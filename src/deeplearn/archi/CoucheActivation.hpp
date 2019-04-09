@@ -12,7 +12,7 @@
  * \version 1.0 
  * \date avril 2019
  *
- * Classe permettant la création d'une couche d'activation.
+ * Classe permettant la création d'une couche d'activation de trois types différents (sigmoid,tangente hyperbolique ou Rectified Linear Units)
  * Cette classe hérite de la classe Couche.
  */
 
