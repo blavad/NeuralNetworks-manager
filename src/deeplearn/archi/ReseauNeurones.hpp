@@ -1,7 +1,7 @@
 #include <vector>
 #include <Graphe.hpp>
 #include <Couche.hpp>
-
+#include <Tenseur.hpp>
 
 #ifndef __RESEAUNEURONES_HPP__
 #define __RESEAUNEURONES_HPP__
@@ -82,4 +82,5 @@ class ReseauNeurones {
          */
        void supprimerCoucheFinale(Couche c)
 
+};
 #endif

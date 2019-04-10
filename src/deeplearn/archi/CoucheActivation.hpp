@@ -1,5 +1,6 @@
 #include <Couche.hpp>
-
+#include <Tenseur.hpp>
+#include <DimTenseur.hpp>
 
 #ifndef __COUCHEACTIVATION_HPP__
 #define __COUCHEACTIVATION_HPP__
