@@ -40,7 +40,7 @@ class ReseauNeurones {
         /**
          * \brief Constructeur du réseau à partir de couches déjà crées. 
          */
-        Graphe(Couche);
+        Graphe(Couche c);
 
   	/**
          * \fn Tenseur propagation(Tenseur t)
