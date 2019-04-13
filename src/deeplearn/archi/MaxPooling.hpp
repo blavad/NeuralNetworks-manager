@@ -34,7 +34,7 @@ class MaxPooling {
 	
 	/**
          * \fn Tenseur propagation(Tenseur t)
-         * \brief Méthode permettant la propagation du réseau d'une étape à une autre.
+         * \brief Méthode permettant la propagation d'une couche à une autre.
          * \param t le tenseur
 	 * \return Le tenseur à l'étape d'après
          */

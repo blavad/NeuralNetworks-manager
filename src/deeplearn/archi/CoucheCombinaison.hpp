@@ -34,7 +34,7 @@ class CoucheActivation {
 
         /**
          * \fn Tenseur propagation(Tenseur t)
-         * \brief Méthode permettant la propagation de la couche d'une étape à une autre.
+         * \brief Méthode permettant la propagation d'une couche à une autre.
          * \param t le tenseur
 	 * \return Le tenseur à l'étape d'après
          */
