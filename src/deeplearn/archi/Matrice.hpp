@@ -16,7 +16,7 @@
  *
  */
 
-class Vecteur {
+class Matrice {
  
     public :
 
