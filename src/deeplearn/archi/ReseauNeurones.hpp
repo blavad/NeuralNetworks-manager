@@ -1,11 +1,11 @@
+#ifndef __RESEAU_NEURONES_HPP__
+#define __RESEAU_NEURONES_HPP__
+
 #include <vector>
+
 #include <Graphe.hpp>
 #include <Couche.hpp>
 #include <Tenseur.hpp>
-
-#ifndef __RESEAUNEURONES_HPP__
-#define __RESEAUNEURONES_HPP__
-
 
 /** 
  * \class ReseauNeurones
@@ -15,72 +15,75 @@
  * \date avril 2019
  *
  * Cette classe permet de créer un réseau de neurones : on peut ajouter/supprimer des couches/noeuds/arcs. 
- * Cette classe hérite de Graphe et de Couche.
+ * 
  */
 
-class ReseauNeurones {
+class ReseauNeurones : public Graphe<Couche>, public Couche
+{
 
-    private :
-        /** \brief La liste correspondant à la première couche du réseau */
-        vector<Couche> couche_initiale;
+private:
+  /** \brief La liste correspondant à la première couche du réseau */
+  std::vector<Couche> couche_initiale;
 
-        /** \brief La liste correspondant à la dernière couche du réseau */
-        vector<Couche> couche_finale;
+  /** \brief La liste correspondant à la dernière couche du réseau */
+  std::vector<Couche> couche_finale;
 
-	/** \brief Le nom du réseau*/
-	string nom;
+  /** \brief Le nom du réseau*/
+  std::string nom;
 
-    public :
+public:
+  /**
+   * \brief Constructeur du réseau vide.
+   */
+  ReseauNeurones();
 
-        /**
-         * \brief Constructeur du réseau vide.
-         */
-        ReseauNeurones();
+  /**
+   * \brief Constructeur du réseau à partir de couches déjà crées. 
+   */
+  ReseauNeurones(Couche, ...);
 
-        /**
-         * \brief Constructeur du réseau à partir de couches déjà crées. 
-         */
-        Graphe(Couche c);
+  /**
+   * \fn Tenseur propagation(Tenseur t)
+   * \brief Méthode permettant la propagation dans un reseau de neurone.
+   * \param t l'entree du reseau de neurone
+	 * \return la sortie du reseau de neurone
+   */
+  Tenseur propagation(Tenseur t);
 
-  	/**
-         * \fn Tenseur propagation(Tenseur t)
-         * \brief Méthode permettant la propagation du réseau d'une couche à une autre.
-         * \param t le tenseur
-	 * \return Le tenseur à l'étape d'après
-         */
-        Tenseur propagation(Tenseur t);
+  /**
+   * \fn void ajouterCoucheInitiale(Couche c)
+   * \brief Ajout d'une la couche initiale.
+   * \param c une couche déjà créée.
+   */
+  void ajouterCoucheInitiale(Couche c);
 
-         /**
-         * \fn void ajouterCoucheInitiale(Couche c)
-         * \brief Ajout de la couche initiale.
-         * \param c une couche déjà créée.
+  /**
+   * \fn void ajouterCoucheFinale(Couche c)
+   * \brief Ajout d'une couche finale.
+   * \param c une couche déjà créée.
+   */
+  void ajouterCoucheFinale(Couche c);
 
-         */
-       void ajouterCoucheInitiale(Couche c)
+  /**
+   * \fn void supprimerCoucheInitiale(Couche c)
+   * \brief Suppression d'une couche initiale.
+   * \param c une couche présente dans le réseau.
+   */
+  void supprimerCoucheInitiale(Couche c);
 
-        /**
-         * \fn void ajouterCoucheFinale(Couche c)
-         * \brief Ajout de la couche finale.
-         * \param c une couche déjà créée.
+  /**
+   * \fn void supprimerCoucheFinale(Couche c)
+   * \brief Suppression d'une couche finale.
+   * \param c une couche présente dans le rése 
+   */
+  void supprimerCoucheFinale(Couche c);
 
-         */
-       void ajouterCoucheFinale(Couche c)
-
-        /**
-         * \fn void supprimerCoucheInitiale(Couche c)
-         * \brief Suppression de la couche initiale.
-         * \param c une couche présente dans le réseau.
-
-         */
-       void supprimerCoucheInitiale(Couche c)
-
-        /**
-         * \fn void supprimerCoucheFinale(Couche c)
-         * \brief Suppression de la couche finale.
-         * \param c une couche présente dans le réseau.
-
-         */
-       void supprimerCoucheFinale(Couche c)
-
+  /**
+   * \fn string getNom()
+   * \brief Méthode pour obtenir le nom du reseau de neurones
+   * \return Le nom du RN
+   */
+  std::string getNom();
 };
+
 #endif

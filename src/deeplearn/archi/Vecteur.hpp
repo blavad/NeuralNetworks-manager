@@ -1,8 +1,7 @@
-#include <Tenseur.hpp>
-
 #ifndef __VECTEUR_HPP__
 #define __VECTEUR_HPP__
 
+#include <Tenseur.hpp>
 
 /** 
  * \class Vecteur
@@ -11,17 +10,15 @@
  * \version 1.0 
  * \date avril 2019
  *
- * Classe qui crée un tenseur de dimension 1 (= vecteur)
- * Classe qui hérite de Tenseur.
+ * Classe qui crée un tenseur d'ordre 1 (= vecteur)
  *
  */
 
-class Vecteur {
+class Vecteur : public Tenseur {
  
     public :
-
         /**
-         * \brief Constructeur d'un vecteur de taille l
+         * \brief Constructeur d'un vecteur de longueur l
          */
         Vecteur(int l);
 

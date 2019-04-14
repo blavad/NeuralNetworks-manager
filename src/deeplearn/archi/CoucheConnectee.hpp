@@ -1,22 +1,22 @@
+#ifndef __COUCHE_CONNECTEE_HPP__
+#define __COUCHE_CONNECTEE_HPP__
+
 #include <Tenseur.hpp>
 #include <DimTenseur.hpp>
 #include <CoucheCombinaison.hpp>
 
-#ifndef __COUCHE_CONNECTEE_HPP__
-#define __COUCHE_CONNECTEE_HPP__
-
 /** 
  * \class CoucheConnectée
- * \brief Création d'une couche connectée
+ * \brief Création d'une couche connectee
  * \author Adrien
  * \version 1.0 
  * \date avril 2019
  *
  * Classe permettant la création d'une couche de combinaison de "type" connectée : tous les neurones sont reliés d'une couche à une autre.
- * Cette classe hérite de la classe CoucheCombinaison.
+ * 
  */
 
-class CoucheConnectee
+class CoucheConnectee : public CoucheCombinaison
 {
 
   public:

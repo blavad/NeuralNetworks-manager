@@ -1,10 +1,9 @@
+#ifndef __COUCHE_COMBINAISON_HPP__
+#define __COUCHE_COMBINAISON_HPP__
+
 #include <Couche.hpp>
 #include <Tenseur.hpp>
 #include <DimTenseur.hpp>
-
-#ifndef __COUCHECOMBINAISON_HPP__
-#define __COUCHECOMBINAISON_HPP__
-
 
 /** 
  * \class CoucheCombinaison
@@ -13,32 +12,24 @@
  * \version 1.0 
  * \date avril 2019
  *
- * Classe permettant la création d'une couche de combinaison de deux types différents (convolutive ou connectée)
- * Cette classe hérite de la classe Couche.
+ * Classe permettant la création d'une couche de combinaison c'est-à-dire comportant les parametres du reseau
+ * 
  */
 
-class CoucheActivation {
+class CoucheCombinaison : public Couche
+{
 
+  private:
+    /** \brief Le tenseur "décrivant" la couche */
+    Tenseur params;
 
-   private :
-        /** \brief Le tenseur "décrivant" la couche */
-        Tenseur params
-
-
-    public :
-
-        /**
-         * \brief Constructeur d'une couche de combinaison avec une taille fixée.
-         */
-        CoucheCombinaison(DimTenseur di, DimTenseur do);
-
-        /**
-         * \fn Tenseur propagation(Tenseur t)
-         * \brief Méthode permettant la propagation d'une couche à une autre.
-         * \param t le tenseur
-	 * \return Le tenseur à l'étape d'après
-         */
-        Tenseur propagation(Tenseur t);
+  public:
+    /**
+     * \fn Tenseur getParams()
+     * \brief getter des parametres de la couche.
+     * \return les parametres de la couche
+     */
+    Tenseur getParams();
 };
 
 #endif
