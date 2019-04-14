@@ -6,7 +6,7 @@
 #include <CoucheCombinaison.hpp>
 
 /** 
- * \class CoucheConnectée
+ * \class CoucheConnectee
  * \brief Création d'une couche connectee
  * \author Adrien
  * \version 1.0 

@@ -10,7 +10,7 @@
  * \version 1.0 
  * \date avril 2019
  *
- * Classe qui gère la dimension d'un tenseur
+ * Classe qui gere la dimension d'un tenseur
  * 
  */
 

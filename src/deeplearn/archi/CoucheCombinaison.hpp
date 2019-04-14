@@ -30,6 +30,14 @@ class CoucheCombinaison : public Couche
      * \return les parametres de la couche
      */
     Tenseur getParams();
+
+    /**
+     * \fn void update(Tenseur t)
+     * \brief getter des parametres de la couche.
+     * \param t les parametres mis a jour
+     */
+    void update(Tenseur t );
+
 };
 
 #endif

@@ -14,7 +14,7 @@
  * Cette classe hérite de la classe CoucheActivation.
  */
 
-class TanH
+class TanH : public CoucheActivation
 {
   public:
     /**
