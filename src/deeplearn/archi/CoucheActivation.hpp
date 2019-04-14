@@ -1,9 +1,9 @@
+#ifndef __COUCHE_ACTIVATION_HPP__
+#define __COUCHE_ACTIVATION_HPP__
+
 #include <Couche.hpp>
 #include <Tenseur.hpp>
 #include <DimTenseur.hpp>
-
-#ifndef __COUCHEACTIVATION_HPP__
-#define __COUCHEACTIVATION_HPP__
 
 
 /** 
@@ -17,22 +17,14 @@
  * Cette classe hérite de la classe Couche.
  */
 
-class CoucheActivation {
+class CoucheActivation : public Couche
+{
 
-    public :
-
-        /**
-         * \brief Constructeur d'une couche d'activation avec une taille fixée.
-         */
-        CoucheActivation(DimTenseur dim);
-
-        /**
-         * \fn Tenseur propagation(Tenseur t)
-         * \brief Méthode permettant la propagation de la couche d'une étape à une autre.
-         * \param t le tenseur
-	 * \return Le tenseur à l'étape d'après
-         */
-        Tenseur propagation(Tenseur t);
+  public:
+    /**
+     * \brief Constructeur d'une couche d'activation avec une dimension d'entree.
+     */
+    CoucheActivation(DimTenseur dim);
 };
 
 #endif

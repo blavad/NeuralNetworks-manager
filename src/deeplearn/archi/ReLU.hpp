@@ -1,9 +1,7 @@
-#include <CoucheActivation.hpp>
-
-
 #ifndef __ReLU_HPP__
 #define __ReLU_HPP__
 
+#include <CoucheActivation.hpp>
 
 /** 
  * \class Sigmoid
@@ -12,19 +10,26 @@
  * \version 1.0 
  * \date avril 2019
  *
- * Classe permettant la création d'une fonction ReLU. C'est à dire f(x)=max(0,x)
- * Cette classe hérite de la classe CoucheActivation.
+ * Classe permettant la création d'une couche de type ReLU (= Rectified Linear Unit). C'est à dire f(x)=max(0,x)
+ * 
  */
 
-class ReLU {
+class ReLU : public CoucheActivation
+{
 
-    public :
+  public:
+    /**
+     * \brief Constructeur de la fonction ReLU
+     */
+    ReLU();
 
-        /**
-         * \brief Constructeur de la fonction ReLU
-         */
-        ReLU();
-
+    /**
+     * \fn Tenseur propagation(Tenseur t)
+     * \brief Méthode permettant la propagation d'une couche à une autre.
+     * \param t le tenseur d'entree
+	 * \return la sortie de la fonction ReLU
+     */
+    Tenseur propagation(Tenseur t);
 };
 
 #endif

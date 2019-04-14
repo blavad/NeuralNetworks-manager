@@ -1,44 +1,48 @@
+#ifndef __MAX_POOLING_HPP__
+#define __MAX_POOLING_HPP__
+
 #include <Tenseur.hpp>
 #include <DimTenseur.hpp>
 #include <Couche.hpp>
 
-#ifndef __MAXPOOLING_HPP__
-#define __MAXPOOLING_HPP__
-
-
 /** 
  * \class MaxPooling 
- * \brief Classe liée au redimensionnement des images.
+ * \brief Classe gérant une couche de MaxPooling.
  * \author Adrien
  * \version 1.0 
  * \date avril 2019
  *
  * Classe qui va effectuer l'opération de redimensionnement des images par la technique du MaxPooling.
- * Cette classe hérite de la classe Couche.
  * 
  */
 
-class MaxPooling {
+class MaxPooling : public Couche
+{
 
-    public :
+private:
+  /** \brief Le nombre de pixels reduits a un seul dans la premiere direction*/
+  int pool_x;
+  /** \brief Le nombre de pixels reduits a un seul dans la seconde direction*/
+  int pool_y;
 
-        /**
-         * \brief Constructeur afin d'obtenir une image de taille pool_x par pool_y.
-         */
-        MaxPooling(DimTenseur dio, int pool_x, int pool_y);
+public:
+  /**
+   * \brief Constructeur afin d'obtenir une image de taille pool_x par pool_y.
+   */
+  MaxPooling(DimTenseur dio, int pool_x, int pool_y);
 
-       /**
-         * \brief Constructeur afin d'obtenir une image de taille pool par pool.
-         */
-        MaxPooling(DimTenseur dio, int pool);
-	
-	/**
-         * \fn Tenseur propagation(Tenseur t)
-         * \brief Méthode permettant la propagation d'une couche à une autre.
-         * \param t le tenseur
-	 * \return Le tenseur à l'étape d'après
-         */
-        Tenseur propagation(Tenseur t);
+  /**
+   * \brief Constructeur afin d'obtenir une image de taille pool par pool.
+   */
+  MaxPooling(DimTenseur dio, int pool);
+
+  /**
+   * \fn Tenseur propagation(Tenseur t)
+   * \brief Méthode permettant la propagation d'une couche à une autre.
+   * \param t le tenseur d'entree
+	 * \return la sortie de la couche
+   */
+  Tenseur propagation(Tenseur t);
 };
 
 #endif

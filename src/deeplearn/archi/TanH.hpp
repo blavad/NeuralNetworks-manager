@@ -1,9 +1,7 @@
-#include <CoucheActivation.hpp>
-
-
 #ifndef __TANH_HPP__
 #define __TANH_HPP__
 
+#include <CoucheActivation.hpp>
 
 /** 
  * \class TanH
@@ -16,15 +14,21 @@
  * Cette classe hérite de la classe CoucheActivation.
  */
 
-class TanH {
+class TanH
+{
+  public:
+    /**
+     * \brief Constructeur d'une fonction tangente hyperbolique.
+     */
+    TanH();
 
-    public :
-
-        /**
-         * \brief Constructeur d'une fonction tangente hyperbolique.
-         */
-        TanH();
-
+    /**
+     * \fn Tenseur propagation(Tenseur t)
+     * \brief Méthode permettant la propagation d'une couche à une autre.
+     * \param t le tenseur d'entree
+     * \return la sortie de la fonction tanH
+     */
+    Tenseur propagation(Tenseur t);
 };
 
 #endif

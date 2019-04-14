@@ -1,7 +1,7 @@
-#include <vector>
-
 #ifndef __DIM_TENSEUR_HPP__
 #define __DIM_TENSEUR_HPP__
+
+#include <vector>
 
 /** 
  * \class DimTenseur
