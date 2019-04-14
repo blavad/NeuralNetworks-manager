@@ -10,9 +10,8 @@
  * \version 1.0 
  * \date avril 2019
  *
- * Module permettant le traitement d'une donnee necessaire a l'apprentissage.
- * Il permet également sa récupération.
- * 
+ * Module permettant le stockage en mémoire vive d'une donnee necessaire a l'apprentissage.
+ * La donnee est vu comme un couple Entree/Sortie.
  * 
  */
 class Donnee {
@@ -25,7 +24,6 @@ class Donnee {
         Tenseur sortie;
 
     public :
-
         /**
          * \brief Constructeur de Donnee avec une entree et une sortie
          */
@@ -34,12 +32,14 @@ class Donnee {
         /**
          * \fn Tenseur getEntree()
          * \brief Retourne l'entree de la donnee
+         * \return l'entree.         * 
          */
         Tenseur getEntree();
 
         /**
          * \fn Tenseur getSortie()
          * \brief Retourne la sortie de la donnee
+         * \return la sortie.         *          * 
          */
         Tenseur getSortie();
 

@@ -1,5 +1,5 @@
-#ifndef __ERREURENTROPIECROISEE_HPP__
-#define __ERREURENTROPIECROISEE_HPP__
+#ifndef __ERREUR_ENTROPIE_CROISEE_HPP__
+#define __ERREUR_ENTROPIE_CROISEE_HPP__
 
 #include "Erreur.hpp"
 
@@ -16,8 +16,15 @@
  * 
  * 
  */
-class ErreurEntropieCroisee : public Erreur{
+class ErreurEntropieCroisee : public Erreur
+{
 
+  public:
+    /**
+    * \brief Constructeur de l'erreur d'entropie croisee.
+    * 
+    */
+    ErreurEntropieCroisee();
 };
 
 #endif
