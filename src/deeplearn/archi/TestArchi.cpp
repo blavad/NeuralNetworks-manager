@@ -13,7 +13,7 @@ public:
 	d1 = new DimTenseur(2)
 	d2 = new DimTenseur(3)	
 	c1 = new Couche (d1,d1)
-	c2 = new Couche (d1, d2)
+	c2 = new Couche (d1,d2)
 	t1 = new Tenseur(2)
 
 };
@@ -31,8 +31,8 @@ public:
 	void testPropagation()
 {
 
-	CPPUNIT_ASSERT (c1.propagation(t1).getDim()==c.getDimOutput);
-	CPPUNIT_ASSERT (c2.propagation(t1).getDim()==c.getDimOutput);
+	CPPUNIT_ASSERT (c1.propagation(t1).getDim()==c.getDimOutput());
+	CPPUNIT_ASSERT (c2.propagation(t1).getDim()==c.getDimOutput());
 
 };
 	void testDerivee()

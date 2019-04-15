@@ -1,7 +1,7 @@
-#include <DimTenseur.hpp>
-
 #ifndef __TENSEUR_HPP__
 #define __TENSEUR_HPP__
+
+#include "DimTenseur.hpp"
 
 /** 
  * \class Tenseur
@@ -28,13 +28,13 @@ public:
   /**
    * \brief Constructeur d'un tenseur dont la taille est fixée grâce à des entiers. 
    * \param dim suite de dimensions 
-   */
-  Tenseur(int dim, ...);
+   *
+  Tenseur(int dim);/
 
   /**
    * \brief Constructeur d'un tenseur dont la taille est fixée grâce à un objet DimTenseur. 
    */
-  Tenseur(DimTenseur dim);
+  Tenseur(void* val, DimTenseur di);
 
   /**
    * \fn void initValeurGaussienne()
@@ -53,6 +53,40 @@ public:
    * \brief Initialisation du tenseur selon une loi uniforme
    */
   void initValeurUnif();
+
+
+  /**
+  * \fn void setValeur(void* vl)
+  * \brief Méthode pour fixer la valeur du Tenseur
+  * \param vl La valeur du tenseur
+  */
+  void setValeur(void* vl);
+
+
+  /**
+  * \fn void setDim(DimTenseur di)
+  * \brief Méthode pour fixer la dimension du Tenseur
+  * \param vl La dimension du tenseur
+  */
+  void setDim(DimTenseur di);
+
+
+  /**
+  * \fn int getValeur()
+  * \brief Méthode pour obtenir la valeur du Tenseur
+  * \return La valeur du Tenseur
+  */
+  void* getValeur();
+
+
+
+  /**
+  * \fn int getDim()
+  * \brief Méthode pour obtenir la dimension du Tenseur
+  * \return La dimension du Tenseur
+  */
+  DimTenseur getDim();
+
 };
 
 #endif
