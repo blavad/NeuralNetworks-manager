@@ -4,17 +4,17 @@
 #define __GRAPHE_HPP__
 
 
-/** 
- * \class Graphe 
+/**
+ * \class Graphe
  * \tparam Type Type de noeud du graphe.
  * \brief Gestion du type Graphe.
  * \author David
- * \version 1.0 
+ * \version 1.0
  * \date avril 2019
  *
- * Module permettant l'utilisation d'un graphe orienté générique. 
- * Les noeuds du graphe portent cette généricité et peuvent donc être de n'importe quel type de donnée.
- * 
+ * Module permettant l'utilisation d'un graphe orienté générique.
+ * Les noeuds du graphe portent cette généricité et peuvent donc être de n'importe quel type de données.
+ *
  */
 template <class Type>
 class Graphe {
@@ -40,7 +40,7 @@ class Graphe {
 
         /**
          * \fn void ajouterNoeud(Type noeud)
-         * \brief Ajout d'un arc.
+         * \brief Ajout d'un noeud.
          * \param noeud un noeud du graphe.
          */
         void ajouterNoeud(Type noeud);
@@ -51,14 +51,14 @@ class Graphe {
          * \param noeud_init le noeud de départ de l'arc.
          * \param noeud_final le noeud d'arrivé de l'arc.
          */
-        void ajouterArc(Type depart,Type arrivee);
+        void ajouterArc(Type noeud_init,Type noeud_final);
 
         /**
          * \fn void supprimerNoeud(Type noeud)
-         * \brief Suppression d'un arc.
+         * \brief Suppression d'un noeud.
          * \param noeud un noeud du graphe.
          */
-        void supprimerNoeud(Type);
+        void supprimerNoeud(Type noeud);
 
         /**
          * \fn void supprimerArc(Type noeud_init,Type noeud_final)
@@ -66,7 +66,7 @@ class Graphe {
          * \param noeud_init le noeud de départ de l'arc.
          * \param noeud_final le noeud d'arrivé de l'arc.
          */
-        void supprimerArc(Type,Type);
+        void supprimerArc(Type noeud_init,Type noeud_final);
 
         /**
          * \fn bool contientCycle()
