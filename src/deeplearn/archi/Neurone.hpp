@@ -1,10 +1,9 @@
-#include <Tenseur.hpp>
-#include <DimTenseur.hpp>
-#include <CoucheConnectée.hpp>
-
 #ifndef __NEURONE_HPP__
 #define __NEURONE_HPP__
 
+#include <Tenseur.hpp>
+#include <DimTenseur.hpp>
+#include <CoucheConnectee.hpp>
 
 /** 
  * \class CoucheConnectée
@@ -17,24 +16,14 @@
  * Cette classe hérite de la classe CoucheConnectée.
  */
 
-class CoucheConnectée {
+class Neurone : public CoucheConnectee
+{
 
-
-    public :
-
-        /**
-         * \brief Constructeur d'une couche connectée à partir du nombre de sorties
-         */
-        CoucheConnectée(int nb_out);
-
-
-        /**
-         * \fn Tenseur propagation(Tenseur t)
-         * \brief Méthode permettant la propagation d'un neurone à un autre.
-         * \param t le tenseur
-	 * \return Le tenseur à l'étape d'après
-         */
-        Tenseur propagation(Tenseur t);
+  public:
+    /**
+     * \brief Constructeur d'un neurone
+     */
+    Neurone();
 };
 
 #endif

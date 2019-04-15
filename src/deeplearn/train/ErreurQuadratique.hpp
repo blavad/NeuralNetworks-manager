@@ -1,5 +1,5 @@
-#ifndef __ERREURQUADRATIQUE_HPP__
-#define __ERREURQUADRATIQUE_HPP__
+#ifndef __ERREUR_QUADRATIQUE_HPP__
+#define __ERREUR_QUADRATIQUE_HPP__
 
 #include "Erreur.hpp"
 
@@ -16,8 +16,15 @@
  * 
  * 
  */
-class ErreurQuadratique : public Erreur{
+class ErreurQuadratique : public Erreur
+{
 
+  public:
+    /**
+    * \brief Constructeur de l'erreur quadratique.
+    * 
+    */
+    ErreurQuadratique();
 };
 
 #endif

@@ -12,7 +12,6 @@
  * Module permettant le choix des parametres de l'apprentissage.
  * Il permet également leur récupération.
  * 
- * 
  */
 class ParametresApprentissage {
 
@@ -20,7 +19,7 @@ class ParametresApprentissage {
         /** \brief nombre d'epoques de l'apprentissage */
         int nb_epoques;
 
-        /** \brief vitesse choisi pour l'apprentissage du reseau */
+        /** \brief vitesse choisie pour l'apprentissage du reseau */
         double taux_apprentissage;
 
     public :
@@ -33,12 +32,14 @@ class ParametresApprentissage {
         /**
          * \fn int getNbEpoques()
          * \brief Retourne le nombre d'epoques de l'apprentissage.
+         * \return le nombre d'epoques
          */
         int getNbEpoques();
 
         /**
          * \fn double getTauxApprentissage()
          * \brief Retourne le taux d'apprentissage du reseau
+         * \return le tauc d'apprentissage         * 
          */
         double getTauxApprentissage();
 

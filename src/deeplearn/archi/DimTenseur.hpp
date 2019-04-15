@@ -1,37 +1,33 @@
+#ifndef __DIM_TENSEUR_HPP__
+#define __DIM_TENSEUR_HPP__
+
 #include <vector>
-
-#ifndef __DIMTENSEUR_HPP__
-#define __DIMTENSEUR_HPP__
-
 
 /** 
  * \class DimTenseur
- * \brief Classe liée à la dimension d'un tenseur.
+ * \brief Classe stockant les dimensions d'un tenseur.
  * \author Adrien
  * \version 1.0 
  * \date avril 2019
  *
- * Classe qui va gérer la dimension d'un tenseur
+ * Classe qui gère la dimension d'un tenseur
  * 
  */
 
-class MaxPooling {
- 
+class DimTenseur
+{
+  private:
+    /** \brief entier correspondant à l'ordre du tenseur  */
+    int ordre;
 
-    private :
-        /** \brief Entier correspondant à l'ordre du tenseur  */
-        int ordre;
+    /** \brief La liste des dimensions du tenseur */
+    std::vector<int> dim;
 
-        /** \brief La liste des dimensions du tenseur */
-        vector<int> dim;
-
-    public :
-
-        /**
-         * \brief Constructeur avec d'obtenir la dimension souhaitée.
-         */
-        DimTenseur(int dim,...);
-
+  public:
+    /**
+     * \brief Constructeur avec d'obtenir la dimension souhaitée.
+     */
+    DimTenseur(int dim, ...);
 };
 
 #endif

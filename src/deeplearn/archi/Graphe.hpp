@@ -1,8 +1,7 @@
-#include <vector>
-
 #ifndef __GRAPHE_HPP__
 #define __GRAPHE_HPP__
 
+#include <vector>
 
 /**
  * \class Graphe

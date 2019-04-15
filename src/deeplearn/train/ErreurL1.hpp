@@ -1,5 +1,5 @@
-#ifndef __ERREURL1_HPP__
-#define __ERREURL1_HPP__
+#ifndef __ERREUR_L1_HPP__
+#define __ERREUR_L1_HPP__
 
 #include "Erreur.hpp"
 
@@ -18,6 +18,12 @@
  */
 class ErreurL1 : public Erreur{
 
+  public:
+    /**
+    * \brief Constructeur de l'erreur L1.
+    * 
+    */
+    ErreurL1();
 };
 
 #endif

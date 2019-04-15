@@ -1,7 +1,7 @@
 #ifndef __APPRENTISSAGE_HPP__
 #define __APPRENTISSAGE_HPP__
 
-#include "ReseauNeurones.hpp"
+#include "archi/ReseauNeurones.hpp"
 #include "Optimisateur.hpp"
 #include "Erreur.hpp"
 #include "Donnees.hpp"
@@ -27,7 +27,7 @@ class Apprentissage {
         ReseauNeurones rn;
 
         /** \brief l'optimisateur choisi */
-        Optmisateur opt;
+        Optimisateur opt;
 
         /** \brief  l'erreur commise a la fin de l'apprentissage */
         Erreur err;
@@ -59,30 +59,35 @@ class Apprentissage {
         /**
          * \fn ReseauNeurones getRN()
          * \brief Recupere le reseau de neurones
+         * \return le reseau de neurones.'         * 
          */
         ReseauNeurones getRN();
 
         /**
          * \fn Optimisateur getOptimisateur()
          * \brief Recupere l'optimisateur.
+         * \return l'optimisateur.'
          */
         Optimisateur getOptimisateur();
 
         /**
          * \fn Erreur getErreur()
          * \brief Recupere l'erreur
+         * \return l'erreur.       * 
          */
         Erreur getErreur();
 
         /**
          * \fn Donnes getDonnees()
          * \brief Recupere les donnees d'apprentissage.
+         * \return les données d'apprentissage.
          */
         Donnees getDonnees();
 
         /**
          * \fn ParametresApprentissage getParam()
-         * \brief Recupere les parametres d'apprentissage du reseau
+         * \brief Recupere les parametres d'apprentissage du reseau.
+         * \return les parametres d'apprentissage actuels.
          */
         ParametresApprentissage getParam();
 
@@ -102,12 +107,11 @@ class Apprentissage {
 
         /**
          * \fn void setParam(ParametresApprentissage paramApp)
-         * \brief Met a jour les parametres d'apprentissage du reseau de neurones
-         * \param paramApp les parametres d'apprentissage
+         * \brief Met a jour les parametres d'apprentissage du reseau de neurones.
+         * \param paramApp les parametres d'apprentissage.
          */
         void setParam(ParametresApprentissage paramApp);
-
-    
+  
 };
 
 #endif

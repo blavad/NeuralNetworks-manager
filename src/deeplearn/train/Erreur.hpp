@@ -1,8 +1,7 @@
 #ifndef __ERREUR_HPP__
 #define __ERREUR_HPP__
 
-#include "Tenseur.hpp"
-
+#include "archi/Tenseur.hpp"
 
 /** 
  * \class Erreur
@@ -16,27 +15,24 @@
  * 
  * 
  */
-class Erreur {
+class Erreur
+{
 
-    public :
-
-        /**
+  public:
+    /**
          * \fn virtual Tenseur eval(Tenseur sortieRN, Tenseur prediction)
          * \brief Methode virtuelle pour evaluer l'erreur effectuee entre la sortie et la prediction.
          * \param sortieRN le tenseur de sortie du reseau de neurones.
-         * \param prediction la sortie attendue du reseau de neurones.
+         * \param label la sortie souhaitée du reseau de neurones.
          */
-        virtual eval(Tenseur sortieRN, Tenseur prediction);
+    virtual Tenseur eval(Tenseur sortieRN, Tenseur label);
 
-        /**
+    /**
          * \fn virtual void derivee(Tenseur t)
          * \brief Méthode virtuelle pour avoir la derivee d'un tenseur donnee en entree
          * \param t le tenseur pour lequel on veut la derivee
          */
-        virtual derivee(Tenseur t);
-
-
-
+    virtual Tenseur derivee(Tenseur t);
 };
 
 #endif

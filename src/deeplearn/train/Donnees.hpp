@@ -12,16 +12,14 @@
  * \version 1.0 
  * \date avril 2019
  *
- * Module permettant le traitement des donnees necessaire a l'apprentissage.
- * Il permet également leur récupération.
- * 
+ * Module permettant le stockage en memoire vive des donnees necessaire a l'apprentissage.
  * 
  */
 class Donnees {
 
     private :
         /** \brief le vecteur des donnees */
-        vector<Donnee> donnees;
+        std::vector<Donnee> donnees;
 
     public :
 
@@ -33,7 +31,7 @@ class Donnees {
         /**
          * \brief Constructeur des donnees d'apprentissage a partir d'un vecteur de donnees unitaires
          */
-        Donnees(vector<Donnee> vd);
+        Donnees(std::vector<Donnee> vd);
 
         /**
          * \fn void ajouterDonnees(Donnees d)
@@ -59,18 +57,21 @@ class Donnees {
          * \fn Donnee getDonnee(int num)
          * \brief Retourne la donnee numero num parmis l'ensemble des donnees
          * \param num le numero de la donnee
+         * \return la donnee en position "num"
          */
         Donnee getDonnee(int num);
 
         /**
          * \fn vector<Donnees> getDonnees()
          * \brief Retourne l'ensemble des donnees
+         * \return le vecteur des donnees
          */
-        vector<Donnees> getDonnees();
+        std::vector<Donnees> getDonnees();
 
         /**
          * \fn int getNbDonnees()
          * \brief Retourne le nombre de donnees
+         * \return le nombre de donnees
          */
         int getNbDonnees();
 
