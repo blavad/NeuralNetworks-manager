@@ -1,7 +1,7 @@
 #ifndef __ERREUR_HPP__
 #define __ERREUR_HPP__
 
-#include "archi/Tenseur.hpp"
+#include "../archi/Tenseur.hpp"
 
 /** 
  * \class Erreur

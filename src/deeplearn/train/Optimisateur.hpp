@@ -1,7 +1,7 @@
 #ifndef __OPTIMISATEUR_HPP__
 #define __OPTIMISATEUR_HPP__
 
-#include "ReseauNeurones.hpp"
+#include "../archi/ReseauNeurones.hpp";
 #include "Erreur.hpp"
 
 
