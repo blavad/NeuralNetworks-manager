@@ -44,7 +44,7 @@ class Couche
          * \fn virtual Tenseur propagation(Tenseur t)
          * \brief Methode virtuelle permettant la propagation d'une couche à une autre.
          * \param t le tenseur d'entree
-	 * \return la sortie de la couche
+	    * \return la sortie de la couche
          */
         virtual Tenseur propagation(Tenseur t);
 

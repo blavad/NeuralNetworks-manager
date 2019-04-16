@@ -1,7 +1,7 @@
 #ifndef __VECTEUR_HPP__
 #define __VECTEUR_HPP__
 
-#include <Tenseur.hpp>
+#include "Tenseur.hpp"
 
 /** 
  * \class Vecteur
@@ -20,7 +20,7 @@ class Vecteur : public Tenseur {
         /**
          * \brief Constructeur d'un vecteur de longueur l
          */
-        Vecteur(int l);
+        Vecteur(void* vl, int l);
 
 };
 

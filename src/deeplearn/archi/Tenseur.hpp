@@ -81,7 +81,7 @@ public:
 
 
   /**
-  * \fn int getDim()
+  * \fn DimTenseur getDim()
   * \brief Méthode pour obtenir la dimension du Tenseur
   * \return La dimension du Tenseur
   */
