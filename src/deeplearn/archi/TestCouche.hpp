@@ -1,15 +1,15 @@
 #ifndef TESTARCHI_HPP__
 #define TESTARCHI_HPP__
 
-#include <cppunit/TestFixture.h>
-#include <Tenseur.hpp>
-#include <DimTenseur.hpp>
-#include <Graphe.hpp>
+#include "cppunit/TestFixture.h"
+#include "Tenseur.hpp"
+#include "DimTenseur.hpp"
+#include "Graphe.hpp"
 
 
 using namespace CppUnit;
 
-class TestArchi : public CppUnit::TextFixture {
+class TestCouche : public CppUnit::TextFixture {
 {
 private :
 
@@ -23,8 +23,6 @@ public:
 
 	void testPropagation();
 	void testDerivee();
-	void testContientCycle();
-	
 	
 };
 #endif

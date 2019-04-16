@@ -16,7 +16,7 @@
 
 using namespace CppUnit;
 
-class TestArchi : public CppUnit::TextFixture {
+class TestGraphe : public CppUnit::TextFixture {
 
 private :
 
@@ -25,12 +25,12 @@ private :
 public:
 
     // Initialiser les variables
-	void setUp();
+    void setUp();
 
-	// Supprime les variables
-	void tearDown();
+    // Supprime les variables
+    void tearDown();
 
-	// Vérifier que le nouveau noeud apparait dans la liste d'adjacence et d'antécédence
+    // Vérifier que le nouveau noeud apparait dans la liste d'adjacence et d'antécédence
     void testAjouterNoeud();
 
     // Vérifier que le noeud de départ apparait dans la liste d'antécédence du noeud d'arrivée

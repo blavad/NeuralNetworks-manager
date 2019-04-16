@@ -2,17 +2,17 @@
 
 using namespace CppUnit;
 
-class TestArchi : public CppUnit::TestFixture{
+class TestGraphe : public CppUnit::TestFixture{
 
-	void setUp(){
-	    g1 = new Graphe();
-	    g2 = new Graphe();
-	};
+    void setUp(){
+	g1 = new Graphe();
+	g2 = new Graphe();
+    };
 
-	void tearDown(){
-        delete g1;
+    void tearDown(){
+      	delete g1;
         delete g2;
-	};
+    };
 
     bool testAjouterNoeud(){
         g1.ajouterNoeud(3);

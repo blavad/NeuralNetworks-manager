@@ -1,9 +1,9 @@
 #include <cppunit/TestFixture.h>
-#include "TestArchi.hpp"
+#include "TestCouche.hpp"
 
 using namespace CppUnit;
 
-class TestArchi : public CppUnit::TestFixture
+class TestCouche : public CppUnit::TestFixture
 {
 	
 public:
@@ -15,7 +15,6 @@ public:
 	c1 = new Couche (d1,d1);
 	c2 = new Couche (d1,d2);
 	t1 = new Tenseur(2);
-	g1 = new Graphe();
 
 };
 	void tearDown()
@@ -26,7 +25,6 @@ public:
 	delete c1;	
 	delete c2;
 	delete t1;	
-	delete g1;
 
 };
 
@@ -42,11 +40,6 @@ public:
 
 };
 
-	void testContientCycle()
-{
-
-
-};
 
 
 };
