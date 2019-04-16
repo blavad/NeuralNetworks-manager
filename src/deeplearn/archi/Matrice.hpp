@@ -1,7 +1,7 @@
 #ifndef __MATRICE_HPP__
 #define __MATRICE_HPP__
 
-#include <Tenseur.hpp>
+#include "Tenseur.hpp"
 
 /** 
  * \class Matrice
@@ -20,7 +20,7 @@ class Matrice : public Tenseur {
         /**
          * \brief Constructeur d'une matrice de taille lxc
          */
-        Matrice(int l,int c);
+        Matrice(void* valeur, int l, int c);
 
 };
 

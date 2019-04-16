@@ -1,7 +1,7 @@
 #ifndef __SIGMOID_HPP__
 #define __SIGMOID_HPP__
 
-#include <CoucheActivation.hpp>
+#include "CoucheActivation.hpp"
 
 /** 
  * \class Sigmoid
@@ -21,7 +21,7 @@ class Sigmoid : public CoucheActivation
     /**
      * \brief Constructeur d'une fonction sigmoid.
      */
-    Sigmoid();
+    Sigmoid(DimTenseur din, DimTenseur dout, std::string no);
 
     /**
      * \fn Tenseur propagation(Tenseur t)

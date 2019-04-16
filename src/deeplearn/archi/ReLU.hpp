@@ -1,7 +1,7 @@
 #ifndef __ReLU_HPP__
 #define __ReLU_HPP__
 
-#include <CoucheActivation.hpp>
+#include "CoucheActivation.hpp"
 
 /** 
  * \class Sigmoid
@@ -21,7 +21,7 @@ class ReLU : public CoucheActivation
     /**
      * \brief Constructeur de la fonction ReLU
      */
-    ReLU();
+    ReLU(DimTenseur din, DimTenseur dout, std::string no);
 
     /**
      * \fn Tenseur propagation(Tenseur t)
