@@ -20,10 +20,10 @@ class Graphe {
 
     private :
         /** \brief La liste dynamique d'adjacence. */
-        vector<pair<Type, vector<Type>>> list_adj;
+        std::vector<std::pair<Type, std::vector<Type> > > list_adj;
 
         /** \brief La liste dynamique d'antécédence. */
-        vector<pair<Type, vector<Type>>> list_ant;
+        std::vector<std::pair<Type, std::vector<Type> > > list_ant;
 
     public :
 
