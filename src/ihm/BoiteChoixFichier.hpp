@@ -1,8 +1,11 @@
+
+#ifndef __BOITE_CHOIX_FICHIER_HPP__
+#define __BOITE_CHOIX_FICHIER_HPP__
+
+#include "Panneau.hpp"
 #include "Boite.hpp"
 
-#ifndef __PANNEAU_ARCHITECTURE_HPP__
-#define __PANNEAU_ARCHITECTURE_HPP__
-
+using namespace std;
 
 /** 
  * \class BoiteChoixFichier
@@ -15,12 +18,10 @@
  * Cette classe hérite de Boite
  * 
  */
-class BoiteChoixFichier {
+class BoiteChoixFichier : public Boite {
 
     private :
-        /** 
-        *\ brief Un string correspondant au choix du fichier  
-        */
+        /** \ brief Un string correspondant au choix du fichier  */
         string nomFichier;
 
     public :
@@ -30,7 +31,7 @@ class BoiteChoixFichier {
          * \brief Constucteur prenant en paramètre un Panneau
          * \param parent un Panneau préalablement défini
          */
-         BoiteChoixFichier(Panneau parent);
+         BoiteChoixFichier(Panneau parent );
 
  
  

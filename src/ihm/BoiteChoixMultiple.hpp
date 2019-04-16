@@ -2,10 +2,10 @@
 #include <vector>
 #include "Boite.hpp"
 
-#ifndef __PANNEAU_ARCHITECTURE_HPP__
-#define __PANNEAU_ARCHITECTURE_HPP__
+#ifndef __BOITE_CHOIX_MULTIPLE_HPP__
+#define __BOITE_CHOIX_MULTIPLE_HPP__
 
-
+using namespace std ;
 /** 
  * \class BoiteChoixMultiple
  * \brief Gestion de l'interaction Homme/Machine liée au choix de l'utilisateur
@@ -17,14 +17,14 @@
  * Cette classe hérite de Boite
  * 
  */
-class BoiteChoixMultiple {
+class BoiteChoixMultiple : public Boite {
 
     private :
         /** \brief Un vecteur contenant l'emsemble des choix offerts à l'utilisateur  */
         vector <string> choix;
 
         /** \brief Un bouton pour valider le choix de l'utilisateur */
-        Button validerSelection;
+        GtkButton validerSelection;
 
     public :
 
@@ -33,7 +33,7 @@ class BoiteChoixMultiple {
          * \brief Constucteur prenant en paramètre un string
          * \param Un string correspondant à un premier choix offert à l'utilisateur
          */
-         BoiteChoixMultiple(String nom);
+         BoiteChoixMultiple(string nom);
 
          /**
          * \fn ajouterChoix(string nom)

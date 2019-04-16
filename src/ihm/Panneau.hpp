@@ -1,9 +1,10 @@
-#include "ReseauNeuronnes.hpp"
+#include "../deeplearn/archi/ReseauNeurones.hpp"
 #include <gtkmm.h>
 
 #ifndef __RESEAUNEURONES_HPP__
 #define __RESEAUNEURONES_HPP__
 
+ using namespace std;
 
 /** 
  * \class Panneau
@@ -20,7 +21,7 @@ class Panneau {
 
     private :
         /** \brief Bouton de sauvegarde */
-        Button sauvegarder;
+        GtkButton sauvegarder;
 
         /** \brief un Reseau de */
         ReseauNeurones reseauNeurones;
@@ -44,7 +45,7 @@ class Panneau {
          * \brief Méthode permettant la sauvegarde d'un reseau de neurones sous un nom donnée
          * \param nomFichier le nom du fichier en sortie
          */
-        void sauvegarderRN(String nomFichier);
+        void sauvegarderRN(string nomFichier);
 
 
          /**

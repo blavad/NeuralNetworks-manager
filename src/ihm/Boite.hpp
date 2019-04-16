@@ -1,8 +1,9 @@
 #include <gtkmm.h>
 
-#ifndef __RESEAUNEURONES_HPP__
-#define __RESEAUNEURONES_HPP__
-
+#ifndef __BOITE_HPP__
+#define __BOITE_HPP__
+ 
+ using namespace std;
 
 /** 
  * \class Boite
