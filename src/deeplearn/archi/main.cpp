@@ -1,7 +1,17 @@
 #include "Couche.cpp"
 #include "DimTenseur.cpp"
 #include "Tenseur.cpp"
+#include "Vecteur.cpp"
+#include "Matrice.cpp"
 #include "MaxPooling.cpp"
+#include "CoucheActivation.cpp"
+#include "ReLu.cpp"
+#include "Sigmoid.cpp"
+#include "TanH.cpp"
+#include "CoucheCombinaison.cpp"
+#include "CoucheConnectee.cpp"
+#include "Neurone.cpp"
+#include "CoucheConvolutive.cpp"
 #include <iostream>
 #include <vector>
 #include <string>
@@ -62,10 +72,55 @@ int main()
 	std::cout << maxP.getPoolX() << "\n";
 	std::cout << maxP.getPoolY() << "\n\n";
 
+	/*Création de couches d'activation diverses*/
+	CoucheActivation c(d1,d2,"CoucheActivation");
+	ReLU r(d1,d2,"ReLU");
+	Sigmoid s(d1,d2,"Sigmoid");
+	TanH t(d1,d2,"TangenteH");
 
+
+	/*Vérification de l'accès au nom d'une Couche*/
+	std::cout << "Nom d'une couche:\n\n";
+	std::cout << r.getNom() << "\n";
+	std::cout << c.getNom() << "\n"; 
+	std::cout << s.getNom() << "\n"; 
+	std::cout << t.getNom() << "\n\n";
+
+	/*Création de tenseurs divers*/
+	int* ptr = nullptr;
+	int truc = 2;
+	ptr = &truc;
+
+
+	Tenseur ts(ptr,d1);
+	Vecteur ve(ptr,7);
+	Matrice mat(ptr,8,10);
+
+
+	/*Vérification de l'accès à l'ordre d'un DimTenseur*/
+	std::cout << "Ordre d'un DimTenseur via Couche Tenseur:\n\n"; 
+	std::cout << ts.getDim().getOrdre() << "\n";
+	std::cout << ve.getDim().getOrdre() << "\n\n";
+
+
+
+	/* Vérification de l'accès aux vector de dimension des tenseurs*/
+	std::cout << "Vectors de dimension des tenseurs :\n\n"; 
+	for (int i : ve.getDim().getDim())
+		std::cout << i << "\n";
+
+
+	for (int i : mat.getDim().getDim())
+		std::cout << i << "\n";	
 	
 	
-	
+
+	/*Création couche combinaison*/
+	CoucheCombinaison ccb(d1,d2,"CoucheCombinaison",mat);
+	CoucheConnectee ccn(d1,d2,"CoucheConnectee",mat);
+	Neurone neu(d1,d2,"Neurone",mat);
+	CoucheConvolutive ccv(d1,d2,"CoucheConnectee",mat,200,300,5);
+
 
 	return 0;
 }

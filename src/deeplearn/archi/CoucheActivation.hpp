@@ -1,9 +1,7 @@
 #ifndef __COUCHE_ACTIVATION_HPP__
 #define __COUCHE_ACTIVATION_HPP__
 
-#include <Couche.hpp>
-#include <Tenseur.hpp>
-#include <DimTenseur.hpp>
+#include "Couche.hpp"
 
 
 /** 
@@ -24,7 +22,7 @@ class CoucheActivation : public Couche
     /**
      * \brief Constructeur d'une couche d'activation avec une dimension d'entree.
      */
-    CoucheActivation(DimTenseur dim);
+    CoucheActivation(DimTenseur din, DimTenseur dout, std::string no);
 };
 
 #endif
