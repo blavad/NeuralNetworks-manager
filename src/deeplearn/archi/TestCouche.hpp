@@ -7,6 +7,16 @@
 #include "Graphe.hpp"
 
 
+/**
+ * \class TestCouche
+ * \brief Test des méthodes de la classe Couche.
+ * \author Adrien
+ * \version 1.0
+ * \date avril 2019
+ *
+ */
+
+
 using namespace CppUnit;
 
 class TestCouche : public CppUnit::TextFixture {
@@ -18,10 +28,13 @@ private :
 	DimTenseur d1,d2
 	Graphe g1;
 public:
+	/** \brief Initialiser les variables  */
 	void setUp();
+	/** \brief Supprimer les variables  */
 	void tearDown();
-
+	/** \brief Vérifier que la propagation d'une couche à une autre se déroule normalement */
 	void testPropagation();
+	/** \brief Vérifier que la dérivation d'une couche s'effectue correctement */
 	void testDerivee();
 	
 };

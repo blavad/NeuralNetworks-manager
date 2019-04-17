@@ -14,19 +14,19 @@ class TestGraphe : public CppUnit::TestFixture{
         delete g2;
     };
 
-    bool testAjouterNoeud(){
+    void testAjouterNoeud(){
         g1.ajouterNoeud(3);
         CPPUNIT_ASSERT (g1.list_adj[0].first == 3 && g1.list_ant[0].first == 3);
     };
 
-    bool testAjouterArc(){
+    void testAjouterArc(){
         g1.ajouterNoeud(3);
         g1.ajouterNoeud(2);
         g1.ajouterArc(2,3);
         CPPUNIT_ASSERT (g1.list_adj[0].second[0] == 2 && g1.list_adj[1].second[0] == 3 && g1.list_ant[0].second[0] == 2);
     };
 
-    bool testSupprimerNoeud(){
+    void testSupprimerNoeud(){
         g1.ajouterNoeud({2,3,4});
         g1.ajouterArc(2,3);
         g1.ajouterArc(4,2);
@@ -35,7 +35,7 @@ class TestGraphe : public CppUnit::TestFixture{
     };
 
 
-    bool testSupprimerArc(){
+    void testSupprimerArc(){
         g1.ajouterNoeud({2,3,4});
         g1.ajouterArc(2,3);
         g1.ajouterArc(2,4);
@@ -43,7 +43,7 @@ class TestGraphe : public CppUnit::TestFixture{
         CPPUNIT_ASSERT (std::find(g1.list_adj[0].second.begin(), g1.list_adj[0].second.end(), 3) != g1.list_adj[0].second.end() && std::find(g1.list_adj[1].second.begin(), g1.list_adj[1].second.end(), 2) != g1.list_adj[1].second.end() && std::find(g1.list_ant[1].second.begin(), g1.list_ant[1].second.end(), 2) != g1.list_ant[1].second.end());
     };
 
-    bool testContientCycle(){
+    void testContientCycle(){
         g1.ajouterNoeud({2,3,4});
         g1.ajouterArc(2,3);
         g1.ajouterArc(3,4);
@@ -55,7 +55,7 @@ class TestGraphe : public CppUnit::TestFixture{
         CPPUNIT_ASSERT (!g2.contientCycle());
     };
 
-    bool testEstConnexe(){
+    void testEstConnexe(){
         g1.ajouterNoeud({2,3,4});
         g1.ajouterArc(2,3);
         g1.ajouterArc(3,4);
