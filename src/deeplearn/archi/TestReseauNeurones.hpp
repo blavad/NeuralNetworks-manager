@@ -7,8 +7,8 @@
 
 using namespace CppUnit;
 
-class TestReseauNeurones : public CppUnit::TextFixture {
-{
+class TestReseauNeurones : public CppUnit::TestFixture{
+
 private :
 
 	DimTenseur d1,d2;
@@ -23,7 +23,7 @@ public:
 	void testGetCoucheFinale();
 	void testAjouterCoucheInitiale();
 	void testAjouterCoucheFinale();
-	void testSupprimerCoucheInitiale;
+	void testSupprimerCoucheInitiale();
 	void testSupprimerCoucheFinale();
 
 	

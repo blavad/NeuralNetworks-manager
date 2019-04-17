@@ -7,8 +7,8 @@
 
 using namespace CppUnit;
 
-class TestTenseur : public CppUnit::TextFixture {
-{
+class TestTenseur : public CppUnit::TestFixture {
+
 private :
 
 	Tenseur t1,t2;
