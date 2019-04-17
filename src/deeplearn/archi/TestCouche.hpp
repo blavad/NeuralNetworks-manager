@@ -4,7 +4,7 @@
 #include "cppunit/TestFixture.h"
 #include "Tenseur.hpp"
 #include "DimTenseur.hpp"
-
+#include "Couche.hpp"
 
 /**
  * \class TestCouche
@@ -18,15 +18,15 @@
 
 using namespace CppUnit;
 
-class TestCouche : public CppUnit::TextFixture {
-{
+class TestCouche : public CppUnit::TestFixture {
+
 private :
 
 	Couche c1,c2;
 	Tenseur t1;
 	DimTenseur d1,d2;
 
-public:
+public :
 	/** \brief Initialiser les variables  */
 	void setUp();
 	/** \brief Supprimer les variables  */
