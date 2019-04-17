@@ -2,9 +2,9 @@
 #define TESTARCHI_HPP__
 
 #include <cppunit/TestFixture.h>
-#include <Tenseur.hpp>
-#include <DimTenseur.hpp>
-#include <Graphe.hpp>
+#include "Tenseur.hpp"
+#include "DimTenseur.hpp"
+#include "Graphe.hpp"
 
 
 using namespace CppUnit;
