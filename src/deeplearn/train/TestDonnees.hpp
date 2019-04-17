@@ -18,12 +18,12 @@
 
 using namespace CppUnit;
 
-class TestDonnees : public CppUnit::TextFixture {
+class TestDonnees : public CppUnit::TestFixture {
 
 private :
 
 	Donnees d1;
-	std::vector<Donnee> d2
+	std::vector<Donnee> d2;
 
 public:
 
