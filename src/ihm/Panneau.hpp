@@ -23,7 +23,7 @@ class Panneau {
         /** \brief Bouton de sauvegarde */
         GtkButton sauvegarder;
 
-        /** \brief un Reseau de */
+        /** \brief un Reseau de Neurones*/
         ReseauNeurones reseauNeurones;
 
 
