@@ -14,7 +14,7 @@ private :
 
 	Couche c1,c2;
 	Tenseur t1;
-	DimTenseur d1,d2
+	DimTenseur d1,d2;
 
 public:
 	void setUp();

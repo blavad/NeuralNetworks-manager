@@ -11,8 +11,7 @@ class TestTenseur : public CppUnit::TextFixture {
 {
 private :
 
-	Tenseur t1;
-	DimTenseur d1,d2
+	Tenseur t1,t2;
 
 public:
 	void setUp();

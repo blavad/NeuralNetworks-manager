@@ -37,9 +37,9 @@ public:
 {
 
 	CPPUNIT_ASSERT (c1.getDimInput()==d1);
-	CPPUNIT_ASSERT (!c1.getDimInput()==d2);
+	CPPUNIT_ASSERT (!(c1.getDimInput()==d2));
 	CPPUNIT_ASSERT (c2.getDimInput()==d1);
-	CPPUNIT_ASSERT (!c1.getDimInput()==d2);
+	CPPUNIT_ASSERT (!(c1.getDimInput()==d2));
 
 };
 
@@ -48,9 +48,9 @@ public:
 {
 
 	CPPUNIT_ASSERT (c1.getDimOutput()==d1);
-	CPPUNIT_ASSERT (!c1.getDimOutput()==d2);
+	CPPUNIT_ASSERT (!(c1.getDimOutput()==d2));
 	CPPUNIT_ASSERT (c2.getDimOutput()==d2);
-	CPPUNIT_ASSERT (!c2.getDimOutpout()==d1);
+	CPPUNIT_ASSERT (!(c2.getDimOutpout()==d1));
 
 };
 
@@ -63,9 +63,9 @@ public:
 	
 
 	CPPUNIT_ASSERT (c1.getDimInput()==d3);
-	CPPUNIT_ASSERT (!c1.getDimInput()==d2);
+	CPPUNIT_ASSERT (!(c1.getDimInput()==d2));
 	CPPUNIT_ASSERT (c2.getDimInput()==d4);
-	CPPUNIT_ASSERT (!c2.getDimInput()==d1);
+	CPPUNIT_ASSERT (!(c2.getDimInput()==d1));
 
 };
 
@@ -78,9 +78,9 @@ public:
 	
 
 	CPPUNIT_ASSERT (c1.getDimOutput()==d3);
-	CPPUNIT_ASSERT (!c1.getDimOutput()==d2);
+	CPPUNIT_ASSERT (!(c1.getDimOutput()==d2));
 	CPPUNIT_ASSERT (c2.getDimOutput()==d4);
-	CPPUNIT_ASSERT (!c2.getDimOutput()==d1);
+	CPPUNIT_ASSERT (!(c2.getDimOutput()==d1));
 
 };
 

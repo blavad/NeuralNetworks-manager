@@ -27,9 +27,9 @@ public:
 {
 
 	CPPUNIT_ASSERT (t1.getValeur()==2);
-	CPPUNIT_ASSERT (!t1.getValeur()==3);
+	CPPUNIT_ASSERT (!(t1.getValeur()==3));
 	CPPUNIT_ASSERT (t2.getValeur()==3);
-	CPPUNIT_ASSERT (!t1.getValeur()==4);
+	CPPUNIT_ASSERT (!(t1.getValeur()==4));
 
 };
 
@@ -40,7 +40,7 @@ public:
 	t1.IniValeurGaussienne();
 	t2.InitValeurGaussienne();	
 
-	CPPUNIT_ASSERT (!t1.getValeur()==t2.getValeur());
+	CPPUNIT_ASSERT (!(t1.getValeur()==t2.getValeur()));
 
 };
 
@@ -52,9 +52,9 @@ public:
 	t2.InitValeurUnif(8);
 
 	CPPUNIT_ASSERT (t1.getValeur()==5);
-	CPPUNIT_ASSERT (!t1.getValeur()==8);
+	CPPUNIT_ASSERT (!(t1.getValeur()==8));
 	CPPUNIT_ASSERT (t2.getValeur()==8);
-	CPPUNIT_ASSERT (!t2.getValeur()==6);
+	CPPUNIT_ASSERT (!(t2.getValeur()==6));
 
 };
 
@@ -67,9 +67,9 @@ public:
 	
 
 	CPPUNIT_ASSERT (t1.getValeur()==0);
-	CPPUNIT_ASSERT (!t1.getValeur()==5);
+	CPPUNIT_ASSERT (!(t1.getValeur()==5));
 	CPPUNIT_ASSERT (t2.getValeur()==0);
-	CPPUNIT_ASSERT (!t2.getValeur()==6);
+	CPPUNIT_ASSERT (!(t2.getValeur()==6));
 
 };
 
