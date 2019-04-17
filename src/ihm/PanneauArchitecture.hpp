@@ -3,7 +3,12 @@
 #ifndef __PANNEAU_ARCHITECTURE_HPP__
 #define __PANNEAU_ARCHITECTURE_HPP__
 
+#include "BoiteChoixCouche.hpp"
+#include "BoiteChoixReseauNeurones.hpp"
+#include "BoiteConnexionCouche.hpp"
+#include "Panneau.hpp"
 
+using namespace std;
 /** 
  * \class PanneauArchitecture 
  * \brief ???
@@ -11,10 +16,10 @@
  * \version 1.0 
  * \date avril 2019
  * 
- * ??? Regroupe les differentes boites ( choix couche, rn,connexion ) dans un même Panneau
+ * Regroupe les differentes boites ( choix couche, RN ,connexion ) dans un même Panneau
  * 
  */
-class PanneauArchitecture {
+class PanneauArchitecture : public Panneau {
 
     private :
         /** \brief Boite de choix des couches à travailler */
@@ -26,27 +31,64 @@ class PanneauArchitecture {
         /** \brief Boite de choix du Reseau de Neurone à travailler */
         BoiteConnexionCouche choixConnexion;
 
+        /** \brief une Couche  */
+        Couche couche;
+        
+        /** \brief une paire de Couche*/
+        pair < Couche, Couche> liaisonSelect; 
+
     public :
 
         /**
          * \brief Constructeur du panneau vide.
          */
-        Panneau();
+        PanneauArchitecture();
 
         /**
-         * \brief Méthode permettant la sauvegarde d'un Reseau de Neurones. 
+         * \brief Méthode permettant l'ajout d'une couche. 
          */
-        void sauvegarderRN();
-
-
-  	/**
-         * \fn void sauvegarderRN(String nomFichier)
-         * \brief Méthode permettant la sauvegarde d'un reseau de neurones sous un nom donnée
-         * \param nomFichier le nom du fichier en sortie
+        void ajouterCouche();
+        
+        /**
+         * \brief Méthode permettant l'ajout d'un Reseau de Neurones.
          */
-        void sauvegarderRN(String nomFichier);
+        void ajouterRN();
+        
+        /**
+         * \brief Méthode permettant d'ajouter une liaison
+         */
+        void ajouterLiaison();
 
-
+        /**
+         * \brief Méthode permettant la suppression d'une couche. 
+         */
+        void supprimerCouche();
+        
+        /**
+         * \brief Méthode permettant de supprimer une liaison
+         */
+        void supprimerLiaison();
+        
+        /**
+         * \brief Méthode mettant à jour la ccouche selectionnée
+         */
+        void selectCouche(Couche);     
+        
+        /**
+         * \brief Méthode mettant à jour la liaison selectionnée
+         */
+        void selectLiaison(Couche,Couche);     
+        
+		/**
+         * \brief Méthode permettant d'acceder a la couche selectionnée
+         */
+        Couche getCoucheSelectionnee();     
+        
+        /**
+         * \brief Méthode permettant d'acceder à la liaisonn selectionnée
+         */
+        pair <Couche, Couche> getLiaison();    
+        
     
 };
 
