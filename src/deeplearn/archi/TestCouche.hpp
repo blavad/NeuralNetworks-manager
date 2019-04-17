@@ -4,7 +4,6 @@
 #include "cppunit/TestFixture.h"
 #include "Tenseur.hpp"
 #include "DimTenseur.hpp"
-#include "Graphe.hpp"
 
 
 /**
@@ -26,13 +25,17 @@ private :
 	Couche c1,c2;
 	Tenseur t1;
 	DimTenseur d1,d2
-	Graphe g1;
+
 public:
 	/** \brief Initialiser les variables  */
 	void setUp();
 	/** \brief Supprimer les variables  */
 	void tearDown();
 	/** \brief Vérifier que la propagation d'une couche à une autre se déroule normalement */
+	void testGetDimInput();
+	void testGetDimOutput();
+	void testSetDimInput();
+	void testSetDimOutput();
 	void testPropagation();
 	/** \brief Vérifier que la dérivation d'une couche s'effectue correctement */
 	void testDerivee();
