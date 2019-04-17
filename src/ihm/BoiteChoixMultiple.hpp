@@ -59,7 +59,7 @@ class BoiteChoixMultiple : public Boite {
          /**
          * \fn getValeurSectionnee()
          * \brief Méthode permettant la lecture du choix de l'utilisateur
-	 * \return le string choisie par l'utilisateur
+	     * \return le string choisie par l'utilisateur
          */
          string getValeurSectionnee();
 
