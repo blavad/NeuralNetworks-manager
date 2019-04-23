@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gestion d&#39;un réseau de neurones:  Fichier source de src/deeplearn/archi/CoucheConvolutive.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Gestion d&#39;un réseau de neurones
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e22bf7c1e2420dd4a87ecc5dca159d6a.html">deeplearn</a></li><li class="navelem"><a class="el" href="dir_3165056fa474754109c17670d2be02fa.html">archi</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">CoucheConvolutive.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __COUCHE_CONVOLUTIVE_HPP__</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __COUCHE_CONVOLUTIVE_HPP__</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;CoucheCombinaison.hpp&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_couche_convolutive.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_couche_convolutive.html">CoucheConvolutive</a> : <span class="keyword">public</span> <a class="code" href="class_couche_combinaison.html">CoucheCombinaison</a></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">private</span>:</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">int</span> l_filtre;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">int</span> h_filtre;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">int</span> nb_filtres;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">public</span>:</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">//CoucheConvolutive(int l_fil, int h_fil, int nb_fil);</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="class_couche_convolutive.html#ac0e9fc1269646ff46ab9ea2a26489123">CoucheConvolutive</a>(<a class="code" href="class_dim_tenseur.html">DimTenseur</a> din, <a class="code" href="class_dim_tenseur.html">DimTenseur</a> dout, std::string no, <a class="code" href="class_tenseur.html">Tenseur</a> par, <span class="keywordtype">int</span> l_fil, <span class="keywordtype">int</span> h_fil, <span class="keywordtype">int</span> nb_fil);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="class_tenseur.html">Tenseur</a> <a class="code" href="class_couche_convolutive.html#ad1a55b3dc9bf52e0725ae2a7b2e92aa1">propagation</a>(<a class="code" href="class_tenseur.html">Tenseur</a> t);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_couche_convolutive.html#a1923173423085bc194b2484ff7b6d922">setL_Filtre</a>(<span class="keywordtype">int</span> l_fil);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> setH_Filtre(<span class="keywordtype">int</span> h_fil);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_couche_convolutive.html#a30fd844fc3a96f2e90d1a20251b1bfe3">setParams</a>(<span class="keywordtype">int</span> nb_filtres);</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="class_couche_convolutive_html_ac0e9fc1269646ff46ab9ea2a26489123"><div class="ttname"><a href="class_couche_convolutive.html#ac0e9fc1269646ff46ab9ea2a26489123">CoucheConvolutive::CoucheConvolutive</a></div><div class="ttdeci">CoucheConvolutive(DimTenseur din, DimTenseur dout, std::string no, Tenseur par, int l_fil, int h_fil, int nb_fil)</div><div class="ttdoc">Constructeur d&amp;#39;une couche convolutive à partir de la longeur du filtre, de la hauteur du filtre et du...</div><div class="ttdef"><b>Definition:</b> <a href="_couche_convolutive_8cpp_source.html#l00003">CoucheConvolutive.cpp:3</a></div></div>
+<div class="ttc" id="class_couche_combinaison_html"><div class="ttname"><a href="class_couche_combinaison.html">CoucheCombinaison</a></div><div class="ttdoc">Gestion d&amp;#39;une couche de combinaison. </div><div class="ttdef"><b>Definition:</b> <a href="_couche_combinaison_8hpp_source.html#l00016">CoucheCombinaison.hpp:16</a></div></div>
+<div class="ttc" id="class_tenseur_html"><div class="ttname"><a href="class_tenseur.html">Tenseur</a></div><div class="ttdoc">Classe liée à la manipulation de tenseurs. </div><div class="ttdef"><b>Definition:</b> <a href="_tenseur_8hpp_source.html#l00017">Tenseur.hpp:17</a></div></div>
+<div class="ttc" id="class_couche_convolutive_html"><div class="ttname"><a href="class_couche_convolutive.html">CoucheConvolutive</a></div><div class="ttdoc">Création d&amp;#39;une couche convolutive. </div><div class="ttdef"><b>Definition:</b> <a href="_couche_convolutive_8hpp_source.html#l00017">CoucheConvolutive.hpp:17</a></div></div>
+<div class="ttc" id="class_couche_convolutive_html_a30fd844fc3a96f2e90d1a20251b1bfe3"><div class="ttname"><a href="class_couche_convolutive.html#a30fd844fc3a96f2e90d1a20251b1bfe3">CoucheConvolutive::setParams</a></div><div class="ttdeci">void setParams(int nb_filtres)</div><div class="ttdoc">Changer la largeur de chaque filtre. </div></div>
+<div class="ttc" id="class_couche_convolutive_html_ad1a55b3dc9bf52e0725ae2a7b2e92aa1"><div class="ttname"><a href="class_couche_convolutive.html#ad1a55b3dc9bf52e0725ae2a7b2e92aa1">CoucheConvolutive::propagation</a></div><div class="ttdeci">Tenseur propagation(Tenseur t)</div><div class="ttdoc">Méthode permettant la propagation d&amp;#39;une couche a une autre. </div><div class="ttdef"><b>Definition:</b> <a href="_couche_convolutive_8cpp_source.html#l00009">CoucheConvolutive.cpp:9</a></div></div>
+<div class="ttc" id="class_couche_convolutive_html_a1923173423085bc194b2484ff7b6d922"><div class="ttname"><a href="class_couche_convolutive.html#a1923173423085bc194b2484ff7b6d922">CoucheConvolutive::setL_Filtre</a></div><div class="ttdeci">void setL_Filtre(int l_fil)</div><div class="ttdoc">Changer la longueur de chaque filtre. </div></div>
+<div class="ttc" id="class_dim_tenseur_html"><div class="ttname"><a href="class_dim_tenseur.html">DimTenseur</a></div><div class="ttdoc">Classe stockant les dimensions d&amp;#39;un tenseur. </div><div class="ttdef"><b>Definition:</b> <a href="_dim_tenseur_8hpp_source.html#l00018">DimTenseur.hpp:18</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

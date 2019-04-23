@@ -1,0 +1,142 @@
+\hypertarget{classBoiteChoixMultiple}{}\section{Référence de la classe Boite\+Choix\+Multiple}
+\label{classBoiteChoixMultiple}\index{Boite\+Choix\+Multiple@{Boite\+Choix\+Multiple}}
+
+
+Gestion de l\textquotesingle{}interaction Homme/\+Machine liée au choix de l\textquotesingle{}utilisateur.  
+
+
+
+
+{\ttfamily \#include $<$Boite\+Choix\+Multiple.\+hpp$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Boite\+Choix\+Multiple\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classBoiteChoixMultiple__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Boite\+Choix\+Multiple\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classBoiteChoixMultiple__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBoiteChoixMultiple_a33c5d1f1b62448952ea8503cdb7ade50}{Boite\+Choix\+Multiple} (string nom)
+\begin{DoxyCompactList}\small\item\em Constucteur prenant en paramètre un string. \end{DoxyCompactList}\item 
+void \hyperlink{classBoiteChoixMultiple_aa0acac137fd87665bc4225e1eec6e387}{ajouter\+Choix} (string nom)
+\begin{DoxyCompactList}\small\item\em Méthode permettant d\textquotesingle{}ajouter un string correpondant à un nouveau choix au vecteur de choix. \end{DoxyCompactList}\item 
+void \hyperlink{classBoiteChoixMultiple_a52c59e771b17233ba4e1816907a68284}{ajouter\+Choix} (vector$<$ string $>$ liste\+\_\+nom)
+\begin{DoxyCompactList}\small\item\em Méthode permettant d\textquotesingle{}ajouter un plusieur string correpondant à des nouveaux choix au vecteur de choix. \end{DoxyCompactList}\item 
+void \hyperlink{classBoiteChoixMultiple_ab37e456d084fb9e70d7e24df0839916f}{supprimer\+Choix} (string nom)
+\begin{DoxyCompactList}\small\item\em Méthode permettant de supprimer un choix du vecteur de choix. \end{DoxyCompactList}\item 
+string \hyperlink{classBoiteChoixMultiple_a3766802fe49f850dbda7a6bdbcb2d5d7}{get\+Valeur\+Sectionnee} ()
+\begin{DoxyCompactList}\small\item\em Méthode permettant la lecture du choix de l\textquotesingle{}utilisateur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Gestion de l\textquotesingle{}interaction Homme/\+Machine liée au choix de l\textquotesingle{}utilisateur. 
+
+\begin{DoxyAuthor}{Auteur}
+Samra 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2019
+\end{DoxyDate}
+Cette classe permet d\textquotesingle{}indiquer à l\textquotesingle{}utililsateur les differentes options qui lui sont proposées et permet d\textquotesingle{}acceder à celle qu\textquotesingle{}il choisit Cette classe hérite de \hyperlink{classBoite}{Boite} 
+
+\subsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{classBoiteChoixMultiple_a33c5d1f1b62448952ea8503cdb7ade50}\label{classBoiteChoixMultiple_a33c5d1f1b62448952ea8503cdb7ade50}} 
+\index{Boite\+Choix\+Multiple@{Boite\+Choix\+Multiple}!Boite\+Choix\+Multiple@{Boite\+Choix\+Multiple}}
+\index{Boite\+Choix\+Multiple@{Boite\+Choix\+Multiple}!Boite\+Choix\+Multiple@{Boite\+Choix\+Multiple}}
+\subsubsection{\texorpdfstring{Boite\+Choix\+Multiple()}{BoiteChoixMultiple()}}
+{\footnotesize\ttfamily Boite\+Choix\+Multiple\+::\+Boite\+Choix\+Multiple (\begin{DoxyParamCaption}\item[{string}]{nom }\end{DoxyParamCaption})}
+
+
+
+Constucteur prenant en paramètre un string. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em Un} & string correspondant à un premier choix offert à l\textquotesingle{}utilisateur \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classBoiteChoixMultiple_aa0acac137fd87665bc4225e1eec6e387}\label{classBoiteChoixMultiple_aa0acac137fd87665bc4225e1eec6e387}} 
+\index{Boite\+Choix\+Multiple@{Boite\+Choix\+Multiple}!ajouter\+Choix@{ajouter\+Choix}}
+\index{ajouter\+Choix@{ajouter\+Choix}!Boite\+Choix\+Multiple@{Boite\+Choix\+Multiple}}
+\subsubsection{\texorpdfstring{ajouter\+Choix()}{ajouterChoix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Boite\+Choix\+Multiple\+::ajouter\+Choix (\begin{DoxyParamCaption}\item[{string}]{nom }\end{DoxyParamCaption})}
+
+
+
+Méthode permettant d\textquotesingle{}ajouter un string correpondant à un nouveau choix au vecteur de choix. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em Un} & string correspondant au nom du nouveau choix \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBoiteChoixMultiple_a52c59e771b17233ba4e1816907a68284}\label{classBoiteChoixMultiple_a52c59e771b17233ba4e1816907a68284}} 
+\index{Boite\+Choix\+Multiple@{Boite\+Choix\+Multiple}!ajouter\+Choix@{ajouter\+Choix}}
+\index{ajouter\+Choix@{ajouter\+Choix}!Boite\+Choix\+Multiple@{Boite\+Choix\+Multiple}}
+\subsubsection{\texorpdfstring{ajouter\+Choix()}{ajouterChoix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Boite\+Choix\+Multiple\+::ajouter\+Choix (\begin{DoxyParamCaption}\item[{vector$<$ string $>$}]{liste\+\_\+nom }\end{DoxyParamCaption})}
+
+
+
+Méthode permettant d\textquotesingle{}ajouter un plusieur string correpondant à des nouveaux choix au vecteur de choix. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em liste\+\_\+nom} & le vecteur contenant les nouveaux noms de choix \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBoiteChoixMultiple_a3766802fe49f850dbda7a6bdbcb2d5d7}\label{classBoiteChoixMultiple_a3766802fe49f850dbda7a6bdbcb2d5d7}} 
+\index{Boite\+Choix\+Multiple@{Boite\+Choix\+Multiple}!get\+Valeur\+Sectionnee@{get\+Valeur\+Sectionnee}}
+\index{get\+Valeur\+Sectionnee@{get\+Valeur\+Sectionnee}!Boite\+Choix\+Multiple@{Boite\+Choix\+Multiple}}
+\subsubsection{\texorpdfstring{get\+Valeur\+Sectionnee()}{getValeurSectionnee()}}
+{\footnotesize\ttfamily Boite\+Choix\+Multiple\+::get\+Valeur\+Sectionnee (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Méthode permettant la lecture du choix de l\textquotesingle{}utilisateur. 
+
+\begin{DoxyReturn}{Renvoie}
+le string choisie par l\textquotesingle{}utilisateur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBoiteChoixMultiple_ab37e456d084fb9e70d7e24df0839916f}\label{classBoiteChoixMultiple_ab37e456d084fb9e70d7e24df0839916f}} 
+\index{Boite\+Choix\+Multiple@{Boite\+Choix\+Multiple}!supprimer\+Choix@{supprimer\+Choix}}
+\index{supprimer\+Choix@{supprimer\+Choix}!Boite\+Choix\+Multiple@{Boite\+Choix\+Multiple}}
+\subsubsection{\texorpdfstring{supprimer\+Choix()}{supprimerChoix()}}
+{\footnotesize\ttfamily Boite\+Choix\+Multiple\+::supprimer\+Choix (\begin{DoxyParamCaption}\item[{string}]{nom }\end{DoxyParamCaption})}
+
+
+
+Méthode permettant de supprimer un choix du vecteur de choix. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em un} & string correspondant au nom du choix à retirer \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+src/ihm/Boite\+Choix\+Multiple.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gestion d&#39;un réseau de neurones:  Fichier source de src/deeplearn/train/Erreur.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Gestion d&#39;un réseau de neurones
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e22bf7c1e2420dd4a87ecc5dca159d6a.html">deeplearn</a></li><li class="navelem"><a class="el" href="dir_f3787c5acacef550a41078d474dee5dc.html">train</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Erreur.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __ERREUR_HPP__</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __ERREUR_HPP__</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../archi/Tenseur.hpp&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_erreur.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_erreur.html">Erreur</a></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">public</span>:</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_tenseur.html">Tenseur</a> <a class="code" href="class_erreur.html#a0def45df23074388e2a338145aeb4660">eval</a>(<a class="code" href="class_tenseur.html">Tenseur</a> sortieRN, <a class="code" href="class_tenseur.html">Tenseur</a> label);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_tenseur.html">Tenseur</a> <a class="code" href="class_erreur.html#ad56634307e3ceb8ab5c2fddede28422a">derivee</a>(<a class="code" href="class_tenseur.html">Tenseur</a> t);</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="class_erreur_html_ad56634307e3ceb8ab5c2fddede28422a"><div class="ttname"><a href="class_erreur.html#ad56634307e3ceb8ab5c2fddede28422a">Erreur::derivee</a></div><div class="ttdeci">virtual Tenseur derivee(Tenseur t)</div><div class="ttdoc">Méthode virtuelle pour avoir la derivee d&amp;#39;un tenseur donnee en entree. </div></div>
+<div class="ttc" id="class_tenseur_html"><div class="ttname"><a href="class_tenseur.html">Tenseur</a></div><div class="ttdoc">Classe liée à la manipulation de tenseurs. </div><div class="ttdef"><b>Definition:</b> <a href="_tenseur_8hpp_source.html#l00017">Tenseur.hpp:17</a></div></div>
+<div class="ttc" id="class_erreur_html"><div class="ttname"><a href="class_erreur.html">Erreur</a></div><div class="ttdoc">Gère le calcul de l&amp;#39;erreur commise lors d&amp;#39;un apprentissage. </div><div class="ttdef"><b>Definition:</b> <a href="_erreur_8hpp_source.html#l00018">Erreur.hpp:18</a></div></div>
+<div class="ttc" id="class_erreur_html_a0def45df23074388e2a338145aeb4660"><div class="ttname"><a href="class_erreur.html#a0def45df23074388e2a338145aeb4660">Erreur::eval</a></div><div class="ttdeci">virtual Tenseur eval(Tenseur sortieRN, Tenseur label)</div><div class="ttdoc">Methode virtuelle pour evaluer l&amp;#39;erreur effectuee entre la sortie et la prediction. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

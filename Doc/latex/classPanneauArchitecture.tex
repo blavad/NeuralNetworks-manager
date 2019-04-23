@@ -1,0 +1,83 @@
+\hypertarget{classPanneauArchitecture}{}\section{Référence de la classe Panneau\+Architecture}
+\label{classPanneauArchitecture}\index{Panneau\+Architecture@{Panneau\+Architecture}}
+
+
+???  
+
+
+
+
+{\ttfamily \#include $<$Panneau\+Architecture.\+hpp$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Panneau\+Architecture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classPanneauArchitecture__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Panneau\+Architecture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classPanneauArchitecture__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPanneauArchitecture_a1143575686655c5088510a94eac5c787}\label{classPanneauArchitecture_a1143575686655c5088510a94eac5c787}} 
+\hyperlink{classPanneauArchitecture_a1143575686655c5088510a94eac5c787}{Panneau\+Architecture} ()
+\begin{DoxyCompactList}\small\item\em Constructeur du panneau vide. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPanneauArchitecture_affc6f75cb58e1c50aad26510bc2c25ea}\label{classPanneauArchitecture_affc6f75cb58e1c50aad26510bc2c25ea}} 
+void \hyperlink{classPanneauArchitecture_affc6f75cb58e1c50aad26510bc2c25ea}{ajouter\+Couche} ()
+\begin{DoxyCompactList}\small\item\em Méthode permettant l\textquotesingle{}ajout d\textquotesingle{}une couche. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPanneauArchitecture_a49eb9dea42db4fb1b16d91cfc1c789c3}\label{classPanneauArchitecture_a49eb9dea42db4fb1b16d91cfc1c789c3}} 
+void \hyperlink{classPanneauArchitecture_a49eb9dea42db4fb1b16d91cfc1c789c3}{ajouter\+RN} ()
+\begin{DoxyCompactList}\small\item\em Méthode permettant l\textquotesingle{}ajout d\textquotesingle{}un Reseau de Neurones. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPanneauArchitecture_ac623d04cebc723d2e590712a337cd5ab}\label{classPanneauArchitecture_ac623d04cebc723d2e590712a337cd5ab}} 
+void \hyperlink{classPanneauArchitecture_ac623d04cebc723d2e590712a337cd5ab}{ajouter\+Liaison} ()
+\begin{DoxyCompactList}\small\item\em Méthode permettant d\textquotesingle{}ajouter une liaison. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPanneauArchitecture_a4b90aec081c2b2d0b2a3c3207183bd3f}\label{classPanneauArchitecture_a4b90aec081c2b2d0b2a3c3207183bd3f}} 
+void \hyperlink{classPanneauArchitecture_a4b90aec081c2b2d0b2a3c3207183bd3f}{supprimer\+Couche} ()
+\begin{DoxyCompactList}\small\item\em Méthode permettant la suppression d\textquotesingle{}une couche. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPanneauArchitecture_af6e7d198ef558f75d8826cf9d52a1248}\label{classPanneauArchitecture_af6e7d198ef558f75d8826cf9d52a1248}} 
+void \hyperlink{classPanneauArchitecture_af6e7d198ef558f75d8826cf9d52a1248}{supprimer\+Liaison} ()
+\begin{DoxyCompactList}\small\item\em Méthode permettant de supprimer une liaison. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPanneauArchitecture_a7670673acd7e9eb1e77e2cb5eb929079}\label{classPanneauArchitecture_a7670673acd7e9eb1e77e2cb5eb929079}} 
+void \hyperlink{classPanneauArchitecture_a7670673acd7e9eb1e77e2cb5eb929079}{select\+Couche} (\hyperlink{classCouche}{Couche})
+\begin{DoxyCompactList}\small\item\em Méthode mettant à jour la ccouche selectionnée. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPanneauArchitecture_a2e4ab85ad5fbc8801bf7ea3fab0ea197}\label{classPanneauArchitecture_a2e4ab85ad5fbc8801bf7ea3fab0ea197}} 
+void \hyperlink{classPanneauArchitecture_a2e4ab85ad5fbc8801bf7ea3fab0ea197}{select\+Liaison} (\hyperlink{classCouche}{Couche}, \hyperlink{classCouche}{Couche})
+\begin{DoxyCompactList}\small\item\em Méthode mettant à jour la liaison selectionnée. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPanneauArchitecture_a77c5b0be02105db0a55ec022cc319e4b}\label{classPanneauArchitecture_a77c5b0be02105db0a55ec022cc319e4b}} 
+\hyperlink{classCouche}{Couche} \hyperlink{classPanneauArchitecture_a77c5b0be02105db0a55ec022cc319e4b}{get\+Couche\+Selectionnee} ()
+\begin{DoxyCompactList}\small\item\em Méthode permettant d\textquotesingle{}acceder a la couche selectionnée. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPanneauArchitecture_a8502f49ce3c223fa9cfe73b6621d5da8}\label{classPanneauArchitecture_a8502f49ce3c223fa9cfe73b6621d5da8}} 
+pair$<$ \hyperlink{classCouche}{Couche}, \hyperlink{classCouche}{Couche} $>$ \hyperlink{classPanneauArchitecture_a8502f49ce3c223fa9cfe73b6621d5da8}{get\+Liaison} ()
+\begin{DoxyCompactList}\small\item\em Méthode permettant d\textquotesingle{}acceder à la liaisonn selectionnée. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+??? 
+
+\begin{DoxyAuthor}{Auteur}
+??? 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2019
+\end{DoxyDate}
+Regroupe les differentes boites ( choix couche, RN ,connexion ) dans un même \hyperlink{classPanneau}{Panneau} 
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+src/ihm/Panneau\+Architecture.\+hpp\end{DoxyCompactItemize}

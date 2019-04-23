@@ -34,7 +34,7 @@ class Donnees {
         Donnees(std::vector<Donnee> vd);
 
         /**
-         * \fn void ajouterDonnees(Donnees d)
+         * \fn void ajouterDonnees(Donnees d)x
          * \brief Ajoute un ensemble de donnees
          * \param d l'ensemble des donnees
          */
@@ -66,7 +66,7 @@ class Donnees {
          * \brief Retourne l'ensemble des donnees
          * \return le vecteur des donnees
          */
-        std::vector<Donnees> getDonnees();
+        std::vector<Donnee> getDonnees();
 
         /**
          * \fn int getNbDonnees()

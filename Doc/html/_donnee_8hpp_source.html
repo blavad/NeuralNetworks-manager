@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gestion d&#39;un réseau de neurones:  Fichier source de src/deeplearn/train/Donnee.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Gestion d&#39;un réseau de neurones
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e22bf7c1e2420dd4a87ecc5dca159d6a.html">deeplearn</a></li><li class="navelem"><a class="el" href="dir_f3787c5acacef550a41078d474dee5dc.html">train</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Donnee.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __DONNEE_HPP__</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __DONNEE_HPP__</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../archi/Tenseur.hpp&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_donnee.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_donnee.html">Donnee</a> {</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    private :</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="class_tenseur.html">Tenseur</a> entree;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="class_tenseur.html">Tenseur</a> sortie;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    public :</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="class_donnee.html#a41bbb1e9a6835479eefa2a694ddd5da3">Donnee</a>(<a class="code" href="class_tenseur.html">Tenseur</a> entree, <a class="code" href="class_tenseur.html">Tenseur</a> sortie);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="class_tenseur.html">Tenseur</a> <a class="code" href="class_donnee.html#af4b02bb80cd289073f1eb56fc9046c11">getEntree</a>();</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="class_tenseur.html">Tenseur</a> <a class="code" href="class_donnee.html#aadc9c0ab3f163fa6c0e57daa57023de0">getSortie</a>();</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_donnee.html#ad8f000cbd829b3f3485cc158b5a92514">setEntree</a>(<a class="code" href="class_tenseur.html">Tenseur</a> e);</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_donnee.html#adbcb8dc22a69b7c0fffca3dbbef4623b">setSortie</a>(<a class="code" href="class_tenseur.html">Tenseur</a> s);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="class_tenseur_html"><div class="ttname"><a href="class_tenseur.html">Tenseur</a></div><div class="ttdoc">Classe liée à la manipulation de tenseurs. </div><div class="ttdef"><b>Definition:</b> <a href="_tenseur_8hpp_source.html#l00017">Tenseur.hpp:17</a></div></div>
+<div class="ttc" id="class_donnee_html"><div class="ttname"><a href="class_donnee.html">Donnee</a></div><div class="ttdoc">Gère une des donnees necessaires a l&amp;#39;apprentissage. </div><div class="ttdef"><b>Definition:</b> <a href="_donnee_8hpp_source.html#l00017">Donnee.hpp:17</a></div></div>
+<div class="ttc" id="class_donnee_html_aadc9c0ab3f163fa6c0e57daa57023de0"><div class="ttname"><a href="class_donnee.html#aadc9c0ab3f163fa6c0e57daa57023de0">Donnee::getSortie</a></div><div class="ttdeci">Tenseur getSortie()</div><div class="ttdoc">Retourne la sortie de la donnee. </div></div>
+<div class="ttc" id="class_donnee_html_a41bbb1e9a6835479eefa2a694ddd5da3"><div class="ttname"><a href="class_donnee.html#a41bbb1e9a6835479eefa2a694ddd5da3">Donnee::Donnee</a></div><div class="ttdeci">Donnee(Tenseur entree, Tenseur sortie)</div><div class="ttdoc">Constructeur de Donnee avec une entree et une sortie. </div></div>
+<div class="ttc" id="class_donnee_html_af4b02bb80cd289073f1eb56fc9046c11"><div class="ttname"><a href="class_donnee.html#af4b02bb80cd289073f1eb56fc9046c11">Donnee::getEntree</a></div><div class="ttdeci">Tenseur getEntree()</div><div class="ttdoc">Retourne l&amp;#39;entree de la donnee. </div></div>
+<div class="ttc" id="class_donnee_html_adbcb8dc22a69b7c0fffca3dbbef4623b"><div class="ttname"><a href="class_donnee.html#adbcb8dc22a69b7c0fffca3dbbef4623b">Donnee::setSortie</a></div><div class="ttdeci">void setSortie(Tenseur s)</div><div class="ttdoc">Met a jour la sortie de la donnee. </div></div>
+<div class="ttc" id="class_donnee_html_ad8f000cbd829b3f3485cc158b5a92514"><div class="ttname"><a href="class_donnee.html#ad8f000cbd829b3f3485cc158b5a92514">Donnee::setEntree</a></div><div class="ttdeci">void setEntree(Tenseur e)</div><div class="ttdoc">Met a jour l&amp;#39;entree de la donnee. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

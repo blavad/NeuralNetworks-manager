@@ -1,0 +1,120 @@
+\hypertarget{class_panneau}{}\section{Référence de la classe Panneau}
+\label{class_panneau}\index{Panneau@{Panneau}}
+
+
+Gestion du type \hyperlink{class_panneau}{Panneau}.  
+
+
+
+
+{\ttfamily \#include $<$Panneau.\+hpp$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Panneau\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{class_panneau__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Panneau\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=135pt]{class_panneau__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_panneau_a8fb82bab20bdc45acfe9234f3fb9a38e}\label{class_panneau_a8fb82bab20bdc45acfe9234f3fb9a38e}} 
+\hyperlink{class_panneau_a8fb82bab20bdc45acfe9234f3fb9a38e}{Boite\+Architecture} ()
+\begin{DoxyCompactList}\small\item\em Constructeur d\textquotesingle{}une boite d\textquotesingle{}architecture. \end{DoxyCompactList}\item 
+\hyperlink{class_panneau_a2c86ba058850b199a83eb4a35541531c}{Boite\+Architecture} (\hyperlink{class_reseau_neurones}{Reseau\+Neurones} rn)
+\begin{DoxyCompactList}\small\item\em Constucteur prenant en paramètre un reseau de neurones. \end{DoxyCompactList}\item 
+void \hyperlink{class_panneau_a0990ee55f48bc73a20f9079fa8e2582d}{afficher} (\hyperlink{class_reseau_neurones}{Reseau\+Neurones} rn)
+\begin{DoxyCompactList}\small\item\em Méthode permettant l\textquotesingle{}affichage d\textquotesingle{}un reseau de neurones. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_panneau_a6d15af2ca1be32f371599285f3edbbcc}\label{class_panneau_a6d15af2ca1be32f371599285f3edbbcc}} 
+\hyperlink{class_panneau_a6d15af2ca1be32f371599285f3edbbcc}{Panneau} ()
+\begin{DoxyCompactList}\small\item\em Constructeur du panneau vide. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_panneau_a390b3758b0280bfa67add85464775016}\label{class_panneau_a390b3758b0280bfa67add85464775016}} 
+void \hyperlink{class_panneau_a390b3758b0280bfa67add85464775016}{sauvegarder\+RN} ()
+\begin{DoxyCompactList}\small\item\em Méthode permettant la sauvegarde d\textquotesingle{}un Reseau de Neurones. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_panneau_a3f7414f7c42e6378fbea049c246db2a9}\label{class_panneau_a3f7414f7c42e6378fbea049c246db2a9}} 
+void {\bfseries sauvegarder\+RN} (string nom\+Fichier)
+\item 
+\hyperlink{class_reseau_neurones}{Reseau\+Neurones} \hyperlink{class_panneau_a8ed7e5db0c0c8a0da729d3c785032643}{get\+Reseau\+Neurones} ()
+\begin{DoxyCompactList}\small\item\em getteur permettant d\textquotesingle{}acceder au Reseau de Neurones en attribut de la classe \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Gestion du type \hyperlink{class_panneau}{Panneau}. 
+
+\begin{DoxyAuthor}{Auteur}
+Samra 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2019 
+\end{DoxyDate}
+
+
+Définition à la ligne 20 du fichier Boite\+Architecture.\+hpp.
+
+
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_panneau_a0990ee55f48bc73a20f9079fa8e2582d}\label{class_panneau_a0990ee55f48bc73a20f9079fa8e2582d}} 
+\index{Panneau@{Panneau}!afficher@{afficher}}
+\index{afficher@{afficher}!Panneau@{Panneau}}
+\subsubsection{\texorpdfstring{afficher()}{afficher()}}
+{\footnotesize\ttfamily void Panneau\+::afficher (\begin{DoxyParamCaption}\item[{\hyperlink{class_reseau_neurones}{Reseau\+Neurones}}]{rn }\end{DoxyParamCaption})}
+
+
+
+Méthode permettant l\textquotesingle{}affichage d\textquotesingle{}un reseau de neurones. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em rn} & le réseau de neurones \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_panneau_a2c86ba058850b199a83eb4a35541531c}\label{class_panneau_a2c86ba058850b199a83eb4a35541531c}} 
+\index{Panneau@{Panneau}!Boite\+Architecture@{Boite\+Architecture}}
+\index{Boite\+Architecture@{Boite\+Architecture}!Panneau@{Panneau}}
+\subsubsection{\texorpdfstring{Boite\+Architecture()}{BoiteArchitecture()}}
+{\footnotesize\ttfamily Panneau\+::\+Boite\+Architecture (\begin{DoxyParamCaption}\item[{\hyperlink{class_reseau_neurones}{Reseau\+Neurones}}]{rn }\end{DoxyParamCaption})}
+
+
+
+Constucteur prenant en paramètre un reseau de neurones. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em rn} & un réseau de neurones préalablement défini \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_panneau_a8ed7e5db0c0c8a0da729d3c785032643}\label{class_panneau_a8ed7e5db0c0c8a0da729d3c785032643}} 
+\index{Panneau@{Panneau}!get\+Reseau\+Neurones@{get\+Reseau\+Neurones}}
+\index{get\+Reseau\+Neurones@{get\+Reseau\+Neurones}!Panneau@{Panneau}}
+\subsubsection{\texorpdfstring{get\+Reseau\+Neurones()}{getReseauNeurones()}}
+{\footnotesize\ttfamily \hyperlink{class_reseau_neurones}{Reseau\+Neurones} Panneau\+::get\+Reseau\+Neurones (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getteur permettant d\textquotesingle{}acceder au Reseau de Neurones en attribut de la classe 
+
+\begin{DoxyReturn}{Renvoie}
+le Reseau de neurones en attribut de la classe \hyperlink{class_panneau}{Panneau} 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+src/ihm/Boite\+Architecture.\+hpp\item 
+src/ihm/Panneau.\+hpp\end{DoxyCompactItemize}

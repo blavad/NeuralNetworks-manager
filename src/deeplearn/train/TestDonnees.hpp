@@ -1,5 +1,6 @@
 #include <vector>
 #include <cppunit/TestFixture.h>
+#include <cppunit/TestAssert.h>
 #include "Donnees.hpp"
 #include "Donnee.hpp"
 
@@ -27,14 +28,11 @@ private :
 
 public:
 
-    /** \brief Initialiser les variables */
-    void setUp();
-
-    /** \brief Supprimer les variables */
-    void tearDown();
-
     /** \brief Vérifier que les données s'ajoutent bien */
     void testAjouterDonnees();
+
+   /** \brief Vérifier que la donnee s'ajoute bien */
+    void testAjouterDonnee();
 
     /** \brief Vérifier que les données se mélangent bien */
     void testMelanger();

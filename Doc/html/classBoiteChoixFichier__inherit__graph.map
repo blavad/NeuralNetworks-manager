@@ -1,0 +1,5 @@
+<map id="BoiteChoixFichier" name="BoiteChoixFichier">
+<area shape="rect" id="node3" href="$classBoiteChoixDonn_xC3_xA9es.html" title="BoiteChoixDonnées" alt="" coords="5,155,144,181"/>
+<area shape="rect" id="node4" href="$classBoiteChoixReseauNeurones.html" title="Gestion de l&#39;interaction Homme/Machine liée au choix du fichier de RN. " alt="" coords="168,155,355,181"/>
+<area shape="rect" id="node2" href="$classBoite.html" title="Gestion du type Boite. " alt="" coords="142,5,194,32"/>
+</map>

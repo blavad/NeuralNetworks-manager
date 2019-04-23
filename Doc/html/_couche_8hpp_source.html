@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gestion d&#39;un réseau de neurones:  Fichier source de src/deeplearn/archi/Couche.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Gestion d&#39;un réseau de neurones
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e22bf7c1e2420dd4a87ecc5dca159d6a.html">deeplearn</a></li><li class="navelem"><a class="el" href="dir_3165056fa474754109c17670d2be02fa.html">archi</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Couche.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __COUCHE_HPP__</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __COUCHE_HPP__</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;DimTenseur.hpp&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;Tenseur.hpp&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_couche.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_couche.html">Couche</a></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      <span class="keyword">private</span>:</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_dim_tenseur.html">DimTenseur</a> dim_in;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="class_dim_tenseur.html">DimTenseur</a> dim_out;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        std::string nom;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <span class="keyword">public</span>:</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="class_couche.html#a6da95828f8c597f57aaac057b9357622">Couche</a>(<a class="code" href="class_dim_tenseur.html">DimTenseur</a> din, <a class="code" href="class_dim_tenseur.html">DimTenseur</a> dout, std::string no);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_tenseur.html">Tenseur</a> <a class="code" href="class_couche.html#a1f0ed59e21020f5d4f37933af4d1b1e5">propagation</a>(<a class="code" href="class_tenseur.html">Tenseur</a> t);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_tenseur.html">Tenseur</a> <a class="code" href="class_couche.html#acfb65d035c2070d65b699508b7333bb3">derivee</a>(<a class="code" href="class_tenseur.html">Tenseur</a> t);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_couche.html#ab24ce01bc6fb7b903013f7682ce60a7e">setDimInput</a>(<a class="code" href="class_dim_tenseur.html">DimTenseur</a> dimIn);</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_couche.html#a9af2f37eaf1063cb05abe980cfaa4cce">setDimOutput</a>(<a class="code" href="class_dim_tenseur.html">DimTenseur</a> dimOut);</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="class_dim_tenseur.html">DimTenseur</a> <a class="code" href="class_couche.html#a4f3e4fe4a84f2dfcbee4bda6e20bdc03">getDimInput</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="class_dim_tenseur.html">DimTenseur</a> <a class="code" href="class_couche.html#ae8c80adf3a53da0d975e6f1148d0cea9">getDimOutput</a>() <span class="keyword">const</span>; </div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        std::string <a class="code" href="class_couche.html#a367bb58eaafab2b5fe635e6d3350fe4b">getNom</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_couche.html#a3c76d2c7a0adf864dc6f3f5fbf2c7563">afficher</a>();</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="class_couche_html_a3c76d2c7a0adf864dc6f3f5fbf2c7563"><div class="ttname"><a href="class_couche.html#a3c76d2c7a0adf864dc6f3f5fbf2c7563">Couche::afficher</a></div><div class="ttdeci">virtual bool afficher()</div><div class="ttdoc">Méthode pour savoir si la couche est affichée ou non. </div><div class="ttdef"><b>Definition:</b> <a href="_couche_8cpp_source.html#l00060">Couche.cpp:60</a></div></div>
+<div class="ttc" id="class_tenseur_html"><div class="ttname"><a href="class_tenseur.html">Tenseur</a></div><div class="ttdoc">Classe liée à la manipulation de tenseurs. </div><div class="ttdef"><b>Definition:</b> <a href="_tenseur_8hpp_source.html#l00017">Tenseur.hpp:17</a></div></div>
+<div class="ttc" id="class_couche_html_a9af2f37eaf1063cb05abe980cfaa4cce"><div class="ttname"><a href="class_couche.html#a9af2f37eaf1063cb05abe980cfaa4cce">Couche::setDimOutput</a></div><div class="ttdeci">void setDimOutput(DimTenseur dimOut)</div><div class="ttdoc">Méthode pour fixer la taille du tenseur à la sortie de la couche. </div><div class="ttdef"><b>Definition:</b> <a href="_couche_8cpp_source.html#l00032">Couche.cpp:32</a></div></div>
+<div class="ttc" id="class_couche_html_ab24ce01bc6fb7b903013f7682ce60a7e"><div class="ttname"><a href="class_couche.html#ab24ce01bc6fb7b903013f7682ce60a7e">Couche::setDimInput</a></div><div class="ttdeci">void setDimInput(DimTenseur dimIn)</div><div class="ttdoc">Méthode pour fixer la taille du tenseur à l&amp;#39;entrée de la couche. </div><div class="ttdef"><b>Definition:</b> <a href="_couche_8cpp_source.html#l00025">Couche.cpp:25</a></div></div>
+<div class="ttc" id="class_couche_html_a6da95828f8c597f57aaac057b9357622"><div class="ttname"><a href="class_couche.html#a6da95828f8c597f57aaac057b9357622">Couche::Couche</a></div><div class="ttdeci">Couche(DimTenseur din, DimTenseur dout, std::string no)</div><div class="ttdoc">Constructeur d&amp;#39;une couche à partir de la taille des tenseurs d&amp;#39;entrée/sortie. </div><div class="ttdef"><b>Definition:</b> <a href="_couche_8cpp_source.html#l00004">Couche.cpp:4</a></div></div>
+<div class="ttc" id="class_couche_html_a4f3e4fe4a84f2dfcbee4bda6e20bdc03"><div class="ttname"><a href="class_couche.html#a4f3e4fe4a84f2dfcbee4bda6e20bdc03">Couche::getDimInput</a></div><div class="ttdeci">DimTenseur getDimInput() const</div><div class="ttdoc">Méthode pour obtenir la taille du tenseur à l&amp;#39;entrée de la couche. </div><div class="ttdef"><b>Definition:</b> <a href="_couche_8cpp_source.html#l00039">Couche.cpp:39</a></div></div>
+<div class="ttc" id="class_couche_html_a1f0ed59e21020f5d4f37933af4d1b1e5"><div class="ttname"><a href="class_couche.html#a1f0ed59e21020f5d4f37933af4d1b1e5">Couche::propagation</a></div><div class="ttdeci">virtual Tenseur propagation(Tenseur t)</div><div class="ttdoc">Methode virtuelle permettant la propagation d&amp;#39;une couche à une autre. </div><div class="ttdef"><b>Definition:</b> <a href="_couche_8cpp_source.html#l00013">Couche.cpp:13</a></div></div>
+<div class="ttc" id="class_couche_html_a367bb58eaafab2b5fe635e6d3350fe4b"><div class="ttname"><a href="class_couche.html#a367bb58eaafab2b5fe635e6d3350fe4b">Couche::getNom</a></div><div class="ttdeci">std::string getNom() const</div><div class="ttdoc">Méthode pour obtenir le nom de la couche. </div><div class="ttdef"><b>Definition:</b> <a href="_couche_8cpp_source.html#l00053">Couche.cpp:53</a></div></div>
+<div class="ttc" id="class_couche_html_acfb65d035c2070d65b699508b7333bb3"><div class="ttname"><a href="class_couche.html#acfb65d035c2070d65b699508b7333bb3">Couche::derivee</a></div><div class="ttdeci">virtual Tenseur derivee(Tenseur t)</div><div class="ttdoc">Methode virtuelle pour avoir la derivee de la couche. </div><div class="ttdef"><b>Definition:</b> <a href="_couche_8cpp_source.html#l00019">Couche.cpp:19</a></div></div>
+<div class="ttc" id="class_couche_html_ae8c80adf3a53da0d975e6f1148d0cea9"><div class="ttname"><a href="class_couche.html#ae8c80adf3a53da0d975e6f1148d0cea9">Couche::getDimOutput</a></div><div class="ttdeci">DimTenseur getDimOutput() const</div><div class="ttdoc">Méthode pour obtenir la taille du tenseur à la sortie de la couche. </div><div class="ttdef"><b>Definition:</b> <a href="_couche_8cpp_source.html#l00046">Couche.cpp:46</a></div></div>
+<div class="ttc" id="class_dim_tenseur_html"><div class="ttname"><a href="class_dim_tenseur.html">DimTenseur</a></div><div class="ttdoc">Classe stockant les dimensions d&amp;#39;un tenseur. </div><div class="ttdef"><b>Definition:</b> <a href="_dim_tenseur_8hpp_source.html#l00018">DimTenseur.hpp:18</a></div></div>
+<div class="ttc" id="class_couche_html"><div class="ttname"><a href="class_couche.html">Couche</a></div><div class="ttdoc">Classe liée à la couche. </div><div class="ttdef"><b>Definition:</b> <a href="_couche_8hpp_source.html#l00020">Couche.hpp:20</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

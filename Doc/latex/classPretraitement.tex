@@ -1,0 +1,154 @@
+\hypertarget{classPretraitement}{}\section{Référence de la classe Pretraitement}
+\label{classPretraitement}\index{Pretraitement@{Pretraitement}}
+
+
+Gère le pretraitement des donnees necessaires a l\textquotesingle{}apprentissage.  
+
+
+
+
+{\ttfamily \#include $<$Pretraitement.\+hpp$>$}
+
+\subsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classDonnees}{Donnees} \hyperlink{classPretraitement_a5f53fc5ecf4893d40577aceb269e97b5}{charger\+Donnees} (std\+::string nom\+Dossier)
+\begin{DoxyCompactList}\small\item\em Charge les donnees du dossier. \end{DoxyCompactList}\item 
+static \hyperlink{classReseauNeurones}{Reseau\+Neurones} \hyperlink{classPretraitement_a2d1e9cdbe1b865565f63c435923ec8e3}{charger\+RN} (std\+::string nom\+Fichier)
+\begin{DoxyCompactList}\small\item\em Charge le reseau de neurones contenu dans un fichier. \end{DoxyCompactList}\item 
+static \hyperlink{classTenseur}{Tenseur} \hyperlink{classPretraitement_a98c809577fe15166c5a9be25daff64a1}{image\+To\+Tenseur} (std\+::string nom\+Fichier)
+\begin{DoxyCompactList}\small\item\em Transforme l\textquotesingle{}image d\textquotesingle{}entree en un tenseur. \end{DoxyCompactList}\item 
+static \hyperlink{classTenseur}{Tenseur} \hyperlink{classPretraitement_a588810b1b86e11464cea64443358ae5a}{csv\+To\+Tenseur} (std\+::string nom\+Fichier)
+\begin{DoxyCompactList}\small\item\em Transforme un fichier csv en tenseur. \end{DoxyCompactList}\item 
+static void \hyperlink{classPretraitement_a3d7be2ef2f1c6b0b8e3f1898110740bc}{normaliser} (\hyperlink{classTenseur}{Tenseur} \&t, double min\+Norm, double max\+Norm, double min\+Valeur, double max\+Valeur)
+\begin{DoxyCompactList}\small\item\em Normalise le tenseur passe en entree en fonction des autres parametres. \end{DoxyCompactList}\item 
+static void \hyperlink{classPretraitement_a68c5f7dc52d76fe0ff1f2794c4de40d7}{denormaliser} (\hyperlink{classTenseur}{Tenseur} \&t, double min\+Norm, double max\+Norm, double min\+Valeur, double max\+Valeur)
+\begin{DoxyCompactList}\small\item\em Denormalise le tenseur passe en entree en fonction des autres parametres. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Gère le pretraitement des donnees necessaires a l\textquotesingle{}apprentissage. 
+
+\begin{DoxyAuthor}{Auteur}
+Marion 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2019
+\end{DoxyDate}
+Module permettant le pretraitement des donnees necessaires avant l\textquotesingle{}apprentissage. 
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classPretraitement_a5f53fc5ecf4893d40577aceb269e97b5}\label{classPretraitement_a5f53fc5ecf4893d40577aceb269e97b5}} 
+\index{Pretraitement@{Pretraitement}!charger\+Donnees@{charger\+Donnees}}
+\index{charger\+Donnees@{charger\+Donnees}!Pretraitement@{Pretraitement}}
+\subsubsection{\texorpdfstring{charger\+Donnees()}{chargerDonnees()}}
+{\footnotesize\ttfamily static \hyperlink{classDonnees}{Donnees} Pretraitement\+::charger\+Donnees (\begin{DoxyParamCaption}\item[{std\+::string}]{nom\+Dossier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Charge les donnees du dossier. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\+Dossier} & le nom du dossier dans lequel se trouve les donnees a recuperer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPretraitement_a2d1e9cdbe1b865565f63c435923ec8e3}\label{classPretraitement_a2d1e9cdbe1b865565f63c435923ec8e3}} 
+\index{Pretraitement@{Pretraitement}!charger\+RN@{charger\+RN}}
+\index{charger\+RN@{charger\+RN}!Pretraitement@{Pretraitement}}
+\subsubsection{\texorpdfstring{charger\+R\+N()}{chargerRN()}}
+{\footnotesize\ttfamily static \hyperlink{classReseauNeurones}{Reseau\+Neurones} Pretraitement\+::charger\+RN (\begin{DoxyParamCaption}\item[{std\+::string}]{nom\+Fichier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Charge le reseau de neurones contenu dans un fichier. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\+Fichier} & le nom du fichier dans lequel se trouve le reseau de neurones a recuperer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPretraitement_a588810b1b86e11464cea64443358ae5a}\label{classPretraitement_a588810b1b86e11464cea64443358ae5a}} 
+\index{Pretraitement@{Pretraitement}!csv\+To\+Tenseur@{csv\+To\+Tenseur}}
+\index{csv\+To\+Tenseur@{csv\+To\+Tenseur}!Pretraitement@{Pretraitement}}
+\subsubsection{\texorpdfstring{csv\+To\+Tenseur()}{csvToTenseur()}}
+{\footnotesize\ttfamily static \hyperlink{classTenseur}{Tenseur} Pretraitement\+::csv\+To\+Tenseur (\begin{DoxyParamCaption}\item[{std\+::string}]{nom\+Fichier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Transforme un fichier csv en tenseur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\+Fichier} & le nom du fichier csv a transformer en tenseur \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPretraitement_a68c5f7dc52d76fe0ff1f2794c4de40d7}\label{classPretraitement_a68c5f7dc52d76fe0ff1f2794c4de40d7}} 
+\index{Pretraitement@{Pretraitement}!denormaliser@{denormaliser}}
+\index{denormaliser@{denormaliser}!Pretraitement@{Pretraitement}}
+\subsubsection{\texorpdfstring{denormaliser()}{denormaliser()}}
+{\footnotesize\ttfamily static void Pretraitement\+::denormaliser (\begin{DoxyParamCaption}\item[{\hyperlink{classTenseur}{Tenseur} \&}]{t,  }\item[{double}]{min\+Norm,  }\item[{double}]{max\+Norm,  }\item[{double}]{min\+Valeur,  }\item[{double}]{max\+Valeur }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Denormalise le tenseur passe en entree en fonction des autres parametres. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em t} & le tenseur a normalise \\
+\hline
+{\em min\+Norm} & la norme minimale \\
+\hline
+{\em max\+Norm} & la norme maximale \\
+\hline
+{\em min\+Valeur} & la valeur minimale \\
+\hline
+{\em max\+Valeur} & la valeur maximale \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPretraitement_a98c809577fe15166c5a9be25daff64a1}\label{classPretraitement_a98c809577fe15166c5a9be25daff64a1}} 
+\index{Pretraitement@{Pretraitement}!image\+To\+Tenseur@{image\+To\+Tenseur}}
+\index{image\+To\+Tenseur@{image\+To\+Tenseur}!Pretraitement@{Pretraitement}}
+\subsubsection{\texorpdfstring{image\+To\+Tenseur()}{imageToTenseur()}}
+{\footnotesize\ttfamily static \hyperlink{classTenseur}{Tenseur} Pretraitement\+::image\+To\+Tenseur (\begin{DoxyParamCaption}\item[{std\+::string}]{nom\+Fichier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Transforme l\textquotesingle{}image d\textquotesingle{}entree en un tenseur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\+Fichier} & le nom du fichier image a transformer en tenseur \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPretraitement_a3d7be2ef2f1c6b0b8e3f1898110740bc}\label{classPretraitement_a3d7be2ef2f1c6b0b8e3f1898110740bc}} 
+\index{Pretraitement@{Pretraitement}!normaliser@{normaliser}}
+\index{normaliser@{normaliser}!Pretraitement@{Pretraitement}}
+\subsubsection{\texorpdfstring{normaliser()}{normaliser()}}
+{\footnotesize\ttfamily static void Pretraitement\+::normaliser (\begin{DoxyParamCaption}\item[{\hyperlink{classTenseur}{Tenseur} \&}]{t,  }\item[{double}]{min\+Norm,  }\item[{double}]{max\+Norm,  }\item[{double}]{min\+Valeur,  }\item[{double}]{max\+Valeur }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Normalise le tenseur passe en entree en fonction des autres parametres. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em t} & le tenseur a normalise \\
+\hline
+{\em min\+Norm} & la norme minimale \\
+\hline
+{\em max\+Norm} & la norme maximale \\
+\hline
+{\em min\+Valeur} & la valeur minimale \\
+\hline
+{\em max\+Valeur} & la valeur maximale \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+src/pretraitement/Pretraitement.\+hpp\end{DoxyCompactItemize}

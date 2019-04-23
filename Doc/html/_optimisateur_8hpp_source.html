@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gestion d&#39;un réseau de neurones:  Fichier source de src/deeplearn/train/Optimisateur.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Gestion d&#39;un réseau de neurones
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e22bf7c1e2420dd4a87ecc5dca159d6a.html">deeplearn</a></li><li class="navelem"><a class="el" href="dir_f3787c5acacef550a41078d474dee5dc.html">train</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Optimisateur.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __OPTIMISATEUR_HPP__</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __OPTIMISATEUR_HPP__</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../archi/ReseauNeurones.hpp&quot;</span>;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;Erreur.hpp&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_optimisateur.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_optimisateur.html">Optimisateur</a> {</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    private :</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="class_reseau_neurones.html">ReseauNeurones</a> rn;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    public :</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="class_optimisateur.html#a6add3f8a05881c495701ced64cb7310e">Optimisateur</a>(<a class="code" href="class_reseau_neurones.html">ReseauNeurones</a> reseauN);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_optimisateur.html#a36f64c4672ec7694a06daad60715bd3a">minimiser</a>(<a class="code" href="class_erreur.html">Erreur</a> err);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="class_erreur_html"><div class="ttname"><a href="class_erreur.html">Erreur</a></div><div class="ttdoc">Gère le calcul de l&amp;#39;erreur commise lors d&amp;#39;un apprentissage. </div><div class="ttdef"><b>Definition:</b> <a href="_erreur_8hpp_source.html#l00018">Erreur.hpp:18</a></div></div>
+<div class="ttc" id="class_optimisateur_html_a6add3f8a05881c495701ced64cb7310e"><div class="ttname"><a href="class_optimisateur.html#a6add3f8a05881c495701ced64cb7310e">Optimisateur::Optimisateur</a></div><div class="ttdeci">Optimisateur(ReseauNeurones reseauN)</div><div class="ttdoc">Constructeur d&amp;#39;un otpimisateur a partir d&amp;#39;un reseau de neurones. </div></div>
+<div class="ttc" id="class_reseau_neurones_html"><div class="ttname"><a href="class_reseau_neurones.html">ReseauNeurones</a></div><div class="ttdoc">Classe liée à la création du réseau de neurones. </div><div class="ttdef"><b>Definition:</b> <a href="_reseau_neurones_8hpp_source.html#l00021">ReseauNeurones.hpp:21</a></div></div>
+<div class="ttc" id="class_optimisateur_html_a36f64c4672ec7694a06daad60715bd3a"><div class="ttname"><a href="class_optimisateur.html#a36f64c4672ec7694a06daad60715bd3a">Optimisateur::minimiser</a></div><div class="ttdeci">void minimiser(Erreur err)</div><div class="ttdoc">Minimise une erreur donnee. </div></div>
+<div class="ttc" id="class_optimisateur_html"><div class="ttname"><a href="class_optimisateur.html">Optimisateur</a></div><div class="ttdoc">Gère l&amp;#39;optimisation d&amp;#39;un apprentissage. </div><div class="ttdef"><b>Definition:</b> <a href="_optimisateur_8hpp_source.html#l00019">Optimisateur.hpp:19</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>
