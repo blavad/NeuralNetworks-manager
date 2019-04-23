@@ -14,14 +14,21 @@
  *
  */
 
-class Matrice : public Tenseur {
- 
-    public :
-        /**
-         * \brief Constructeur d'une matrice de taille lxc
-         */
-        Matrice(void* valeur, int l, int c);
+class Matrice : public Tenseur
+{
 
+  public:
+    /**
+    * \brief Constructeur d'une matrice de taille lxc
+    */
+    Matrice(int l, int c);
+    
+    /**
+    * \brief Constructeur d'une matrice de taille lxc
+    */
+    Matrice(double *valeur, int l, int c);
+
+    
 };
 
 #endif

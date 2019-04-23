@@ -17,10 +17,17 @@
 class Vecteur : public Tenseur {
  
     public :
+
+
         /**
          * \brief Constructeur d'un vecteur de longueur l
          */
-        Vecteur(void* vl, int l);
+        Vecteur(int l);
+
+        /**
+         * \brief Constructeur d'un vecteur de longueur l
+         */
+        Vecteur(double* vl, int l);
 
 };
 

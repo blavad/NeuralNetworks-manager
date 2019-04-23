@@ -1,29 +1,26 @@
 #include "DimTenseur.hpp"
 
-
-
-DimTenseur::DimTenseur()
+DimTenseur::DimTenseur(std::vector<int> d)
 {
+	dim = d;
 }
 
-
-
-DimTenseur::DimTenseur(int ord, std::vector<int> di)
+bool DimTenseur::operator==(DimTenseur t2)
 {
-	ordre = ord;
-	dim = di;
+	return (dim == t2.getDims());
 }
-
-
 
 int DimTenseur::getOrdre()
 {
-	return ordre;
+	return dim.size();
 }
 
+int DimTenseur::getDim(int i)
+{
+	return dim[i];
+}
 
-
-std::vector<int> DimTenseur::getDim()
+std::vector<int> DimTenseur::getDims()
 {
 	return dim;
 }

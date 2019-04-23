@@ -1,5 +1,10 @@
 #include "Vecteur.hpp"
 
-Vecteur::Vecteur(void* vl, int l):Tenseur(vl,DimTenseur(1,std::vector<int>{l}))
+
+Vecteur::Vecteur(int l):Tenseur(std::vector<int>{l})
+{
+}
+
+Vecteur::Vecteur(double* vl, int l):Tenseur(vl,DimTenseur(std::vector<int>{l}))
 {
 }

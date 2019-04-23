@@ -1,6 +1,7 @@
 #ifndef __TENSEUR_HPP__
 #define __TENSEUR_HPP__
 
+#include <vector>
 #include "DimTenseur.hpp"
 
 /** 
@@ -17,24 +18,42 @@
 class Tenseur
 {
 
-private:
+protected:
   /** \brief valeur du tenseur */
-  void *valeur;
+  double *valeur;
 
   /** \brief Dimension du tenseur */
-  DimTenseur dim;
+  DimTenseur dimT;
 
 public:
+
   /**
    * \brief Constructeur d'un tenseur dont la taille est fixée grâce à des entiers. 
    * \param dim suite de dimensions 
-   *
-  Tenseur(int dim);/
+   */
+  Tenseur(std::vector<int> dims);
 
   /**
    * \brief Constructeur d'un tenseur dont la taille est fixée grâce à un objet DimTenseur. 
    */
-  Tenseur(void* val, DimTenseur di);
+  Tenseur(double *val, DimTenseur di);
+
+  /**
+   * \brief Destructeur d'un tenseur
+   */ 
+  ~Tenseur();
+
+  /**
+   * 
+   */ 
+  Tenseur operator[](const int);
+
+  /**
+   * \fn bool nextInd(std::vector<int> &)
+   * \param liste d'indices
+   * \return booleen verifiant si un indice suivant existe
+   */ 
+  bool nextInd(std::vector<int> &);
 
   /**
    * \fn void initValeurGaussienne()
@@ -54,30 +73,27 @@ public:
    */
   void initValeurUnif();
 
+  /**
+   * \fn double get(std::vector<int>)
+   * \brief Recupere la valeur grace à un un multi-indice donnee
+   * \param indices vecteur d'indices
+   */
+  double getValeur(std::vector<int> indices);
+
+  /**
+   * \fn void setValeur(double val, std::vector<int>)
+   * \brief Met à jour la valeur grace à un un multi-indice donnee
+   * \param val nouvelle valeur
+   * \param indices vecteur d'indices
+   */
+  void setValeur(double val, std::vector<int> indices);
 
   /**
   * \fn void setValeur(void* vl)
   * \brief Méthode pour fixer la valeur du Tenseur
   * \param vl La valeur du tenseur
   */
-  void setValeur(void* vl);
-
-
-  /**
-  * \fn void setDim(DimTenseur di)
-  * \brief Méthode pour fixer la dimension du Tenseur
-  * \param vl La dimension du tenseur
-  */
-  void setDim(DimTenseur di);
-
-
-  /**
-  * \fn int getValeur()
-  * \brief Méthode pour obtenir la valeur du Tenseur
-  * \return La valeur du Tenseur
-  */
-  void* getValeur();
-
+  void setValeurs(double *vl);
 
 
   /**
@@ -86,6 +102,16 @@ public:
   * \return La dimension du Tenseur
   */
   DimTenseur getDim();
+
+  /**
+  * \fn void setDim(DimTenseur di)
+  * \brief Méthode pour fixer la dimension du Tenseur
+  * \param vl La dimension du tenseur
+  */
+  void setDim(DimTenseur di);
+
+private:
+  int getInd(std::vector<int> indices);
 
 };
 
