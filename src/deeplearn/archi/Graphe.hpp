@@ -2,12 +2,13 @@
 #define __GRAPHE_HPP__
 
 #include <vector>
+#include <iostream>
 
 /**
  * \class Graphe
  * \tparam Type Type de noeud du graphe.
  * \brief Gestion du type Graphe.
- * \author David
+ * \author David, Coralie
  * \version 1.0
  * \date avril 2019
  *
@@ -20,10 +21,10 @@ class Graphe {
 
     private :
         /** \brief La liste dynamique d'adjacence. */
-        std::vector<std::pair<Type, std::vector<Type> > > list_adj;
+        std::vector<std::pair<Type, std::vector<Type>>> list_adj;
 
         /** \brief La liste dynamique d'antécédence. */
-        std::vector<std::pair<Type, std::vector<Type> > > list_ant;
+        std::vector<std::pair<Type, std::vector<Type>>> list_ant;
 
     public :
 
@@ -35,7 +36,47 @@ class Graphe {
         /**
          * \brief Constructeur de graphe à partir de noeuds isolés.
          */
-        Graphe(Type noeuds[]);
+        Graphe(Type* noeuds);
+        
+        /**
+         * \brief Récupère list_adj
+         */
+        std::vector<std::pair<Type, std::vector<Type>>> getListAdj();
+        
+        /**
+         * \brief Récupère list_ant
+         */
+        std::vector<std::pair<Type, std::vector<Type>>> getListAnt();     
+        
+        /**
+         * \brief Récupère la kième paire de list_adj
+         */
+        std::pair<Type, std::vector<Type>> getPairAdj(int k);
+        
+        /**
+         * \brief Récupère la kième paire de list_ant
+         */
+        std::pair<Type, std::vector<Type>> getPairAnt(int k);
+        
+        /**
+         * \brief Récupère le premier élément de la kième paire de list_adj
+         */
+        Type getNoeudAdj(int k);
+        
+        /**
+         * \brief Récupère le premier élément de la kième paire de list_ant
+         */
+        Type getNoeudAnt(int k);
+        
+        /**
+         * \brief Récupère le deuxième élément de la kième paire de list_adj
+         */
+        std::vector<Type> getListNoeudAdj(int k);
+        
+        /**
+         * \brief Récupère le deuxième élément de la kième paire de list_ant
+         */
+        std::vector<Type> getListNoeudAnt(int k);
 
         /**
          * \fn void ajouterNoeud(Type noeud)
@@ -81,6 +122,7 @@ class Graphe {
          */
         bool estConnexe();
 };
+
 
 #endif
 

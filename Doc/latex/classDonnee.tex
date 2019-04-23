@@ -1,0 +1,103 @@
+\hypertarget{classDonnee}{}\section{Référence de la classe Donnee}
+\label{classDonnee}\index{Donnee@{Donnee}}
+
+
+Gère une des donnees necessaires a l\textquotesingle{}apprentissage.  
+
+
+
+
+{\ttfamily \#include $<$Donnee.\+hpp$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDonnee_a41bbb1e9a6835479eefa2a694ddd5da3}\label{classDonnee_a41bbb1e9a6835479eefa2a694ddd5da3}} 
+\hyperlink{classDonnee_a41bbb1e9a6835479eefa2a694ddd5da3}{Donnee} (\hyperlink{classTenseur}{Tenseur} entree, \hyperlink{classTenseur}{Tenseur} sortie)
+\begin{DoxyCompactList}\small\item\em Constructeur de \hyperlink{classDonnee}{Donnee} avec une entree et une sortie. \end{DoxyCompactList}\item 
+\hyperlink{classTenseur}{Tenseur} \hyperlink{classDonnee_af4b02bb80cd289073f1eb56fc9046c11}{get\+Entree} ()
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}entree de la donnee. \end{DoxyCompactList}\item 
+\hyperlink{classTenseur}{Tenseur} \hyperlink{classDonnee_aadc9c0ab3f163fa6c0e57daa57023de0}{get\+Sortie} ()
+\begin{DoxyCompactList}\small\item\em Retourne la sortie de la donnee. \end{DoxyCompactList}\item 
+void \hyperlink{classDonnee_ad8f000cbd829b3f3485cc158b5a92514}{set\+Entree} (\hyperlink{classTenseur}{Tenseur} e)
+\begin{DoxyCompactList}\small\item\em Met a jour l\textquotesingle{}entree de la donnee. \end{DoxyCompactList}\item 
+void \hyperlink{classDonnee_adbcb8dc22a69b7c0fffca3dbbef4623b}{set\+Sortie} (\hyperlink{classTenseur}{Tenseur} s)
+\begin{DoxyCompactList}\small\item\em Met a jour la sortie de la donnee. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Gère une des donnees necessaires a l\textquotesingle{}apprentissage. 
+
+\begin{DoxyAuthor}{Auteur}
+Marion 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2019
+\end{DoxyDate}
+Module permettant le stockage en mémoire vive d\textquotesingle{}une donnee necessaire a l\textquotesingle{}apprentissage. La donnee est vu comme un couple Entree/\+Sortie. 
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classDonnee_af4b02bb80cd289073f1eb56fc9046c11}\label{classDonnee_af4b02bb80cd289073f1eb56fc9046c11}} 
+\index{Donnee@{Donnee}!get\+Entree@{get\+Entree}}
+\index{get\+Entree@{get\+Entree}!Donnee@{Donnee}}
+\subsubsection{\texorpdfstring{get\+Entree()}{getEntree()}}
+{\footnotesize\ttfamily \hyperlink{classTenseur}{Tenseur} Donnee\+::get\+Entree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retourne l\textquotesingle{}entree de la donnee. 
+
+\begin{DoxyReturn}{Renvoie}
+l\textquotesingle{}entree. $\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDonnee_aadc9c0ab3f163fa6c0e57daa57023de0}\label{classDonnee_aadc9c0ab3f163fa6c0e57daa57023de0}} 
+\index{Donnee@{Donnee}!get\+Sortie@{get\+Sortie}}
+\index{get\+Sortie@{get\+Sortie}!Donnee@{Donnee}}
+\subsubsection{\texorpdfstring{get\+Sortie()}{getSortie()}}
+{\footnotesize\ttfamily \hyperlink{classTenseur}{Tenseur} Donnee\+::get\+Sortie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retourne la sortie de la donnee. 
+
+\begin{DoxyReturn}{Renvoie}
+la sortie. $\ast$ $\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDonnee_ad8f000cbd829b3f3485cc158b5a92514}\label{classDonnee_ad8f000cbd829b3f3485cc158b5a92514}} 
+\index{Donnee@{Donnee}!set\+Entree@{set\+Entree}}
+\index{set\+Entree@{set\+Entree}!Donnee@{Donnee}}
+\subsubsection{\texorpdfstring{set\+Entree()}{setEntree()}}
+{\footnotesize\ttfamily void Donnee\+::set\+Entree (\begin{DoxyParamCaption}\item[{\hyperlink{classTenseur}{Tenseur}}]{e }\end{DoxyParamCaption})}
+
+
+
+Met a jour l\textquotesingle{}entree de la donnee. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em e} & le tenseur d\textquotesingle{}entree \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDonnee_adbcb8dc22a69b7c0fffca3dbbef4623b}\label{classDonnee_adbcb8dc22a69b7c0fffca3dbbef4623b}} 
+\index{Donnee@{Donnee}!set\+Sortie@{set\+Sortie}}
+\index{set\+Sortie@{set\+Sortie}!Donnee@{Donnee}}
+\subsubsection{\texorpdfstring{set\+Sortie()}{setSortie()}}
+{\footnotesize\ttfamily void Donnee\+::set\+Sortie (\begin{DoxyParamCaption}\item[{\hyperlink{classTenseur}{Tenseur}}]{s }\end{DoxyParamCaption})}
+
+
+
+Met a jour la sortie de la donnee. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em s} & le tenseur de sortie \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+src/deeplearn/train/Donnee.\+hpp\end{DoxyCompactItemize}

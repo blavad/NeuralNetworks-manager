@@ -1,0 +1,129 @@
+\hypertarget{classDonnees}{}\section{Référence de la classe Donnees}
+\label{classDonnees}\index{Donnees@{Donnees}}
+
+
+Gère les donnees necessaire a l\textquotesingle{}apprentissage.  
+
+
+
+
+{\ttfamily \#include $<$Donnees.\+hpp$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDonnees_af6379b2712677e845cf58e37000f9b75}\label{classDonnees_af6379b2712677e845cf58e37000f9b75}} 
+\hyperlink{classDonnees_af6379b2712677e845cf58e37000f9b75}{Donnees} ()
+\begin{DoxyCompactList}\small\item\em Constructeur des donnees d\textquotesingle{}apprentissage. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDonnees_aab4dadccfdee90d79faedaa42a3200b8}\label{classDonnees_aab4dadccfdee90d79faedaa42a3200b8}} 
+\hyperlink{classDonnees_aab4dadccfdee90d79faedaa42a3200b8}{Donnees} (std\+::vector$<$ \hyperlink{classDonnee}{Donnee} $>$ vd)
+\begin{DoxyCompactList}\small\item\em Constructeur des donnees d\textquotesingle{}apprentissage a partir d\textquotesingle{}un vecteur de donnees unitaires. \end{DoxyCompactList}\item 
+void \hyperlink{classDonnees_a26d282aff1a7adfdcaea1a3cab6ffbaf}{ajouter\+Donnees} (\hyperlink{classDonnees}{Donnees} d)
+\begin{DoxyCompactList}\small\item\em Ajoute un ensemble de donnees. \end{DoxyCompactList}\item 
+void \hyperlink{classDonnees_a7f77ebe53ea55a3293cefb864d60e7ff}{ajouter\+Donnee} (\hyperlink{classDonnee}{Donnee} d)
+\begin{DoxyCompactList}\small\item\em Ajoute une donnee a l\textquotesingle{}ensemble des donnees. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDonnees_a722ba74b5e8c6bc0a2f7c16589692ad5}\label{classDonnees_a722ba74b5e8c6bc0a2f7c16589692ad5}} 
+void \hyperlink{classDonnees_a722ba74b5e8c6bc0a2f7c16589692ad5}{melanger} ()
+\begin{DoxyCompactList}\small\item\em Melange les donnees. \end{DoxyCompactList}\item 
+\hyperlink{classDonnee}{Donnee} \hyperlink{classDonnees_a1986c4b95b3cf90767dbe966b2497ae8}{get\+Donnee} (int num)
+\begin{DoxyCompactList}\small\item\em Retourne la donnee numero num parmis l\textquotesingle{}ensemble des donnees. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classDonnees}{Donnees} $>$ \hyperlink{classDonnees_acb2f30978cb824d70c39b716c49fe1fa}{get\+Donnees} ()
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}ensemble des donnees. \end{DoxyCompactList}\item 
+int \hyperlink{classDonnees_a4c4da37884b1b91d881524f2a7b91dbc}{get\+Nb\+Donnees} ()
+\begin{DoxyCompactList}\small\item\em Retourne le nombre de donnees. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Gère les donnees necessaire a l\textquotesingle{}apprentissage. 
+
+\begin{DoxyAuthor}{Auteur}
+Marion 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2019
+\end{DoxyDate}
+Module permettant le stockage en memoire vive des donnees necessaire a l\textquotesingle{}apprentissage. 
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classDonnees_a7f77ebe53ea55a3293cefb864d60e7ff}\label{classDonnees_a7f77ebe53ea55a3293cefb864d60e7ff}} 
+\index{Donnees@{Donnees}!ajouter\+Donnee@{ajouter\+Donnee}}
+\index{ajouter\+Donnee@{ajouter\+Donnee}!Donnees@{Donnees}}
+\subsubsection{\texorpdfstring{ajouter\+Donnee()}{ajouterDonnee()}}
+{\footnotesize\ttfamily void Donnees\+::ajouter\+Donnee (\begin{DoxyParamCaption}\item[{\hyperlink{classDonnee}{Donnee}}]{d }\end{DoxyParamCaption})}
+
+
+
+Ajoute une donnee a l\textquotesingle{}ensemble des donnees. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em d} & la donnee a ajouter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDonnees_a26d282aff1a7adfdcaea1a3cab6ffbaf}\label{classDonnees_a26d282aff1a7adfdcaea1a3cab6ffbaf}} 
+\index{Donnees@{Donnees}!ajouter\+Donnees@{ajouter\+Donnees}}
+\index{ajouter\+Donnees@{ajouter\+Donnees}!Donnees@{Donnees}}
+\subsubsection{\texorpdfstring{ajouter\+Donnees()}{ajouterDonnees()}}
+{\footnotesize\ttfamily void Donnees\+::ajouter\+Donnees (\begin{DoxyParamCaption}\item[{\hyperlink{classDonnees}{Donnees}}]{d }\end{DoxyParamCaption})}
+
+
+
+Ajoute un ensemble de donnees. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em d} & l\textquotesingle{}ensemble des donnees \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDonnees_a1986c4b95b3cf90767dbe966b2497ae8}\label{classDonnees_a1986c4b95b3cf90767dbe966b2497ae8}} 
+\index{Donnees@{Donnees}!get\+Donnee@{get\+Donnee}}
+\index{get\+Donnee@{get\+Donnee}!Donnees@{Donnees}}
+\subsubsection{\texorpdfstring{get\+Donnee()}{getDonnee()}}
+{\footnotesize\ttfamily \hyperlink{classDonnee}{Donnee} Donnees\+::get\+Donnee (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})}
+
+
+
+Retourne la donnee numero num parmis l\textquotesingle{}ensemble des donnees. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em num} & le numero de la donnee \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la donnee en position \char`\"{}num\char`\"{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDonnees_acb2f30978cb824d70c39b716c49fe1fa}\label{classDonnees_acb2f30978cb824d70c39b716c49fe1fa}} 
+\index{Donnees@{Donnees}!get\+Donnees@{get\+Donnees}}
+\index{get\+Donnees@{get\+Donnees}!Donnees@{Donnees}}
+\subsubsection{\texorpdfstring{get\+Donnees()}{getDonnees()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{classDonnees}{Donnees} $>$ Donnees\+::get\+Donnees (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retourne l\textquotesingle{}ensemble des donnees. 
+
+\begin{DoxyReturn}{Renvoie}
+le vecteur des donnees 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDonnees_a4c4da37884b1b91d881524f2a7b91dbc}\label{classDonnees_a4c4da37884b1b91d881524f2a7b91dbc}} 
+\index{Donnees@{Donnees}!get\+Nb\+Donnees@{get\+Nb\+Donnees}}
+\index{get\+Nb\+Donnees@{get\+Nb\+Donnees}!Donnees@{Donnees}}
+\subsubsection{\texorpdfstring{get\+Nb\+Donnees()}{getNbDonnees()}}
+{\footnotesize\ttfamily int Donnees\+::get\+Nb\+Donnees (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retourne le nombre de donnees. 
+
+\begin{DoxyReturn}{Renvoie}
+le nombre de donnees 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+src/deeplearn/train/Donnees.\+hpp\end{DoxyCompactItemize}

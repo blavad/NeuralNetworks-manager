@@ -1,0 +1,328 @@
+\begin{theindex}
+
+  \item {afficher}
+    \subitem {Couche}, \hyperpage{26}
+    \subitem {Panneau}, \hyperpage{59}
+  \item {ajouter\+Arc}
+    \subitem {Graphe}, \hyperpage{49}
+  \item {ajouter\+Choix}
+    \subitem {Boite\+Choix\+Multiple}, \hyperpage{18}
+  \item {ajouter\+Couche\+Finale}
+    \subitem {Reseau\+Neurones}, \hyperpage{70}
+  \item {ajouter\+Couche\+Initiale}
+    \subitem {Reseau\+Neurones}, \hyperpage{70}
+  \item {ajouter\+Donnee}
+    \subitem {Donnees}, \hyperpage{41}
+  \item {ajouter\+Donnees}
+    \subitem {Donnees}, \hyperpage{41}
+  \item {ajouter\+Noeud}
+    \subitem {Graphe}, \hyperpage{49}
+  \item {Apprentissage}, \hyperpage{5}
+    \subitem {get\+Donnees}, \hyperpage{6}
+    \subitem {get\+Erreur}, \hyperpage{6}
+    \subitem {get\+Optimisateur}, \hyperpage{6}
+    \subitem {get\+Param}, \hyperpage{6}
+    \subitem {get\+RN}, \hyperpage{7}
+    \subitem {set\+Donnees}, \hyperpage{7}
+    \subitem {set\+Param}, \hyperpage{7}
+
+  \indexspace
+
+  \item {Boite}, \hyperpage{8}
+  \item {Boite\+Architecture}, \hyperpage{9}
+    \subitem {Panneau}, \hyperpage{59}
+  \item {Boite\+Choix\+Couche}, \hyperpage{9}
+  \item {Boite\+Choix\+Donn\IeC {\'e}es}, \hyperpage{11}
+  \item {Boite\+Choix\+Donnees}, \hyperpage{10}
+  \item {Boite\+Choix\+Erreur}, \hyperpage{12}
+  \item {Boite\+Choix\+Fichier}, \hyperpage{14}
+    \subitem {Boite\+Choix\+Fichier}, \hyperpage{15}
+    \subitem {get\+Nom\+Fichier}, \hyperpage{16}
+  \item {Boite\+Choix\+Multiple}, \hyperpage{16}
+    \subitem {ajouter\+Choix}, \hyperpage{18}
+    \subitem {Boite\+Choix\+Multiple}, \hyperpage{17}
+    \subitem {get\+Valeur\+Sectionnee}, \hyperpage{18}
+    \subitem {supprimer\+Choix}, \hyperpage{18}
+  \item {Boite\+Choix\+Reseau\+Neurones}, \hyperpage{19}
+  \item {Boite\+Connexion\+Couche}, \hyperpage{20}
+    \subitem {Boite\+Connexion\+Couche}, \hyperpage{21}
+    \subitem {get\+Couche\+Finale}, \hyperpage{22}
+    \subitem {get\+Couche\+Initiale}, \hyperpage{22}
+    \subitem {set\+Couche\+Finale}, \hyperpage{22}
+    \subitem {set\+Couche\+Initiale}, \hyperpage{22}
+  \item {Boite\+Parametrage}, \hyperpage{23}
+    \subitem {Boite\+Parametrage}, \hyperpage{24}
+    \subitem {get\+Parametrage}, \hyperpage{24}
+
+  \indexspace
+
+  \item {charger\+Donnees}
+    \subitem {Pretraitement}, \hyperpage{64}
+  \item {charger\+RN}
+    \subitem {Pretraitement}, \hyperpage{64}
+  \item {contient\+Cycle}
+    \subitem {Graphe}, \hyperpage{50}
+  \item {Couche}, \hyperpage{25}
+    \subitem {afficher}, \hyperpage{26}
+    \subitem {derivee}, \hyperpage{26}
+    \subitem {get\+Dim\+Input}, \hyperpage{26}
+    \subitem {get\+Dim\+Output}, \hyperpage{26}
+    \subitem {get\+Nom}, \hyperpage{27}
+    \subitem {propagation}, \hyperpage{27}
+    \subitem {set\+Dim\+Input}, \hyperpage{27}
+    \subitem {set\+Dim\+Output}, \hyperpage{28}
+  \item {Couche\+Activation}, \hyperpage{28}
+  \item {Couche\+Combinaison}, \hyperpage{30}
+    \subitem {get\+Params}, \hyperpage{31}
+  \item {Couche\+Connect\IeC {\'e}e}, \hyperpage{33}
+  \item {Couche\+Connectee}, \hyperpage{32}
+    \subitem {propagation}, \hyperpage{33}
+  \item {Couche\+Convolutive}, \hyperpage{34}
+    \subitem {Couche\+Convolutive}, \hyperpage{36}
+    \subitem {propagation}, \hyperpage{36}
+    \subitem {set\+Params}, \hyperpage{36}
+  \item {csv\+To\+Tenseur}
+    \subitem {Pretraitement}, \hyperpage{65}
+
+  \indexspace
+
+  \item {denormaliser}
+    \subitem {Pretraitement}, \hyperpage{65}
+  \item {derivee}
+    \subitem {Couche}, \hyperpage{26}
+    \subitem {Erreur}, \hyperpage{43}
+  \item {Dim\+Tenseur}, \hyperpage{37}
+    \subitem {get\+Dim}, \hyperpage{37}
+    \subitem {get\+Ordre}, \hyperpage{38}
+  \item {Donnee}, \hyperpage{38}
+    \subitem {get\+Entree}, \hyperpage{39}
+    \subitem {get\+Sortie}, \hyperpage{39}
+    \subitem {set\+Entree}, \hyperpage{39}
+    \subitem {set\+Sortie}, \hyperpage{40}
+  \item {Donnees}, \hyperpage{40}
+    \subitem {ajouter\+Donnee}, \hyperpage{41}
+    \subitem {ajouter\+Donnees}, \hyperpage{41}
+    \subitem {get\+Donnee}, \hyperpage{41}
+    \subitem {get\+Donnees}, \hyperpage{42}
+    \subitem {get\+Nb\+Donnees}, \hyperpage{42}
+
+  \indexspace
+
+  \item {Erreur}, \hyperpage{43}
+    \subitem {derivee}, \hyperpage{43}
+    \subitem {eval}, \hyperpage{44}
+  \item {Erreur\+Entropie\+Croisee}, \hyperpage{44}
+  \item {Erreur\+L1}, \hyperpage{46}
+  \item {Erreur\+Quadratique}, \hyperpage{47}
+  \item {est\+Connexe}
+    \subitem {Graphe}, \hyperpage{50}
+  \item {eval}
+    \subitem {Erreur}, \hyperpage{44}
+
+  \indexspace
+
+  \item {get\+Couche\+Finale}
+    \subitem {Boite\+Connexion\+Couche}, \hyperpage{22}
+  \item {get\+Couche\+Initiale}
+    \subitem {Boite\+Connexion\+Couche}, \hyperpage{22}
+  \item {get\+Dim}
+    \subitem {Dim\+Tenseur}, \hyperpage{37}
+    \subitem {Tenseur}, \hyperpage{77}
+  \item {get\+Dim\+Input}
+    \subitem {Couche}, \hyperpage{26}
+  \item {get\+Dim\+Output}
+    \subitem {Couche}, \hyperpage{26}
+  \item {get\+Donnee}
+    \subitem {Donnees}, \hyperpage{41}
+  \item {get\+Donnees}
+    \subitem {Apprentissage}, \hyperpage{6}
+    \subitem {Donnees}, \hyperpage{42}
+  \item {get\+Entree}
+    \subitem {Donnee}, \hyperpage{39}
+  \item {get\+Erreur}
+    \subitem {Apprentissage}, \hyperpage{6}
+  \item {get\+Nb\+Donnees}
+    \subitem {Donnees}, \hyperpage{42}
+  \item {get\+Nb\+Epoques}
+    \subitem {Parametres\+Apprentissage}, \hyperpage{62}
+  \item {get\+Nom}
+    \subitem {Couche}, \hyperpage{27}
+    \subitem {Reseau\+Neurones}, \hyperpage{70}
+  \item {get\+Nom\+Fichier}
+    \subitem {Boite\+Choix\+Fichier}, \hyperpage{16}
+  \item {get\+Optimisateur}
+    \subitem {Apprentissage}, \hyperpage{6}
+  \item {get\+Ordre}
+    \subitem {Dim\+Tenseur}, \hyperpage{38}
+  \item {get\+Param}
+    \subitem {Apprentissage}, \hyperpage{6}
+  \item {get\+Parametrage}
+    \subitem {Boite\+Parametrage}, \hyperpage{24}
+  \item {get\+Params}
+    \subitem {Couche\+Combinaison}, \hyperpage{31}
+  \item {get\+PoolX}
+    \subitem {Max\+Pooling}, \hyperpage{54}
+  \item {get\+PoolY}
+    \subitem {Max\+Pooling}, \hyperpage{54}
+  \item {get\+Reseau\+Neurones}
+    \subitem {Panneau}, \hyperpage{59}
+  \item {get\+RN}
+    \subitem {Apprentissage}, \hyperpage{7}
+  \item {get\+Sortie}
+    \subitem {Donnee}, \hyperpage{39}
+  \item {get\+Taux\+Apprentissage}
+    \subitem {Parametres\+Apprentissage}, \hyperpage{62}
+  \item {get\+Valeur}
+    \subitem {Tenseur}, \hyperpage{77}
+  \item {get\+Valeur\+Sectionnee}
+    \subitem {Boite\+Choix\+Multiple}, \hyperpage{18}
+  \item {Graphe}
+    \subitem {ajouter\+Arc}, \hyperpage{49}
+    \subitem {ajouter\+Noeud}, \hyperpage{49}
+    \subitem {contient\+Cycle}, \hyperpage{50}
+    \subitem {est\+Connexe}, \hyperpage{50}
+    \subitem {supprimer\+Arc}, \hyperpage{50}
+    \subitem {supprimer\+Noeud}, \hyperpage{50}
+  \item {Graphe$<$ Type $>$}, \hyperpage{48}
+
+  \indexspace
+
+  \item {image\+To\+Tenseur}
+    \subitem {Pretraitement}, \hyperpage{65}
+
+  \indexspace
+
+  \item {Matrice}, \hyperpage{51}
+    \subitem {produit\+Matriciel}, \hyperpage{52}
+  \item {Max\+Pooling}, \hyperpage{53}
+    \subitem {get\+PoolX}, \hyperpage{54}
+    \subitem {get\+PoolY}, \hyperpage{54}
+    \subitem {propagation}, \hyperpage{54}
+    \subitem {set\+PoolX}, \hyperpage{55}
+    \subitem {set\+PoolY}, \hyperpage{55}
+
+  \indexspace
+
+  \item {Neurone}, \hyperpage{56}
+  \item {normaliser}
+    \subitem {Pretraitement}, \hyperpage{66}
+
+  \indexspace
+
+  \item {Optimisateur}, \hyperpage{57}
+
+  \indexspace
+
+  \item {Panneau}, \hyperpage{58}
+    \subitem {afficher}, \hyperpage{59}
+    \subitem {Boite\+Architecture}, \hyperpage{59}
+    \subitem {get\+Reseau\+Neurones}, \hyperpage{59}
+  \item {Panneau\+Architecture}, \hyperpage{60}
+  \item {Parametres\+Apprentissage}, \hyperpage{62}
+    \subitem {get\+Nb\+Epoques}, \hyperpage{62}
+    \subitem {get\+Taux\+Apprentissage}, \hyperpage{62}
+    \subitem {set\+Nb\+Epoques}, \hyperpage{63}
+    \subitem {set\+Taux\+Apprentissage}, \hyperpage{63}
+  \item {Pretraitement}, \hyperpage{63}
+    \subitem {charger\+Donnees}, \hyperpage{64}
+    \subitem {charger\+RN}, \hyperpage{64}
+    \subitem {csv\+To\+Tenseur}, \hyperpage{65}
+    \subitem {denormaliser}, \hyperpage{65}
+    \subitem {image\+To\+Tenseur}, \hyperpage{65}
+    \subitem {normaliser}, \hyperpage{66}
+  \item {produit\+Matriciel}
+    \subitem {Matrice}, \hyperpage{52}
+  \item {produit\+Scalaire}
+    \subitem {Vecteur}, \hyperpage{86}
+  \item {produit\+Terme\+A\+Terme}
+    \subitem {Tenseur}, \hyperpage{77}
+  \item {propagation}
+    \subitem {Couche}, \hyperpage{27}
+    \subitem {Couche\+Connectee}, \hyperpage{33}
+    \subitem {Couche\+Convolutive}, \hyperpage{36}
+    \subitem {Max\+Pooling}, \hyperpage{54}
+    \subitem {Re\+LU}, \hyperpage{68}
+    \subitem {Reseau\+Neurones}, \hyperpage{70}
+    \subitem {Sigmoid}, \hyperpage{73}
+    \subitem {TanH}, \hyperpage{75}
+
+  \indexspace
+
+  \item {Re\+LU}, \hyperpage{67}
+    \subitem {propagation}, \hyperpage{68}
+  \item {Reseau\+Neurones}, \hyperpage{68}
+    \subitem {ajouter\+Couche\+Finale}, \hyperpage{70}
+    \subitem {ajouter\+Couche\+Initiale}, \hyperpage{70}
+    \subitem {get\+Nom}, \hyperpage{70}
+    \subitem {propagation}, \hyperpage{70}
+    \subitem {supprimer\+Couche\+Finale}, \hyperpage{71}
+    \subitem {supprimer\+Couche\+Initiale}, \hyperpage{71}
+
+  \indexspace
+
+  \item {set\+Couche\+Finale}
+    \subitem {Boite\+Connexion\+Couche}, \hyperpage{22}
+  \item {set\+Couche\+Initiale}
+    \subitem {Boite\+Connexion\+Couche}, \hyperpage{22}
+  \item {set\+Dim}
+    \subitem {Tenseur}, \hyperpage{78}
+  \item {set\+Dim\+Input}
+    \subitem {Couche}, \hyperpage{27}
+  \item {set\+Dim\+Output}
+    \subitem {Couche}, \hyperpage{28}
+  \item {set\+Donnees}
+    \subitem {Apprentissage}, \hyperpage{7}
+  \item {set\+Entree}
+    \subitem {Donnee}, \hyperpage{39}
+  \item {set\+Nb\+Epoques}
+    \subitem {Parametres\+Apprentissage}, \hyperpage{63}
+  \item {set\+Param}
+    \subitem {Apprentissage}, \hyperpage{7}
+  \item {set\+Params}
+    \subitem {Couche\+Convolutive}, \hyperpage{36}
+  \item {set\+PoolX}
+    \subitem {Max\+Pooling}, \hyperpage{55}
+  \item {set\+PoolY}
+    \subitem {Max\+Pooling}, \hyperpage{55}
+  \item {set\+Sortie}
+    \subitem {Donnee}, \hyperpage{40}
+  \item {set\+Taux\+Apprentissage}
+    \subitem {Parametres\+Apprentissage}, \hyperpage{63}
+  \item {set\+Valeur}
+    \subitem {Tenseur}, \hyperpage{78}
+  \item {Sigmoid}, \hyperpage{71}
+    \subitem {propagation}, \hyperpage{73}
+  \item {supprimer\+Arc}
+    \subitem {Graphe}, \hyperpage{50}
+  \item {supprimer\+Choix}
+    \subitem {Boite\+Choix\+Multiple}, \hyperpage{18}
+  \item {supprimer\+Couche\+Finale}
+    \subitem {Reseau\+Neurones}, \hyperpage{71}
+  \item {supprimer\+Couche\+Initiale}
+    \subitem {Reseau\+Neurones}, \hyperpage{71}
+  \item {supprimer\+Noeud}
+    \subitem {Graphe}, \hyperpage{50}
+
+  \indexspace
+
+  \item {TanH}, \hyperpage{74}
+    \subitem {propagation}, \hyperpage{75}
+  \item {Tenseur}, \hyperpage{76}
+    \subitem {get\+Dim}, \hyperpage{77}
+    \subitem {get\+Valeur}, \hyperpage{77}
+    \subitem {produit\+Terme\+A\+Terme}, \hyperpage{77}
+    \subitem {set\+Dim}, \hyperpage{78}
+    \subitem {set\+Valeur}, \hyperpage{78}
+    \subitem {Tenseur}, \hyperpage{77}
+  \item {Test\+Couche}, \hyperpage{78}
+  \item {Test\+Donnees}, \hyperpage{80}
+  \item {Test\+Graphe}, \hyperpage{81}
+  \item {Test\+Reseau\+Neurones}, \hyperpage{83}
+  \item {Test\+Tenseur}, \hyperpage{84}
+
+  \indexspace
+
+  \item {Vecteur}, \hyperpage{85}
+    \subitem {produit\+Scalaire}, \hyperpage{86}
+
+\end{theindex}

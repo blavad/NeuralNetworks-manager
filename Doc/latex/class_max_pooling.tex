@@ -1,0 +1,173 @@
+\hypertarget{class_max_pooling}{}\section{Référence de la classe Max\+Pooling}
+\label{class_max_pooling}\index{Max\+Pooling@{Max\+Pooling}}
+
+
+Classe gérant une couche de \hyperlink{class_max_pooling}{Max\+Pooling}.  
+
+
+
+
+{\ttfamily \#include $<$Max\+Pooling.\+hpp$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Max\+Pooling\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{class_max_pooling__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Max\+Pooling\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{class_max_pooling__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_max_pooling_aa26ff6fb01b361da3e57dfe77131a20a}\label{class_max_pooling_aa26ff6fb01b361da3e57dfe77131a20a}} 
+\hyperlink{class_max_pooling_aa26ff6fb01b361da3e57dfe77131a20a}{Max\+Pooling} (\hyperlink{class_dim_tenseur}{Dim\+Tenseur} din, \hyperlink{class_dim_tenseur}{Dim\+Tenseur} dout, std\+::string no, int pl\+\_\+x, int pl\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Constructeur afin d\textquotesingle{}obtenir une image de taille pool\+\_\+x par pool\+\_\+y. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_max_pooling_a49e6a67705aacebcc8a58a4d73cd7c58}\label{class_max_pooling_a49e6a67705aacebcc8a58a4d73cd7c58}} 
+\hyperlink{class_max_pooling_a49e6a67705aacebcc8a58a4d73cd7c58}{Max\+Pooling} (\hyperlink{class_dim_tenseur}{Dim\+Tenseur} din, \hyperlink{class_dim_tenseur}{Dim\+Tenseur} dout, std\+::string no, int pl)
+\begin{DoxyCompactList}\small\item\em Constructeur afin d\textquotesingle{}obtenir une image de taille pool par pool. \end{DoxyCompactList}\item 
+\hyperlink{class_tenseur}{Tenseur} \hyperlink{class_max_pooling_a48e0258bf1f949853cfceb2726035fb8}{propagation} (\hyperlink{class_tenseur}{Tenseur} t)
+\begin{DoxyCompactList}\small\item\em Méthode permettant la propagation d\textquotesingle{}une couche à une autre. \end{DoxyCompactList}\item 
+void \hyperlink{class_max_pooling_ae70dd14b2ebe5963b3a6904ca86857bc}{set\+PoolX} (int pl\+\_\+x)
+\begin{DoxyCompactList}\small\item\em Méthode pour fixer le nombre de pixels en dimension x. \end{DoxyCompactList}\item 
+void \hyperlink{class_max_pooling_abf21b8f9da67780af60a588a543f7a1b}{set\+PoolY} (int pl\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Méthode pour fixer le nombre de pixels en dimension y. \end{DoxyCompactList}\item 
+int \hyperlink{class_max_pooling_aa794b6174d54f2be8e6eed4ab09365e9}{get\+PoolX} () const
+\begin{DoxyCompactList}\small\item\em Méthode pour obtenir le nombre de pixels fixé pour les images en dimension x. \end{DoxyCompactList}\item 
+int \hyperlink{class_max_pooling_a7c72e57c8a90e18804b288f28fde7af0}{get\+PoolY} () const
+\begin{DoxyCompactList}\small\item\em Méthode pour obtenir le nombre de pixels fixé pour les images en dimension y. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Classe gérant une couche de \hyperlink{class_max_pooling}{Max\+Pooling}. 
+
+\begin{DoxyAuthor}{Auteur}
+Adrien 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2019
+\end{DoxyDate}
+Classe qui va effectuer l\textquotesingle{}opération de redimensionnement des images par la technique du \hyperlink{class_max_pooling}{Max\+Pooling}. 
+
+Définition à la ligne 18 du fichier Max\+Pooling.\+hpp.
+
+
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_max_pooling_aa794b6174d54f2be8e6eed4ab09365e9}\label{class_max_pooling_aa794b6174d54f2be8e6eed4ab09365e9}} 
+\index{Max\+Pooling@{Max\+Pooling}!get\+PoolX@{get\+PoolX}}
+\index{get\+PoolX@{get\+PoolX}!Max\+Pooling@{Max\+Pooling}}
+\subsubsection{\texorpdfstring{get\+Pool\+X()}{getPoolX()}}
+{\footnotesize\ttfamily int Max\+Pooling\+::get\+PoolX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Méthode pour obtenir le nombre de pixels fixé pour les images en dimension x. 
+
+\begin{DoxyReturn}{Renvoie}
+Le nombre de pixels en dimension x 
+\end{DoxyReturn}
+
+
+Définition à la ligne 38 du fichier Max\+Pooling.\+cpp.
+
+\mbox{\Hypertarget{class_max_pooling_a7c72e57c8a90e18804b288f28fde7af0}\label{class_max_pooling_a7c72e57c8a90e18804b288f28fde7af0}} 
+\index{Max\+Pooling@{Max\+Pooling}!get\+PoolY@{get\+PoolY}}
+\index{get\+PoolY@{get\+PoolY}!Max\+Pooling@{Max\+Pooling}}
+\subsubsection{\texorpdfstring{get\+Pool\+Y()}{getPoolY()}}
+{\footnotesize\ttfamily int Max\+Pooling\+::get\+PoolY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Méthode pour obtenir le nombre de pixels fixé pour les images en dimension y. 
+
+\begin{DoxyReturn}{Renvoie}
+Le nombre de pixels en dimension y 
+\end{DoxyReturn}
+
+
+Définition à la ligne 45 du fichier Max\+Pooling.\+cpp.
+
+\mbox{\Hypertarget{class_max_pooling_a48e0258bf1f949853cfceb2726035fb8}\label{class_max_pooling_a48e0258bf1f949853cfceb2726035fb8}} 
+\index{Max\+Pooling@{Max\+Pooling}!propagation@{propagation}}
+\index{propagation@{propagation}!Max\+Pooling@{Max\+Pooling}}
+\subsubsection{\texorpdfstring{propagation()}{propagation()}}
+{\footnotesize\ttfamily \hyperlink{class_tenseur}{Tenseur} Max\+Pooling\+::propagation (\begin{DoxyParamCaption}\item[{\hyperlink{class_tenseur}{Tenseur}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode permettant la propagation d\textquotesingle{}une couche à une autre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em t} & le tenseur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Le tenseur à l\textquotesingle{}étape d\textquotesingle{}après 
+\end{DoxyReturn}
+
+
+Réimplémentée à partir de \hyperlink{class_couche_a1f0ed59e21020f5d4f37933af4d1b1e5}{Couche}.
+
+
+
+Définition à la ligne 17 du fichier Max\+Pooling.\+cpp.
+
+\mbox{\Hypertarget{class_max_pooling_ae70dd14b2ebe5963b3a6904ca86857bc}\label{class_max_pooling_ae70dd14b2ebe5963b3a6904ca86857bc}} 
+\index{Max\+Pooling@{Max\+Pooling}!set\+PoolX@{set\+PoolX}}
+\index{set\+PoolX@{set\+PoolX}!Max\+Pooling@{Max\+Pooling}}
+\subsubsection{\texorpdfstring{set\+Pool\+X()}{setPoolX()}}
+{\footnotesize\ttfamily void Max\+Pooling\+::set\+PoolX (\begin{DoxyParamCaption}\item[{int}]{pl\+\_\+x }\end{DoxyParamCaption})}
+
+
+
+Méthode pour fixer le nombre de pixels en dimension x. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em dim\+In} & La dimension du tenseur d\textquotesingle{}entrée \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 24 du fichier Max\+Pooling.\+cpp.
+
+\mbox{\Hypertarget{class_max_pooling_abf21b8f9da67780af60a588a543f7a1b}\label{class_max_pooling_abf21b8f9da67780af60a588a543f7a1b}} 
+\index{Max\+Pooling@{Max\+Pooling}!set\+PoolY@{set\+PoolY}}
+\index{set\+PoolY@{set\+PoolY}!Max\+Pooling@{Max\+Pooling}}
+\subsubsection{\texorpdfstring{set\+Pool\+Y()}{setPoolY()}}
+{\footnotesize\ttfamily void Max\+Pooling\+::set\+PoolY (\begin{DoxyParamCaption}\item[{int}]{pl\+\_\+y }\end{DoxyParamCaption})}
+
+
+
+Méthode pour fixer le nombre de pixels en dimension y. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em dim\+In} & La dimension du tenseur de sortie \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 31 du fichier Max\+Pooling.\+cpp.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+src/deeplearn/archi/Max\+Pooling.\+hpp\item 
+src/deeplearn/archi/Max\+Pooling.\+cpp\end{DoxyCompactItemize}

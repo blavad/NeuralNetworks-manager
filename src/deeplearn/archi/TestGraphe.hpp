@@ -1,9 +1,11 @@
-#include <vector>
-#include <cppunit/TestFixture.h>
-#include "Graphe.hpp"
+#ifndef TESTGRAPHE_HPP__
+#define TESTGRAPHE_HPP__
 
-#ifndef TESTGRAPHE_HPP
-#define TESTGRAPHE_HPP
+#include <vector>
+#include <string>
+#include <cppunit/TestFixture.h>
+#include <cppunit/TestAssert.h>
+#include "Graphe.hpp"
 
 /**
  * \class TestGraphe
@@ -13,40 +15,27 @@
  * \date avril 2019
  *
  */
+class TestGraphe : public CppUnit::TestFixture {
 
-using namespace CppUnit;
+	public :
 
-class TestGraphe : public CppUnit::TextFixture {
+		/** \brief Vérifier que le nouveau noeud apparait dans la liste d'adjacence et d'antécédence */
+		void testAjouterNoeud();
 
-private :
+		/** \brief Vérifier que le noeud de départ apparait dans la liste d'antécédence du noeud d'arrivée */
+		void testAjouterArc();
 
-	Graphe g1, g2;
+		/** \brief Vérifier que le noeud n'apparait plus dans la liste d'adjacence et d'antécédence */
+		void testSupprimerNoeud();
 
-public:
+		/** \brief Vérifier que le noeud de départ d'apparaît plus dans la liste d'antécédence du noeud d'arrivée */
+		void testSupprimerArc();
 
-    // Initialiser les variables
-    void setUp();
+		/** \brief Vérifier qu'elle renvoie vrai quand on lui donne un graphe avec cycle faux sinon */
+		void testContientCycle();
 
-    // Supprime les variables
-    void tearDown();
-
-    // Vérifier que le nouveau noeud apparait dans la liste d'adjacence et d'antécédence
-    void testAjouterNoeud();
-
-    // Vérifier que le noeud de départ apparait dans la liste d'antécédence du noeud d'arrivée
-    void testAjouterArc();
-
-    // Vérifier que le noeud n'apparait plus dans la liste d'adjacence et d'antécédence
-    void testSupprimerNoeud();
-
-    // Vérifier que le noeud de départ d'apparaît plus dans la liste d'antécédence du noeud d'arrivée
-    void testSupprimerArc();
-
-    // Vérifier qu'elle renvoie vrai quand on lui donne un graphe avec cycle faux sinon
-    void testContientCycle();
-
-    // Vérifier qu'elle renvoie vrai quand on lui donne un graphe connexe faux sinon
-    void testEstConnexe();
+		/** \brief Vérifier qu'elle renvoie vrai quand on lui donne un graphe connexe faux sinon */
+		void testEstConnexe();
 
 
 };

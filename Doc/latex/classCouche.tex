@@ -1,0 +1,188 @@
+\hypertarget{classCouche}{}\section{Référence de la classe Couche}
+\label{classCouche}\index{Couche@{Couche}}
+
+
+Classe liée à la couche.  
+
+
+
+
+{\ttfamily \#include $<$Couche.\+hpp$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Couche\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCouche__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCouche_a6da95828f8c597f57aaac057b9357622}\label{classCouche_a6da95828f8c597f57aaac057b9357622}} 
+\hyperlink{classCouche_a6da95828f8c597f57aaac057b9357622}{Couche} (\hyperlink{classDimTenseur}{Dim\+Tenseur} din, \hyperlink{classDimTenseur}{Dim\+Tenseur} dout, std\+::string no)
+\begin{DoxyCompactList}\small\item\em Constructeur d\textquotesingle{}une couche à partir de la taille des tenseurs d\textquotesingle{}entrée/sortie. \end{DoxyCompactList}\item 
+virtual \hyperlink{classTenseur}{Tenseur} \hyperlink{classCouche_a1f0ed59e21020f5d4f37933af4d1b1e5}{propagation} (\hyperlink{classTenseur}{Tenseur} t)
+\begin{DoxyCompactList}\small\item\em Methode virtuelle permettant la propagation d\textquotesingle{}une couche à une autre. \end{DoxyCompactList}\item 
+virtual \hyperlink{classTenseur}{Tenseur} \hyperlink{classCouche_acfb65d035c2070d65b699508b7333bb3}{derivee} (\hyperlink{classTenseur}{Tenseur} t)
+\begin{DoxyCompactList}\small\item\em Methode virtuelle pour avoir la derivee de la couche. \end{DoxyCompactList}\item 
+void \hyperlink{classCouche_ab24ce01bc6fb7b903013f7682ce60a7e}{set\+Dim\+Input} (\hyperlink{classDimTenseur}{Dim\+Tenseur} dim\+In)
+\begin{DoxyCompactList}\small\item\em Méthode pour fixer la taille du tenseur à l\textquotesingle{}entrée de la couche. \end{DoxyCompactList}\item 
+void \hyperlink{classCouche_a9af2f37eaf1063cb05abe980cfaa4cce}{set\+Dim\+Output} (\hyperlink{classDimTenseur}{Dim\+Tenseur} dim\+Out)
+\begin{DoxyCompactList}\small\item\em Méthode pour fixer la taille du tenseur à la sortie de la couche. \end{DoxyCompactList}\item 
+\hyperlink{classDimTenseur}{Dim\+Tenseur} \hyperlink{classCouche_a4f3e4fe4a84f2dfcbee4bda6e20bdc03}{get\+Dim\+Input} () const
+\begin{DoxyCompactList}\small\item\em Méthode pour obtenir la taille du tenseur à l\textquotesingle{}entrée de la couche. \end{DoxyCompactList}\item 
+\hyperlink{classDimTenseur}{Dim\+Tenseur} \hyperlink{classCouche_ae8c80adf3a53da0d975e6f1148d0cea9}{get\+Dim\+Output} () const
+\begin{DoxyCompactList}\small\item\em Méthode pour obtenir la taille du tenseur à la sortie de la couche. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classCouche_a367bb58eaafab2b5fe635e6d3350fe4b}{get\+Nom} () const
+\begin{DoxyCompactList}\small\item\em Méthode pour obtenir le nom de la couche. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCouche_a3c76d2c7a0adf864dc6f3f5fbf2c7563}{afficher} ()
+\begin{DoxyCompactList}\small\item\em Méthode pour savoir si la couche est affichée ou non. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Classe liée à la couche. 
+
+\begin{DoxyAuthor}{Auteur}
+Adrien 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2019
+\end{DoxyDate}
+Cette classe permet de fixer les tailles (entrée/sortie) de la couche. Une couche peut être dérivée et propagée. 
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classCouche_a3c76d2c7a0adf864dc6f3f5fbf2c7563}\label{classCouche_a3c76d2c7a0adf864dc6f3f5fbf2c7563}} 
+\index{Couche@{Couche}!afficher@{afficher}}
+\index{afficher@{afficher}!Couche@{Couche}}
+\subsubsection{\texorpdfstring{afficher()}{afficher()}}
+{\footnotesize\ttfamily bool Couche\+::afficher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode pour savoir si la couche est affichée ou non. 
+
+\begin{DoxyReturn}{Renvoie}
+booléen 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCouche_acfb65d035c2070d65b699508b7333bb3}\label{classCouche_acfb65d035c2070d65b699508b7333bb3}} 
+\index{Couche@{Couche}!derivee@{derivee}}
+\index{derivee@{derivee}!Couche@{Couche}}
+\subsubsection{\texorpdfstring{derivee()}{derivee()}}
+{\footnotesize\ttfamily void Couche\+::derivee (\begin{DoxyParamCaption}\item[{\hyperlink{classTenseur}{Tenseur}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Methode virtuelle pour avoir la derivee de la couche. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em t} & le tenseur pour lequel on veut la derivee \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la derivee de la couche 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCouche_a4f3e4fe4a84f2dfcbee4bda6e20bdc03}\label{classCouche_a4f3e4fe4a84f2dfcbee4bda6e20bdc03}} 
+\index{Couche@{Couche}!get\+Dim\+Input@{get\+Dim\+Input}}
+\index{get\+Dim\+Input@{get\+Dim\+Input}!Couche@{Couche}}
+\subsubsection{\texorpdfstring{get\+Dim\+Input()}{getDimInput()}}
+{\footnotesize\ttfamily \hyperlink{classDimTenseur}{Dim\+Tenseur} Couche\+::get\+Dim\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Méthode pour obtenir la taille du tenseur à l\textquotesingle{}entrée de la couche. 
+
+\begin{DoxyReturn}{Renvoie}
+La taille du tenseur d\textquotesingle{}entrée 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCouche_ae8c80adf3a53da0d975e6f1148d0cea9}\label{classCouche_ae8c80adf3a53da0d975e6f1148d0cea9}} 
+\index{Couche@{Couche}!get\+Dim\+Output@{get\+Dim\+Output}}
+\index{get\+Dim\+Output@{get\+Dim\+Output}!Couche@{Couche}}
+\subsubsection{\texorpdfstring{get\+Dim\+Output()}{getDimOutput()}}
+{\footnotesize\ttfamily \hyperlink{classDimTenseur}{Dim\+Tenseur} Couche\+::get\+Dim\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Méthode pour obtenir la taille du tenseur à la sortie de la couche. 
+
+\begin{DoxyReturn}{Renvoie}
+La taille du tenseur de sortie 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCouche_a367bb58eaafab2b5fe635e6d3350fe4b}\label{classCouche_a367bb58eaafab2b5fe635e6d3350fe4b}} 
+\index{Couche@{Couche}!get\+Nom@{get\+Nom}}
+\index{get\+Nom@{get\+Nom}!Couche@{Couche}}
+\subsubsection{\texorpdfstring{get\+Nom()}{getNom()}}
+{\footnotesize\ttfamily string Couche\+::get\+Nom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Méthode pour obtenir le nom de la couche. 
+
+\begin{DoxyReturn}{Renvoie}
+Le nom de la couche 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCouche_a1f0ed59e21020f5d4f37933af4d1b1e5}\label{classCouche_a1f0ed59e21020f5d4f37933af4d1b1e5}} 
+\index{Couche@{Couche}!propagation@{propagation}}
+\index{propagation@{propagation}!Couche@{Couche}}
+\subsubsection{\texorpdfstring{propagation()}{propagation()}}
+{\footnotesize\ttfamily \hyperlink{classTenseur}{Tenseur} Couche\+::propagation (\begin{DoxyParamCaption}\item[{\hyperlink{classTenseur}{Tenseur}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Methode virtuelle permettant la propagation d\textquotesingle{}une couche à une autre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em t} & le tenseur d\textquotesingle{}entree \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la sortie de la couche 
+\end{DoxyReturn}
+
+
+Réimplémentée dans \hyperlink{classReseauNeurones_a7079f7694f0369187b8ff28cefcbc5eb}{Reseau\+Neurones}, \hyperlink{classCoucheConvolutive_ad1a55b3dc9bf52e0725ae2a7b2e92aa1}{Couche\+Convolutive}, \hyperlink{classMaxPooling_a48e0258bf1f949853cfceb2726035fb8}{Max\+Pooling}, \hyperlink{classCoucheConnectee_acd60c499c6c74f914795f45f3f8084d0}{Couche\+Connectee}, \hyperlink{classReLU_a0d42917d6a9124571b0b467c81bce38a}{Re\+LU}, \hyperlink{classSigmoid_a6bd1f6bbc49bd7e634dc33701aee420c}{Sigmoid}, et \hyperlink{classTanH_a869967c9b278c6592e6fcc04b61a5f0c}{TanH}.
+
+\mbox{\Hypertarget{classCouche_ab24ce01bc6fb7b903013f7682ce60a7e}\label{classCouche_ab24ce01bc6fb7b903013f7682ce60a7e}} 
+\index{Couche@{Couche}!set\+Dim\+Input@{set\+Dim\+Input}}
+\index{set\+Dim\+Input@{set\+Dim\+Input}!Couche@{Couche}}
+\subsubsection{\texorpdfstring{set\+Dim\+Input()}{setDimInput()}}
+{\footnotesize\ttfamily void Couche\+::set\+Dim\+Input (\begin{DoxyParamCaption}\item[{\hyperlink{classDimTenseur}{Dim\+Tenseur}}]{dim\+In }\end{DoxyParamCaption})}
+
+
+
+Méthode pour fixer la taille du tenseur à l\textquotesingle{}entrée de la couche. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em dim\+In} & La dimension du tenseur d\textquotesingle{}entrée \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCouche_a9af2f37eaf1063cb05abe980cfaa4cce}\label{classCouche_a9af2f37eaf1063cb05abe980cfaa4cce}} 
+\index{Couche@{Couche}!set\+Dim\+Output@{set\+Dim\+Output}}
+\index{set\+Dim\+Output@{set\+Dim\+Output}!Couche@{Couche}}
+\subsubsection{\texorpdfstring{set\+Dim\+Output()}{setDimOutput()}}
+{\footnotesize\ttfamily void Couche\+::set\+Dim\+Output (\begin{DoxyParamCaption}\item[{\hyperlink{classDimTenseur}{Dim\+Tenseur}}]{dim\+Out }\end{DoxyParamCaption})}
+
+
+
+Méthode pour fixer la taille du tenseur à la sortie de la couche. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em dim\+In} & La dimension du tenseur de sortie \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+src/deeplearn/archi/Couche.\+hpp\item 
+src/deeplearn/archi/Couche.\+cpp\end{DoxyCompactItemize}

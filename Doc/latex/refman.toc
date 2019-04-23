@@ -1,0 +1,216 @@
+\babel@toc {french}{}
+\contentsline {chapter}{\numberline {1}Index hi\IeC {\'e}rarchique}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Hi\IeC {\'e}rarchie des classes}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}Index des classes}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Liste des classes}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}Documentation des classes}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}R\IeC {\'e}f\IeC {\'e}rence de la classe Apprentissage}{5}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Description d\IeC {\'e}taill\IeC {\'e}e}{5}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Documentation des fonctions membres}{6}{subsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.2.1}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Donnees()}{6}{subsubsection.3.1.2.1}
+\contentsline {subsubsection}{\numberline {3.1.2.2}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Erreur()}{6}{subsubsection.3.1.2.2}
+\contentsline {subsubsection}{\numberline {3.1.2.3}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Optimisateur()}{6}{subsubsection.3.1.2.3}
+\contentsline {subsubsection}{\numberline {3.1.2.4}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Param()}{7}{subsubsection.3.1.2.4}
+\contentsline {subsubsection}{\numberline {3.1.2.5}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}N()}{7}{subsubsection.3.1.2.5}
+\contentsline {subsubsection}{\numberline {3.1.2.6}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Donnees()}{7}{subsubsection.3.1.2.6}
+\contentsline {subsubsection}{\numberline {3.1.2.7}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Param()}{7}{subsubsection.3.1.2.7}
+\contentsline {section}{\numberline {3.2}R\IeC {\'e}f\IeC {\'e}rence de la classe Boite}{8}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Description d\IeC {\'e}taill\IeC {\'e}e}{8}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}R\IeC {\'e}f\IeC {\'e}rence de la classe Boite\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Architecture}{9}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Description d\IeC {\'e}taill\IeC {\'e}e}{9}{subsection.3.3.1}
+\contentsline {section}{\numberline {3.4}R\IeC {\'e}f\IeC {\'e}rence de la classe Boite\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Choix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Couche}{9}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Description d\IeC {\'e}taill\IeC {\'e}e}{10}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}R\IeC {\'e}f\IeC {\'e}rence de la classe Boite\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Choix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Donnees}{10}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Description d\IeC {\'e}taill\IeC {\'e}e}{11}{subsection.3.5.1}
+\contentsline {section}{\numberline {3.6}R\IeC {\'e}f\IeC {\'e}rence de la classe Boite\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Choix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Donn\IeC {\'e}es}{11}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Description d\IeC {\'e}taill\IeC {\'e}e}{12}{subsection.3.6.1}
+\contentsline {section}{\numberline {3.7}R\IeC {\'e}f\IeC {\'e}rence de la classe Boite\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Choix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Erreur}{12}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}Description d\IeC {\'e}taill\IeC {\'e}e}{13}{subsection.3.7.1}
+\contentsline {section}{\numberline {3.8}R\IeC {\'e}f\IeC {\'e}rence de la classe Boite\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Choix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Fichier}{14}{section.3.8}
+\contentsline {subsection}{\numberline {3.8.1}Description d\IeC {\'e}taill\IeC {\'e}e}{15}{subsection.3.8.1}
+\contentsline {subsection}{\numberline {3.8.2}Documentation des constructeurs et destructeur}{15}{subsection.3.8.2}
+\contentsline {subsubsection}{\numberline {3.8.2.1}Boite\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Choix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Fichier()}{15}{subsubsection.3.8.2.1}
+\contentsline {subsection}{\numberline {3.8.3}Documentation des fonctions membres}{16}{subsection.3.8.3}
+\contentsline {subsubsection}{\numberline {3.8.3.1}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Nom\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Fichier()}{16}{subsubsection.3.8.3.1}
+\contentsline {section}{\numberline {3.9}R\IeC {\'e}f\IeC {\'e}rence de la classe Boite\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Choix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Multiple}{16}{section.3.9}
+\contentsline {subsection}{\numberline {3.9.1}Description d\IeC {\'e}taill\IeC {\'e}e}{17}{subsection.3.9.1}
+\contentsline {subsection}{\numberline {3.9.2}Documentation des constructeurs et destructeur}{17}{subsection.3.9.2}
+\contentsline {subsubsection}{\numberline {3.9.2.1}Boite\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Choix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Multiple()}{17}{subsubsection.3.9.2.1}
+\contentsline {subsection}{\numberline {3.9.3}Documentation des fonctions membres}{18}{subsection.3.9.3}
+\contentsline {subsubsection}{\numberline {3.9.3.1}ajouter\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Choix()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamilyFB [1/2]}}{18}{subsubsection.3.9.3.1}
+\contentsline {subsubsection}{\numberline {3.9.3.2}ajouter\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Choix()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamilyFB [2/2]}}{18}{subsubsection.3.9.3.2}
+\contentsline {subsubsection}{\numberline {3.9.3.3}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Valeur\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Sectionnee()}{18}{subsubsection.3.9.3.3}
+\contentsline {subsubsection}{\numberline {3.9.3.4}supprimer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Choix()}{18}{subsubsection.3.9.3.4}
+\contentsline {section}{\numberline {3.10}R\IeC {\'e}f\IeC {\'e}rence de la classe Boite\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Choix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Reseau\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Neurones}{19}{section.3.10}
+\contentsline {subsection}{\numberline {3.10.1}Description d\IeC {\'e}taill\IeC {\'e}e}{20}{subsection.3.10.1}
+\contentsline {section}{\numberline {3.11}R\IeC {\'e}f\IeC {\'e}rence de la classe Boite\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Connexion\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Couche}{20}{section.3.11}
+\contentsline {subsection}{\numberline {3.11.1}Description d\IeC {\'e}taill\IeC {\'e}e}{21}{subsection.3.11.1}
+\contentsline {subsection}{\numberline {3.11.2}Documentation des constructeurs et destructeur}{21}{subsection.3.11.2}
+\contentsline {subsubsection}{\numberline {3.11.2.1}Boite\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Connexion\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Couche()}{21}{subsubsection.3.11.2.1}
+\contentsline {subsection}{\numberline {3.11.3}Documentation des fonctions membres}{22}{subsection.3.11.3}
+\contentsline {subsubsection}{\numberline {3.11.3.1}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Couche\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Finale()}{22}{subsubsection.3.11.3.1}
+\contentsline {subsubsection}{\numberline {3.11.3.2}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Couche\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Initiale()}{22}{subsubsection.3.11.3.2}
+\contentsline {subsubsection}{\numberline {3.11.3.3}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Couche\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Finale()}{22}{subsubsection.3.11.3.3}
+\contentsline {subsubsection}{\numberline {3.11.3.4}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Couche\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Initiale()}{23}{subsubsection.3.11.3.4}
+\contentsline {section}{\numberline {3.12}R\IeC {\'e}f\IeC {\'e}rence de la classe Boite\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Parametrage}{23}{section.3.12}
+\contentsline {subsection}{\numberline {3.12.1}Description d\IeC {\'e}taill\IeC {\'e}e}{24}{subsection.3.12.1}
+\contentsline {subsection}{\numberline {3.12.2}Documentation des constructeurs et destructeur}{24}{subsection.3.12.2}
+\contentsline {subsubsection}{\numberline {3.12.2.1}Boite\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Parametrage()}{24}{subsubsection.3.12.2.1}
+\contentsline {subsection}{\numberline {3.12.3}Documentation des fonctions membres}{24}{subsection.3.12.3}
+\contentsline {subsubsection}{\numberline {3.12.3.1}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Parametrage()}{24}{subsubsection.3.12.3.1}
+\contentsline {section}{\numberline {3.13}R\IeC {\'e}f\IeC {\'e}rence de la classe Couche}{25}{section.3.13}
+\contentsline {subsection}{\numberline {3.13.1}Description d\IeC {\'e}taill\IeC {\'e}e}{25}{subsection.3.13.1}
+\contentsline {subsection}{\numberline {3.13.2}Documentation des fonctions membres}{26}{subsection.3.13.2}
+\contentsline {subsubsection}{\numberline {3.13.2.1}afficher()}{26}{subsubsection.3.13.2.1}
+\contentsline {subsubsection}{\numberline {3.13.2.2}derivee()}{26}{subsubsection.3.13.2.2}
+\contentsline {subsubsection}{\numberline {3.13.2.3}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dim\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Input()}{26}{subsubsection.3.13.2.3}
+\contentsline {subsubsection}{\numberline {3.13.2.4}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dim\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Output()}{27}{subsubsection.3.13.2.4}
+\contentsline {subsubsection}{\numberline {3.13.2.5}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Nom()}{27}{subsubsection.3.13.2.5}
+\contentsline {subsubsection}{\numberline {3.13.2.6}propagation()}{27}{subsubsection.3.13.2.6}
+\contentsline {subsubsection}{\numberline {3.13.2.7}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dim\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Input()}{28}{subsubsection.3.13.2.7}
+\contentsline {subsubsection}{\numberline {3.13.2.8}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dim\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Output()}{28}{subsubsection.3.13.2.8}
+\contentsline {section}{\numberline {3.14}R\IeC {\'e}f\IeC {\'e}rence de la classe Couche\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Activation}{28}{section.3.14}
+\contentsline {subsection}{\numberline {3.14.1}Description d\IeC {\'e}taill\IeC {\'e}e}{29}{subsection.3.14.1}
+\contentsline {section}{\numberline {3.15}R\IeC {\'e}f\IeC {\'e}rence de la classe Couche\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Combinaison}{30}{section.3.15}
+\contentsline {subsection}{\numberline {3.15.1}Description d\IeC {\'e}taill\IeC {\'e}e}{31}{subsection.3.15.1}
+\contentsline {subsection}{\numberline {3.15.2}Documentation des fonctions membres}{31}{subsection.3.15.2}
+\contentsline {subsubsection}{\numberline {3.15.2.1}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Params()}{31}{subsubsection.3.15.2.1}
+\contentsline {section}{\numberline {3.16}R\IeC {\'e}f\IeC {\'e}rence de la classe Couche\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Connectee}{32}{section.3.16}
+\contentsline {subsection}{\numberline {3.16.1}Description d\IeC {\'e}taill\IeC {\'e}e}{33}{subsection.3.16.1}
+\contentsline {subsection}{\numberline {3.16.2}Documentation des fonctions membres}{33}{subsection.3.16.2}
+\contentsline {subsubsection}{\numberline {3.16.2.1}propagation()}{33}{subsubsection.3.16.2.1}
+\contentsline {section}{\numberline {3.17}R\IeC {\'e}f\IeC {\'e}rence de la classe Couche\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Connect\IeC {\'e}e}{33}{section.3.17}
+\contentsline {subsection}{\numberline {3.17.1}Description d\IeC {\'e}taill\IeC {\'e}e}{33}{subsection.3.17.1}
+\contentsline {section}{\numberline {3.18}R\IeC {\'e}f\IeC {\'e}rence de la classe Couche\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Convolutive}{34}{section.3.18}
+\contentsline {subsection}{\numberline {3.18.1}Description d\IeC {\'e}taill\IeC {\'e}e}{35}{subsection.3.18.1}
+\contentsline {subsection}{\numberline {3.18.2}Documentation des constructeurs et destructeur}{36}{subsection.3.18.2}
+\contentsline {subsubsection}{\numberline {3.18.2.1}Couche\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Convolutive()}{36}{subsubsection.3.18.2.1}
+\contentsline {subsection}{\numberline {3.18.3}Documentation des fonctions membres}{36}{subsection.3.18.3}
+\contentsline {subsubsection}{\numberline {3.18.3.1}propagation()}{36}{subsubsection.3.18.3.1}
+\contentsline {subsubsection}{\numberline {3.18.3.2}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Params()}{37}{subsubsection.3.18.3.2}
+\contentsline {section}{\numberline {3.19}R\IeC {\'e}f\IeC {\'e}rence de la classe Dim\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tenseur}{37}{section.3.19}
+\contentsline {subsection}{\numberline {3.19.1}Description d\IeC {\'e}taill\IeC {\'e}e}{37}{subsection.3.19.1}
+\contentsline {subsection}{\numberline {3.19.2}Documentation des fonctions membres}{37}{subsection.3.19.2}
+\contentsline {subsubsection}{\numberline {3.19.2.1}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dim()}{38}{subsubsection.3.19.2.1}
+\contentsline {subsubsection}{\numberline {3.19.2.2}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Ordre()}{38}{subsubsection.3.19.2.2}
+\contentsline {section}{\numberline {3.20}R\IeC {\'e}f\IeC {\'e}rence de la classe Donnee}{38}{section.3.20}
+\contentsline {subsection}{\numberline {3.20.1}Description d\IeC {\'e}taill\IeC {\'e}e}{39}{subsection.3.20.1}
+\contentsline {subsection}{\numberline {3.20.2}Documentation des fonctions membres}{39}{subsection.3.20.2}
+\contentsline {subsubsection}{\numberline {3.20.2.1}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Entree()}{39}{subsubsection.3.20.2.1}
+\contentsline {subsubsection}{\numberline {3.20.2.2}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Sortie()}{39}{subsubsection.3.20.2.2}
+\contentsline {subsubsection}{\numberline {3.20.2.3}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Entree()}{39}{subsubsection.3.20.2.3}
+\contentsline {subsubsection}{\numberline {3.20.2.4}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Sortie()}{40}{subsubsection.3.20.2.4}
+\contentsline {section}{\numberline {3.21}R\IeC {\'e}f\IeC {\'e}rence de la classe Donnees}{40}{section.3.21}
+\contentsline {subsection}{\numberline {3.21.1}Description d\IeC {\'e}taill\IeC {\'e}e}{41}{subsection.3.21.1}
+\contentsline {subsection}{\numberline {3.21.2}Documentation des fonctions membres}{41}{subsection.3.21.2}
+\contentsline {subsubsection}{\numberline {3.21.2.1}ajouter\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Donnee()}{41}{subsubsection.3.21.2.1}
+\contentsline {subsubsection}{\numberline {3.21.2.2}ajouter\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Donnees()}{41}{subsubsection.3.21.2.2}
+\contentsline {subsubsection}{\numberline {3.21.2.3}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Donnee()}{42}{subsubsection.3.21.2.3}
+\contentsline {subsubsection}{\numberline {3.21.2.4}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Donnees()}{42}{subsubsection.3.21.2.4}
+\contentsline {subsubsection}{\numberline {3.21.2.5}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Nb\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Donnees()}{42}{subsubsection.3.21.2.5}
+\contentsline {section}{\numberline {3.22}R\IeC {\'e}f\IeC {\'e}rence de la classe Erreur}{43}{section.3.22}
+\contentsline {subsection}{\numberline {3.22.1}Description d\IeC {\'e}taill\IeC {\'e}e}{43}{subsection.3.22.1}
+\contentsline {subsection}{\numberline {3.22.2}Documentation des fonctions membres}{43}{subsection.3.22.2}
+\contentsline {subsubsection}{\numberline {3.22.2.1}derivee()}{43}{subsubsection.3.22.2.1}
+\contentsline {subsubsection}{\numberline {3.22.2.2}eval()}{44}{subsubsection.3.22.2.2}
+\contentsline {section}{\numberline {3.23}R\IeC {\'e}f\IeC {\'e}rence de la classe Erreur\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Entropie\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Croisee}{44}{section.3.23}
+\contentsline {subsection}{\numberline {3.23.1}Description d\IeC {\'e}taill\IeC {\'e}e}{45}{subsection.3.23.1}
+\contentsline {section}{\numberline {3.24}R\IeC {\'e}f\IeC {\'e}rence de la classe Erreur\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L1}{46}{section.3.24}
+\contentsline {subsection}{\numberline {3.24.1}Description d\IeC {\'e}taill\IeC {\'e}e}{46}{subsection.3.24.1}
+\contentsline {section}{\numberline {3.25}R\IeC {\'e}f\IeC {\'e}rence de la classe Erreur\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Quadratique}{47}{section.3.25}
+\contentsline {subsection}{\numberline {3.25.1}Description d\IeC {\'e}taill\IeC {\'e}e}{48}{subsection.3.25.1}
+\contentsline {section}{\numberline {3.26}R\IeC {\'e}f\IeC {\'e}rence du mod\IeC {\`e}le de la classe Graphe$<$ Type $>$}{48}{section.3.26}
+\contentsline {subsection}{\numberline {3.26.1}Description d\IeC {\'e}taill\IeC {\'e}e}{48}{subsection.3.26.1}
+\contentsline {subsection}{\numberline {3.26.2}Documentation des fonctions membres}{49}{subsection.3.26.2}
+\contentsline {subsubsection}{\numberline {3.26.2.1}ajouter\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Arc()}{49}{subsubsection.3.26.2.1}
+\contentsline {subsubsection}{\numberline {3.26.2.2}ajouter\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Noeud()}{49}{subsubsection.3.26.2.2}
+\contentsline {subsubsection}{\numberline {3.26.2.3}contient\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Cycle()}{50}{subsubsection.3.26.2.3}
+\contentsline {subsubsection}{\numberline {3.26.2.4}est\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Connexe()}{50}{subsubsection.3.26.2.4}
+\contentsline {subsubsection}{\numberline {3.26.2.5}supprimer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Arc()}{50}{subsubsection.3.26.2.5}
+\contentsline {subsubsection}{\numberline {3.26.2.6}supprimer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Noeud()}{51}{subsubsection.3.26.2.6}
+\contentsline {section}{\numberline {3.27}R\IeC {\'e}f\IeC {\'e}rence de la classe Matrice}{51}{section.3.27}
+\contentsline {subsection}{\numberline {3.27.1}Description d\IeC {\'e}taill\IeC {\'e}e}{52}{subsection.3.27.1}
+\contentsline {subsection}{\numberline {3.27.2}Documentation des fonctions membres}{52}{subsection.3.27.2}
+\contentsline {subsubsection}{\numberline {3.27.2.1}produit\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Matriciel()}{52}{subsubsection.3.27.2.1}
+\contentsline {section}{\numberline {3.28}R\IeC {\'e}f\IeC {\'e}rence de la classe Max\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Pooling}{53}{section.3.28}
+\contentsline {subsection}{\numberline {3.28.1}Description d\IeC {\'e}taill\IeC {\'e}e}{54}{subsection.3.28.1}
+\contentsline {subsection}{\numberline {3.28.2}Documentation des fonctions membres}{54}{subsection.3.28.2}
+\contentsline {subsubsection}{\numberline {3.28.2.1}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Pool\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}X()}{54}{subsubsection.3.28.2.1}
+\contentsline {subsubsection}{\numberline {3.28.2.2}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Pool\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Y()}{54}{subsubsection.3.28.2.2}
+\contentsline {subsubsection}{\numberline {3.28.2.3}propagation()}{54}{subsubsection.3.28.2.3}
+\contentsline {subsubsection}{\numberline {3.28.2.4}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Pool\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}X()}{55}{subsubsection.3.28.2.4}
+\contentsline {subsubsection}{\numberline {3.28.2.5}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Pool\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Y()}{55}{subsubsection.3.28.2.5}
+\contentsline {section}{\numberline {3.29}R\IeC {\'e}f\IeC {\'e}rence de la classe Neurone}{56}{section.3.29}
+\contentsline {subsection}{\numberline {3.29.1}Description d\IeC {\'e}taill\IeC {\'e}e}{57}{subsection.3.29.1}
+\contentsline {section}{\numberline {3.30}R\IeC {\'e}f\IeC {\'e}rence de la classe Optimisateur}{57}{section.3.30}
+\contentsline {subsection}{\numberline {3.30.1}Description d\IeC {\'e}taill\IeC {\'e}e}{57}{subsection.3.30.1}
+\contentsline {section}{\numberline {3.31}R\IeC {\'e}f\IeC {\'e}rence de la classe Panneau}{58}{section.3.31}
+\contentsline {subsection}{\numberline {3.31.1}Description d\IeC {\'e}taill\IeC {\'e}e}{59}{subsection.3.31.1}
+\contentsline {subsection}{\numberline {3.31.2}Documentation des fonctions membres}{59}{subsection.3.31.2}
+\contentsline {subsubsection}{\numberline {3.31.2.1}afficher()}{59}{subsubsection.3.31.2.1}
+\contentsline {subsubsection}{\numberline {3.31.2.2}Boite\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Architecture()}{59}{subsubsection.3.31.2.2}
+\contentsline {subsubsection}{\numberline {3.31.2.3}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Reseau\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Neurones()}{60}{subsubsection.3.31.2.3}
+\contentsline {section}{\numberline {3.32}R\IeC {\'e}f\IeC {\'e}rence de la classe Panneau\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Architecture}{60}{section.3.32}
+\contentsline {subsection}{\numberline {3.32.1}Description d\IeC {\'e}taill\IeC {\'e}e}{61}{subsection.3.32.1}
+\contentsline {section}{\numberline {3.33}R\IeC {\'e}f\IeC {\'e}rence de la classe Parametres\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Apprentissage}{62}{section.3.33}
+\contentsline {subsection}{\numberline {3.33.1}Description d\IeC {\'e}taill\IeC {\'e}e}{62}{subsection.3.33.1}
+\contentsline {subsection}{\numberline {3.33.2}Documentation des fonctions membres}{62}{subsection.3.33.2}
+\contentsline {subsubsection}{\numberline {3.33.2.1}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Nb\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Epoques()}{62}{subsubsection.3.33.2.1}
+\contentsline {subsubsection}{\numberline {3.33.2.2}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Taux\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Apprentissage()}{63}{subsubsection.3.33.2.2}
+\contentsline {subsubsection}{\numberline {3.33.2.3}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Nb\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Epoques()}{63}{subsubsection.3.33.2.3}
+\contentsline {subsubsection}{\numberline {3.33.2.4}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Taux\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Apprentissage()}{63}{subsubsection.3.33.2.4}
+\contentsline {section}{\numberline {3.34}R\IeC {\'e}f\IeC {\'e}rence de la classe Pretraitement}{63}{section.3.34}
+\contentsline {subsection}{\numberline {3.34.1}Description d\IeC {\'e}taill\IeC {\'e}e}{64}{subsection.3.34.1}
+\contentsline {subsection}{\numberline {3.34.2}Documentation des fonctions membres}{64}{subsection.3.34.2}
+\contentsline {subsubsection}{\numberline {3.34.2.1}charger\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Donnees()}{64}{subsubsection.3.34.2.1}
+\contentsline {subsubsection}{\numberline {3.34.2.2}charger\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}N()}{65}{subsubsection.3.34.2.2}
+\contentsline {subsubsection}{\numberline {3.34.2.3}csv\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}To\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tenseur()}{65}{subsubsection.3.34.2.3}
+\contentsline {subsubsection}{\numberline {3.34.2.4}denormaliser()}{65}{subsubsection.3.34.2.4}
+\contentsline {subsubsection}{\numberline {3.34.2.5}image\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}To\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tenseur()}{66}{subsubsection.3.34.2.5}
+\contentsline {subsubsection}{\numberline {3.34.2.6}normaliser()}{66}{subsubsection.3.34.2.6}
+\contentsline {section}{\numberline {3.35}R\IeC {\'e}f\IeC {\'e}rence de la classe Re\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}LU}{67}{section.3.35}
+\contentsline {subsection}{\numberline {3.35.1}Description d\IeC {\'e}taill\IeC {\'e}e}{67}{subsection.3.35.1}
+\contentsline {subsection}{\numberline {3.35.2}Documentation des fonctions membres}{68}{subsection.3.35.2}
+\contentsline {subsubsection}{\numberline {3.35.2.1}propagation()}{68}{subsubsection.3.35.2.1}
+\contentsline {section}{\numberline {3.36}R\IeC {\'e}f\IeC {\'e}rence de la classe Reseau\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Neurones}{68}{section.3.36}
+\contentsline {subsection}{\numberline {3.36.1}Description d\IeC {\'e}taill\IeC {\'e}e}{69}{subsection.3.36.1}
+\contentsline {subsection}{\numberline {3.36.2}Documentation des fonctions membres}{70}{subsection.3.36.2}
+\contentsline {subsubsection}{\numberline {3.36.2.1}ajouter\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Couche\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Finale()}{70}{subsubsection.3.36.2.1}
+\contentsline {subsubsection}{\numberline {3.36.2.2}ajouter\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Couche\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Initiale()}{70}{subsubsection.3.36.2.2}
+\contentsline {subsubsection}{\numberline {3.36.2.3}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Nom()}{70}{subsubsection.3.36.2.3}
+\contentsline {subsubsection}{\numberline {3.36.2.4}propagation()}{70}{subsubsection.3.36.2.4}
+\contentsline {subsubsection}{\numberline {3.36.2.5}supprimer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Couche\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Finale()}{71}{subsubsection.3.36.2.5}
+\contentsline {subsubsection}{\numberline {3.36.2.6}supprimer\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Couche\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Initiale()}{71}{subsubsection.3.36.2.6}
+\contentsline {section}{\numberline {3.37}R\IeC {\'e}f\IeC {\'e}rence de la classe Sigmoid}{71}{section.3.37}
+\contentsline {subsection}{\numberline {3.37.1}Description d\IeC {\'e}taill\IeC {\'e}e}{72}{subsection.3.37.1}
+\contentsline {subsection}{\numberline {3.37.2}Documentation des fonctions membres}{73}{subsection.3.37.2}
+\contentsline {subsubsection}{\numberline {3.37.2.1}propagation()}{73}{subsubsection.3.37.2.1}
+\contentsline {section}{\numberline {3.38}R\IeC {\'e}f\IeC {\'e}rence de la classe TanH}{74}{section.3.38}
+\contentsline {subsection}{\numberline {3.38.1}Description d\IeC {\'e}taill\IeC {\'e}e}{75}{subsection.3.38.1}
+\contentsline {subsection}{\numberline {3.38.2}Documentation des fonctions membres}{75}{subsection.3.38.2}
+\contentsline {subsubsection}{\numberline {3.38.2.1}propagation()}{75}{subsubsection.3.38.2.1}
+\contentsline {section}{\numberline {3.39}R\IeC {\'e}f\IeC {\'e}rence de la classe Tenseur}{76}{section.3.39}
+\contentsline {subsection}{\numberline {3.39.1}Description d\IeC {\'e}taill\IeC {\'e}e}{76}{subsection.3.39.1}
+\contentsline {subsection}{\numberline {3.39.2}Documentation des constructeurs et destructeur}{77}{subsection.3.39.2}
+\contentsline {subsubsection}{\numberline {3.39.2.1}Tenseur()}{77}{subsubsection.3.39.2.1}
+\contentsline {subsection}{\numberline {3.39.3}Documentation des fonctions membres}{77}{subsection.3.39.3}
+\contentsline {subsubsection}{\numberline {3.39.3.1}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dim()}{77}{subsubsection.3.39.3.1}
+\contentsline {subsubsection}{\numberline {3.39.3.2}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Valeur()}{77}{subsubsection.3.39.3.2}
+\contentsline {subsubsection}{\numberline {3.39.3.3}produit\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Terme\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Terme()}{77}{subsubsection.3.39.3.3}
+\contentsline {subsubsection}{\numberline {3.39.3.4}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dim()}{78}{subsubsection.3.39.3.4}
+\contentsline {subsubsection}{\numberline {3.39.3.5}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Valeur()}{78}{subsubsection.3.39.3.5}
+\contentsline {section}{\numberline {3.40}R\IeC {\'e}f\IeC {\'e}rence de la classe Test\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Couche}{78}{section.3.40}
+\contentsline {subsection}{\numberline {3.40.1}Description d\IeC {\'e}taill\IeC {\'e}e}{80}{subsection.3.40.1}
+\contentsline {section}{\numberline {3.41}R\IeC {\'e}f\IeC {\'e}rence de la classe Test\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Donnees}{80}{section.3.41}
+\contentsline {subsection}{\numberline {3.41.1}Description d\IeC {\'e}taill\IeC {\'e}e}{81}{subsection.3.41.1}
+\contentsline {section}{\numberline {3.42}R\IeC {\'e}f\IeC {\'e}rence de la classe Test\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Graphe}{81}{section.3.42}
+\contentsline {subsection}{\numberline {3.42.1}Description d\IeC {\'e}taill\IeC {\'e}e}{82}{subsection.3.42.1}
+\contentsline {section}{\numberline {3.43}R\IeC {\'e}f\IeC {\'e}rence de la classe Test\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Reseau\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Neurones}{83}{section.3.43}
+\contentsline {subsection}{\numberline {3.43.1}Description d\IeC {\'e}taill\IeC {\'e}e}{83}{subsection.3.43.1}
+\contentsline {section}{\numberline {3.44}R\IeC {\'e}f\IeC {\'e}rence de la classe Test\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tenseur}{84}{section.3.44}
+\contentsline {subsection}{\numberline {3.44.1}Description d\IeC {\'e}taill\IeC {\'e}e}{84}{subsection.3.44.1}
+\contentsline {section}{\numberline {3.45}R\IeC {\'e}f\IeC {\'e}rence de la classe Vecteur}{85}{section.3.45}
+\contentsline {subsection}{\numberline {3.45.1}Description d\IeC {\'e}taill\IeC {\'e}e}{85}{subsection.3.45.1}
+\contentsline {subsection}{\numberline {3.45.2}Documentation des fonctions membres}{86}{subsection.3.45.2}
+\contentsline {subsubsection}{\numberline {3.45.2.1}produit\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Scalaire()}{86}{subsubsection.3.45.2.1}
+\contentsline {chapter}{Index}{87}{section*.109}

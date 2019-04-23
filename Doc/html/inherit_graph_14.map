@@ -1,0 +1,5 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node1" href="$class_tenseur.html" title="Classe liée à la manipulation de tenseurs. " alt="" coords="5,31,75,57"/>
+<area shape="rect" id="node2" href="$class_matrice.html" title="Classe qui crée une matrice. " alt="" coords="123,5,189,32"/>
+<area shape="rect" id="node3" href="$class_vecteur.html" title="Classe qui crée un vecteur. " alt="" coords="123,56,189,83"/>
+</map>

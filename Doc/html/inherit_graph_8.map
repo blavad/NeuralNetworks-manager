@@ -1,0 +1,6 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node1" href="$class_erreur.html" title="Gère le calcul de l&#39;erreur commise lors d&#39;un apprentissage. " alt="" coords="5,56,63,83"/>
+<area shape="rect" id="node2" href="$class_erreur_entropie_croisee.html" title="Gère le calcul de l&#39;erreur commise suivant l&#39;entropie croisee lors d&#39;un apprentissage. " alt="" coords="111,5,261,32"/>
+<area shape="rect" id="node3" href="$class_erreur_l1.html" title="Gère le calcul de l&#39;erreur commise lors d&#39;un apprentissage suivant la norme L1. " alt="" coords="151,56,221,83"/>
+<area shape="rect" id="node4" href="$class_erreur_quadratique.html" title="Gère le calcul de l&#39;erreur commise de facon quadratique lors d&#39;un apprentissage. " alt="" coords="123,107,249,133"/>
+</map>

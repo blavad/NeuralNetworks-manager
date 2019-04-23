@@ -1,0 +1,6 @@
+<map id="CoucheActivation" name="CoucheActivation">
+<area shape="rect" id="node3" href="$class_re_l_u.html" title="ReLU" alt="" coords="5,155,61,181"/>
+<area shape="rect" id="node4" href="$class_sigmoid.html" title="Création de la fonction ReLU. " alt="" coords="85,155,155,181"/>
+<area shape="rect" id="node5" href="$class_tan_h.html" title="Création d&#39;une fonction tangente hyperbolique. " alt="" coords="179,155,234,181"/>
+<area shape="rect" id="node2" href="$class_couche.html" title="Classe liée à la couche. " alt="" coords="87,5,153,32"/>
+</map>

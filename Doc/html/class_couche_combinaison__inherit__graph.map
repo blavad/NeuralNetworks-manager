@@ -1,0 +1,6 @@
+<map id="CoucheCombinaison" name="CoucheCombinaison">
+<area shape="rect" id="node3" href="$class_couche_connectee.html" title="CoucheConnectee" alt="" coords="5,155,136,181"/>
+<area shape="rect" id="node5" href="$class_couche_convolutive.html" title="Création d&#39;une couche convolutive. " alt="" coords="160,155,296,181"/>
+<area shape="rect" id="node2" href="$class_couche.html" title="Classe liée à la couche. " alt="" coords="116,5,183,32"/>
+<area shape="rect" id="node4" href="$class_neurone.html" title="Neurone" alt="" coords="35,229,106,256"/>
+</map>

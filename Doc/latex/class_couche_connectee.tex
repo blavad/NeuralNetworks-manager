@@ -1,0 +1,70 @@
+\hypertarget{class_couche_connectee}{}\section{Référence de la classe Couche\+Connectee}
+\label{class_couche_connectee}\index{Couche\+Connectee@{Couche\+Connectee}}
+
+
+Graphe d\textquotesingle{}héritage de Couche\+Connectee\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{class_couche_connectee__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Couche\+Connectee\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{class_couche_connectee__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_couche_connectee_a57bb158c3d73fc0b19cc44cdc2946e0d}\label{class_couche_connectee_a57bb158c3d73fc0b19cc44cdc2946e0d}} 
+\hyperlink{class_couche_connectee_a57bb158c3d73fc0b19cc44cdc2946e0d}{Couche\+Connectee} (\hyperlink{class_dim_tenseur}{Dim\+Tenseur} din, \hyperlink{class_dim_tenseur}{Dim\+Tenseur} dout, std\+::string no, \hyperlink{class_tenseur}{Tenseur} par)
+\begin{DoxyCompactList}\small\item\em Constructeur d\textquotesingle{}une couche connectée à partir du nombre de sorties. \end{DoxyCompactList}\item 
+\hyperlink{class_tenseur}{Tenseur} \hyperlink{class_couche_connectee_acd60c499c6c74f914795f45f3f8084d0}{propagation} (\hyperlink{class_tenseur}{Tenseur} t)
+\begin{DoxyCompactList}\small\item\em Methode permettant la propagation d\textquotesingle{}une couche à une autre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+
+
+Définition à la ligne 17 du fichier Couche\+Connectee.\+hpp.
+
+
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_couche_connectee_acd60c499c6c74f914795f45f3f8084d0}\label{class_couche_connectee_acd60c499c6c74f914795f45f3f8084d0}} 
+\index{Couche\+Connectee@{Couche\+Connectee}!propagation@{propagation}}
+\index{propagation@{propagation}!Couche\+Connectee@{Couche\+Connectee}}
+\subsubsection{\texorpdfstring{propagation()}{propagation()}}
+{\footnotesize\ttfamily \hyperlink{class_tenseur}{Tenseur} Couche\+Connectee\+::propagation (\begin{DoxyParamCaption}\item[{\hyperlink{class_tenseur}{Tenseur}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Methode permettant la propagation d\textquotesingle{}une couche à une autre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em t} & le tenseur d\textquotesingle{}entree \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la sortie de la couche 
+\end{DoxyReturn}
+
+
+Réimplémentée à partir de \hyperlink{class_couche_a1f0ed59e21020f5d4f37933af4d1b1e5}{Couche}.
+
+
+
+Définition à la ligne 8 du fichier Couche\+Connectee.\+cpp.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+src/deeplearn/archi/Couche\+Connectee.\+hpp\item 
+src/deeplearn/archi/Couche\+Connectee.\+cpp\end{DoxyCompactItemize}

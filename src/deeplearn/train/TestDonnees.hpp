@@ -1,5 +1,6 @@
 #include <vector>
 #include <cppunit/TestFixture.h>
+#include <cppunit/TestAssert.h>
 #include "Donnees.hpp"
 #include "Donnee.hpp"
 
@@ -18,23 +19,20 @@
 
 using namespace CppUnit;
 
-class TestDonnees : public CppUnit::TextFixture {
+class TestDonnees : public CppUnit::TestFixture {
 
 private :
 
 	Donnees d1;
-	std::vector<Donnee> d2
+	std::vector<Donnee> d2;
 
 public:
 
-    /** \brief Initialiser les variables */
-    void setUp();
-
-    /** \brief Supprimer les variables */
-    void tearDown();
-
     /** \brief Vérifier que les données s'ajoutent bien */
     void testAjouterDonnees();
+
+   /** \brief Vérifier que la donnee s'ajoute bien */
+    void testAjouterDonnee();
 
     /** \brief Vérifier que les données se mélangent bien */
     void testMelanger();

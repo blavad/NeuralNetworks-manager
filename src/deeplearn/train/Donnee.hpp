@@ -24,6 +24,12 @@ class Donnee {
         Tenseur sortie;
 
     public :
+
+        /**
+         * \brief Constructeur sans paramètre de Donnee
+         */
+        Donnee();
+
         /**
          * \brief Constructeur de Donnee avec une entree et une sortie
          */
@@ -57,6 +63,7 @@ class Donnee {
          */
         void setSortie(Tenseur s);
 
+	
 };
 
 #endif
