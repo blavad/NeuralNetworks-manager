@@ -1,9 +1,7 @@
 #ifndef __COUCHE_CONNECTEE_HPP__
 #define __COUCHE_CONNECTEE_HPP__
 
-#include <Tenseur.hpp>
-#include <DimTenseur.hpp>
-#include <CoucheCombinaison.hpp>
+#include "CoucheCombinaison.hpp"
 
 /** 
  * \class CoucheConnectee
@@ -23,7 +21,7 @@ class CoucheConnectee : public CoucheCombinaison
     /**
      * \brief Constructeur d'une couche connectée à partir du nombre de sorties
      */
-    CoucheConnectee(int nb_out);
+    CoucheConnectee(DimTenseur din, DimTenseur dout, std::string no, Tenseur par);
 
     /**
      * \fn Tenseur propagation(Tenseur t)

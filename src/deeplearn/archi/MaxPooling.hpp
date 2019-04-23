@@ -1,9 +1,7 @@
 #ifndef __MAX_POOLING_HPP__
 #define __MAX_POOLING_HPP__
 
-#include <Tenseur.hpp>
-#include <DimTenseur.hpp>
-#include <Couche.hpp>
+#include "Couche.hpp"
 
 /** 
  * \class MaxPooling 
@@ -16,33 +14,67 @@
  * 
  */
 
-class MaxPooling : public Couche
-{
 
-private:
-  /** \brief Le nombre de pixels reduits a un seul dans la premiere direction*/
-  int pool_x;
-  /** \brief Le nombre de pixels reduits a un seul dans la seconde direction*/
-  int pool_y;
+class MaxPooling : public Couche {
 
-public:
-  /**
-   * \brief Constructeur afin d'obtenir une image de taille pool_x par pool_y.
-   */
-  MaxPooling(DimTenseur dio, int pool_x, int pool_y);
 
-  /**
-   * \brief Constructeur afin d'obtenir une image de taille pool par pool.
-   */
-  MaxPooling(DimTenseur dio, int pool);
+    private :
+     /** \brief Nombre de pixels dimension 1*/
+    int pool_x;
 
-  /**
-   * \fn Tenseur propagation(Tenseur t)
-   * \brief Méthode permettant la propagation d'une couche à une autre.
-   * \param t le tenseur d'entree
-	 * \return la sortie de la couche
-   */
-  Tenseur propagation(Tenseur t);
+    /** \brief Nombre de pixels dimension 2*/
+    int pool_y;
+
+
+    public :
+
+        /**
+         * \brief Constructeur afin d'obtenir une image de taille pool_x par pool_y.
+         */
+        MaxPooling(DimTenseur din, DimTenseur dout, std::string no, int pl_x, int pl_y);
+
+       /**
+         * \brief Constructeur afin d'obtenir une image de taille pool par pool.
+         */
+        MaxPooling(DimTenseur din, DimTenseur dout, std::string no, int pl);
+	
+	/**
+         * \fn Tenseur propagation(Tenseur t)
+         * \brief Méthode permettant la propagation d'une couche à une autre.
+         * \param t le tenseur
+	 * \return Le tenseur à l'étape d'après
+         */
+        Tenseur propagation(Tenseur t);
+
+
+         /**
+         * \fn void setPoolX(int pl_x)
+         * \brief Méthode pour fixer le nombre de pixels en dimension x
+         * \param dimIn La dimension du tenseur d'entrée
+         */
+        void setPoolX(int pl_x );
+
+        /**
+         * \fn void setPoolY(int pl_y)
+         * \brief Méthode pour fixer le nombre de pixels en dimension y
+         * \param dimIn La dimension du tenseur de sortie
+         */
+        void setPoolY(int pl_y);
+
+        /**
+         * \fn int getPoolX()
+         * \brief Méthode pour obtenir le nombre de pixels fixé pour les images en dimension x
+         * \return Le nombre de pixels en dimension x
+         */
+        int getPoolX() const;
+
+        /**
+         * \fn int getPoolY()
+         * \brief Méthode pour obtenir le nombre de pixels fixé pour les images en dimension y
+         * \return Le nombre de pixels en dimension y
+         */
+        int getPoolY() const; 
+
 };
 
 #endif

@@ -1,7 +1,9 @@
 #include "Panneau.hpp"
+#include "Boite.hpp"
+#include "../deeplearn/train/ParametresApprentissage.hpp"
 
-#ifndef __PANNEAU_ARCHITECTURE_HPP__
-#define __PANNEAU_ARCHITECTURE_HPP__
+#ifndef __BOITE_PARAMETRAGE_HPP__
+#define __BOITE_PARAMETRAGE_HPP__
 
 
 /** 
@@ -14,7 +16,7 @@
  * Cette classe hérite de Boite
  * 
  */
-class BoiteParametrage {
+class BoiteParametrage : public Boite{
 
     private :
         /** \brief Les parametres d'aprentissage  */
@@ -27,7 +29,7 @@ class BoiteParametrage {
          * \brief Constucteur prenant en paramètre un Panneau
          * \param parent un Panneau contenant déja un réseau de neurones
          */
-        BoiteCParametrage(Panneau parent);
+        BoiteParametrage(Panneau parent);
 
  
  

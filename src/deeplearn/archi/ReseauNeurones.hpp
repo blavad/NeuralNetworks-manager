@@ -3,9 +3,9 @@
 
 #include <vector>
 
-#include <Graphe.hpp>
-#include <Couche.hpp>
-#include <Tenseur.hpp>
+#include "Graphe.hpp"
+#include "Couche.hpp"
+#include "Tenseur.hpp"
 
 /** 
  * \class ReseauNeurones

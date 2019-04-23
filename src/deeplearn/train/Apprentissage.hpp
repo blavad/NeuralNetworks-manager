@@ -1,7 +1,7 @@
 #ifndef __APPRENTISSAGE_HPP__
 #define __APPRENTISSAGE_HPP__
 
-#include "archi/ReseauNeurones.hpp"
+#include "../archi/ReseauNeurones.hpp"
 #include "Optimisateur.hpp"
 #include "Erreur.hpp"
 #include "Donnees.hpp"

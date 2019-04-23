@@ -1,7 +1,7 @@
 #ifndef __DONNEE_HPP__
 #define __DONNEE_HPP__
 
-#include "Tenseur.hpp"
+#include "../archi/Tenseur.hpp"
 
 /** 
  * \class Donnee

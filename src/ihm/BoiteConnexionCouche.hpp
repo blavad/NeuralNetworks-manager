@@ -1,10 +1,12 @@
-#include "Couche.hpp"
+
+#ifndef __BOITE_CONNEXION_COUCHE_HPP__
+#define __BOITE_CONNEXION_COUCHE_HPP__
+
+#include "../deeplearn/archi/Couche.hpp"
 #include "Panneau.hpp"
-
-
-#ifndef __PANNEAU_ARCHITECTURE_HPP__
-#define __PANNEAU_ARCHITECTURE_HPP__
-
+#include "Boite.hpp"
+ 
+ using namespace std;
 
 /** 
  * \class BoiteConnexionCouche
@@ -16,7 +18,7 @@
  * Module permettant le choix des couches à relier et la mise en place de leur liaison
  * 
  */
-class BoiteConnexionCouche {
+class BoiteConnexionCouche : public Boite {
 
     private :
         /** \brief La couche de depart de la connexion */

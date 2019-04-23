@@ -14,20 +14,56 @@
  * 
  */
 
-class DimTenseur
+
+class DimTenseur 
 {
-  private:
-    /** \brief entier correspondant à l'ordre du tenseur  */
-    int ordre;
+ 
 
-    /** \brief La liste des dimensions du tenseur */
-    std::vector<int> dim;
+    private :
+        /** \brief Entier correspondant à l'ordre du tenseur  */
+        int ordre;
 
-  public:
-    /**
-     * \brief Constructeur avec d'obtenir la dimension souhaitée.
-     */
-    DimTenseur(int dim, ...);
+        /** \brief La liste des dimensions du tenseur */
+        std::vector<int> dim;
+
+
+
+
+    public :
+
+
+        /**
+         * \brief Constructeur standard.
+         */
+        DimTenseur();
+
+
+
+        /**
+         * \brief Constructeur avec d'obtenir la dimension souhaitée.
+         */
+        DimTenseur(int ord, std::vector<int> di);
+
+
+
+         /**
+         * \fn int getOrdre()
+         * \brief Méthode pour obtenir l'ordre du tenseur
+         * \return l'ordre du tenseur
+         */
+        int getOrdre();
+
+
+
+         /**
+         * \fn DimTenseur getDim()
+         * \brief Méthode pour obtenir la liste des dimensions du tenseur
+         * \return la liste des dimensions du tenseur
+         */
+        std::vector<int> getDim();
+
+
+
 };
 
 #endif

@@ -1,9 +1,7 @@
 #ifndef __NEURONE_HPP__
 #define __NEURONE_HPP__
 
-#include <Tenseur.hpp>
-#include <DimTenseur.hpp>
-#include <CoucheConnectee.hpp>
+#include "CoucheConnectee.hpp"
 
 /** 
  * \class CoucheConnectée
@@ -23,7 +21,7 @@ class Neurone : public CoucheConnectee
     /**
      * \brief Constructeur d'un neurone
      */
-    Neurone();
+    Neurone(DimTenseur din, DimTenseur dout, std::string no, Tenseur par);
 };
 
 #endif

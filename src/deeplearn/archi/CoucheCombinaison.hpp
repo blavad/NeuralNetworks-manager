@@ -1,10 +1,7 @@
 #ifndef __COUCHE_COMBINAISON_HPP__
 #define __COUCHE_COMBINAISON_HPP__
 
-#include <Couche.hpp>
-#include <Tenseur.hpp>
-#include <DimTenseur.hpp>
-
+#include "Couche.hpp"
 /** 
  * \class CoucheCombinaison
  * \brief Gestion d'une couche de combinaison
@@ -24,6 +21,24 @@ class CoucheCombinaison : public Couche
     Tenseur params;
 
   public:
+
+
+    /**
+     * \brief Constructeur d'une couche à partir de la taille des tenseurs d'entrée/sortie
+    */
+    CoucheCombinaison(DimTenseur din, DimTenseur dout, std::string no, Tenseur par);
+
+
+
+
+    /**
+     * \fn void setParams()
+     * \brief setter les parametres de la couche.
+     */
+    void setParams(Tenseur nouvParams);
+
+
+
     /**
      * \fn Tenseur getParams()
      * \brief getter des parametres de la couche.

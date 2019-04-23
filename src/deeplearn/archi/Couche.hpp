@@ -1,10 +1,10 @@
 #ifndef __COUCHE_HPP__
 #define __COUCHE_HPP__
 
+#include "DimTenseur.hpp"
+#include "Tenseur.hpp"
 #include <string>
 
-#include <DimTenseur.hpp>
-#include <Tenseur.hpp>
 
 /** 
  * \class Couche
@@ -27,17 +27,24 @@ class Couche
         /** \brief La dimension du tenseur à la sortie de la couche */
         DimTenseur dim_out;
 
+	   /** \brief Le nom de la couche */
+        std::string nom;
+
+
+
+
       public:
         /**
          * \brief Constructeur d'une couche à partir de la taille des tenseurs d'entrée/sortie
          */
-        Couche(DimTenseur din, DimTenseur dout);
+        Couche(DimTenseur din, DimTenseur dout, std::string no);
+
 
         /**
          * \fn virtual Tenseur propagation(Tenseur t)
          * \brief Methode virtuelle permettant la propagation d'une couche à une autre.
          * \param t le tenseur d'entree
-	 * \return la sortie de la couche
+	    * \return la sortie de la couche
          */
         virtual Tenseur propagation(Tenseur t);
 
@@ -49,11 +56,6 @@ class Couche
          */
         virtual Tenseur derivee(Tenseur t);
 
-        /**
-         * \fn virtual bool afficher()
-         * \brief affiche la couche en question
-         */
-        virtual void afficher();
 
         /**
          * \fn void setDimInput(DimTenseur dimIn)
@@ -74,13 +76,30 @@ class Couche
          * \brief Méthode pour obtenir la taille du tenseur à l'entrée de la couche
          * \return La taille du tenseur d'entrée
          */
-        DimTenseur getDimInput();
+        DimTenseur getDimInput() const;
 
         /**
          * \fn DimTenseur getDimOutput()
          * \brief Méthode pour obtenir la taille du tenseur à la sortie de la couche
          * \return La taille du tenseur de sortie
          */
-        DimTenseur getDimOutput();
+        DimTenseur getDimOutput() const; 
+
+
+	   /**
+         * \fn string getNom()
+         * \brief Méthode pour obtenir le nom de la couche
+         * \return Le nom de la couche
+         */
+        std::string getNom() const;
+
+	   /**
+         * \fn virtual bool afficher()
+         * \brief Méthode pour savoir si la couche est affichée ou non
+         * \return booléen
+         */
+        virtual bool afficher();
+
+
 };
 #endif

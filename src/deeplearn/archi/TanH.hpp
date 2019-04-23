@@ -1,7 +1,7 @@
 #ifndef __TANH_HPP__
 #define __TANH_HPP__
 
-#include <CoucheActivation.hpp>
+#include "CoucheActivation.hpp"
 
 /** 
  * \class TanH
@@ -20,7 +20,7 @@ class TanH : public CoucheActivation
     /**
      * \brief Constructeur d'une fonction tangente hyperbolique.
      */
-    TanH();
+    TanH(DimTenseur din, DimTenseur dout, std::string no);
 
     /**
      * \fn Tenseur propagation(Tenseur t)
