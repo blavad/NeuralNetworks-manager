@@ -1,8 +1,9 @@
-#include "../deeplearn/archi/ReseauNeurones.hpp"
-#include <gtkmm.h>
-
 #ifndef __RESEAUNEURONES_HPP__
 #define __RESEAUNEURONES_HPP__
+
+#include "../deeplearn/archi/ReseauNeurones.hpp"
+#include <gtkmm.h>
+#include "BoiteArchitecture.hpp"
 
  using namespace std;
 
@@ -13,8 +14,6 @@
  * \version 1.0 
  * \date avril 2019
  *
- * ??
- * Cette classe hérite de ?? 
  */
 
 class Panneau {
@@ -25,6 +24,9 @@ class Panneau {
 
         /** \brief un Reseau de Neurones*/
         ReseauNeurones reseauNeurones;
+        
+        /** \brief une Boite Architecture */
+        BoiteArchitecture boiteArchi;
 
 
     public :
