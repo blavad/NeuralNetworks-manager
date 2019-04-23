@@ -1,0 +1,182 @@
+\hypertarget{class_tenseur}{}\section{Référence de la classe Tenseur}
+\label{class_tenseur}\index{Tenseur@{Tenseur}}
+
+
+Classe liée à la manipulation de tenseurs.  
+
+
+
+
+{\ttfamily \#include $<$Tenseur.\+hpp$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Tenseur\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{class_tenseur__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_tenseur_a936de784ba6d02e78456091b857c90d2}{Tenseur} (int dim)
+\begin{DoxyCompactList}\small\item\em Constructeur d\textquotesingle{}un tenseur dont la taille est fixée grâce à des entiers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_tenseur_a6a39e895e161502a104b28e108d5923e}\label{class_tenseur_a6a39e895e161502a104b28e108d5923e}} 
+\hyperlink{class_tenseur_a6a39e895e161502a104b28e108d5923e}{Tenseur} (void $\ast$val, \hyperlink{class_dim_tenseur}{Dim\+Tenseur} di)
+\begin{DoxyCompactList}\small\item\em Constructeur d\textquotesingle{}un tenseur dont la taille est fixée grâce à un objet \hyperlink{class_dim_tenseur}{Dim\+Tenseur}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_tenseur_ad8c217e97370fbe4fabe47c792f976a0}\label{class_tenseur_ad8c217e97370fbe4fabe47c792f976a0}} 
+void \hyperlink{class_tenseur_ad8c217e97370fbe4fabe47c792f976a0}{init\+Valeur\+Gaussienne} ()
+\begin{DoxyCompactList}\small\item\em Initialisation du tenseur selon une loi gaussienne. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_tenseur_ad56d975cf6954e6e38116b82bc4aca3a}\label{class_tenseur_ad56d975cf6954e6e38116b82bc4aca3a}} 
+void \hyperlink{class_tenseur_ad56d975cf6954e6e38116b82bc4aca3a}{init\+Valeur\+Nulle} ()
+\begin{DoxyCompactList}\small\item\em Initialisation du tenseur avec des valeurs nulles. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_tenseur_aba025d1b39fd6de6dba44b9ed4bc865a}\label{class_tenseur_aba025d1b39fd6de6dba44b9ed4bc865a}} 
+void \hyperlink{class_tenseur_aba025d1b39fd6de6dba44b9ed4bc865a}{init\+Valeur\+Unif} ()
+\begin{DoxyCompactList}\small\item\em Initialisation du tenseur selon une loi uniforme. \end{DoxyCompactList}\item 
+void \hyperlink{class_tenseur_add5cd51caa3aae69a44dc3f0bc2b9170}{set\+Valeur} (void $\ast$vl)
+\begin{DoxyCompactList}\small\item\em Méthode pour fixer la valeur du \hyperlink{class_tenseur}{Tenseur}. \end{DoxyCompactList}\item 
+void \hyperlink{class_tenseur_a161be386a5d179f538234fceb152e80a}{set\+Dim} (\hyperlink{class_dim_tenseur}{Dim\+Tenseur} di)
+\begin{DoxyCompactList}\small\item\em Méthode pour fixer la dimension du \hyperlink{class_tenseur}{Tenseur}. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{class_tenseur_abf24ad6abb135909d0ec82142da47188}{get\+Valeur} ()
+\begin{DoxyCompactList}\small\item\em Méthode pour obtenir la valeur du \hyperlink{class_tenseur}{Tenseur}. \end{DoxyCompactList}\item 
+\hyperlink{class_tenseur}{Tenseur} \hyperlink{class_tenseur_a616b8fc8cfee2c3f601c567ba42c7422}{produit\+Terme\+A\+Terme} (\hyperlink{class_tenseur}{Tenseur} t1)
+\begin{DoxyCompactList}\small\item\em Méthode qui calcule le produit terme à terme entre deux tenseurs. \end{DoxyCompactList}\item 
+\hyperlink{class_dim_tenseur}{Dim\+Tenseur} \hyperlink{class_tenseur_a84d2bb71deb6f4998327f6c9309c1ed4}{get\+Dim} ()
+\begin{DoxyCompactList}\small\item\em Méthode pour obtenir la dimension du \hyperlink{class_tenseur}{Tenseur}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Classe liée à la manipulation de tenseurs. 
+
+\begin{DoxyAuthor}{Auteur}
+Adrien 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2019
+\end{DoxyDate}
+Cette classe permet de créer un tenseur de la taille souhaitée. On peut initialiser un tenseur de trois façons différentes (uniforme,nulle,gaussienne). 
+
+Définition à la ligne 17 du fichier Tenseur.\+hpp.
+
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_tenseur_a936de784ba6d02e78456091b857c90d2}\label{class_tenseur_a936de784ba6d02e78456091b857c90d2}} 
+\index{Tenseur@{Tenseur}!Tenseur@{Tenseur}}
+\index{Tenseur@{Tenseur}!Tenseur@{Tenseur}}
+\subsubsection{\texorpdfstring{Tenseur()}{Tenseur()}}
+{\footnotesize\ttfamily Tenseur\+::\+Tenseur (\begin{DoxyParamCaption}\item[{int}]{dim }\end{DoxyParamCaption})}
+
+
+
+Constructeur d\textquotesingle{}un tenseur dont la taille est fixée grâce à des entiers. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em dim} & suite de dimensions \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_tenseur_a84d2bb71deb6f4998327f6c9309c1ed4}\label{class_tenseur_a84d2bb71deb6f4998327f6c9309c1ed4}} 
+\index{Tenseur@{Tenseur}!get\+Dim@{get\+Dim}}
+\index{get\+Dim@{get\+Dim}!Tenseur@{Tenseur}}
+\subsubsection{\texorpdfstring{get\+Dim()}{getDim()}}
+{\footnotesize\ttfamily \hyperlink{class_dim_tenseur}{Dim\+Tenseur} Tenseur\+::get\+Dim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Méthode pour obtenir la dimension du \hyperlink{class_tenseur}{Tenseur}. 
+
+\begin{DoxyReturn}{Renvoie}
+La dimension du \hyperlink{class_tenseur}{Tenseur} 
+\end{DoxyReturn}
+
+
+Définition à la ligne 51 du fichier Tenseur.\+cpp.
+
+\mbox{\Hypertarget{class_tenseur_abf24ad6abb135909d0ec82142da47188}\label{class_tenseur_abf24ad6abb135909d0ec82142da47188}} 
+\index{Tenseur@{Tenseur}!get\+Valeur@{get\+Valeur}}
+\index{get\+Valeur@{get\+Valeur}!Tenseur@{Tenseur}}
+\subsubsection{\texorpdfstring{get\+Valeur()}{getValeur()}}
+{\footnotesize\ttfamily int Tenseur\+::get\+Valeur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Méthode pour obtenir la valeur du \hyperlink{class_tenseur}{Tenseur}. 
+
+\begin{DoxyReturn}{Renvoie}
+La valeur du \hyperlink{class_tenseur}{Tenseur} 
+\end{DoxyReturn}
+
+
+Définition à la ligne 44 du fichier Tenseur.\+cpp.
+
+\mbox{\Hypertarget{class_tenseur_a616b8fc8cfee2c3f601c567ba42c7422}\label{class_tenseur_a616b8fc8cfee2c3f601c567ba42c7422}} 
+\index{Tenseur@{Tenseur}!produit\+Terme\+A\+Terme@{produit\+Terme\+A\+Terme}}
+\index{produit\+Terme\+A\+Terme@{produit\+Terme\+A\+Terme}!Tenseur@{Tenseur}}
+\subsubsection{\texorpdfstring{produit\+Terme\+A\+Terme()}{produitTermeATerme()}}
+{\footnotesize\ttfamily \hyperlink{class_tenseur}{Tenseur} Tenseur\+::produit\+Terme\+A\+Terme (\begin{DoxyParamCaption}\item[{\hyperlink{class_tenseur}{Tenseur}}]{t1 }\end{DoxyParamCaption})}
+
+
+
+Méthode qui calcule le produit terme à terme entre deux tenseurs. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em un} & tenseur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un tenseur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tenseur_a161be386a5d179f538234fceb152e80a}\label{class_tenseur_a161be386a5d179f538234fceb152e80a}} 
+\index{Tenseur@{Tenseur}!set\+Dim@{set\+Dim}}
+\index{set\+Dim@{set\+Dim}!Tenseur@{Tenseur}}
+\subsubsection{\texorpdfstring{set\+Dim()}{setDim()}}
+{\footnotesize\ttfamily void Tenseur\+::set\+Dim (\begin{DoxyParamCaption}\item[{\hyperlink{class_dim_tenseur}{Dim\+Tenseur}}]{di }\end{DoxyParamCaption})}
+
+
+
+Méthode pour fixer la dimension du \hyperlink{class_tenseur}{Tenseur}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em vl} & La dimension du tenseur \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 37 du fichier Tenseur.\+cpp.
+
+\mbox{\Hypertarget{class_tenseur_add5cd51caa3aae69a44dc3f0bc2b9170}\label{class_tenseur_add5cd51caa3aae69a44dc3f0bc2b9170}} 
+\index{Tenseur@{Tenseur}!set\+Valeur@{set\+Valeur}}
+\index{set\+Valeur@{set\+Valeur}!Tenseur@{Tenseur}}
+\subsubsection{\texorpdfstring{set\+Valeur()}{setValeur()}}
+{\footnotesize\ttfamily void Tenseur\+::set\+Valeur (\begin{DoxyParamCaption}\item[{void $\ast$}]{vl }\end{DoxyParamCaption})}
+
+
+
+Méthode pour fixer la valeur du \hyperlink{class_tenseur}{Tenseur}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em vl} & La valeur du tenseur \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 30 du fichier Tenseur.\+cpp.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+src/deeplearn/archi/Tenseur.\+hpp\item 
+src/deeplearn/archi/Tenseur.\+cpp\end{DoxyCompactItemize}

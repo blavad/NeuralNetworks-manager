@@ -1,0 +1,140 @@
+\hypertarget{classBoiteConnexionCouche}{}\section{Référence de la classe Boite\+Connexion\+Couche}
+\label{classBoiteConnexionCouche}\index{Boite\+Connexion\+Couche@{Boite\+Connexion\+Couche}}
+
+
+Gestion de l\textquotesingle{}interaction Homme/\+Machine liée à la liaison entre 2 couches.  
+
+
+
+
+{\ttfamily \#include $<$Boite\+Connexion\+Couche.\+hpp$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Boite\+Connexion\+Couche\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classBoiteConnexionCouche__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Boite\+Connexion\+Couche\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classBoiteConnexionCouche__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBoiteConnexionCouche_a69b773ea326589e81c3beba4f8eef4e7}{Boite\+Connexion\+Couche} (\hyperlink{classPanneau}{Panneau} parent)
+\begin{DoxyCompactList}\small\item\em Constucteur prenant en paramètre un \hyperlink{classPanneau}{Panneau}. \end{DoxyCompactList}\item 
+void \hyperlink{classBoiteConnexionCouche_aca89aac7d4ae0ba89828c6d542790925}{set\+Couche\+Initiale} (\hyperlink{classCouche}{Couche} couche)
+\begin{DoxyCompactList}\small\item\em Setteur permetant de changer la valeur de la \hyperlink{classCouche}{Couche} Initiale. \end{DoxyCompactList}\item 
+void \hyperlink{classBoiteConnexionCouche_a9469138a3db603eddacf8757595ad6cf}{set\+Couche\+Finale} (\hyperlink{classCouche}{Couche} couche)
+\begin{DoxyCompactList}\small\item\em Setteur permetant de changer la valeur de la \hyperlink{classCouche}{Couche} finale. \end{DoxyCompactList}\item 
+\hyperlink{classCouche}{Couche} \hyperlink{classBoiteConnexionCouche_a3b0faf67baf198a1abaafc7c469fc6d2}{get\+Couche\+Initiale} ()
+\begin{DoxyCompactList}\small\item\em Getteur permetant d\textquotesingle{}obtenir la valeur de la \hyperlink{classCouche}{Couche} Initiale. \end{DoxyCompactList}\item 
+\hyperlink{classCouche}{Couche} \hyperlink{classBoiteConnexionCouche_af35c756dfc1f9491e2803b251f2d4434}{get\+Couche\+Finale} ()
+\begin{DoxyCompactList}\small\item\em getteur permetant d\textquotesingle{}obtenir la valeur de la \hyperlink{classCouche}{Couche} Finale \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Gestion de l\textquotesingle{}interaction Homme/\+Machine liée à la liaison entre 2 couches. 
+
+\begin{DoxyAuthor}{Auteur}
+Samra 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2019
+\end{DoxyDate}
+Module permettant le choix des couches à relier et la mise en place de leur liaison 
+
+\subsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{classBoiteConnexionCouche_a69b773ea326589e81c3beba4f8eef4e7}\label{classBoiteConnexionCouche_a69b773ea326589e81c3beba4f8eef4e7}} 
+\index{Boite\+Connexion\+Couche@{Boite\+Connexion\+Couche}!Boite\+Connexion\+Couche@{Boite\+Connexion\+Couche}}
+\index{Boite\+Connexion\+Couche@{Boite\+Connexion\+Couche}!Boite\+Connexion\+Couche@{Boite\+Connexion\+Couche}}
+\subsubsection{\texorpdfstring{Boite\+Connexion\+Couche()}{BoiteConnexionCouche()}}
+{\footnotesize\ttfamily Boite\+Connexion\+Couche\+::\+Boite\+Connexion\+Couche (\begin{DoxyParamCaption}\item[{\hyperlink{classPanneau}{Panneau}}]{parent }\end{DoxyParamCaption})}
+
+
+
+Constucteur prenant en paramètre un \hyperlink{classPanneau}{Panneau}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em parent} & un \hyperlink{classPanneau}{Panneau} contenant déja un réseau de neurones \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classBoiteConnexionCouche_af35c756dfc1f9491e2803b251f2d4434}\label{classBoiteConnexionCouche_af35c756dfc1f9491e2803b251f2d4434}} 
+\index{Boite\+Connexion\+Couche@{Boite\+Connexion\+Couche}!get\+Couche\+Finale@{get\+Couche\+Finale}}
+\index{get\+Couche\+Finale@{get\+Couche\+Finale}!Boite\+Connexion\+Couche@{Boite\+Connexion\+Couche}}
+\subsubsection{\texorpdfstring{get\+Couche\+Finale()}{getCoucheFinale()}}
+{\footnotesize\ttfamily Boite\+Connexion\+Couche\+::get\+Couche\+Finale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getteur permetant d\textquotesingle{}obtenir la valeur de la \hyperlink{classCouche}{Couche} Finale 
+
+\begin{DoxyReturn}{Renvoie}
+la \hyperlink{classCouche}{Couche} c\+\_\+finale en attribut de la classe 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBoiteConnexionCouche_a3b0faf67baf198a1abaafc7c469fc6d2}\label{classBoiteConnexionCouche_a3b0faf67baf198a1abaafc7c469fc6d2}} 
+\index{Boite\+Connexion\+Couche@{Boite\+Connexion\+Couche}!get\+Couche\+Initiale@{get\+Couche\+Initiale}}
+\index{get\+Couche\+Initiale@{get\+Couche\+Initiale}!Boite\+Connexion\+Couche@{Boite\+Connexion\+Couche}}
+\subsubsection{\texorpdfstring{get\+Couche\+Initiale()}{getCoucheInitiale()}}
+{\footnotesize\ttfamily Boite\+Connexion\+Couche\+::get\+Couche\+Initiale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getteur permetant d\textquotesingle{}obtenir la valeur de la \hyperlink{classCouche}{Couche} Initiale. 
+
+\begin{DoxyReturn}{Renvoie}
+la \hyperlink{classCouche}{Couche} c\+\_\+init en attribut de la classe 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBoiteConnexionCouche_a9469138a3db603eddacf8757595ad6cf}\label{classBoiteConnexionCouche_a9469138a3db603eddacf8757595ad6cf}} 
+\index{Boite\+Connexion\+Couche@{Boite\+Connexion\+Couche}!set\+Couche\+Finale@{set\+Couche\+Finale}}
+\index{set\+Couche\+Finale@{set\+Couche\+Finale}!Boite\+Connexion\+Couche@{Boite\+Connexion\+Couche}}
+\subsubsection{\texorpdfstring{set\+Couche\+Finale()}{setCoucheFinale()}}
+{\footnotesize\ttfamily Boite\+Connexion\+Couche\+::set\+Couche\+Finale (\begin{DoxyParamCaption}\item[{\hyperlink{classCouche}{Couche}}]{couche }\end{DoxyParamCaption})}
+
+
+
+Setteur permetant de changer la valeur de la \hyperlink{classCouche}{Couche} finale. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em la} & nouvelle \hyperlink{classCouche}{Couche} finale \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBoiteConnexionCouche_aca89aac7d4ae0ba89828c6d542790925}\label{classBoiteConnexionCouche_aca89aac7d4ae0ba89828c6d542790925}} 
+\index{Boite\+Connexion\+Couche@{Boite\+Connexion\+Couche}!set\+Couche\+Initiale@{set\+Couche\+Initiale}}
+\index{set\+Couche\+Initiale@{set\+Couche\+Initiale}!Boite\+Connexion\+Couche@{Boite\+Connexion\+Couche}}
+\subsubsection{\texorpdfstring{set\+Couche\+Initiale()}{setCoucheInitiale()}}
+{\footnotesize\ttfamily Boite\+Connexion\+Couche\+::set\+Couche\+Initiale (\begin{DoxyParamCaption}\item[{\hyperlink{classCouche}{Couche}}]{couche }\end{DoxyParamCaption})}
+
+
+
+Setteur permetant de changer la valeur de la \hyperlink{classCouche}{Couche} Initiale. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em la} & nouvelle \hyperlink{classCouche}{Couche} initiale \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+src/ihm/Boite\+Connexion\+Couche.\+hpp\end{DoxyCompactItemize}

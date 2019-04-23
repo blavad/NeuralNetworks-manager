@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gestion d&#39;un réseau de neurones:  Fichier source de src/deeplearn/archi/Graphe.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Gestion d&#39;un réseau de neurones
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e22bf7c1e2420dd4a87ecc5dca159d6a.html">deeplearn</a></li><li class="navelem"><a class="el" href="dir_3165056fa474754109c17670d2be02fa.html">archi</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Graphe.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __GRAPHE_HPP__</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __GRAPHE_HPP__</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Type&gt;</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_graphe.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_graphe.html">Graphe</a> {</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    private :</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        std::vector&lt;std::pair&lt;Type, std::vector&lt;Type&gt; &gt; &gt; list_adj;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        std::vector&lt;std::pair&lt;Type, std::vector&lt;Type&gt; &gt; &gt; list_ant;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    public :</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="class_graphe.html#ac6269bd27d5bd9386348e34879619d2f">Graphe</a>();</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="class_graphe.html#ac6269bd27d5bd9386348e34879619d2f">Graphe</a>(Type noeuds[]);</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_graphe.html#a555829daa877e49cdb4e9555e559650c">ajouterNoeud</a>(Type noeud);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_graphe.html#a690a652df5be597b9045d2036bad11ed">ajouterArc</a>(Type noeud_init,Type noeud_final);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_graphe.html#a5887c7cd72bcf4b5f8c169a22b5180f1">supprimerNoeud</a>(Type noeud);</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_graphe.html#a4d2b2b022f6c4747f15e1f4e059fef33">supprimerArc</a>(Type noeud_init,Type noeud_final);</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_graphe.html#aa003e00ed2d8c1d49c4b80e3dabfa4fd">contientCycle</a>();</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_graphe.html#a15609b3cd6e0ab6a96afb579ffd420c4">estConnexe</a>();</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div><div class="ttc" id="class_graphe_html_aa003e00ed2d8c1d49c4b80e3dabfa4fd"><div class="ttname"><a href="class_graphe.html#aa003e00ed2d8c1d49c4b80e3dabfa4fd">Graphe::contientCycle</a></div><div class="ttdeci">bool contientCycle()</div><div class="ttdoc">Teste si le graphe contient un cycle. </div></div>
+<div class="ttc" id="class_graphe_html_a5887c7cd72bcf4b5f8c169a22b5180f1"><div class="ttname"><a href="class_graphe.html#a5887c7cd72bcf4b5f8c169a22b5180f1">Graphe::supprimerNoeud</a></div><div class="ttdeci">void supprimerNoeud(Type noeud)</div><div class="ttdoc">Suppression d&amp;#39;un noeud. </div></div>
+<div class="ttc" id="class_graphe_html"><div class="ttname"><a href="class_graphe.html">Graphe</a></div><div class="ttdoc">Gestion du type Graphe. </div><div class="ttdef"><b>Definition:</b> <a href="_graphe_8hpp_source.html#l00019">Graphe.hpp:19</a></div></div>
+<div class="ttc" id="class_graphe_html_a15609b3cd6e0ab6a96afb579ffd420c4"><div class="ttname"><a href="class_graphe.html#a15609b3cd6e0ab6a96afb579ffd420c4">Graphe::estConnexe</a></div><div class="ttdeci">bool estConnexe()</div><div class="ttdoc">Teste si le graphe est connexe. </div></div>
+<div class="ttc" id="class_graphe_html_a555829daa877e49cdb4e9555e559650c"><div class="ttname"><a href="class_graphe.html#a555829daa877e49cdb4e9555e559650c">Graphe::ajouterNoeud</a></div><div class="ttdeci">void ajouterNoeud(Type noeud)</div><div class="ttdoc">Ajout d&amp;#39;un noeud. </div></div>
+<div class="ttc" id="class_graphe_html_a690a652df5be597b9045d2036bad11ed"><div class="ttname"><a href="class_graphe.html#a690a652df5be597b9045d2036bad11ed">Graphe::ajouterArc</a></div><div class="ttdeci">void ajouterArc(Type noeud_init, Type noeud_final)</div><div class="ttdoc">Ajout d&amp;#39;un arc. </div></div>
+<div class="ttc" id="class_graphe_html_ac6269bd27d5bd9386348e34879619d2f"><div class="ttname"><a href="class_graphe.html#ac6269bd27d5bd9386348e34879619d2f">Graphe::Graphe</a></div><div class="ttdeci">Graphe()</div><div class="ttdoc">Constructeur de graphe vide. </div></div>
+<div class="ttc" id="class_graphe_html_a4d2b2b022f6c4747f15e1f4e059fef33"><div class="ttname"><a href="class_graphe.html#a4d2b2b022f6c4747f15e1f4e059fef33">Graphe::supprimerArc</a></div><div class="ttdeci">void supprimerArc(Type noeud_init, Type noeud_final)</div><div class="ttdoc">Suppression d&amp;#39;un arc. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

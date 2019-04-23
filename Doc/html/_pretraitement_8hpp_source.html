@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gestion d&#39;un réseau de neurones:  Fichier source de src/pretraitement/Pretraitement.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Gestion d&#39;un réseau de neurones
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c2817472c5749168d3cd5d60b8c75bcf.html">pretraitement</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Pretraitement.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __PRETRAITEMENT_HPP__</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __PRETRAITEMENT_HPP__</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;Donnees.hpp&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;ReseauNeurones.hpp&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_pretraitement.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_pretraitement.html">Pretraitement</a> {</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    public :</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_donnees.html">Donnees</a> <a class="code" href="class_pretraitement.html#a5f53fc5ecf4893d40577aceb269e97b5">chargerDonnees</a>(std::string nomDossier);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_reseau_neurones.html">ReseauNeurones</a> <a class="code" href="class_pretraitement.html#a2d1e9cdbe1b865565f63c435923ec8e3">chargerRN</a>(std::string nomFichier);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_tenseur.html">Tenseur</a> <a class="code" href="class_pretraitement.html#a98c809577fe15166c5a9be25daff64a1">imageToTenseur</a>(std::string nomFichier);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_tenseur.html">Tenseur</a> <a class="code" href="class_pretraitement.html#a588810b1b86e11464cea64443358ae5a">csvToTenseur</a>(std::string nomFichier);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_pretraitement.html#a3d7be2ef2f1c6b0b8e3f1898110740bc">normaliser</a>(<a class="code" href="class_tenseur.html">Tenseur</a>&amp; t, <span class="keywordtype">double</span> minNorm, <span class="keywordtype">double</span> maxNorm, <span class="keywordtype">double</span> minValeur, <span class="keywordtype">double</span> maxValeur);</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_pretraitement.html#a68c5f7dc52d76fe0ff1f2794c4de40d7">denormaliser</a>(<a class="code" href="class_tenseur.html">Tenseur</a>&amp; t, <span class="keywordtype">double</span> minNorm, <span class="keywordtype">double</span> maxNorm, <span class="keywordtype">double</span> minValeur, <span class="keywordtype">double</span> maxValeur);</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="class_donnees_html"><div class="ttname"><a href="class_donnees.html">Donnees</a></div><div class="ttdoc">Gère les donnees necessaire a l&amp;#39;apprentissage. </div><div class="ttdef"><b>Definition:</b> <a href="_donnees_8hpp_source.html#l00018">Donnees.hpp:18</a></div></div>
+<div class="ttc" id="class_tenseur_html"><div class="ttname"><a href="class_tenseur.html">Tenseur</a></div><div class="ttdoc">Classe liée à la manipulation de tenseurs. </div><div class="ttdef"><b>Definition:</b> <a href="_tenseur_8hpp_source.html#l00017">Tenseur.hpp:17</a></div></div>
+<div class="ttc" id="class_pretraitement_html_a3d7be2ef2f1c6b0b8e3f1898110740bc"><div class="ttname"><a href="class_pretraitement.html#a3d7be2ef2f1c6b0b8e3f1898110740bc">Pretraitement::normaliser</a></div><div class="ttdeci">static void normaliser(Tenseur &amp;t, double minNorm, double maxNorm, double minValeur, double maxValeur)</div><div class="ttdoc">Normalise le tenseur passe en entree en fonction des autres parametres. </div></div>
+<div class="ttc" id="class_pretraitement_html_a5f53fc5ecf4893d40577aceb269e97b5"><div class="ttname"><a href="class_pretraitement.html#a5f53fc5ecf4893d40577aceb269e97b5">Pretraitement::chargerDonnees</a></div><div class="ttdeci">static Donnees chargerDonnees(std::string nomDossier)</div><div class="ttdoc">Charge les donnees du dossier. </div></div>
+<div class="ttc" id="class_pretraitement_html_a2d1e9cdbe1b865565f63c435923ec8e3"><div class="ttname"><a href="class_pretraitement.html#a2d1e9cdbe1b865565f63c435923ec8e3">Pretraitement::chargerRN</a></div><div class="ttdeci">static ReseauNeurones chargerRN(std::string nomFichier)</div><div class="ttdoc">Charge le reseau de neurones contenu dans un fichier. </div></div>
+<div class="ttc" id="class_pretraitement_html_a588810b1b86e11464cea64443358ae5a"><div class="ttname"><a href="class_pretraitement.html#a588810b1b86e11464cea64443358ae5a">Pretraitement::csvToTenseur</a></div><div class="ttdeci">static Tenseur csvToTenseur(std::string nomFichier)</div><div class="ttdoc">Transforme un fichier csv en tenseur. </div></div>
+<div class="ttc" id="class_reseau_neurones_html"><div class="ttname"><a href="class_reseau_neurones.html">ReseauNeurones</a></div><div class="ttdoc">Classe liée à la création du réseau de neurones. </div><div class="ttdef"><b>Definition:</b> <a href="_reseau_neurones_8hpp_source.html#l00021">ReseauNeurones.hpp:21</a></div></div>
+<div class="ttc" id="class_pretraitement_html"><div class="ttname"><a href="class_pretraitement.html">Pretraitement</a></div><div class="ttdoc">Gère le pretraitement des donnees necessaires a l&amp;#39;apprentissage. </div><div class="ttdef"><b>Definition:</b> <a href="_pretraitement_8hpp_source.html#l00018">Pretraitement.hpp:18</a></div></div>
+<div class="ttc" id="class_pretraitement_html_a98c809577fe15166c5a9be25daff64a1"><div class="ttname"><a href="class_pretraitement.html#a98c809577fe15166c5a9be25daff64a1">Pretraitement::imageToTenseur</a></div><div class="ttdeci">static Tenseur imageToTenseur(std::string nomFichier)</div><div class="ttdoc">Transforme l&amp;#39;image d&amp;#39;entree en un tenseur. </div></div>
+<div class="ttc" id="class_pretraitement_html_a68c5f7dc52d76fe0ff1f2794c4de40d7"><div class="ttname"><a href="class_pretraitement.html#a68c5f7dc52d76fe0ff1f2794c4de40d7">Pretraitement::denormaliser</a></div><div class="ttdeci">static void denormaliser(Tenseur &amp;t, double minNorm, double maxNorm, double minValeur, double maxValeur)</div><div class="ttdoc">Denormalise le tenseur passe en entree en fonction des autres parametres. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

@@ -1,0 +1,85 @@
+\hypertarget{class_erreur}{}\section{Référence de la classe Erreur}
+\label{class_erreur}\index{Erreur@{Erreur}}
+
+
+Gère le calcul de l\textquotesingle{}erreur commise lors d\textquotesingle{}un apprentissage.  
+
+
+
+
+{\ttfamily \#include $<$Erreur.\+hpp$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Erreur\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_erreur__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{class_tenseur}{Tenseur} \hyperlink{class_erreur_a0def45df23074388e2a338145aeb4660}{eval} (\hyperlink{class_tenseur}{Tenseur} sortie\+RN, \hyperlink{class_tenseur}{Tenseur} label)
+\begin{DoxyCompactList}\small\item\em Methode virtuelle pour evaluer l\textquotesingle{}erreur effectuee entre la sortie et la prediction. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_tenseur}{Tenseur} \hyperlink{class_erreur_ad56634307e3ceb8ab5c2fddede28422a}{derivee} (\hyperlink{class_tenseur}{Tenseur} t)
+\begin{DoxyCompactList}\small\item\em Méthode virtuelle pour avoir la derivee d\textquotesingle{}un tenseur donnee en entree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Gère le calcul de l\textquotesingle{}erreur commise lors d\textquotesingle{}un apprentissage. 
+
+\begin{DoxyAuthor}{Auteur}
+Marion 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2019
+\end{DoxyDate}
+Module permettant le traitement de l\textquotesingle{}erreur commise lors d\textquotesingle{}un apprentissage. Il permet également la récupération des données liées aux erreurs. 
+
+Définition à la ligne 18 du fichier Erreur.\+hpp.
+
+
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_erreur_ad56634307e3ceb8ab5c2fddede28422a}\label{class_erreur_ad56634307e3ceb8ab5c2fddede28422a}} 
+\index{Erreur@{Erreur}!derivee@{derivee}}
+\index{derivee@{derivee}!Erreur@{Erreur}}
+\subsubsection{\texorpdfstring{derivee()}{derivee()}}
+{\footnotesize\ttfamily void Erreur\+::derivee (\begin{DoxyParamCaption}\item[{\hyperlink{class_tenseur}{Tenseur}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode virtuelle pour avoir la derivee d\textquotesingle{}un tenseur donnee en entree. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em t} & le tenseur pour lequel on veut la derivee \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_erreur_a0def45df23074388e2a338145aeb4660}\label{class_erreur_a0def45df23074388e2a338145aeb4660}} 
+\index{Erreur@{Erreur}!eval@{eval}}
+\index{eval@{eval}!Erreur@{Erreur}}
+\subsubsection{\texorpdfstring{eval()}{eval()}}
+{\footnotesize\ttfamily \hyperlink{class_tenseur}{Tenseur} Erreur\+::eval (\begin{DoxyParamCaption}\item[{\hyperlink{class_tenseur}{Tenseur}}]{sortie\+RN,  }\item[{\hyperlink{class_tenseur}{Tenseur}}]{prediction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Methode virtuelle pour evaluer l\textquotesingle{}erreur effectuee entre la sortie et la prediction. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em sortie\+RN} & le tenseur de sortie du reseau de neurones. \\
+\hline
+{\em label} & la sortie souhaitée du reseau de neurones. \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+src/deeplearn/train/Erreur.\+hpp\end{DoxyCompactItemize}

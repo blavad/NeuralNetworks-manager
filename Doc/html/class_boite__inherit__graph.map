@@ -1,0 +1,12 @@
+<map id="Boite" name="Boite">
+<area shape="rect" id="node2" href="$class_boite_choix_fichier.html" title="Gestion de l&#39;interaction Homme/Machine liée au choix de fichier. " alt="" coords="122,56,247,83"/>
+<area shape="rect" id="node5" href="$class_boite_choix_multiple.html" title="Gestion de l&#39;interaction Homme/Machine liée au choix de l&#39;utilisateur. " alt="" coords="119,107,250,133"/>
+<area shape="rect" id="node8" href="$class_boite_connexion_couche.html" title="Gestion de l&#39;interaction Homme/Machine liée à la liaison entre 2 couches. " alt="" coords="105,157,264,184"/>
+<area shape="rect" id="node9" href="$class_boite_parametrage.html" title="BoiteParametrage" alt="" coords="121,208,248,235"/>
+<area shape="rect" id="node10" href="$class_panneau.html" title="Gestion du type Panneau. " alt="" coords="148,259,221,285"/>
+<area shape="rect" id="node3" href="$class_boite_choix_donn_xC3_xA9es.html" title="BoiteChoixDonnées" alt="" coords="336,5,475,32"/>
+<area shape="rect" id="node4" href="$class_boite_choix_reseau_neurones.html" title="Gestion de l&#39;interaction Homme/Machine liée au choix du fichier de RN. " alt="" coords="312,56,499,83"/>
+<area shape="rect" id="node6" href="$class_boite_choix_couche.html" title="Gestion de l&#39;interaction Homme/Machine liée au choix des couches. " alt="" coords="340,107,471,133"/>
+<area shape="rect" id="node7" href="$class_boite_choix_erreur.html" title="Gestion de l&#39;interaction Homme/Machine liée au choix de l&#39;erreur. " alt="" coords="345,157,466,184"/>
+<area shape="rect" id="node11" href="$class_panneau_architecture.html" title="??? " alt="" coords="334,259,477,285"/>
+</map>

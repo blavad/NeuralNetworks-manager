@@ -1,0 +1,171 @@
+\hypertarget{class_reseau_neurones}{}\section{Référence de la classe Reseau\+Neurones}
+\label{class_reseau_neurones}\index{Reseau\+Neurones@{Reseau\+Neurones}}
+
+
+Classe liée à la création du réseau de neurones.  
+
+
+
+
+{\ttfamily \#include $<$Reseau\+Neurones.\+hpp$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Reseau\+Neurones\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{class_reseau_neurones__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Reseau\+Neurones\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{class_reseau_neurones__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_reseau_neurones_aaeb64d6dcc72efb8dd3a2ab46e548ffa}\label{class_reseau_neurones_aaeb64d6dcc72efb8dd3a2ab46e548ffa}} 
+\hyperlink{class_reseau_neurones_aaeb64d6dcc72efb8dd3a2ab46e548ffa}{Reseau\+Neurones} ()
+\begin{DoxyCompactList}\small\item\em Constructeur du réseau vide. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_reseau_neurones_aa7c75b3511f748811e9cbd4643ae27e4}\label{class_reseau_neurones_aa7c75b3511f748811e9cbd4643ae27e4}} 
+\hyperlink{class_reseau_neurones_aa7c75b3511f748811e9cbd4643ae27e4}{Reseau\+Neurones} (\hyperlink{class_couche}{Couche},...)
+\begin{DoxyCompactList}\small\item\em Constructeur du réseau à partir de couches déjà crées. \end{DoxyCompactList}\item 
+\hyperlink{class_tenseur}{Tenseur} \hyperlink{class_reseau_neurones_a7079f7694f0369187b8ff28cefcbc5eb}{propagation} (\hyperlink{class_tenseur}{Tenseur} t)
+\begin{DoxyCompactList}\small\item\em Méthode permettant la propagation dans un reseau de neurone. \end{DoxyCompactList}\item 
+void \hyperlink{class_reseau_neurones_a21335ab1fa9c375290cb36cb06d77c79}{ajouter\+Couche\+Initiale} (\hyperlink{class_couche}{Couche} c)
+\begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}une la couche initiale. \end{DoxyCompactList}\item 
+void \hyperlink{class_reseau_neurones_a8802f175e367ecd5ab3ad2d4d5b91058}{ajouter\+Couche\+Finale} (\hyperlink{class_couche}{Couche} c)
+\begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}une couche finale. \end{DoxyCompactList}\item 
+void \hyperlink{class_reseau_neurones_a1f8002e2367febe871dda7dc32c02784}{supprimer\+Couche\+Initiale} (\hyperlink{class_couche}{Couche} c)
+\begin{DoxyCompactList}\small\item\em Suppression d\textquotesingle{}une couche initiale. \end{DoxyCompactList}\item 
+void \hyperlink{class_reseau_neurones_a1451816837d4df8ad486775cc2f9730b}{supprimer\+Couche\+Finale} (\hyperlink{class_couche}{Couche} c)
+\begin{DoxyCompactList}\small\item\em Suppression d\textquotesingle{}une couche finale. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_reseau_neurones_a3dff69c97c748171ca5bacfe521e9063}{get\+Nom} ()
+\begin{DoxyCompactList}\small\item\em Méthode pour obtenir le nom du reseau de neurones. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Classe liée à la création du réseau de neurones. 
+
+\begin{DoxyAuthor}{Auteur}
+Adrien 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2019
+\end{DoxyDate}
+Cette classe permet de créer un réseau de neurones \+: on peut ajouter/supprimer des couches/noeuds/arcs. 
+
+Définition à la ligne 21 du fichier Reseau\+Neurones.\+hpp.
+
+
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_reseau_neurones_a8802f175e367ecd5ab3ad2d4d5b91058}\label{class_reseau_neurones_a8802f175e367ecd5ab3ad2d4d5b91058}} 
+\index{Reseau\+Neurones@{Reseau\+Neurones}!ajouter\+Couche\+Finale@{ajouter\+Couche\+Finale}}
+\index{ajouter\+Couche\+Finale@{ajouter\+Couche\+Finale}!Reseau\+Neurones@{Reseau\+Neurones}}
+\subsubsection{\texorpdfstring{ajouter\+Couche\+Finale()}{ajouterCoucheFinale()}}
+{\footnotesize\ttfamily void Reseau\+Neurones\+::ajouter\+Couche\+Finale (\begin{DoxyParamCaption}\item[{\hyperlink{class_couche}{Couche}}]{c }\end{DoxyParamCaption})}
+
+
+
+Ajout d\textquotesingle{}une couche finale. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & une couche déjà créée. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_reseau_neurones_a21335ab1fa9c375290cb36cb06d77c79}\label{class_reseau_neurones_a21335ab1fa9c375290cb36cb06d77c79}} 
+\index{Reseau\+Neurones@{Reseau\+Neurones}!ajouter\+Couche\+Initiale@{ajouter\+Couche\+Initiale}}
+\index{ajouter\+Couche\+Initiale@{ajouter\+Couche\+Initiale}!Reseau\+Neurones@{Reseau\+Neurones}}
+\subsubsection{\texorpdfstring{ajouter\+Couche\+Initiale()}{ajouterCoucheInitiale()}}
+{\footnotesize\ttfamily void Reseau\+Neurones\+::ajouter\+Couche\+Initiale (\begin{DoxyParamCaption}\item[{\hyperlink{class_couche}{Couche}}]{c }\end{DoxyParamCaption})}
+
+
+
+Ajout d\textquotesingle{}une la couche initiale. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & une couche déjà créée. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_reseau_neurones_a3dff69c97c748171ca5bacfe521e9063}\label{class_reseau_neurones_a3dff69c97c748171ca5bacfe521e9063}} 
+\index{Reseau\+Neurones@{Reseau\+Neurones}!get\+Nom@{get\+Nom}}
+\index{get\+Nom@{get\+Nom}!Reseau\+Neurones@{Reseau\+Neurones}}
+\subsubsection{\texorpdfstring{get\+Nom()}{getNom()}}
+{\footnotesize\ttfamily string Reseau\+Neurones\+::get\+Nom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Méthode pour obtenir le nom du reseau de neurones. 
+
+\begin{DoxyReturn}{Renvoie}
+Le nom du RN 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_reseau_neurones_a7079f7694f0369187b8ff28cefcbc5eb}\label{class_reseau_neurones_a7079f7694f0369187b8ff28cefcbc5eb}} 
+\index{Reseau\+Neurones@{Reseau\+Neurones}!propagation@{propagation}}
+\index{propagation@{propagation}!Reseau\+Neurones@{Reseau\+Neurones}}
+\subsubsection{\texorpdfstring{propagation()}{propagation()}}
+{\footnotesize\ttfamily \hyperlink{class_tenseur}{Tenseur} Reseau\+Neurones\+::propagation (\begin{DoxyParamCaption}\item[{\hyperlink{class_tenseur}{Tenseur}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode permettant la propagation dans un reseau de neurone. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em t} & l\textquotesingle{}entree du reseau de neurone \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la sortie du reseau de neurone 
+\end{DoxyReturn}
+
+
+Réimplémentée à partir de \hyperlink{class_couche_a1f0ed59e21020f5d4f37933af4d1b1e5}{Couche}.
+
+\mbox{\Hypertarget{class_reseau_neurones_a1451816837d4df8ad486775cc2f9730b}\label{class_reseau_neurones_a1451816837d4df8ad486775cc2f9730b}} 
+\index{Reseau\+Neurones@{Reseau\+Neurones}!supprimer\+Couche\+Finale@{supprimer\+Couche\+Finale}}
+\index{supprimer\+Couche\+Finale@{supprimer\+Couche\+Finale}!Reseau\+Neurones@{Reseau\+Neurones}}
+\subsubsection{\texorpdfstring{supprimer\+Couche\+Finale()}{supprimerCoucheFinale()}}
+{\footnotesize\ttfamily void Reseau\+Neurones\+::supprimer\+Couche\+Finale (\begin{DoxyParamCaption}\item[{\hyperlink{class_couche}{Couche}}]{c }\end{DoxyParamCaption})}
+
+
+
+Suppression d\textquotesingle{}une couche finale. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & une couche présente dans le rése \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_reseau_neurones_a1f8002e2367febe871dda7dc32c02784}\label{class_reseau_neurones_a1f8002e2367febe871dda7dc32c02784}} 
+\index{Reseau\+Neurones@{Reseau\+Neurones}!supprimer\+Couche\+Initiale@{supprimer\+Couche\+Initiale}}
+\index{supprimer\+Couche\+Initiale@{supprimer\+Couche\+Initiale}!Reseau\+Neurones@{Reseau\+Neurones}}
+\subsubsection{\texorpdfstring{supprimer\+Couche\+Initiale()}{supprimerCoucheInitiale()}}
+{\footnotesize\ttfamily void Reseau\+Neurones\+::supprimer\+Couche\+Initiale (\begin{DoxyParamCaption}\item[{\hyperlink{class_couche}{Couche}}]{c }\end{DoxyParamCaption})}
+
+
+
+Suppression d\textquotesingle{}une couche initiale. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & une couche présente dans le réseau. \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+src/deeplearn/archi/Reseau\+Neurones.\+hpp\end{DoxyCompactItemize}

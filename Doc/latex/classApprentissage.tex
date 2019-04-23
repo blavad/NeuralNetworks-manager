@@ -1,0 +1,157 @@
+\hypertarget{classApprentissage}{}\section{Référence de la classe Apprentissage}
+\label{classApprentissage}\index{Apprentissage@{Apprentissage}}
+
+
+Gère l\textquotesingle{}apprentissage automatique des paramètres du réseau de neurones.  
+
+
+
+
+{\ttfamily \#include $<$Apprentissage.\+hpp$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classApprentissage_a649ffeeec970b5ad604b41a987844387}\label{classApprentissage_a649ffeeec970b5ad604b41a987844387}} 
+\hyperlink{classApprentissage_a649ffeeec970b5ad604b41a987844387}{Apprentissage} ()
+\begin{DoxyCompactList}\small\item\em Constructeur d\textquotesingle{}une session d\textquotesingle{}apprentissage vide. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classApprentissage_a1a510815ab52c24fb92bf9d5e0686101}\label{classApprentissage_a1a510815ab52c24fb92bf9d5e0686101}} 
+\hyperlink{classApprentissage_a1a510815ab52c24fb92bf9d5e0686101}{Apprentissage} (\hyperlink{classReseauNeurones}{Reseau\+Neurones} reseauN, \hyperlink{classErreur}{Erreur} erreur)
+\begin{DoxyCompactList}\small\item\em Contructeur d\textquotesingle{}une session d\textquotesingle{}apprentissage avec un reseau de neurones et une erreur donnes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classApprentissage_aa90784b8d9692d451b1d9242bbe15554}\label{classApprentissage_aa90784b8d9692d451b1d9242bbe15554}} 
+void \hyperlink{classApprentissage_aa90784b8d9692d451b1d9242bbe15554}{apprendre} ()
+\begin{DoxyCompactList}\small\item\em Lance l\textquotesingle{}apprentissage. \end{DoxyCompactList}\item 
+\hyperlink{classReseauNeurones}{Reseau\+Neurones} \hyperlink{classApprentissage_a56d2b6eff05342d1482bfed2a947b60d}{get\+RN} ()
+\begin{DoxyCompactList}\small\item\em Recupere le reseau de neurones. \end{DoxyCompactList}\item 
+\hyperlink{classOptimisateur}{Optimisateur} \hyperlink{classApprentissage_af3fdf7d92ebf36d3edb6c4d06addc8e6}{get\+Optimisateur} ()
+\begin{DoxyCompactList}\small\item\em Recupere l\textquotesingle{}optimisateur. \end{DoxyCompactList}\item 
+\hyperlink{classErreur}{Erreur} \hyperlink{classApprentissage_a9df18f6e95729c7263a2ab1fa9a0df8f}{get\+Erreur} ()
+\begin{DoxyCompactList}\small\item\em Recupere l\textquotesingle{}erreur. \end{DoxyCompactList}\item 
+\hyperlink{classDonnees}{Donnees} \hyperlink{classApprentissage_ac9fbf481a1bc46c15a36129c1eba3796}{get\+Donnees} ()
+\begin{DoxyCompactList}\small\item\em Recupere les donnees d\textquotesingle{}apprentissage. \end{DoxyCompactList}\item 
+\hyperlink{classParametresApprentissage}{Parametres\+Apprentissage} \hyperlink{classApprentissage_a025d66e8c5edb1c4c6ce9f3d8c983395}{get\+Param} ()
+\begin{DoxyCompactList}\small\item\em Recupere les parametres d\textquotesingle{}apprentissage du reseau. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classApprentissage_a03a3f022cc45f90670f744a7a4cfaf4d}\label{classApprentissage_a03a3f022cc45f90670f744a7a4cfaf4d}} 
+void {\bfseries set\+Optimisateut} (\hyperlink{classOptimisateur}{Optimisateur} optimisateur)
+\item 
+void \hyperlink{classApprentissage_a2e16d329d73dad8f771ccb9b7fee3931}{set\+Donnees} (\hyperlink{classDonnees}{Donnees} d)
+\begin{DoxyCompactList}\small\item\em Met a jour les donnees de l\textquotesingle{}apprentissage. \end{DoxyCompactList}\item 
+void \hyperlink{classApprentissage_a61b1b8bc359935c1de479a72241acb9c}{set\+Param} (\hyperlink{classParametresApprentissage}{Parametres\+Apprentissage} param\+App)
+\begin{DoxyCompactList}\small\item\em Met a jour les parametres d\textquotesingle{}apprentissage du reseau de neurones. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Gère l\textquotesingle{}apprentissage automatique des paramètres du réseau de neurones. 
+
+\begin{DoxyAuthor}{Auteur}
+Marion 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2019
+\end{DoxyDate}
+Module permettant le lancement de l\textquotesingle{}apprentissage. Il permet également la récupération des données et paramètres d\textquotesingle{}apprentissage. 
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classApprentissage_ac9fbf481a1bc46c15a36129c1eba3796}\label{classApprentissage_ac9fbf481a1bc46c15a36129c1eba3796}} 
+\index{Apprentissage@{Apprentissage}!get\+Donnees@{get\+Donnees}}
+\index{get\+Donnees@{get\+Donnees}!Apprentissage@{Apprentissage}}
+\subsubsection{\texorpdfstring{get\+Donnees()}{getDonnees()}}
+{\footnotesize\ttfamily Donnes Apprentissage\+::get\+Donnees (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Recupere les donnees d\textquotesingle{}apprentissage. 
+
+\begin{DoxyReturn}{Renvoie}
+les données d\textquotesingle{}apprentissage. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classApprentissage_a9df18f6e95729c7263a2ab1fa9a0df8f}\label{classApprentissage_a9df18f6e95729c7263a2ab1fa9a0df8f}} 
+\index{Apprentissage@{Apprentissage}!get\+Erreur@{get\+Erreur}}
+\index{get\+Erreur@{get\+Erreur}!Apprentissage@{Apprentissage}}
+\subsubsection{\texorpdfstring{get\+Erreur()}{getErreur()}}
+{\footnotesize\ttfamily \hyperlink{classErreur}{Erreur} Apprentissage\+::get\+Erreur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Recupere l\textquotesingle{}erreur. 
+
+\begin{DoxyReturn}{Renvoie}
+l\textquotesingle{}erreur. $\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classApprentissage_af3fdf7d92ebf36d3edb6c4d06addc8e6}\label{classApprentissage_af3fdf7d92ebf36d3edb6c4d06addc8e6}} 
+\index{Apprentissage@{Apprentissage}!get\+Optimisateur@{get\+Optimisateur}}
+\index{get\+Optimisateur@{get\+Optimisateur}!Apprentissage@{Apprentissage}}
+\subsubsection{\texorpdfstring{get\+Optimisateur()}{getOptimisateur()}}
+{\footnotesize\ttfamily \hyperlink{classOptimisateur}{Optimisateur} Apprentissage\+::get\+Optimisateur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Recupere l\textquotesingle{}optimisateur. 
+
+\begin{DoxyReturn}{Renvoie}
+l\textquotesingle{}optimisateur.\textquotesingle{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classApprentissage_a025d66e8c5edb1c4c6ce9f3d8c983395}\label{classApprentissage_a025d66e8c5edb1c4c6ce9f3d8c983395}} 
+\index{Apprentissage@{Apprentissage}!get\+Param@{get\+Param}}
+\index{get\+Param@{get\+Param}!Apprentissage@{Apprentissage}}
+\subsubsection{\texorpdfstring{get\+Param()}{getParam()}}
+{\footnotesize\ttfamily \hyperlink{classParametresApprentissage}{Parametres\+Apprentissage} Apprentissage\+::get\+Param (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Recupere les parametres d\textquotesingle{}apprentissage du reseau. 
+
+\begin{DoxyReturn}{Renvoie}
+les parametres d\textquotesingle{}apprentissage actuels. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classApprentissage_a56d2b6eff05342d1482bfed2a947b60d}\label{classApprentissage_a56d2b6eff05342d1482bfed2a947b60d}} 
+\index{Apprentissage@{Apprentissage}!get\+RN@{get\+RN}}
+\index{get\+RN@{get\+RN}!Apprentissage@{Apprentissage}}
+\subsubsection{\texorpdfstring{get\+R\+N()}{getRN()}}
+{\footnotesize\ttfamily \hyperlink{classReseauNeurones}{Reseau\+Neurones} Apprentissage\+::get\+RN (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Recupere le reseau de neurones. 
+
+\begin{DoxyReturn}{Renvoie}
+le reseau de neurones.\textquotesingle{} $\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classApprentissage_a2e16d329d73dad8f771ccb9b7fee3931}\label{classApprentissage_a2e16d329d73dad8f771ccb9b7fee3931}} 
+\index{Apprentissage@{Apprentissage}!set\+Donnees@{set\+Donnees}}
+\index{set\+Donnees@{set\+Donnees}!Apprentissage@{Apprentissage}}
+\subsubsection{\texorpdfstring{set\+Donnees()}{setDonnees()}}
+{\footnotesize\ttfamily void Apprentissage\+::set\+Donnees (\begin{DoxyParamCaption}\item[{\hyperlink{classDonnees}{Donnees}}]{d }\end{DoxyParamCaption})}
+
+
+
+Met a jour les donnees de l\textquotesingle{}apprentissage. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em d} & les donnees de l\textquotesingle{}apprentissage. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classApprentissage_a61b1b8bc359935c1de479a72241acb9c}\label{classApprentissage_a61b1b8bc359935c1de479a72241acb9c}} 
+\index{Apprentissage@{Apprentissage}!set\+Param@{set\+Param}}
+\index{set\+Param@{set\+Param}!Apprentissage@{Apprentissage}}
+\subsubsection{\texorpdfstring{set\+Param()}{setParam()}}
+{\footnotesize\ttfamily void Apprentissage\+::set\+Param (\begin{DoxyParamCaption}\item[{\hyperlink{classParametresApprentissage}{Parametres\+Apprentissage}}]{param\+App }\end{DoxyParamCaption})}
+
+
+
+Met a jour les parametres d\textquotesingle{}apprentissage du reseau de neurones. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em param\+App} & les parametres d\textquotesingle{}apprentissage. \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+src/deeplearn/train/Apprentissage.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gestion d&#39;un réseau de neurones:  Fichier source de src/deeplearn/archi/MaxPooling.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Gestion d&#39;un réseau de neurones
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e22bf7c1e2420dd4a87ecc5dca159d6a.html">deeplearn</a></li><li class="navelem"><a class="el" href="dir_3165056fa474754109c17670d2be02fa.html">archi</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">MaxPooling.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __MAX_POOLING_HPP__</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __MAX_POOLING_HPP__</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;Couche.hpp&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_max_pooling.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_max_pooling.html">MaxPooling</a> : <span class="keyword">public</span> <a class="code" href="class_couche.html">Couche</a> {</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    private :</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">int</span> pool_x;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">int</span> pool_y;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    public :</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="class_max_pooling.html#aa26ff6fb01b361da3e57dfe77131a20a">MaxPooling</a>(<a class="code" href="class_dim_tenseur.html">DimTenseur</a> din, <a class="code" href="class_dim_tenseur.html">DimTenseur</a> dout, std::string no, <span class="keywordtype">int</span> pl_x, <span class="keywordtype">int</span> pl_y);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="class_max_pooling.html#aa26ff6fb01b361da3e57dfe77131a20a">MaxPooling</a>(<a class="code" href="class_dim_tenseur.html">DimTenseur</a> din, <a class="code" href="class_dim_tenseur.html">DimTenseur</a> dout, std::string no, <span class="keywordtype">int</span> pl);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="class_tenseur.html">Tenseur</a> <a class="code" href="class_max_pooling.html#a48e0258bf1f949853cfceb2726035fb8">propagation</a>(<a class="code" href="class_tenseur.html">Tenseur</a> t);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_max_pooling.html#ae70dd14b2ebe5963b3a6904ca86857bc">setPoolX</a>(<span class="keywordtype">int</span> pl_x );</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_max_pooling.html#abf21b8f9da67780af60a588a543f7a1b">setPoolY</a>(<span class="keywordtype">int</span> pl_y);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_max_pooling.html#aa794b6174d54f2be8e6eed4ab09365e9">getPoolX</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_max_pooling.html#a7c72e57c8a90e18804b288f28fde7af0">getPoolY</a>() <span class="keyword">const</span>; </div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;};</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="class_tenseur_html"><div class="ttname"><a href="class_tenseur.html">Tenseur</a></div><div class="ttdoc">Classe liée à la manipulation de tenseurs. </div><div class="ttdef"><b>Definition:</b> <a href="_tenseur_8hpp_source.html#l00017">Tenseur.hpp:17</a></div></div>
+<div class="ttc" id="class_max_pooling_html_ae70dd14b2ebe5963b3a6904ca86857bc"><div class="ttname"><a href="class_max_pooling.html#ae70dd14b2ebe5963b3a6904ca86857bc">MaxPooling::setPoolX</a></div><div class="ttdeci">void setPoolX(int pl_x)</div><div class="ttdoc">Méthode pour fixer le nombre de pixels en dimension x. </div><div class="ttdef"><b>Definition:</b> <a href="_max_pooling_8cpp_source.html#l00024">MaxPooling.cpp:24</a></div></div>
+<div class="ttc" id="class_max_pooling_html_aa26ff6fb01b361da3e57dfe77131a20a"><div class="ttname"><a href="class_max_pooling.html#aa26ff6fb01b361da3e57dfe77131a20a">MaxPooling::MaxPooling</a></div><div class="ttdeci">MaxPooling(DimTenseur din, DimTenseur dout, std::string no, int pl_x, int pl_y)</div><div class="ttdoc">Constructeur afin d&amp;#39;obtenir une image de taille pool_x par pool_y. </div><div class="ttdef"><b>Definition:</b> <a href="_max_pooling_8cpp_source.html#l00005">MaxPooling.cpp:5</a></div></div>
+<div class="ttc" id="class_max_pooling_html_aa794b6174d54f2be8e6eed4ab09365e9"><div class="ttname"><a href="class_max_pooling.html#aa794b6174d54f2be8e6eed4ab09365e9">MaxPooling::getPoolX</a></div><div class="ttdeci">int getPoolX() const</div><div class="ttdoc">Méthode pour obtenir le nombre de pixels fixé pour les images en dimension x. </div><div class="ttdef"><b>Definition:</b> <a href="_max_pooling_8cpp_source.html#l00038">MaxPooling.cpp:38</a></div></div>
+<div class="ttc" id="class_max_pooling_html_a7c72e57c8a90e18804b288f28fde7af0"><div class="ttname"><a href="class_max_pooling.html#a7c72e57c8a90e18804b288f28fde7af0">MaxPooling::getPoolY</a></div><div class="ttdeci">int getPoolY() const</div><div class="ttdoc">Méthode pour obtenir le nombre de pixels fixé pour les images en dimension y. </div><div class="ttdef"><b>Definition:</b> <a href="_max_pooling_8cpp_source.html#l00045">MaxPooling.cpp:45</a></div></div>
+<div class="ttc" id="class_max_pooling_html"><div class="ttname"><a href="class_max_pooling.html">MaxPooling</a></div><div class="ttdoc">Classe gérant une couche de MaxPooling. </div><div class="ttdef"><b>Definition:</b> <a href="_max_pooling_8hpp_source.html#l00018">MaxPooling.hpp:18</a></div></div>
+<div class="ttc" id="class_max_pooling_html_a48e0258bf1f949853cfceb2726035fb8"><div class="ttname"><a href="class_max_pooling.html#a48e0258bf1f949853cfceb2726035fb8">MaxPooling::propagation</a></div><div class="ttdeci">Tenseur propagation(Tenseur t)</div><div class="ttdoc">Méthode permettant la propagation d&amp;#39;une couche à une autre. </div><div class="ttdef"><b>Definition:</b> <a href="_max_pooling_8cpp_source.html#l00017">MaxPooling.cpp:17</a></div></div>
+<div class="ttc" id="class_dim_tenseur_html"><div class="ttname"><a href="class_dim_tenseur.html">DimTenseur</a></div><div class="ttdoc">Classe stockant les dimensions d&amp;#39;un tenseur. </div><div class="ttdef"><b>Definition:</b> <a href="_dim_tenseur_8hpp_source.html#l00018">DimTenseur.hpp:18</a></div></div>
+<div class="ttc" id="class_couche_html"><div class="ttname"><a href="class_couche.html">Couche</a></div><div class="ttdoc">Classe liée à la couche. </div><div class="ttdef"><b>Definition:</b> <a href="_couche_8hpp_source.html#l00020">Couche.hpp:20</a></div></div>
+<div class="ttc" id="class_max_pooling_html_abf21b8f9da67780af60a588a543f7a1b"><div class="ttname"><a href="class_max_pooling.html#abf21b8f9da67780af60a588a543f7a1b">MaxPooling::setPoolY</a></div><div class="ttdeci">void setPoolY(int pl_y)</div><div class="ttdoc">Méthode pour fixer le nombre de pixels en dimension y. </div><div class="ttdef"><b>Definition:</b> <a href="_max_pooling_8cpp_source.html#l00031">MaxPooling.cpp:31</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

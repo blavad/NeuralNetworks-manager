@@ -1,0 +1,14 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node1" href="$class_couche.html" title="Classe liée à la couche. " alt="" coords="39,183,105,209"/>
+<area shape="rect" id="node2" href="$class_couche_activation.html" title="Gestion d&#39;une couche d&#39;activation. " alt="" coords="195,81,321,108"/>
+<area shape="rect" id="node6" href="$class_couche_combinaison.html" title="Gestion d&#39;une couche de combinaison. " alt="" coords="187,157,329,184"/>
+<area shape="rect" id="node10" href="$class_max_pooling.html" title="Classe gérant une couche de MaxPooling. " alt="" coords="213,208,303,235"/>
+<area shape="rect" id="node11" href="$class_reseau_neurones.html" title="Classe liée à la création du réseau de neurones. " alt="" coords="197,259,319,285"/>
+<area shape="rect" id="node3" href="$class_re_l_u.html" title="ReLU" alt="" coords="417,5,473,32"/>
+<area shape="rect" id="node4" href="$class_sigmoid.html" title="Création de la fonction ReLU. " alt="" coords="411,56,480,83"/>
+<area shape="rect" id="node5" href="$class_tan_h.html" title="Création d&#39;une fonction tangente hyperbolique. " alt="" coords="418,107,473,133"/>
+<area shape="rect" id="node7" href="$class_couche_connectee.html" title="CoucheConnectee" alt="" coords="380,157,511,184"/>
+<area shape="rect" id="node9" href="$class_couche_convolutive.html" title="Création d&#39;une couche convolutive. " alt="" coords="377,208,513,235"/>
+<area shape="rect" id="node8" href="$class_neurone.html" title="Neurone" alt="" coords="561,157,632,184"/>
+<area shape="rect" id="node12" href="$class_graphe.html" title="Graphe\&lt; Couche \&gt;" alt="" coords="5,259,139,285"/>
+</map>

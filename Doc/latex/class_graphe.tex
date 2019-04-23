@@ -1,0 +1,162 @@
+\hypertarget{class_graphe}{}\section{Référence du modèle de la classe Graphe$<$ Type $>$}
+\label{class_graphe}\index{Graphe$<$ Type $>$@{Graphe$<$ Type $>$}}
+
+
+Gestion du type \hyperlink{class_graphe}{Graphe}.  
+
+
+
+
+{\ttfamily \#include $<$Graphe.\+hpp$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_graphe_ac6269bd27d5bd9386348e34879619d2f}\label{class_graphe_ac6269bd27d5bd9386348e34879619d2f}} 
+\hyperlink{class_graphe_ac6269bd27d5bd9386348e34879619d2f}{Graphe} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de graphe vide. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_graphe_a4769b44ffb23da74a1b413857966c157}\label{class_graphe_a4769b44ffb23da74a1b413857966c157}} 
+\hyperlink{class_graphe_a4769b44ffb23da74a1b413857966c157}{Graphe} (Type noeuds\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Constructeur de graphe à partir de noeuds isolés. \end{DoxyCompactList}\item 
+void \hyperlink{class_graphe_a555829daa877e49cdb4e9555e559650c}{ajouter\+Noeud} (Type noeud)
+\begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}un noeud. \end{DoxyCompactList}\item 
+void \hyperlink{class_graphe_a690a652df5be597b9045d2036bad11ed}{ajouter\+Arc} (Type noeud\+\_\+init, Type noeud\+\_\+final)
+\begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}un arc. \end{DoxyCompactList}\item 
+void \hyperlink{class_graphe_a5887c7cd72bcf4b5f8c169a22b5180f1}{supprimer\+Noeud} (Type noeud)
+\begin{DoxyCompactList}\small\item\em Suppression d\textquotesingle{}un noeud. \end{DoxyCompactList}\item 
+void \hyperlink{class_graphe_a4d2b2b022f6c4747f15e1f4e059fef33}{supprimer\+Arc} (Type noeud\+\_\+init, Type noeud\+\_\+final)
+\begin{DoxyCompactList}\small\item\em Suppression d\textquotesingle{}un arc. \end{DoxyCompactList}\item 
+bool \hyperlink{class_graphe_aa003e00ed2d8c1d49c4b80e3dabfa4fd}{contient\+Cycle} ()
+\begin{DoxyCompactList}\small\item\em Teste si le graphe contient un cycle. \end{DoxyCompactList}\item 
+bool \hyperlink{class_graphe_a15609b3cd6e0ab6a96afb579ffd420c4}{est\+Connexe} ()
+\begin{DoxyCompactList}\small\item\em Teste si le graphe est connexe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+\subsubsection*{template$<$class Type$>$\newline
+class Graphe$<$ Type $>$}
+
+Gestion du type \hyperlink{class_graphe}{Graphe}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Type} & Type de noeud du graphe. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyAuthor}{Auteur}
+David 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2019
+\end{DoxyDate}
+Module permettant l\textquotesingle{}utilisation d\textquotesingle{}un graphe orienté générique. Les noeuds du graphe portent cette généricité et peuvent donc être de n\textquotesingle{}importe quel type de données. 
+
+Définition à la ligne 19 du fichier Graphe.\+hpp.
+
+
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_graphe_a690a652df5be597b9045d2036bad11ed}\label{class_graphe_a690a652df5be597b9045d2036bad11ed}} 
+\index{Graphe@{Graphe}!ajouter\+Arc@{ajouter\+Arc}}
+\index{ajouter\+Arc@{ajouter\+Arc}!Graphe@{Graphe}}
+\subsubsection{\texorpdfstring{ajouter\+Arc()}{ajouterArc()}}
+{\footnotesize\ttfamily template$<$class Type$>$ \\
+void \hyperlink{class_graphe}{Graphe}$<$ Type $>$\+::ajouter\+Arc (\begin{DoxyParamCaption}\item[{Type}]{noeud\+\_\+init,  }\item[{Type}]{noeud\+\_\+final }\end{DoxyParamCaption})}
+
+
+
+Ajout d\textquotesingle{}un arc. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em noeud\+\_\+init} & le noeud de départ de l\textquotesingle{}arc. \\
+\hline
+{\em noeud\+\_\+final} & le noeud d\textquotesingle{}arrivé de l\textquotesingle{}arc. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graphe_a555829daa877e49cdb4e9555e559650c}\label{class_graphe_a555829daa877e49cdb4e9555e559650c}} 
+\index{Graphe@{Graphe}!ajouter\+Noeud@{ajouter\+Noeud}}
+\index{ajouter\+Noeud@{ajouter\+Noeud}!Graphe@{Graphe}}
+\subsubsection{\texorpdfstring{ajouter\+Noeud()}{ajouterNoeud()}}
+{\footnotesize\ttfamily template$<$class Type$>$ \\
+void \hyperlink{class_graphe}{Graphe}$<$ Type $>$\+::ajouter\+Noeud (\begin{DoxyParamCaption}\item[{Type}]{noeud }\end{DoxyParamCaption})}
+
+
+
+Ajout d\textquotesingle{}un noeud. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em noeud} & un noeud du graphe. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graphe_aa003e00ed2d8c1d49c4b80e3dabfa4fd}\label{class_graphe_aa003e00ed2d8c1d49c4b80e3dabfa4fd}} 
+\index{Graphe@{Graphe}!contient\+Cycle@{contient\+Cycle}}
+\index{contient\+Cycle@{contient\+Cycle}!Graphe@{Graphe}}
+\subsubsection{\texorpdfstring{contient\+Cycle()}{contientCycle()}}
+{\footnotesize\ttfamily template$<$class Type$>$ \\
+bool \hyperlink{class_graphe}{Graphe}$<$ Type $>$\+::contient\+Cycle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Teste si le graphe contient un cycle. 
+
+\begin{DoxyReturn}{Renvoie}
+un booléen. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graphe_a15609b3cd6e0ab6a96afb579ffd420c4}\label{class_graphe_a15609b3cd6e0ab6a96afb579ffd420c4}} 
+\index{Graphe@{Graphe}!est\+Connexe@{est\+Connexe}}
+\index{est\+Connexe@{est\+Connexe}!Graphe@{Graphe}}
+\subsubsection{\texorpdfstring{est\+Connexe()}{estConnexe()}}
+{\footnotesize\ttfamily template$<$class Type$>$ \\
+bool \hyperlink{class_graphe}{Graphe}$<$ Type $>$\+::est\+Connexe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Teste si le graphe est connexe. 
+
+\begin{DoxyReturn}{Renvoie}
+un booléen. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graphe_a4d2b2b022f6c4747f15e1f4e059fef33}\label{class_graphe_a4d2b2b022f6c4747f15e1f4e059fef33}} 
+\index{Graphe@{Graphe}!supprimer\+Arc@{supprimer\+Arc}}
+\index{supprimer\+Arc@{supprimer\+Arc}!Graphe@{Graphe}}
+\subsubsection{\texorpdfstring{supprimer\+Arc()}{supprimerArc()}}
+{\footnotesize\ttfamily template$<$class Type$>$ \\
+void \hyperlink{class_graphe}{Graphe}$<$ Type $>$\+::supprimer\+Arc (\begin{DoxyParamCaption}\item[{Type}]{noeud\+\_\+init,  }\item[{Type}]{noeud\+\_\+final }\end{DoxyParamCaption})}
+
+
+
+Suppression d\textquotesingle{}un arc. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em noeud\+\_\+init} & le noeud de départ de l\textquotesingle{}arc. \\
+\hline
+{\em noeud\+\_\+final} & le noeud d\textquotesingle{}arrivé de l\textquotesingle{}arc. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graphe_a5887c7cd72bcf4b5f8c169a22b5180f1}\label{class_graphe_a5887c7cd72bcf4b5f8c169a22b5180f1}} 
+\index{Graphe@{Graphe}!supprimer\+Noeud@{supprimer\+Noeud}}
+\index{supprimer\+Noeud@{supprimer\+Noeud}!Graphe@{Graphe}}
+\subsubsection{\texorpdfstring{supprimer\+Noeud()}{supprimerNoeud()}}
+{\footnotesize\ttfamily template$<$class Type$>$ \\
+void \hyperlink{class_graphe}{Graphe}$<$ Type $>$\+::supprimer\+Noeud (\begin{DoxyParamCaption}\item[{Type}]{noeud }\end{DoxyParamCaption})}
+
+
+
+Suppression d\textquotesingle{}un noeud. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em noeud} & un noeud du graphe. \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+src/deeplearn/archi/Graphe.\+hpp\end{DoxyCompactItemize}

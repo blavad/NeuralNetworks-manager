@@ -1,0 +1,4 @@
+<map id="BoiteChoixErreur" name="BoiteChoixErreur">
+<area shape="rect" id="node2" href="$classBoiteChoixMultiple.html" title="Gestion de l&#39;interaction Homme/Machine liée au choix de l&#39;utilisateur. " alt="" coords="5,80,136,107"/>
+<area shape="rect" id="node3" href="$classBoite.html" title="Gestion du type Boite. " alt="" coords="45,5,97,32"/>
+</map>

@@ -1,0 +1,124 @@
+\hypertarget{class_couche_convolutive}{}\section{Référence de la classe Couche\+Convolutive}
+\label{class_couche_convolutive}\index{Couche\+Convolutive@{Couche\+Convolutive}}
+
+
+Création d\textquotesingle{}une couche convolutive.  
+
+
+
+
+{\ttfamily \#include $<$Couche\+Convolutive.\+hpp$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Couche\+Convolutive\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{class_couche_convolutive__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Couche\+Convolutive\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{class_couche_convolutive__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_couche_convolutive_ac0e9fc1269646ff46ab9ea2a26489123}{Couche\+Convolutive} (\hyperlink{class_dim_tenseur}{Dim\+Tenseur} din, \hyperlink{class_dim_tenseur}{Dim\+Tenseur} dout, std\+::string no, \hyperlink{class_tenseur}{Tenseur} par, int l\+\_\+fil, int h\+\_\+fil, int nb\+\_\+fil)
+\begin{DoxyCompactList}\small\item\em Constructeur d\textquotesingle{}une couche convolutive à partir de la longeur du filtre, de la hauteur du filtre et du nombre de filtres. \end{DoxyCompactList}\item 
+\hyperlink{class_tenseur}{Tenseur} \hyperlink{class_couche_convolutive_ad1a55b3dc9bf52e0725ae2a7b2e92aa1}{propagation} (\hyperlink{class_tenseur}{Tenseur} t)
+\begin{DoxyCompactList}\small\item\em Méthode permettant la propagation d\textquotesingle{}une couche a une autre. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_couche_convolutive_a1923173423085bc194b2484ff7b6d922}\label{class_couche_convolutive_a1923173423085bc194b2484ff7b6d922}} 
+void \hyperlink{class_couche_convolutive_a1923173423085bc194b2484ff7b6d922}{set\+L\+\_\+\+Filtre} (int l\+\_\+fil)
+\begin{DoxyCompactList}\small\item\em Changer la longueur de chaque filtre. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_couche_convolutive_a352b530060db1a2b20a8df3f9daaf026}\label{class_couche_convolutive_a352b530060db1a2b20a8df3f9daaf026}} 
+void {\bfseries set\+H\+\_\+\+Filtre} (int h\+\_\+fil)
+\item 
+void \hyperlink{class_couche_convolutive_a30fd844fc3a96f2e90d1a20251b1bfe3}{set\+Params} (int nb\+\_\+filtres)
+\begin{DoxyCompactList}\small\item\em Changer la largeur de chaque filtre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Création d\textquotesingle{}une couche convolutive. 
+
+\begin{DoxyAuthor}{Auteur}
+Adrien 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2019
+\end{DoxyDate}
+Classe permettant la création d\textquotesingle{}une couche de combinaison de \char`\"{}type\char`\"{} convolutive. 
+
+Définition à la ligne 17 du fichier Couche\+Convolutive.\+hpp.
+
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_couche_convolutive_ac0e9fc1269646ff46ab9ea2a26489123}\label{class_couche_convolutive_ac0e9fc1269646ff46ab9ea2a26489123}} 
+\index{Couche\+Convolutive@{Couche\+Convolutive}!Couche\+Convolutive@{Couche\+Convolutive}}
+\index{Couche\+Convolutive@{Couche\+Convolutive}!Couche\+Convolutive@{Couche\+Convolutive}}
+\subsubsection{\texorpdfstring{Couche\+Convolutive()}{CoucheConvolutive()}}
+{\footnotesize\ttfamily Couche\+Convolutive\+::\+Couche\+Convolutive (\begin{DoxyParamCaption}\item[{\hyperlink{class_dim_tenseur}{Dim\+Tenseur}}]{din,  }\item[{\hyperlink{class_dim_tenseur}{Dim\+Tenseur}}]{dout,  }\item[{std\+::string}]{no,  }\item[{\hyperlink{class_tenseur}{Tenseur}}]{par,  }\item[{int}]{l\+\_\+fil,  }\item[{int}]{h\+\_\+fil,  }\item[{int}]{nb\+\_\+fil }\end{DoxyParamCaption})}
+
+
+
+Constructeur d\textquotesingle{}une couche convolutive à partir de la longeur du filtre, de la hauteur du filtre et du nombre de filtres. 
+
+Constructeur d\textquotesingle{}une couche convolutive à partir de la taille du tenseur d\textquotesingle{}entrée, de la longeur du filtre, de la hauteur du filtre et du nombre de $\ast$ filtres 
+
+Définition à la ligne 3 du fichier Couche\+Convolutive.\+cpp.
+
+
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_couche_convolutive_ad1a55b3dc9bf52e0725ae2a7b2e92aa1}\label{class_couche_convolutive_ad1a55b3dc9bf52e0725ae2a7b2e92aa1}} 
+\index{Couche\+Convolutive@{Couche\+Convolutive}!propagation@{propagation}}
+\index{propagation@{propagation}!Couche\+Convolutive@{Couche\+Convolutive}}
+\subsubsection{\texorpdfstring{propagation()}{propagation()}}
+{\footnotesize\ttfamily \hyperlink{class_tenseur}{Tenseur} Couche\+Convolutive\+::propagation (\begin{DoxyParamCaption}\item[{\hyperlink{class_tenseur}{Tenseur}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode permettant la propagation d\textquotesingle{}une couche a une autre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em t} & le tenseur d\textquotesingle{}entree \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la sortie de la couche 
+\end{DoxyReturn}
+
+
+Réimplémentée à partir de \hyperlink{class_couche_a1f0ed59e21020f5d4f37933af4d1b1e5}{Couche}.
+
+
+
+Définition à la ligne 9 du fichier Couche\+Convolutive.\+cpp.
+
+\mbox{\Hypertarget{class_couche_convolutive_a30fd844fc3a96f2e90d1a20251b1bfe3}\label{class_couche_convolutive_a30fd844fc3a96f2e90d1a20251b1bfe3}} 
+\index{Couche\+Convolutive@{Couche\+Convolutive}!set\+Params@{set\+Params}}
+\index{set\+Params@{set\+Params}!Couche\+Convolutive@{Couche\+Convolutive}}
+\subsubsection{\texorpdfstring{set\+Params()}{setParams()}}
+{\footnotesize\ttfamily void Couche\+Convolutive\+::set\+Params (\begin{DoxyParamCaption}\item[{int}]{nb\+\_\+filtres }\end{DoxyParamCaption})}
+
+
+
+Changer la largeur de chaque filtre. 
+
+Changer le nombre de filtres. 
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+src/deeplearn/archi/Couche\+Convolutive.\+hpp\item 
+src/deeplearn/archi/Couche\+Convolutive.\+cpp\end{DoxyCompactItemize}

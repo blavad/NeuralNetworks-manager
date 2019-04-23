@@ -1,0 +1,7 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node2" href="$class_test_couche.html" title="Test des méthodes de la classe Couche. " alt="" coords="169,5,263,32"/>
+<area shape="rect" id="node3" href="$class_test_donnees.html" title="Test des méthodes de la classe Donnees. " alt="" coords="166,56,266,83"/>
+<area shape="rect" id="node4" href="$class_test_graphe.html" title="Test des methodes de la classe Graphe. " alt="" coords="172,131,260,157"/>
+<area shape="rect" id="node5" href="$class_test_reseau_neurones.html" title="TestReseauNeurones" alt="" coords="141,181,291,208"/>
+<area shape="rect" id="node6" href="$class_test_tenseur.html" title="TestTenseur" alt="" coords="169,232,263,259"/>
+</map>

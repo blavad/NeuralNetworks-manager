@@ -1,0 +1,103 @@
+\hypertarget{class_sigmoid}{}\section{Référence de la classe Sigmoid}
+\label{class_sigmoid}\index{Sigmoid@{Sigmoid}}
+
+
+Création de la fonction \hyperlink{class_re_l_u}{Re\+LU}.  
+
+
+
+
+{\ttfamily \#include $<$Re\+L\+U.\+hpp$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Sigmoid\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{class_sigmoid__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Sigmoid\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{class_sigmoid__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sigmoid_a6085e021ce6eb13fd04b46387f4b3ccf}\label{class_sigmoid_a6085e021ce6eb13fd04b46387f4b3ccf}} 
+\hyperlink{class_sigmoid_a6085e021ce6eb13fd04b46387f4b3ccf}{Sigmoid} (\hyperlink{class_dim_tenseur}{Dim\+Tenseur} din, \hyperlink{class_dim_tenseur}{Dim\+Tenseur} dout, std\+::string no)
+\begin{DoxyCompactList}\small\item\em Constructeur d\textquotesingle{}une fonction sigmoid. \end{DoxyCompactList}\item 
+\hyperlink{class_tenseur}{Tenseur} \hyperlink{class_sigmoid_a6bd1f6bbc49bd7e634dc33701aee420c}{propagation} (\hyperlink{class_tenseur}{Tenseur} t)
+\begin{DoxyCompactList}\small\item\em Méthode permettant la propagation d\textquotesingle{}une couche à une autre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Création de la fonction \hyperlink{class_re_l_u}{Re\+LU}. 
+
+Création d\textquotesingle{}une couche \hyperlink{class_sigmoid}{Sigmoid}.
+
+\begin{DoxyAuthor}{Auteur}
+Adrien 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2019
+\end{DoxyDate}
+Classe permettant la création d\textquotesingle{}une couche de type \hyperlink{class_re_l_u}{Re\+LU} (= Rectified Linear Unit). C\textquotesingle{}est à dire f(x)=max(0,x)
+
+\begin{DoxyAuthor}{Auteur}
+Adrien 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+avril 2019
+\end{DoxyDate}
+Classe permettant la création d\textquotesingle{}une fonction sigmoid. 
+
+Définition à la ligne 17 du fichier Sigmoid.\+hpp.
+
+
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_sigmoid_a6bd1f6bbc49bd7e634dc33701aee420c}\label{class_sigmoid_a6bd1f6bbc49bd7e634dc33701aee420c}} 
+\index{Sigmoid@{Sigmoid}!propagation@{propagation}}
+\index{propagation@{propagation}!Sigmoid@{Sigmoid}}
+\subsubsection{\texorpdfstring{propagation()}{propagation()}}
+{\footnotesize\ttfamily \hyperlink{class_tenseur}{Tenseur} Sigmoid\+::propagation (\begin{DoxyParamCaption}\item[{\hyperlink{class_tenseur}{Tenseur}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode permettant la propagation d\textquotesingle{}une couche à une autre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em t} & le tenseur d\textquotesingle{}entree \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la sortie de la fonction sigmoid = 1./1-\/e$^\wedge$(-\/t) 
+\end{DoxyReturn}
+
+
+Réimplémentée à partir de \hyperlink{class_couche_a1f0ed59e21020f5d4f37933af4d1b1e5}{Couche}.
+
+
+
+Définition à la ligne 8 du fichier Sigmoid.\+cpp.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+src/deeplearn/archi/Sigmoid.\+hpp\item 
+src/deeplearn/archi/Sigmoid.\+cpp\end{DoxyCompactItemize}
