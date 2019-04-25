@@ -16,7 +16,7 @@
 class CoucheCombinaison : public Couche
 {
 
-  private:
+  protected:
     /** \brief Le tenseur "décrivant" la couche */
     Tenseur params;
 
@@ -27,8 +27,6 @@ class CoucheCombinaison : public Couche
      * \brief Constructeur d'une couche à partir de la taille des tenseurs d'entrée/sortie
     */
     CoucheCombinaison(DimTenseur din, DimTenseur dout, std::string no, Tenseur par);
-
-
 
 
     /**

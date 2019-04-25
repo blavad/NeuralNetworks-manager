@@ -21,15 +21,12 @@
 class ReseauNeurones : public Graphe<Couche>, public Couche
 {
 
-private:
+protected:
   /** \brief La liste correspondant à la première couche du réseau */
   std::vector<Couche> couche_initiale;
 
   /** \brief La liste correspondant à la dernière couche du réseau */
   std::vector<Couche> couche_finale;
-
-  /** \brief Le nom du réseau*/
-  std::string nom;
 
 public:
   /**
@@ -40,7 +37,7 @@ public:
   /**
    * \brief Constructeur du réseau à partir de couches déjà crées. 
    */
-  ReseauNeurones(Couche, ...);
+  ReseauNeurones(std::vector<Couche> couches);
 
   /**
    * \fn Tenseur propagation(Tenseur t)
@@ -79,11 +76,20 @@ public:
   void supprimerCoucheFinale(Couche c);
 
   /**
-   * \fn string getNom()
-   * \brief Méthode pour obtenir le nom du reseau de neurones
-   * \return Le nom du RN
+   * \fn void ajouterArc(Couche noeud_init,Couche noeud_final)
+   * \brief Ajout d'une connexion entre couches.
+   * \param noeud_init la couche d'où sortent les données.
+   * \param noeud_final la couche où entrent les données.
    */
-  std::string getNom();
+  void ajouterArc(Couche noeud_init, Couche noeud_final);
+
+  /**
+   * \fn void supprimerArc(Couche noeud_init,Couche noeud_final)
+   * \brief Suppression d'une connexion entre couches.
+   * \param noeud_init la couche d'où sortent les données.
+   * \param noeud_final la couche où entrent les données.
+   */
+  void supprimerArc(Couche noeud_init, Couche noeud_final);
 };
 
 #endif

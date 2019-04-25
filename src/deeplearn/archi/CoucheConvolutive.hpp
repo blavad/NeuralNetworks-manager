@@ -17,21 +17,23 @@
 class CoucheConvolutive : public CoucheCombinaison
 {
 
-  private:
+  protected:
 
     /** \brief La longueur de chaque filtre */
     int l_filtre;
-    /** \brief La largeur de chaque filtre */
+    /** \brief La hauteur de chaque filtre */
     int h_filtre;
     /** \brief Le nombre de filtre de la couche */
     int nb_filtres;
+    /** \brief Le "padding", le décalage appliqué */
+    int padding;
 
 
   public:
     /**
      * \brief Constructeur d'une couche convolutive à partir de la longeur du filtre, de la hauteur du filtre et du nombre de filtres
      */
-    //CoucheConvolutive(int l_fil, int h_fil, int nb_fil);
+    CoucheConvolutive(int l_fil, int h_fil, int nb_fil);
 
     /**
      * \brief Constructeur d'une couche convolutive à partir de la taille du tenseur d'entrée, de la longeur du filtre, de la hauteur du filtre et du nombre de     	 * filtres
@@ -64,10 +66,10 @@ class CoucheConvolutive : public CoucheCombinaison
 
 
     /**
-     * \fn void setParams()
+     * \fn void setNbFiltres()
      * \brief Changer le nombre de filtres
      */
-    void setParams(int nb_filtres);
+    void setNbFiltres(int nb_filtres);
 };
 
 #endif

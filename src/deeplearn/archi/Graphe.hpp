@@ -19,7 +19,7 @@
 template <class Type>
 class Graphe {
 
-    private :
+    protected :
         /** \brief La liste dynamique d'adjacence. */
         std::vector<std::pair<Type, std::vector<Type>>> list_adj;
 
