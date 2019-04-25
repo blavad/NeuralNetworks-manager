@@ -28,6 +28,9 @@ class Matrice : public Tenseur
     */
     Matrice(double *valeur, int l, int c);
 
+    /**
+     * 
+     */
     
 };
 

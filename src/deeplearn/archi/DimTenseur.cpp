@@ -5,22 +5,33 @@ DimTenseur::DimTenseur(std::vector<int> d)
 	dim = d;
 }
 
-bool DimTenseur::operator==(DimTenseur t2)
+DimTenseur& DimTenseur::operator=(const DimTenseur &dimT) 
 {
-	return (dim == t2.getDims());
+	dim = dimT.getDims();
+	return *this;
 }
 
-int DimTenseur::getOrdre()
+bool DimTenseur::operator==(const DimTenseur &dimT) const
+{
+	return (dim == dimT.getDims());
+}
+
+bool DimTenseur::operator!=(const DimTenseur &dimT) const
+{
+	return (dim != dimT.getDims());
+}
+
+int DimTenseur::getOrdre() const
 {
 	return dim.size();
 }
 
-int DimTenseur::getDim(int i)
+int DimTenseur::getDim(int i) const
 {
 	return dim[i];
 }
 
-std::vector<int> DimTenseur::getDims()
+std::vector<int> DimTenseur::getDims() const
 {
 	return dim;
 }

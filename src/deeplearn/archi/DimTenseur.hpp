@@ -17,43 +17,57 @@
 class DimTenseur
 {
 
-  protected:
-    /** \brief La liste des dimensions du tenseur */
-    std::vector<int> dim;
+protected:
+  /** \brief La liste des dimensions du tenseur */
+  std::vector<int> dim;
 
-  public:
-    /**
+public:
+  /**
      * \brief Constructeur standard.
      */
-    DimTenseur(std::vector<int> di);
+  DimTenseur(std::vector<int> di);
 
-    /**
-     *  \fn bool operator==(const DimTenseur t2)
-     *  \param t2 le tenseur à comparer
+  /**
+     *  \fn bool operator=(const DimTenseur &dimT)
+     *  \param dimT la dimension tensorielle à affecter
      *  \return booleen
      */
-    bool operator==(const DimTenseur t2);
+  DimTenseur& operator=(const DimTenseur &dimT);
 
-    /**
+  /**
+     *  \fn bool operator==(const DimTenseur dimT)
+     *  \param dimT la dimension tensorielle à comparer
+     *  \return booleen
+     */
+  bool operator==(const DimTenseur &dimT) const;
+
+  /**
+     *  \fn bool operator!=(const DimTenseur dimT)
+     *  \param dimT la dimension tensorielle à comparer
+     *  \return booleen
+     */
+  bool operator!=(const DimTenseur &dimT) const;
+
+  /**
      * \fn int getOrdre()
      * \brief Méthode pour obtenir l'ordre du tenseur
      * \return l'ordre du tenseur
      */
-    int getOrdre();
+  int getOrdre() const;
 
-    /**
+  /**
      * \fn int getDim(int)
      * \brief Méthode pour obtenir la i ème dimension d'un tenseur
      * \return la i ème dimension du tenseur
      */
-    int getDim(int);
+  int getDim(int) const;
 
-    /**
+  /**
      * \fn std::vector<int> getDims()
      * \brief Méthode pour obtenir les dimensions d'un tenseur
      * \return le vecteur de dimensions
      */
-    std::vector<int> getDims();
+  std::vector<int> getDims() const;
 };
 
 #endif

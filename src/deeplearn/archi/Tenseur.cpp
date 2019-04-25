@@ -1,4 +1,5 @@
 #include "Tenseur.hpp"
+#include "DimTenseur.hpp"
 #include <vector>
 #include <iostream>
 #include <stdlib.h>
@@ -25,6 +26,30 @@ Tenseur::Tenseur(double *val, DimTenseur di) : dimT(di)
 Tenseur::~Tenseur()
 {
 	free(valeur);
+}
+
+bool Tenseur::operator==(const Tenseur &t)
+{
+	bool res;
+	if (getDim() != t.getDim())
+	{
+		return false;
+	}
+	else
+	{
+		vector<int> indice(t.getDim().getOrdre(), 0);
+		res = getValeur(indice) == t.getValeur(indice);
+		while (res && nextInd(indice))
+		{
+			res = getValeur(indice) == t.getValeur(indice);
+		}
+		return res;
+	}
+}
+
+bool Tenseur::operator!=(const Tenseur &t)
+{
+	return !(operator==(t));
 }
 
 Tenseur Tenseur::operator[](const int)
@@ -86,19 +111,19 @@ void Tenseur::initValeurUnif()
 	}
 }
 
-double Tenseur::getValeur(std::vector<int> indices)
+double Tenseur::getValeur(std::vector<int> indices) const
 {
 	int ind = getInd(indices);
 	return valeur[ind];
 }
 
-void Tenseur::setValeur(double val, std::vector<int> indices)
+void Tenseur::setValeur(double val, std::vector<int> indices) const
 {
 	int ind = getInd(indices);
 	valeur[ind] = val;
 }
 
-DimTenseur Tenseur::getDim()
+DimTenseur Tenseur::getDim() const
 {
 	return dimT;
 }
@@ -108,7 +133,7 @@ void Tenseur::setDim(DimTenseur di)
 	dimT = di;
 }
 
-int Tenseur::getInd(std::vector<int> indices)
+int Tenseur::getInd(std::vector<int> indices) const
 {
 	int n = indices.size() - 1;
 	int ind = indices[n];
