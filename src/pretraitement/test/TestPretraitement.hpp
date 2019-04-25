@@ -6,7 +6,7 @@
 #include <cppunit/TestFixture.h>
 #include "../deeplearn/train/Donnees.hpp"
 #include "../deeplearn/archi/ReseauNeurones.hpp"
-#include "Pretraitement.hpp"
+#include "../Pretraitement.hpp"
 #include <cppunit/TestAssert.h>
 
 /**

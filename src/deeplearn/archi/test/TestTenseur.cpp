@@ -1,4 +1,3 @@
-#include "Tenseur.hpp"
 #include "TestTenseur.hpp"
 #include <vector>
 

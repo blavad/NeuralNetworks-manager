@@ -1,8 +1,8 @@
 #include <vector>
 #include <cppunit/TestFixture.h>
 #include <cppunit/TestAssert.h>
-#include "Donnees.hpp"
-#include "Donnee.hpp"
+#include "../Donnees.hpp"
+#include "../Donnee.hpp"
 
 #ifndef TESTDONNEES_HPP
 #define TESTDONNEES_HPP

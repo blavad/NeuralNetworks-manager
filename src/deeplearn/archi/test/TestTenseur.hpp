@@ -9,7 +9,7 @@
 #include <cppunit/Test.h>
 #include <cppunit/extensions/HelperMacros.h>
 
-#include "Tenseur.hpp"
+#include "../Tenseur.hpp"
 
 using namespace CppUnit;
 

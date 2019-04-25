@@ -1,7 +1,7 @@
 #include <cppunit/ui/text/TestRunner.h>
 #include "TestTenseur.hpp"
-#include "Tenseur.cpp"
-#include "DimTenseur.cpp"
+#include "../Tenseur.cpp"
+#include "../DimTenseur.cpp"
 
 int main(int argc, char **argv)
 {

@@ -4,9 +4,9 @@
 #include <string>
 #include <cppunit/TestFixture.h>
 #include <cppunit/TestAssert.h>
-#include "Tenseur.hpp"
-#include "DimTenseur.hpp"
-#include "Couche.hpp"
+#include "../Tenseur.hpp"
+#include "../DimTenseur.hpp"
+#include "../Couche.hpp"
 
 /**
  * \class TestCouche

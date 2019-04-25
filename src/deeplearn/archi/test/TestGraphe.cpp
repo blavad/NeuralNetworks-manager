@@ -1,5 +1,4 @@
 #include "TestGraphe.hpp"
-#include "Graphe.hpp"
 #include <algorithm> // pour pouvoir utiliser find
 
 void TestGraphe :: testAjouterNoeud(){
