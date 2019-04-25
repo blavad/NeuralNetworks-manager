@@ -4,7 +4,6 @@
 #include "Donnees.hpp"
 #include "Donnee.hpp"
 
-
 #ifndef TESTDONNEES_HPP
 #define TESTDONNEES_HPP
 
@@ -19,26 +18,27 @@
 
 using namespace CppUnit;
 
-class TestDonnees : public CppUnit::TestFixture {
+class TestDonnees : public CppUnit::TestFixture
+{
 
-private :
+  protected:
+    Donnees *d1;
+    Donnees *d2;
+    std::vector<Donnee> donnees;
 
-	Donnees d1;
-	std::vector<Donnee> d2;
+  public:
+    void setUp();
 
-public:
+    void tearDown();
 
     /** \brief Vérifier que les données s'ajoutent bien */
     void testAjouterDonnees();
 
-   /** \brief Vérifier que la donnee s'ajoute bien */
+    /** \brief Vérifier que la donnee s'ajoute bien */
     void testAjouterDonnee();
 
     /** \brief Vérifier que les données se mélangent bien */
     void testMelanger();
-
-
 };
-
 
 #endif // TESTDONNEES_HPP

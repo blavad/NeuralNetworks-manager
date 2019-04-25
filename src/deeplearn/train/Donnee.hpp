@@ -31,21 +31,21 @@ class Donnee {
         Donnee();
 
         /**
-         * \brief Constructeur de Donnee avec une entree et une sortie
+         * \brief Constructeur de Donnee avec l'entree et la sortie 
          */
         Donnee(Tenseur entree, Tenseur sortie);
 
         /**
          * \fn Tenseur getEntree()
          * \brief Retourne l'entree de la donnee
-         * \return l'entree.         * 
+         * \return l'entree.         
          */
         Tenseur getEntree();
 
         /**
          * \fn Tenseur getSortie()
          * \brief Retourne la sortie de la donnee
-         * \return la sortie.         *          * 
+         * \return la sortie.  
          */
         Tenseur getSortie();
 

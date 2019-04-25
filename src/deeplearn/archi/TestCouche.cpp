@@ -1,26 +1,21 @@
 #include "TestCouche.hpp"
+#include <vector>
 
-
-
-	void TestCouche::testPropagation()
+void TestCouche::testPropagation()
 {
-	DimTenseur d1;
-	Couche c1(d1,d1,"test");
-	Tenseur t1(2);
-	// IL FAUT SURCHARGER L'OPERATEUR = POUR DIMTENSEUR AVANT DE POUVOIR ENLEVER LES COMMENTAIRES
-	//CPPUNIT_ASSERT_EQUAL(c1.propagation(t1).getDim(),c1.getDimOutput());
+	std::vector<int> din{4, 2}, dout{5};
+	DimTenseur dimIn(din), dimOut(dout);
+	Couche c1(din, dout, "test");
+	Tenseur t1(dout);
+
+	CPPUNIT_ASSERT_EQUAL(c1.propagation(t1).getDim(), c1.getDimOutput());
 }
 
-
-	void TestCouche::testDerivee()
+void TestCouche::testDerivee()
 {
-	DimTenseur d1;
-	Couche c1(d1,d1,"test");
-	Tenseur t1(2);
-	//CPPUNIT_ASSERT_EQUAL (c1.derivee(t1).getDim(),c1.getDimOutput());
+	std::vector<int> din{4, 2}, dout{5};
+	DimTenseur dimIn(din), dimOut(dout);
+	Couche c1(dimIn, dimOut, "test");
+	Tenseur t1(dout);
+	CPPUNIT_ASSERT_EQUAL(c1.derivee(t1).getDim(), c1.getDimOutput());
 }
-
-
-
-
-

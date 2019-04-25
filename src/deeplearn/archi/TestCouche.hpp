@@ -21,6 +21,7 @@ class TestCouche : public CppUnit::TestFixture {
 public :
 	/** \brief Vérifier que la propagation d'une couche à une autre se déroule normalement */
 	void testPropagation();
+	
 	/** \brief Vérifier que la dérivation d'une couche s'effectue correctement */
 	void testDerivee();
 	
