@@ -20,7 +20,7 @@ class TanH : public CoucheActivation
     /**
      * \brief Constructeur d'une fonction tangente hyperbolique.
      */
-    TanH(DimTenseur din, DimTenseur dout, std::string no);
+    TanH(DimTenseur din, std::string no);
 
     /**
      * \fn Tenseur propagation(Tenseur t)

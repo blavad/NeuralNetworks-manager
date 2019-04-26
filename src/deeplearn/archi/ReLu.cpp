@@ -1,6 +1,6 @@
 #include "ReLU.hpp"
 
-ReLU::ReLU(DimTenseur din,DimTenseur dout, std::string no):CoucheActivation(din,dout,no)
+ReLU::ReLU(DimTenseur din, std::string no):CoucheActivation(din, no)
 {
 }
 

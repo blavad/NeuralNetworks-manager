@@ -4,12 +4,12 @@
 #include "Couche.hpp"
 /** 
  * \class CoucheCombinaison
- * \brief Gestion d'une couche de combinaison
+ * \brief Classe abstraite définissant les couches de combinaisons.
  * \author Adrien
  * \version 1.0 
  * \date avril 2019
  *
- * Classe permettant la création d'une couche de combinaison c'est-à-dire comportant les parametres du reseau
+ * Classe permettant la création d'une couche de combinaison c'est-à-dire comportant les paramètres du reseau
  * 
  */
 
@@ -25,8 +25,12 @@ class CoucheCombinaison : public Couche
 
     /**
      * \brief Constructeur d'une couche à partir de la taille des tenseurs d'entrée/sortie
+     * \param din dimension des entrées de la couche 
+     * \param dout dimension des sorties de la couche 
+     * \param no nom de la couche  
+     * 
     */
-    CoucheCombinaison(DimTenseur din, DimTenseur dout, std::string no, Tenseur par);
+    CoucheCombinaison(DimTenseur din, DimTenseur dout, std::string no);
 
 
     /**
@@ -34,7 +38,6 @@ class CoucheCombinaison : public Couche
      * \brief setter les parametres de la couche.
      */
     void setParams(Tenseur nouvParams);
-
 
 
     /**
@@ -46,10 +49,10 @@ class CoucheCombinaison : public Couche
 
     /**
      * \fn void update(Tenseur t)
-     * \brief getter des parametres de la couche.
+     * \brief Met à jour les paramètres
      * \param t les parametres mis a jour
      */
-    void update(Tenseur t );
+    void update(Tenseur t);
 
 };
 

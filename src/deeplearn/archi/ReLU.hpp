@@ -21,7 +21,7 @@ class ReLU : public CoucheActivation
     /**
      * \brief Constructeur de la fonction ReLU
      */
-    ReLU(DimTenseur din, DimTenseur dout, std::string no);
+    ReLU(DimTenseur din, std::string no);
 
     /**
      * \fn Tenseur propagation(Tenseur t)

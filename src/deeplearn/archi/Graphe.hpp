@@ -35,6 +35,7 @@ class Graphe {
 
         /**
          * \brief Constructeur de graphe à partir de noeuds isolés.
+         * \params noeuds Ensembles de noeuds initiaux
          */
         Graphe(Type* noeuds);
         

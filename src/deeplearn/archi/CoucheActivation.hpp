@@ -6,7 +6,7 @@
 
 /** 
  * \class CoucheActivation
- * \brief Gestion d'une couche d'activation
+ * \brief Classe abstraite définissant les couches d'activation
  * \author Adrien
  * \version 1.0 
  * \date avril 2019
@@ -21,8 +21,10 @@ class CoucheActivation : public Couche
   public:
     /**
      * \brief Constructeur d'une couche d'activation avec une dimension d'entree.
+     * \param din la dimension du tenseur d'entrée
+     * \param no le nom de la couche
      */
-    CoucheActivation(DimTenseur din, DimTenseur dout, std::string no);
+    CoucheActivation(DimTenseur din, std::string no);
 };
 
 #endif

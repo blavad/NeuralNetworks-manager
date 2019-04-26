@@ -21,7 +21,7 @@ class Sigmoid : public CoucheActivation
     /**
      * \brief Constructeur d'une fonction sigmoid.
      */
-    Sigmoid(DimTenseur din, DimTenseur dout, std::string no);
+    Sigmoid(DimTenseur din, std::string no);
 
     /**
      * \fn Tenseur propagation(Tenseur t)

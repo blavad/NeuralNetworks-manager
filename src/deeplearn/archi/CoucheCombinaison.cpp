@@ -1,6 +1,6 @@
 #include "CoucheCombinaison.hpp"
 
-CoucheCombinaison::CoucheCombinaison(DimTenseur din, DimTenseur dout, std::string no, Tenseur par):Couche(din,dout,no), params(par)
+CoucheCombinaison::CoucheCombinaison(DimTenseur din, DimTenseur dout, std::string no):Couche(din,dout,no)
 {	
 }
 

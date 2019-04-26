@@ -21,7 +21,7 @@ class Neurone : public CoucheConnectee
     /**
      * \brief Constructeur d'un neurone
      */
-    Neurone(DimTenseur din, DimTenseur dout, std::string no, Tenseur par);
+    Neurone(DimTenseur din, std::string no);
 };
 
 #endif

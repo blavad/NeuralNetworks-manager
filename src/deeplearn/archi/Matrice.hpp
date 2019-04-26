@@ -5,15 +5,15 @@
 
 /** 
  * \class Matrice
- * \brief Classe qui crée une matrice
+ * \brief Module permettant la manipulation de matrices
  * \author Adrien
+ * \author David
  * \version 1.0 
  * \date avril 2019
  *
- * Classe qui crée un tenseur d'ordre 2 (= matrice).
+ * Classe qui crée un tenseur d'ordre 2 (= une matrice).
  *
  */
-
 class Matrice : public Tenseur
 {
 
@@ -27,10 +27,6 @@ class Matrice : public Tenseur
     * \brief Constructeur d'une matrice de taille lxc
     */
     Matrice(double *valeur, int l, int c);
-
-    /**
-     * 
-     */
     
 };
 

@@ -5,8 +5,9 @@
 
 /** 
  * \class Vecteur
- * \brief Classe qui crée un vecteur
+ * \brief Module qui permet la manipulation de vecteurs
  * \author Adrien
+ * \author David
  * \version 1.0 
  * \date avril 2019
  *

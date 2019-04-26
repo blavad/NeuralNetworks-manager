@@ -7,7 +7,7 @@
 
 /** 
  * \class Couche
- * \brief Classe liée à la couche.
+ * \brief Classe abstraite définissant les fonctionalités d'une couche.
  * \author Adrien
  * \version 1.0 
  * \date avril 2019
@@ -20,10 +20,10 @@ class Couche
 {
 
 protected:
-  /** \brief La dimension du tenseur à l'entrée de la couche */
+  /** \brief La dimension du tenseur (= données) à l'entrée de la couche */
   DimTenseur dim_in;
 
-  /** \brief La dimension du tenseur à la sortie de la couche */
+  /** \brief La dimension du tenseur (= données) à la sortie de la couche */
   DimTenseur dim_out;
 
   /** \brief Le nom de la couche */
@@ -97,7 +97,7 @@ public:
   /**
    * \fn virtual bool afficher()
    * \brief Méthode pour savoir si la couche est affichée ou non
-   * \return booléen
+   * \return booléen vérifiant si l'affiche s'est bien déroulé
    */
   virtual bool afficher();
 };

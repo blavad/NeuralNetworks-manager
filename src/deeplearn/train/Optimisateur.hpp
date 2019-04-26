@@ -19,15 +19,15 @@
 class Optimisateur {
 
     private :
-        /** \brief le reseau de neurones de l'optimisateur */
-        ReseauNeurones rn;
+        /** \brief le reseau de neurones à optimiser */
+        ReseauNeurones *rn;
 
     public :
 
         /**
          * \brief Constructeur d'un otpimisateur a partir d'un reseau de neurones
          */
-        Optimisateur(ReseauNeurones reseauN);
+        Optimisateur(ReseauNeurones *reseauN);
 
         /**
          * \fn void minimiser(Erreur err)

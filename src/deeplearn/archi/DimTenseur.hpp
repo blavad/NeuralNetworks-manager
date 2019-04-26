@@ -5,12 +5,14 @@
 
 /** 
  * \class DimTenseur
- * \brief Classe stockant les dimensions d'un tenseur.
+ * \brief Classe qui gere la dimension d'un tenseur.
  * \author Adrien
+ * \author David
  * \version 1.0 
  * \date avril 2019
  *
- * Classe qui gere la dimension d'un tenseur
+ * Classe stockant les dimensions d'un tenseur.
+ * La dimension d'un tenseur est représenter comme une suite de dimensions dans chaque direction.
  * 
  */
 
@@ -18,17 +20,25 @@ class DimTenseur
 {
 
 protected:
-  /** \brief La liste des dimensions du tenseur */
+  /** \brief la liste des dimensions du tenseur */
   std::vector<int> dim;
 
 public:
-  /**
+
+   /**
+     * \brief Constructeur par défault.
+     */
+   DimTenseur();
+
+   /**
      * \brief Constructeur standard.
+     * \param di la liste des dimensions
      */
   DimTenseur(std::vector<int> di);
 
   /**
      *  \fn bool operator=(const DimTenseur &dimT)
+     *  \brief Affectation de dimensions tensorielles  
      *  \param dimT la dimension tensorielle à affecter
      *  \return booleen
      */
@@ -36,16 +46,18 @@ public:
 
   /**
      *  \fn bool operator==(const DimTenseur dimT)
+     *  \brief Compare des dimensions tensorielles  
      *  \param dimT la dimension tensorielle à comparer
      *  \return booleen
      */
   bool operator==(const DimTenseur &dimT) const;
 
   /**
-     *  \fn bool operator!=(const DimTenseur dimT)
-     *  \param dimT la dimension tensorielle à comparer
-     *  \return booleen
-     */
+   *  \fn bool operator!=(const DimTenseur dimT)
+   *  \brief Compare des dimensions tensorielles
+   *  \param dimT la dimension tensorielle à comparer
+   *  \return booleen
+   */
   bool operator!=(const DimTenseur &dimT) const;
 
   /**
@@ -58,6 +70,7 @@ public:
   /**
      * \fn int getDim(int)
      * \brief Méthode pour obtenir la i ème dimension d'un tenseur
+     * \param i la dimension souhaitée
      * \return la i ème dimension du tenseur
      */
   int getDim(int) const;

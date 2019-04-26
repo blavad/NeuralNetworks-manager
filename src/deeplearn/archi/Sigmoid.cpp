@@ -1,6 +1,6 @@
 #include "Sigmoid.hpp"
 
-Sigmoid::Sigmoid(DimTenseur din,DimTenseur dout, std::string no):CoucheActivation(din,dout,no)
+Sigmoid::Sigmoid(DimTenseur din, std::string no):CoucheActivation(din,no)
 {
 }
 

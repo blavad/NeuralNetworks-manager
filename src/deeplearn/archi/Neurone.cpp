@@ -1,5 +1,5 @@
 #include "Neurone.hpp"
 
-Neurone::Neurone(DimTenseur din, DimTenseur dout, std::string no, Tenseur par):CoucheConnectee(din,dout,no,par)
+Neurone::Neurone(DimTenseur din, std::string no):CoucheConnectee(din,1,no)
 {
 }

@@ -27,16 +27,15 @@ class MaxPooling : public Couche {
 
 
     public :
-
         /**
          * \brief Constructeur afin d'obtenir une image de taille pool_x par pool_y.
          */
-        MaxPooling(DimTenseur din, DimTenseur dout, std::string no, int pl_x, int pl_y);
+        MaxPooling(DimTenseur din, std::string no, int pl_x, int pl_y);
 
        /**
          * \brief Constructeur afin d'obtenir une image de taille pool par pool.
          */
-        MaxPooling(DimTenseur din, DimTenseur dout, std::string no, int pl);
+        MaxPooling(DimTenseur din, std::string no, int pl);
 	
 	/**
          * \fn Tenseur propagation(Tenseur t)

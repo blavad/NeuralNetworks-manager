@@ -8,19 +8,28 @@
 
 using namespace std;
 
+Tenseur::Tenseur()
+{
+}
+
 Tenseur::Tenseur(std::vector<int> dims) : dimT(dims)
 {
+	init();
+}
+
+Tenseur::Tenseur(DimTenseur di) : dimT(di)
+{
+	init();
+}
+
+void Tenseur::init()
+{
 	int prod = 1;
-	for (int d : dims)
+	for (int d : dimT.getDims())
 	{
 		prod = prod * d;
 	}
 	valeur = (double *)malloc(prod * sizeof(double));
-}
-
-Tenseur::Tenseur(double *val, DimTenseur di) : dimT(di)
-{
-	valeur = val;
 }
 
 Tenseur::~Tenseur()
@@ -50,10 +59,6 @@ bool Tenseur::operator==(const Tenseur &t)
 bool Tenseur::operator!=(const Tenseur &t)
 {
 	return !(operator==(t));
-}
-
-Tenseur Tenseur::operator[](const int)
-{
 }
 
 bool Tenseur::nextInd(std::vector<int> &ind)

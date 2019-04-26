@@ -1,11 +1,8 @@
 #include "Couche.hpp"
 
 
-Couche::Couche(DimTenseur din, DimTenseur dout, std::string no)
+Couche::Couche(DimTenseur din, DimTenseur dout, std::string no=NULL):dim_in(din),dim_out(dout), nom(no)
 {	
-	dim_in = din;
-	dim_out = dout;	
-	nom = no;
 }
 
 

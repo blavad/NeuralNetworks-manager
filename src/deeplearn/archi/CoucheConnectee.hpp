@@ -5,7 +5,7 @@
 
 /** 
  * \class CoucheConnectee
- * \brief Création d'une couche connectee
+ * \brief Création d'une couche connectée
  * \author Adrien
  * \version 1.0 
  * \date avril 2019
@@ -21,13 +21,13 @@ class CoucheConnectee : public CoucheCombinaison
     /**
      * \brief Constructeur d'une couche connectée à partir du nombre de sorties
      */
-    CoucheConnectee(DimTenseur din, DimTenseur dout, std::string no, Tenseur par);
+    CoucheConnectee(DimTenseur din, int nb_sorties, std::string no);
 
     /**
      * \fn Tenseur propagation(Tenseur t)
      * \brief Methode permettant la propagation d'une couche à une autre.
      * \param t le tenseur d'entree
-	 * \return la sortie de la couche
+	   * \return la sortie de la couche
      */
     Tenseur propagation(Tenseur t);
 };

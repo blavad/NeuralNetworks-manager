@@ -9,7 +9,7 @@
 
 /** 
  * \class ReseauNeurones
- * \brief Classe liée à la création du réseau de neurones.
+ * \brief Module permettant la manipulation de réseaux de neurones.
  * \author Adrien
  * \version 1.0 
  * \date avril 2019

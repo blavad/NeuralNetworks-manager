@@ -1,5 +1,9 @@
 #include "DimTenseur.hpp"
 
+DimTenseur::DimTenseur():dim(std::vector<int>{}){
+
+ }
+
 DimTenseur::DimTenseur(std::vector<int> d)
 {
 	dim = d;

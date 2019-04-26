@@ -2,13 +2,13 @@
 
 
    
-MaxPooling::MaxPooling(DimTenseur din, DimTenseur dout, std::string no, int pl_x, int pl_y):Couche(din,dout,no), pool_x(pl_x), pool_y(pl_y) 
+MaxPooling::MaxPooling(DimTenseur din, std::string no, int pl_x, int pl_y):Couche(din,DimTenseur(std::vector<int>{}), no), pool_x(pl_x), pool_y(pl_y) 
 {
 }
 
 
 
-MaxPooling::MaxPooling(DimTenseur din, DimTenseur dout, std::string no, int pl):Couche(din,dout,no), pool_x(pl), pool_y(pl) 
+MaxPooling::MaxPooling(DimTenseur din, std::string no, int pl):Couche(din,DimTenseur(std::vector<int>{}),no), pool_x(pl), pool_y(pl) 
 {
 }
 	
