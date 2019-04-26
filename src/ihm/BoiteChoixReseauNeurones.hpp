@@ -19,6 +19,12 @@ using namespace std;
  */
 class BoiteChoixReseauNeurones : public BoiteChoixFichier {
 
+        /**
+         * \fn BoiteChoixReseauNeurones(Panneau parent)
+         * \brief Constucteur d'une boite de choix de fichier de réseau de neurones 
+         * \param parent le panneau qui contient la boite
+         */
+         BoiteChoixReseauNeurones(Panneau parent);
 
 };
 

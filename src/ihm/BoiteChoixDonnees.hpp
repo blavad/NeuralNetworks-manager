@@ -17,8 +17,14 @@ using namespace std;
  * Cette classe hérite de BoiteChoixFichier
  * 
  */
-class BoiteChoixDonnées : public BoiteChoixFichier {
+class BoiteChoixDonnees : public BoiteChoixFichier {
 
+        /**
+         * \fn BoiteChoixDonnees(Panneau parent)
+         * \brief Constucteur d'une boite de choix de fichier de données 
+         * \param parent le panneau qui contient la boite
+         */
+         BoiteChoixDonnees(Panneau parent);
 
 };
 

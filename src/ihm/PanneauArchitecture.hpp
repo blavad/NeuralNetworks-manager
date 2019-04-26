@@ -1,27 +1,27 @@
-
-
 #ifndef __PANNEAU_ARCHITECTURE_HPP__
 #define __PANNEAU_ARCHITECTURE_HPP__
 
 #include "BoiteChoixCouche.hpp"
+#include "../deeplearn/archi/Couche.hpp"
 #include "BoiteChoixReseauNeurones.hpp"
 #include "BoiteConnexionCouche.hpp"
 #include "Panneau.hpp"
 
 using namespace std;
+
 /** 
  * \class PanneauArchitecture 
- * \brief ???
- * \author ???
+ * \brief Panneau de création d'architecture de réseau de neurones
+ * \author David
  * \version 1.0 
  * \date avril 2019
  * 
- * Regroupe les differentes boites ( choix couche, RN ,connexion ) dans un même Panneau
+ * Regroupe les differentes boites ( choix couche, RN ,connexion, etc ) dans un même Panneau
  * 
  */
 class PanneauArchitecture : public Panneau {
 
-    private :
+    protected :
         /** \brief Boite de choix des couches à travailler */
         BoiteChoixCouche choixCouche;
 
@@ -32,10 +32,10 @@ class PanneauArchitecture : public Panneau {
         BoiteConnexionCouche choixConnexion;
 
         /** \brief une Couche  */
-        Couche couche;
+        Couche* couche;
         
         /** \brief une paire de Couche*/
-        pair < Couche, Couche> liaisonSelect; 
+        pair < Couche*, Couche*> liaisonSelect; 
 
     public :
 
@@ -45,49 +45,49 @@ class PanneauArchitecture : public Panneau {
         PanneauArchitecture();
 
         /**
-         * \brief Méthode permettant l'ajout d'une couche. 
+         * \brief Méthode appelée lors du choix de l'ajout d'une couche. 
          */
         void ajouterCouche();
         
         /**
-         * \brief Méthode permettant l'ajout d'un Reseau de Neurones.
+         * \brief Méthode appelée lors du choix de l'ajout d'un Reseau de Neurones.
          */
         void ajouterRN();
         
         /**
-         * \brief Méthode permettant d'ajouter une liaison
+         * \brief Méthode appelée lors du choix d'ajouter une liaison
          */
         void ajouterLiaison();
 
         /**
-         * \brief Méthode permettant la suppression d'une couche. 
+         * \brief Méthode appelée lors du choix de la suppression d'une couche. 
          */
         void supprimerCouche();
         
         /**
-         * \brief Méthode permettant de supprimer une liaison
+         * \brief Méthode appelée lors de la suppression d'une liaison
          */
         void supprimerLiaison();
         
         /**
-         * \brief Méthode mettant à jour la ccouche selectionnée
+         * \brief Méthode mettant à jour la couche selectionnée
          */
-        void selectCouche(Couche);     
+        void selectCouche(Couche*);     
         
         /**
          * \brief Méthode mettant à jour la liaison selectionnée
          */
-        void selectLiaison(Couche,Couche);     
+        void selectLiaison(Couche*,Couche*);     
         
 		/**
          * \brief Méthode permettant d'acceder a la couche selectionnée
          */
-        Couche getCoucheSelectionnee();     
+        Couche* getCoucheSelectionnee();     
         
         /**
          * \brief Méthode permettant d'acceder à la liaisonn selectionnée
          */
-        pair <Couche, Couche> getLiaison();    
+        pair<Couche*, Couche*> getLiaison();    
         
     
 };

@@ -8,13 +8,12 @@
 
 /** 
  * \class BoiteArchitecture
- * \brief Gestion de l'interaction Homme/Machine liée au choix de l architecture
+ * \brief Boite contenant l'affichage du réseau de neurones
  * \author Marion
  * \version 1.0 
  * \date avril 2019
  *
- * Ce module gere le choix de l architecture du reseau de neurones utilisé par le logiciel 
- * Cette classe hérite de Boite
+ * Ce module gère l'affichage de l architecture du reseau de neurones utilisé par le logiciel 
  */
 
 class Panneau : public Boite {
@@ -41,6 +40,5 @@ class Panneau : public Boite {
          */
         void afficher(ReseauNeurones rn);
     
-
 };
 #endif

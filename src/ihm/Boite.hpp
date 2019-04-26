@@ -1,7 +1,9 @@
-#include <gtkmm.h>
-
 #ifndef __BOITE_HPP__
 #define __BOITE_HPP__
+
+#include <gtkmm.h>
+#include <gtkmm/frame.h>
+#include <string>
  
  using namespace std;
 
@@ -13,15 +15,15 @@
  * \date avril 2019
  *
  *
- * Cette classe hérite de getkmm::Frame
+ * Cette classe hérite de gtkmm::Frame
  */
 
-class Boite {
+class Boite : public Frame {
 
     private :
         /** 
-	* \brief Le nom de la boite 
-        */
+	     * \brief Le nom de la boite 
+         */
         string nom;
 
 

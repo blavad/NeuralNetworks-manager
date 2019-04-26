@@ -22,10 +22,10 @@ class BoiteConnexionCouche : public Boite {
 
     private :
         /** \brief La couche de depart de la connexion */
-        Couche couche_init;
+        Couche* couche_init;
 
         /** \brief La couche d'arrivée de la connexion */
-        Couche couche_finale;
+        Couche* couche_finale;
 
     public :
 
@@ -41,28 +41,28 @@ class BoiteConnexionCouche : public Boite {
          * \brief Setteur permetant de changer la valeur de la Couche Initiale  
          * \param la nouvelle Couche initiale
          */
-        void setCoucheInitiale(Couche couche);
+        void setCoucheInitiale(Couche* couche);
 
          /**
          * \fn setCoucheFinale(Couche couche)
          * \brief Setteur permetant de changer la valeur de la Couche finale 
          * \param la nouvelle Couche finale
          */
-        void setCoucheFinale(Couche couche);
+        void setCoucheFinale(Couche* couche);
 
          /**
          * \fn getCoucheInitiale()
          * \brief Getteur permetant d'obtenir la valeur de la Couche Initiale  
-	 * \return la Couche c_init en attribut de la classe
+	     * \return la Couche c_init en attribut de la classe
          */
-        Couche getCoucheInitiale();
+        Couche* getCoucheInitiale();
 
          /**
          * \fn getCoucheFinale()
          * \brief getteur permetant d'obtenir la valeur de la Couche Finale 
-	 * \return la Couche c_finale en attribut de la classe
+	     * \return la Couche c_finale en attribut de la classe
          */
-        Couche getCoucheFinale();
+        Couche* getCoucheFinale();
 
 };
 

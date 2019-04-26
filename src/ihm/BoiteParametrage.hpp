@@ -13,7 +13,7 @@
  * \version 1.0 
  * \date avril 2019
  * 
- * Cette classe hérite de Boite
+ * Boite contenant les différents éléments graphique du choix des paramètres d'apprentissage
  * 
  */
 class BoiteParametrage : public Boite{
@@ -31,12 +31,10 @@ class BoiteParametrage : public Boite{
          */
         BoiteParametrage(Panneau parent);
 
- 
- 
          /**
          * \fn getParametrage()
          * \brief Getteur permettant d'acceder aux paramètres en attribut
-	 * \return ParametresApprentissage
+	     * \return ParametresApprentissage
          */
          ParametresApprentissage getParametrage();
 

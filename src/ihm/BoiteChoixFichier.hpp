@@ -4,6 +4,7 @@
 
 #include "Panneau.hpp"
 #include "Boite.hpp"
+#include<string>
 
 using namespace std;
 
@@ -28,17 +29,15 @@ class BoiteChoixFichier : public Boite {
 
          /**
          * \fn BoiteChoixFichier(Panneau parent)
-         * \brief Constucteur prenant en paramètre un Panneau
-         * \param parent un Panneau préalablement défini
+         * \brief Constucteur d'une boite de choix de fichier 
+         * \param parent le panneau qui contient la boite
          */
-         BoiteChoixFichier(Panneau parent );
-
- 
+         BoiteChoixFichier(Panneau parent);
  
          /**
          * \fn getNomFichier()
          * \brief getteur permettant d'acceder au nom du fichier en attribut
-	 * \return le string correspondant au nom du fichier
+	     * \return le string correspondant au nom du fichier
          */
          string getNomFichier();
 

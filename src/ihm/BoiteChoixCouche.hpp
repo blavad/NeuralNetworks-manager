@@ -18,6 +18,13 @@ using namespace std ;
  */
 class BoiteChoixCouche: public BoiteChoixMultiple {
 
+    /**
+     * \fn BoiteChoixCouche(string ,vector<string> choix = vector<string>{})
+     * \brief Constructeur d'une boite de choix de couche
+     * \param nom un string correspondant au nom de la boite
+     * \param choix la liste des choix possibles
+     */
+     BoiteChoixCouche(string nom, vector<string> choix = vector<string>{});
 
 };
 

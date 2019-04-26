@@ -1,4 +1,3 @@
-
 #ifndef __PANNEAU_ENTRAINEMENT_HPP__
 #define __PANNEAU_ENTRAINEMENT_HPP__
 
@@ -7,7 +6,7 @@
 #include "BoiteChoixReseauNeurones.hpp"
 #include "BoiteParametrage.hpp"
 #include "Panneau.hpp"
-#include "../deeplearn/archi/Apprentissage.hpp"
+#include "../deeplearn/train/Apprentissage.hpp"
 
 using namespace std;
 /** 
@@ -17,61 +16,56 @@ using namespace std;
  * \version 1.0 
  * \date avril 2019
  * 
- *Classe gerant l'IHM liee a l'entrainement d'un Reseau de Neurones
+ * Classe gerant l'IHM liee a l'entrainement d'un Reseau de Neurones
  * 
  */
 
-class PanneauEntrainement : public Panneau{
+class PanneauEntrainement : public Panneau
+{
 
-    private :
-	
-	/** \brief Apprentissage */
-	Apprentissage apprentissage;
-	
-	/** \brief Boite de choix de l'erreur*/
-	BoiteChoixErreur choixErreur
+  protected:
+    /** \brief Apprentissage */
+    Apprentissage apprentissage;
 
-	/** \brief Boite de choix des donnees*/
-	BoiteChoDonnees choixDonnees
+    /** \brief Boite de choix de l'erreur*/
+    BoiteChoixErreur choixErreur;
 
-	/** \brief Boite de choix du RN*/
-	BoiteReseauNeurones choixRN
+    /** \brief Boite de choix des donnees*/
+    BoiteChoDonnees choixDonnees;
 
+    /** \brief Boite de choix du RN*/
+    BoiteReseauNeurones choixRN;
 
-        /** \brief Bouton de demarrage de l'entrainement */
-        GtkButton demarrerEntrainement;
+    /** \brief Bouton de démarrage de l'entrainement */
+    GtkButton demarrerEntrainement;
 
-	
+  public:
+    /**
+     * \brief Constructeur du panneau d'entrainement.
+     */
+    PanneauEntrainement();
 
-    public :
+    /**
+     * \brief Méthode appelée après le choix de la fonction d'erreur. 
+     */
+    void ajouterErreur();
 
-	/**
-         * \brief Constructeur du panneau d'entrainement.
-         */
-        PanneauEntrainement();
+    /**
+     * \brief Méthode appelée après le choix de donnees à ajouter. 
+     */
+    void ajouterDonnees();
 
-        /**
-         * \brief Méthode permettant l'ajout d'une erreur. 
-         */
-        void ajouterErreur();
+    /**
+     * \brief Méthode appelée après le choix d'un Reseau de Neurones. 
+     */
+    void ajouterRN();
 
-        /**
-         * \brief Méthode permettant l'ajout de donnees. 
-         */
-        void ajouterDonnees();
+    /**
+     * \brief Méthode appelée lors du choix de sauvegarder le parametrage. 
+     */
+    void sauverParametrage();
 
-        /**
-         * \brief Méthode permettant l'ajout d'un Reseau de Neurones. 
-         */
-        void ajouterRN();
-
-        /**
-         * \brief Méthode permettant de sauvegarder le parametre. 
-         */
-        void sauverParametrage();
-
-        /**
-         * \brief Méthode permettant de verifier si les parametres sont coherents. 
-         */
-        bool verifierOptions();
-        
+    /**
+     * \brief Méthode permettant de verifier si les parametres sont coherents. 
+     */
+    bool verifierOptions();
