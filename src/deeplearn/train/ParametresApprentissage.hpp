@@ -19,7 +19,7 @@ class ParametresApprentissage {
         /** \brief nombre d'epoques de l'apprentissage */
         int nb_epoques;
 
-        /** \brief vitesse choisie pour l'apprentissage du reseau */
+        /** \brief vitesse d'apprentissage du reseau */
         double taux_apprentissage;
 
     public :
