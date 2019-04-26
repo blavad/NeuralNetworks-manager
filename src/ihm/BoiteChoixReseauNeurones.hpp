@@ -8,7 +8,7 @@ using namespace std;
 
 /** 
  * \class BoiteChoixReseauNeurones
- * \brief Gestion de l'interaction Homme/Machine liée au choix du fichier de RN
+ * \brief Composant graphique qui gère le choix du fichier de RN
  * \author Samra
  * \version 1.0 
  * \date avril 2019

@@ -10,7 +10,7 @@ using namespace std;
 
 /** 
  * \class BoiteChoixFichier
- * \brief Gestion de l'interaction Homme/Machine liée au choix de fichier
+ * \brief Composant graphique qui gère le choix de fichier
  * \author Samra
  * \version 1.0 
  * \date avril 2019

@@ -5,7 +5,7 @@
 
 /** 
  * \class CoucheConnectee
- * \brief Création d'une couche connectée
+ * \brief Gère les couches connectées
  * \author Adrien
  * \version 1.0 
  * \date avril 2019

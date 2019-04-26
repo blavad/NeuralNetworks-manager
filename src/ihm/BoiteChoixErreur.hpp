@@ -6,7 +6,7 @@
 using namespace std ;
 /** 
  * \class BoiteChoixErreur
- * \brief Gestion de l'interaction Homme/Machine liée au choix de l'erreur
+ * \brief Composant graphique qui gère le choix de l'erreur (fonction de cout)
  * \author Samra
  * \version 1.0 
  * \date avril 2019

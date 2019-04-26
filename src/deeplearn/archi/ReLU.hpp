@@ -5,7 +5,7 @@
 
 /** 
  * \class Sigmoid
- * \brief Création de la fonction ReLU
+ * \brief Gère la couche Rectified Linear Unit 
  * \author Adrien
  * \version 1.0 
  * \date avril 2019

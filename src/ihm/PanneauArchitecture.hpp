@@ -10,8 +10,8 @@
 using namespace std;
 
 /** 
- * \class PanneauArchitecture 
- * \brief Panneau de création d'architecture de réseau de neurones
+ * \class PanneauArchitecture  
+ * \brief Composant graphique principal de la partie création d'architecture du logiciel
  * \author David
  * \version 1.0 
  * \date avril 2019

@@ -10,7 +10,7 @@ using namespace std;
 
 /** 
  * \class Panneau
- * \brief Panneau principal 
+ * \brief Composant graphique principal (qui contient tous les autres) 
  * \author Samra
  * \version 1.0 
  * \date avril 2019

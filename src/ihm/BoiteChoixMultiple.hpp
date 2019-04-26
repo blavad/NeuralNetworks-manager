@@ -9,7 +9,7 @@
 using namespace std ;
 /** 
  * \class BoiteChoixMultiple
- * \brief Gestion de l'interaction Homme/Machine liée au choix de l'utilisateur
+ * \brief Composant graphique qui gère une boite de contenant un choix multiple
  * \author Samra
  * \version 1.0 
  * \date avril 2019

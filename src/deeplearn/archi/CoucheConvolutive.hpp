@@ -5,7 +5,7 @@
 
 /** 
  * \class CoucheConvolutive
- * \brief Création d'une couche convolutive
+ * \brief Gère les couche convolutive
  * \author Adrien
  * \version 1.0 
  * \date avril 2019

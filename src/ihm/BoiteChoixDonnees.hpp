@@ -8,7 +8,7 @@ using namespace std;
 
 /** 
  * \class BoiteChoixDonnees
- * \brief Gestion de l'interaction Homme/Machine liée au choix du fichier de données
+ * \brief Composant graphique qui gère le choix du fichier de données
  * \author Samra
  * \version 1.0 
  * \date avril 2019

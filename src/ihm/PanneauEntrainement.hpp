@@ -11,7 +11,7 @@
 using namespace std;
 /** 
  * \class PanneauEntrainement
- * \brief Gestion du type PanneauEntrainement
+ * \brief Composant graphique principal de la partie entrainement du logiciel
  * \author Samra
  * \version 1.0 
  * \date avril 2019

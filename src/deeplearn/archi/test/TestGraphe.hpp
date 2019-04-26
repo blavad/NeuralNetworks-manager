@@ -10,7 +10,7 @@
 
 /**
  * \class TestGraphe
- * \brief Test des m�thodes de la classe Graphe.
+ * \brief Test des méthodes de la classe Graphe.
  * \author Coralie
  * \version 1.0
  * \date avril 2019
@@ -29,22 +29,22 @@ class TestGraphe : public CppUnit::TestFixture
 	CPPUNIT_TEST_SUITE_END();
 
   public:
-	/** \brief V�rifier que le nouveau noeud apparait dans la liste d'adjacence et d'ant�c�dence */
+	/** \brief Vérifier que le nouveau noeud apparait dans la liste d'adjacence et d'antécédence */
 	void testAjouterNoeud();
 
-	/** \brief V�rifier que le noeud de d�part apparait dans la liste d'ant�c�dence du noeud d'arriv�e */
+	/** \brief Vérifier que le noeud de départ apparait dans la liste d'antécédence du noeud d'arrivée */
 	void testAjouterArc();
 
-	/** \brief V�rifier que le noeud n'apparait plus dans la liste d'adjacence et d'ant�c�dence */
+	/** \brief Vérifier que le noeud n'apparait plus dans la liste d'adjacence et d'antécédence */
 	void testSupprimerNoeud();
 
-	/** \brief V�rifier que le noeud de d�part d'appara�t plus dans la liste d'ant�c�dence du noeud d'arriv�e */
+	/** \brief Vérifier que le noeud de départ d'apparait plus dans la liste d'antécédence du noeud d'arrivée */
 	void testSupprimerArc();
 
-	/** \brief V�rifier qu'elle renvoie vrai quand on lui donne un graphe avec cycle faux sinon */
+	/** \brief Vérifier qu'elle renvoie vrai quand on lui donne un graphe avec cycle faux sinon */
 	void testContientCycle();
 
-	/** \brief V�rifier qu'elle renvoie vrai quand on lui donne un graphe connexe faux sinon */
+	/** \brief Vérifier qu'elle renvoie vrai quand on lui donne un graphe connexe faux sinon */
 	void testEstConnexe();
 };
 

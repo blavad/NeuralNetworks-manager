@@ -13,6 +13,14 @@
 
 using namespace CppUnit;
 
+/**
+ * \class TestTenseur
+ * \brief Test les méthodes de la classe Tenseur.
+ * \author David
+ * \version 1.0
+ * \date avril 2019
+ *
+ */
 class TestTenseur : public CppUnit::TestFixture
 {
 

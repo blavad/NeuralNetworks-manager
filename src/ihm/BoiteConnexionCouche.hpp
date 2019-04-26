@@ -10,7 +10,7 @@
 
 /** 
  * \class BoiteConnexionCouche
- * \brief Gestion de l'interaction Homme/Machine liée à la liaison entre 2 couches
+ * \brief Composant graphique qui gère la création de liaisons entre 2 couches
  * \author Samra
  * \version 1.0 
  * \date avril 2019

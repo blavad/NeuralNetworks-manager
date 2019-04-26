@@ -7,7 +7,7 @@
 /**
  * \class Graphe
  * \tparam Type Type de noeud du graphe.
- * \brief Gestion du type Graphe.
+ * \brief Gestion de graphes génériques.
  * \author David, Coralie
  * \version 1.0
  * \date avril 2019

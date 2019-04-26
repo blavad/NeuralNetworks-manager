@@ -8,7 +8,7 @@
 
 /** 
  * \class BoiteChoixFichier
- * \brief Gestion de l'interaction Homme/Machine liée au choix des paramètres
+ * \brief Composant graphique qui gère le choix des paramètres d'apprentissage
  * \author Samra
  * \version 1.0 
  * \date avril 2019

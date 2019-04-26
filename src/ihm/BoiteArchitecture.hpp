@@ -8,7 +8,7 @@
 
 /** 
  * \class BoiteArchitecture
- * \brief Boite contenant l'affichage du réseau de neurones
+ * \brief Composant graphique qui gère l'affichage du réseau de neurones
  * \author Marion
  * \version 1.0 
  * \date avril 2019

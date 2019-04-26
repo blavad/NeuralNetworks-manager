@@ -6,7 +6,7 @@
 using namespace std ;
 /** 
  * \class BoiteChoixCouche
- * \brief Gestion de l'interaction Homme/Machine liée au choix des couches
+ * \brief Composant graphique qui gère le choix et l'ajout de couches au réseau de neurones
  * \author Samra
  * \version 1.0 
  * \date avril 2019

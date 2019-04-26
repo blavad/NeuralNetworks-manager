@@ -5,7 +5,7 @@
 
 /** 
  * \class CoucheConnectée
- * \brief Création d'un neurone
+ * \brief Gère un neurone
  * \author Adrien
  * \version 1.0 
  * \date avril 2019

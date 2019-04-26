@@ -9,13 +9,13 @@
 
 /** 
  * \class Boite
- * \brief Gestion du type Boite
+ * \brief Composant graphique abstrait qui contient des composants propres propres au type de boite.
  * \author Samra
  * \version 1.0 
  * \date avril 2019
  *
  *
- * Cette classe hérite de gtkmm::Frame
+ * Cette classe hérite de gtkmm::Frame. Elle contient un nom des des composants graphiques dépendants du type de boite.
  */
 
 class Boite : public Frame {
