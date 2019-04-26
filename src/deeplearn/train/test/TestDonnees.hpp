@@ -1,6 +1,7 @@
 #include <vector>
 #include <cppunit/TestFixture.h>
 #include <cppunit/TestAssert.h>
+#include <cppunit/extensions/HelperMacros.h>
 #include "../Donnees.hpp"
 #include "../Donnee.hpp"
 
@@ -21,10 +22,16 @@ using namespace CppUnit;
 class TestDonnees : public CppUnit::TestFixture
 {
 
+  CPPUNIT_TEST_SUITE(TestDonnees);
+	CPPUNIT_TEST(testAjouterDonnee);
+	CPPUNIT_TEST(testAjouterDonnees);
+	CPPUNIT_TEST(testMelanger);
+	CPPUNIT_TEST_SUITE_END();
+
   protected:
     Donnees *d1;
     Donnees *d2;
-    std::vector<Donnee> donnees;
+    Donnee *du;
 
   public:
     void setUp();

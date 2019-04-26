@@ -6,6 +6,7 @@ void TestDonnees::setUp()
 {
 	d1 = new Donnees();
 	d2 = new Donnees();
+	du = new Donnee();
 }
 void TestDonnees::tearDown()
 {
@@ -16,13 +17,19 @@ void TestDonnees::tearDown()
 void TestDonnees::testAjouterDonnees()
 {
 	int n = d1->getNbDonnees();
-	d1 -> ajouterDonnees(d2);
-	CPPUNIT_ASSERT(d1.Donnees::getNbDonnees() == d2.size() + n);
-};
+    std::vector<Donnee> donnees{Donnee(),Donnee(),Donnee()};
+
+	d1 -> ajouterDonnees(donnees);
+	CPPUNIT_ASSERT(d1->getNbDonnees() == donnees.size() + n);
+}
 
 void TestDonnees::testAjouterDonnee()
 {
-	d1.ajouterDonnee(d);
-	int n = d1.Donnees::getNbDonnees();
-	CPPUNIT_ASSERT(d1.Donnees::getNbDonnees() == n + 1);
-};
+	int n = d1 -> getNbDonnees();
+	d1 -> ajouterDonnee(*du);
+	CPPUNIT_ASSERT(d1->getNbDonnees() == n + 1);
+}
+
+void TestDonnees::testMelanger(){
+	CPPUNIT_ASSERT(true);
+}
