@@ -35,7 +35,7 @@ public:
   ReseauNeurones();
 
   /**
-   * \brief Constructeur du réseau à partir de couches déjà crées. 
+   * \brief Constructeur du réseau à partir de couches déjà créées. 
    */
   ReseauNeurones(std::vector<Couche> couches);
 
@@ -43,7 +43,7 @@ public:
    * \fn Tenseur propagation(Tenseur t)
    * \brief Méthode permettant la propagation dans un reseau de neurone.
    * \param t l'entree du reseau de neurone
-	 * \return la sortie du reseau de neurone
+	 * \return la sortie du reseau de neurones
    */
   Tenseur propagation(Tenseur t);
 
@@ -71,7 +71,7 @@ public:
   /**
    * \fn void supprimerCoucheFinale(Couche c)
    * \brief Suppression d'une couche finale.
-   * \param c une couche présente dans le rése 
+   * \param c une couche présente dans le réseau.
    */
   void supprimerCoucheFinale(Couche c);
 
