@@ -22,19 +22,15 @@ Tenseur::Tenseur(DimTenseur di) : dimT(di)
 	init();
 }
 
-void Tenseur::init()
-{
-	int prod = 1;
-	for (int d : dimT.getDims())
-	{
-		prod = prod * d;
-	}
-	valeur = (double *)malloc(prod * sizeof(double));
-}
-
 Tenseur::~Tenseur()
 {
 	free(valeur);
+}
+
+void Tenseur::init()
+{
+	int prod = getTaille();
+	valeur = (double *)malloc(prod * sizeof(double));
 }
 
 bool Tenseur::operator==(const Tenseur &t)
@@ -61,6 +57,18 @@ bool Tenseur::operator!=(const Tenseur &t)
 	return !(operator==(t));
 }
 
+Tenseur operator+(const Tenseur &, const Tenseur &){
+	
+}
+
+Tenseur operator-(const Tenseur &, const Tenseur &){
+
+}
+
+Tenseur operator*(const Tenseur &, const Tenseur &){
+
+}
+
 bool Tenseur::nextInd(std::vector<int> &ind)
 {
 	int n = ind.size() - 1;
@@ -79,14 +87,21 @@ bool Tenseur::nextInd(std::vector<int> &ind)
 	return false;
 }
 
-Tenseur Tenseur::appliquerFonction(double (*f)(double), Tenseur x){
-	vector<int> indice(dimT.getOrdre(), 0);
+Tenseur Tenseur::appliquerFonction(double (*f)(double), Tenseur x)
+{
 	Tenseur res(x.getDim());
+	int n = x.getTaille();
+	for (int i = 0; i < n; i++)
+	{
+		res.setValeur(f(x.getValeur(i)), i);
+	}
+	/* 
+	vector<int> indice(dimT.getOrdre(), 0);
 	res.setValeur(f(x.getValeur(indice)), indice);
 	while (nextInd(indice))
 	{
 		res.setValeur(f(x.getValeur(indice)), indice);
-	}
+	} */
 	return res;
 }
 
@@ -163,4 +178,21 @@ int Tenseur::getInd(std::vector<int> indices) const
 		ind += (indices[k]) * prod;
 	}
 	return ind;
+}
+
+ void Tenseur::setValeur(double val, int indice){
+	 valeur[indice]=val;
+ }
+
+double Tenseur::getValeur(int i){
+	return valeur[i];
+}
+int Tenseur::getTaille()
+{
+	int prod = 1;
+	for (int d : dimT.getDims())
+	{
+		prod = prod * d;
+	}
+	return prod;
 }
