@@ -33,6 +33,14 @@ class ReLU : public CoucheActivation
     Tenseur propagation(Tenseur t);
 
     /**
+     * \fn Tenseur derivee(Tenseur t);
+     * \brief Methode permettant la derivation des composantes d'un tenseur 
+     * \param t le tenseur d'entree
+     * \return le tenseur avec toutes ses composantes derivees
+     */
+    Tenseur derivee(Tenseur t);
+
+    /**
      * \fn double calcul(double d)
      * \brief Méthode qui calcule la valeur pour une fonction ReLu
      * \param d la valeur d'entrée

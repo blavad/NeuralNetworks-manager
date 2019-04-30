@@ -25,11 +25,19 @@ class TanH : public CoucheActivation
 
     /**
      * \fn Tenseur propagation(Tenseur t)
-     * \brief Méthode permettant la propagation d'une couche à une autre.
+     * \brief Methode permettant la propagation d'une couche a une autre.
      * \param t le tenseur d'entree
      * \return la sortie de la fonction tanH
      */
     Tenseur propagation(Tenseur t);
+
+    /**
+     * \fn Tenseur derivee(Tenseur t);
+     * \brief Methode permettant la derivation des composantes d'un tenseur
+     * \param t le tenseur d'entree
+     * \return le tenseur avec toutes ses composantes derivees
+     */
+    Tenseur derivee(Tenseur t);
 
     /**
      * \fn double calcul(double d)

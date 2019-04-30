@@ -16,4 +16,15 @@ Tenseur Sigmoid::propagation(Tenseur t)
 	return t.appliquerFonction(f,t);
 }
 
+double calcul_derive(double x)
+{
+	return calcul(x)*(1-calcul(x));
+}
+
+Tenseur Sigmoid::derivee(Tenseur t)
+{
+	double (*df)(double);
+	df = calcul_derive;
+	return t.appliquerFonction(df,t);
+}
 
