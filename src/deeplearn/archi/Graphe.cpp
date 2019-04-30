@@ -1,7 +1,7 @@
 #include "Graphe.hpp"
-#include "NoeudInexistantException.hpp"
-#include "ArcDejaExistantException.hpp"
-#include "NoeudDejaExistantException.hpp"
+#include "exception/NoeudInexistantException.hpp"
+#include "exception/ArcDejaExistantException.hpp"
+#include "exception/NoeudDejaExistantException.hpp"
 #include <algorithm> // pour pouvoir utiliser find
 
 template <class Type> Graphe <Type> :: Graphe(){
