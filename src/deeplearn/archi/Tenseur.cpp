@@ -57,19 +57,39 @@ bool Tenseur::operator!=(const Tenseur &t)
 	return !(operator==(t));
 }
 
-Tenseur operator+(const Tenseur &, const Tenseur &){
-	
+Tenseur operator+(const Tenseur &t, const Tenseur &tt){
+	if (t.getDim() != tt.getDim()) throw DimensionsIncompatiblesException();
+	else
+	{
+		vector<int> indice(t.getDim().getOrdre(), 0);
+		Tenseur res(t.getDim);
+		res.setValeur(t.getValeur(indice) + tt.getValeur(indice),indice);
+		while (t.nextInd(indice))
+		{
+			res.setValeur(t.getValeur(indice) + tt.getValeur(indice),indice);
+		}
+		return res;
+	}	
 }
 
-Tenseur operator-(const Tenseur &, const Tenseur &){
-
+Tenseur operator-(const Tenseur &t, const Tenseur &tt){
+	if (t.getDim() != tt.getDim()) throw DimensionsIncompatiblesException();
+	else
+	{
+		vector<int> indice(t.getDim().getOrdre(), 0);
+		Tenseur res(t.getDim);
+		res.setValeur(t.getValeur(indice) - tt.getValeur(indice),indice);
+		while (t.nextInd(indice))
+		{
+			res.setValeur(t.getValeur(indice) - tt.getValeur(indice),indice);
+		}
+		return res;
+	}	
 }
 
-Tenseur operator*(const Tenseur &, const Tenseur &){
+//Tenseur operator*(const Tenseur &, const Tenseur &){}
 
-}
-
-bool Tenseur::nextInd(std::vector<int> &ind)
+bool Tenseur::nextInd(std::vector<int> &ind) const
 {
 	int n = ind.size() - 1;
 	for (int i = n; i >= 0; i--)
