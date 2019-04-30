@@ -2,6 +2,7 @@
 #define __COUCHE_ACTIVATION_HPP__
 
 #include "Couche.hpp"
+#include "Tenseur.hpp"
 
 
 /** 
@@ -25,6 +26,12 @@ class CoucheActivation : public Couche
      * \param no le nom de la couche
      */
     CoucheActivation(DimTenseur din, std::string no);
+
+    /**
+     * \brief Constructeur d'une couche d'activation 
+     * \param no le nom de la couche
+     */
+    CoucheActivation(std::string no);
 };
 
 #endif

@@ -103,6 +103,11 @@ class Tenseur
    bool nextInd(std::vector<int> &ind);
 
    /**
+    * 
+    */
+   Tenseur appliquerFonction(double (*f)(double), Tenseur);
+
+   /**
    * \fn void initValeurGaussienne()
    * \brief Initialise le tenseur selon une loi gaussienne
    */

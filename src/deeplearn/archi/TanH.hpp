@@ -2,6 +2,7 @@
 #define __TANH_HPP__
 
 #include "CoucheActivation.hpp"
+#include <math.h>
 
 /** 
  * \class TanH
@@ -29,6 +30,14 @@ class TanH : public CoucheActivation
      * \return la sortie de la fonction tanH
      */
     Tenseur propagation(Tenseur t);
+
+    /**
+     * \fn double calcul(double d)
+     * \brief Méthode qui calcule la valeur pour une fonction tangente hyperbolique
+     * \param d la valeur d'entrée
+     * \return le résultat de la fonction
+     */
+    // double calcul(double x);
 };
 
 #endif
