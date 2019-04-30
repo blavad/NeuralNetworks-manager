@@ -1,4 +1,7 @@
 #include "Graphe.hpp"
+#include "NoeudInexistantException.hpp"
+#include "ArcDejaExistantException.hpp"
+#include "NoeudDejaExistantException.hpp"
 #include <algorithm> // pour pouvoir utiliser find
 
 template <class Type> Graphe <Type> :: Graphe(){
@@ -43,43 +46,73 @@ template <class Type> std::vector<Type> Graphe <Type> :: getListNoeudAnt(int k){
 }
 
 template <class Type> void Graphe <Type> :: ajouterNoeud(Type noeud){
-    list_adj.first.push_back(noeud);
-    list_ant.first.push_back(noeud);
+	int i=0;
+	bool trouve = false;
+	try {
+		while (i<list_adj.size() && trouve == false){
+			if (getNoeudAdj(i) == noeud){
+				trouve = true;
+			}
+			i++;
+		}
+		if (trouve == true){
+			throw NoeudDejaExistantException();
+		}
+		else {
+			list_adj.first.push_back(noeud);
+			list_ant.first.push_back(noeud);
+		}
+	}
+	catch (NoeudDejaExistantException e){
+		e.messageErreur();
+	}
 }
 
-// /!\ Vérif arc existe pas déjà !!!!!!!!!
+
 template <class Type> void Graphe <Type> :: ajouterArc(Type noeud_init,Type noeud_final){
     bool trouveNI = false;
     bool trouveNF = false;
     int i=0;
-    while (i<list_adj.size() && (trouveNF == false || trouveNI == false)){
-        if (getNoeudAdj(i)==noeud_init){
-            getListNoeudAdj(i).push_back(noeud_final);
-            trouveNI = true;
-        };
-        if (getNoeudAdj(i)==noeud_final){
-            getListNoeudAdj(i).push_back(noeud_init);
-            trouveNF = true;
-        };
-        i++;
-    };
-    if (trouveNI==false) {
-        ajouterNoeud(noeud_init);
-        getListNoeudAdj.second.push_back(noeud_final);
-    };
-    if (trouveNF==false) {
-        ajouterNoeud(noeud_final);
-        getListNoeudAdj.second.push_back(noeud_init);
-    };
-    trouveNF = false;
-    i = 0;
-    while (i<list_ant.size() && trouveNF == false){
-        if (getNoeudAnt(i)==noeud_final){
-            getListNoeudAnt(i).push_back(noeud_init);
-            trouveNF = true;
-        };
-        i++;
-    };
+    try {		
+		while (i<list_adj.size() && (trouveNF == false || trouveNI == false)){
+			if (getNoeudAdj(i)==noeud_init){
+				std::vector<Type> v1 = getListNoeudAdj(i);
+				if (std::find(v1.begin(), v1.end(), noeud_final) != v1.end()){
+					throw ArcDejaExistantException();
+					std::exit(-1);
+				}
+				else {		
+					getListNoeudAdj(i).push_back(noeud_final);
+					trouveNI = true;
+				}
+			};
+			if (getNoeudAdj(i)==noeud_final){
+				getListNoeudAdj(i).push_back(noeud_init);
+				trouveNF = true;
+			};
+			i++;
+		};
+		if (trouveNI==false || trouveNF==false) {
+			throw NoeudInexistantException();
+		}
+		else {
+			trouveNF = false;
+			i = 0;
+			while (i<list_ant.size() && trouveNF == false){
+				if (getNoeudAnt(i)==noeud_final){
+					getListNoeudAnt(i).push_back(noeud_init);
+					trouveNF = true;
+				};
+				i++;
+			};
+		};
+	}
+	catch (NoeudInexistantException e1) {
+		e1.messageErreur();
+	}
+	catch (ArcDejaExistantException e2) {
+		e2.messageErreur();
+	}  
 }
 
 template <class Type> void Graphe <Type> :: supprimerNoeud(Type noeud){
