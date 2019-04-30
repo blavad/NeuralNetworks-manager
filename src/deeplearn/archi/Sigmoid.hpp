@@ -2,6 +2,7 @@
 #define __SIGMOID_HPP__
 
 #include "CoucheActivation.hpp"
+#include <math.h>
 
 /** 
  * \class Sigmoid
@@ -30,6 +31,22 @@ class Sigmoid : public CoucheActivation
      * \return la sortie de la fonction sigmoid = 1./1-e^(-t)
      */
     Tenseur propagation(Tenseur t);
+
+    /**
+     * \fn Tenseur derivee(Tenseur t);
+     * \brief Methode permettant de deriver les composantes d'un tenseur
+     * \param t le tenseur d'entree
+     * \return le tenseur avec toutes ses composantes derivees
+     */
+    Tenseur derivee(Tenseur t);
+
+    /**
+     * \fn double calcul(double d)
+     * \brief Méthode qui calcule la valeur pour une fonction Sigmoid
+     * \param d la valeur d'entrée
+     * \return le résultat de la fonction
+     */
+    // double calcul(double x);
 };
 
 #endif
