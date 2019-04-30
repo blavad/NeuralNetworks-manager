@@ -5,5 +5,5 @@ ArcDejaExistantException :: ArcDejaExistantException(){
 }
 		
 void ArcDejaExistantException :: messageErreur(){
-	std::cout << "L'arc existe déjà.\n";
+	std::cout << "Erreur : L'arc existe déjà.\n";
 }

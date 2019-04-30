@@ -5,5 +5,6 @@ NoeudInexistantException :: NoeudInexistantException(){
 }
 		
 void NoeudInexistantException :: messageErreur(){
-	std :: cout << "Il manque au moins une des extrémités.\n";
+	std :: cout << "Erreur : Il manque un noeud.\n";
 }
+
