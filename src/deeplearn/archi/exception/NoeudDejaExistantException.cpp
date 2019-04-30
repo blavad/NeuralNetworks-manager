@@ -5,5 +5,5 @@ NoeudDejaExistantException :: NoeudDejaExistantException(){
 }
 		
 void NoeudDejaExistantException :: messageErreur(){
-	std :: cout << "Le noeud existe déjà.\n";
+	std :: cout << "Erreur : Le noeud existe déjà.\n";
 }
