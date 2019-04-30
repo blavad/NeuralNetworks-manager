@@ -79,6 +79,17 @@ bool Tenseur::nextInd(std::vector<int> &ind)
 	return false;
 }
 
+Tenseur Tenseur::appliquerFonction(double (*f)(double), Tenseur x){
+	vector<int> indice(dimT.getOrdre(), 0);
+	Tenseur res(x.getDim());
+	res.setValeur(f(x.getValeur(indice)), indice);
+	while (nextInd(indice))
+	{
+		res.setValeur(f(x.getValeur(indice)), indice);
+	}
+	return res;
+}
+
 void Tenseur::initValeurGaussienne()
 {
 	default_random_engine generator;
