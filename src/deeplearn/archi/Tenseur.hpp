@@ -108,9 +108,10 @@ public:
   bool nextInd(std::vector<int> &ind);
 
   /**
+    * \fn Tenseur* appliquerFonction((double (*f)(double),Tenseur)
     * 
     */
-  Tenseur appliquerFonction(double (*f)(double), Tenseur);
+  Tenseur* appliquerFonction(double (*f)(double));
 
   /**
    * \fn void initValeurGaussienne()
@@ -169,7 +170,7 @@ public:
 
 
 
-  protected:
+//   protected:
 
   /**
    * \fn int getInd(std::vector<int> indices)

@@ -87,22 +87,14 @@ bool Tenseur::nextInd(std::vector<int> &ind)
 	return false;
 }
 
-Tenseur Tenseur::appliquerFonction(double (*f)(double), Tenseur x)
+Tenseur* Tenseur::appliquerFonction(double (*f)(double))
 {
-	Tenseur res(x.getDim());
-	int n = x.getTaille();
+	int n = getTaille();
 	for (int i = 0; i < n; i++)
 	{
-		res.setValeur(f(x.getValeur(i)), i);
+		setValeur(f(getValeur(i)), i);
 	}
-	/* 
-	vector<int> indice(dimT.getOrdre(), 0);
-	res.setValeur(f(x.getValeur(indice)), indice);
-	while (nextInd(indice))
-	{
-		res.setValeur(f(x.getValeur(indice)), indice);
-	} */
-	return res;
+	return this;
 }
 
 void Tenseur::initValeurGaussienne()
