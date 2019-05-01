@@ -22,6 +22,12 @@ class CoucheCombinaison : public Couche
 
   public:
 
+    /**
+     * \brief Constructeur d'une couche à partir de la taille des tenseurs d'entrée/sortie
+     * \param no nom de la couche  
+     * 
+    */
+    CoucheCombinaison(std::string no="Combinaison");
 
     /**
      * \brief Constructeur d'une couche à partir de la taille des tenseurs d'entrée/sortie
@@ -30,7 +36,7 @@ class CoucheCombinaison : public Couche
      * \param no nom de la couche  
      * 
     */
-    CoucheCombinaison(DimTenseur din, DimTenseur dout, std::string no);
+    CoucheCombinaison(DimTenseur din, DimTenseur dout, std::string no="Combinaison");
 
 
     /**

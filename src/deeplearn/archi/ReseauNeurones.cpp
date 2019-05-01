@@ -17,7 +17,12 @@ ReseauNeurones::ReseauNeurones(std::vector<Couche> couches)
 }
 
 
-Tenseur ReseauNeurones::propagation(Tenseur t)
+Tenseur* ReseauNeurones::propagation(Tenseur* t)
+{
+	return t;
+}
+
+Tenseur* ReseauNeurones::derivee(Tenseur* t)
 {
 	return t;
 }

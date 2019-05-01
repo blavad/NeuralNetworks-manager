@@ -17,19 +17,32 @@
 class CoucheConnectee : public CoucheCombinaison
 {
 
-  public:
-    /**
+public:
+  /**
      * \brief Constructeur d'une couche connectée à partir du nombre de sorties
      */
-    CoucheConnectee(DimTenseur din, int nb_sorties, std::string no);
+  CoucheConnectee(int nb_sorties, std::string no = "Fully Connected");
 
-    /**
-     * \fn Tenseur propagation(Tenseur t)
+  /**
+     * \brief Constructeur d'une couche connectée à partir du nombre de sorties
+     */
+  CoucheConnectee(DimTenseur din, int nb_sorties, std::string no = "Fully Connected");
+
+  /**
+     * \fn Tenseur* propagation(Tenseur* t)
      * \brief Methode permettant la propagation d'une couche à une autre.
      * \param t le tenseur d'entree
 	   * \return la sortie de la couche
      */
-    Tenseur propagation(Tenseur t);
+  Tenseur* propagation(Tenseur* t);
+
+  /**
+   * \fn Tenseur* derivee(Tenseur* t)
+   * \brief Methode pour avoir la derivee de la couche
+   * \param t le tenseur pour lequel on veut la derivee
+   * \return la derivee de la couche
+   */
+  Tenseur* derivee(Tenseur* t);
 };
 
 #endif

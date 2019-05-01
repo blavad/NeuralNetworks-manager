@@ -39,14 +39,14 @@ public:
 
   /**
    * \brief Methode virtuelle permettant la propagation d'une couche à une autre.
-   * \fn virtual Tenseur propagation(Tenseur t)
+   * \fn virtual Tenseur* propagation(Tenseur* t)
    * \param t le tenseur d'entree
 	 * \return la sortie de la couche
    */
   virtual Tenseur* propagation(Tenseur* t);
 
   /**
-   * \fn virtual void derivee(Tenseur t)
+   * \fn virtual Tenseur* derivee(Tenseur* t)
    * \brief Methode virtuelle pour avoir la derivee de la couche
    * \param t le tenseur pour lequel on veut la derivee
    * \return la derivee de la couche

@@ -40,12 +40,20 @@ public:
   ReseauNeurones(std::vector<Couche> couches);
 
   /**
-   * \fn Tenseur propagation(Tenseur t)
+   * \fn Tenseur* propagation(Tenseur* t)
    * \brief Méthode permettant la propagation dans un reseau de neurone.
    * \param t l'entree du reseau de neurone
 	 * \return la sortie du reseau de neurones
    */
-  Tenseur propagation(Tenseur t);
+  Tenseur* propagation(Tenseur* t);
+
+   /**
+     * \fn Tenseur* derivee(Tenseur* t);
+     * \brief Methode permettant la backpropagation d'un réseau de neurones
+     * \param t le tenseur d'entree
+     * \return le tenseur avec toutes ses composantes derivees
+     */
+  Tenseur* derivee(Tenseur* t);
 
   /**
    * \fn void ajouterCoucheInitiale(Couche c)
