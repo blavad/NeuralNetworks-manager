@@ -12,7 +12,7 @@
  * \date avril 2019
  *
  * Classe stockant les dimensions d'un tenseur.
- * La dimension d'un tenseur est représenter comme une suite de dimensions dans chaque direction.
+ * La dimension d'un tenseur est représentée comme une suite de dimensions dans chaque direction.
  * 
  */
 

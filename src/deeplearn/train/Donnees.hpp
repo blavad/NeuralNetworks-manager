@@ -12,7 +12,7 @@
  * \version 1.0 
  * \date avril 2019
  *
- * Module permettant le stockage en memoire vive des donnees necessaire a l'apprentissage.
+ * Module permettant le stockage en memoire vive des donnees necessaires a l'apprentissage.
  * 
  */
 class Donnees {
@@ -55,7 +55,7 @@ class Donnees {
 
         /**
          * \fn Donnee getDonnee(int num)
-         * \brief Retourne la donnee numero num parmis l'ensemble des donnees
+         * \brief Retourne la donnee numero num parmi l'ensemble des donnees
          * \param num le numero de la donnee
          * \return la donnee en position "num"
          */
@@ -74,6 +74,15 @@ class Donnees {
          * \return le nombre de donnees
          */
         int getNbDonnees();
+        
+        
+        /**
+         * \fn int nombreAleatoire(int i)
+         * \brief permet de créer un nombre aléatoire afin de pouvoir ensuite effectuer le mélange des données
+         * \param i un entier 
+         * \return retour un nombre entier aléatoire
+         */
+         int nombreAleatoire(int i)
 
 };
 
