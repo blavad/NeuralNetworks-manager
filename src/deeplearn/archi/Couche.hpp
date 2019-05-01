@@ -30,10 +30,12 @@ protected:
   std::string nom;
 
 public:
+  Couche(const std::string no="Couche");
+
   /**
    * \brief Constructeur d'une couche à partir de la taille des tenseurs d'entrée/sortie
    */
-  Couche(DimTenseur din, DimTenseur dout, std::string nom=NULL);
+  Couche(DimTenseur din, DimTenseur dout, const std::string no="Couche");
 
   /**
    * \brief Methode virtuelle permettant la propagation d'une couche à une autre.
@@ -41,7 +43,7 @@ public:
    * \param t le tenseur d'entree
 	 * \return la sortie de la couche
    */
-  virtual Tenseur propagation(Tenseur t);
+  virtual Tenseur* propagation(Tenseur* t);
 
   /**
    * \fn virtual void derivee(Tenseur t)
@@ -49,28 +51,21 @@ public:
    * \param t le tenseur pour lequel on veut la derivee
    * \return la derivee de la couche
    */
-  virtual Tenseur derivee(Tenseur t);
+  virtual Tenseur* derivee(Tenseur* t);
+  
+  /**
+   * \fn virtual bool afficher()
+   * \brief Méthode pour savoir si la couche est affichée ou non
+   * \return booléen vérifiant si l'affiche s'est bien déroulé
+   */
+  virtual bool afficher();
 
   /**
-   * \fn void setDimInput(DimTenseur dimIn)
-   * \brief Méthode pour fixer la taille du tenseur à l'entrée de la couche
-   * \param dimIn La dimension du tenseur d'entrée
+   * \fn string getNom()
+   * \brief Méthode pour obtenir le nom de la couche
+   * \return Le nom de la couche
    */
-  void setDimInput(DimTenseur dimIn);
-
-  /**
-   * \fn void setDimOutput(DimTenseur dimOut)
-   * \brief Méthode pour fixer la taille du tenseur à la sortie de la couche
-   * \param dimIn La dimension du tenseur de sortie
-   */
-  void setDimOutput(DimTenseur dimOut);
-
-  /**
-   * \fn string setNom(std::string nom)
-   * \brief Méthode pour (re)définir le nom de la couche
-   * \param Le nom de la couche
-   */
-  void setNom(std::string nom);
+  std::string getNom() const;
 
   /**
    * \fn DimTenseur getDimInput()
@@ -87,18 +82,25 @@ public:
   DimTenseur getDimOutput() const;
 
   /**
-   * \fn string getNom()
-   * \brief Méthode pour obtenir le nom de la couche
-   * \return Le nom de la couche
+   * \fn string setNom(std::string nom)
+   * \brief Méthode pour (re)définir le nom de la couche
+   * \param Le nom de la couche
    */
-  std::string getNom() const;
-
+  void setNom(std::string nom);
 
   /**
-   * \fn virtual bool afficher()
-   * \brief Méthode pour savoir si la couche est affichée ou non
-   * \return booléen vérifiant si l'affiche s'est bien déroulé
+   * \fn void setDimInput(DimTenseur dimIn)
+   * \brief Méthode pour fixer la taille du tenseur à l'entrée de la couche
+   * \param dimIn La dimension du tenseur d'entrée
    */
-  virtual bool afficher();
+  void setDimInput(DimTenseur dimIn);
+
+  /**
+   * \fn void setDimOutput(DimTenseur dimOut)
+   * \brief Méthode pour fixer la taille du tenseur à la sortie de la couche
+   * \param dimIn La dimension du tenseur de sortie
+   */
+  void setDimOutput(DimTenseur dimOut);
+
 };
 #endif

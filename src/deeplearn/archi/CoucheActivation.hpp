@@ -4,7 +4,6 @@
 #include "Couche.hpp"
 #include "Tenseur.hpp"
 
-
 /** 
  * \class CoucheActivation
  * \brief Classe abstraite définissant les couches d'activation
@@ -19,19 +18,19 @@
 class CoucheActivation : public Couche
 {
 
-  public:
-    /**
+public:
+  /**
+     * \brief Constructeur d'une couche d'activation 
+     * \param no le nom de la couche
+     */
+  CoucheActivation(const std::string no = "Activation");
+
+  /**
      * \brief Constructeur d'une couche d'activation avec une dimension d'entree.
      * \param din la dimension du tenseur d'entrée
      * \param no le nom de la couche
      */
-    CoucheActivation(DimTenseur din, std::string no);
-
-    /**
-     * \brief Constructeur d'une couche d'activation 
-     * \param no le nom de la couche
-     */
-    CoucheActivation(std::string no);
+  CoucheActivation(DimTenseur din, const std::string no = "Activation");
 };
 
 #endif

@@ -17,35 +17,32 @@
 
 class TanH : public CoucheActivation
 {
-  public:
-    /**
+public:
+  /**
+   * \brief Constructeur d'une fonction tangente hyperbolique.
+   */
+  TanH(std::string no="TanH");
+
+  /**
      * \brief Constructeur d'une fonction tangente hyperbolique.
      */
-    TanH(DimTenseur din, std::string no);
+  TanH(DimTenseur din, std::string no="TanH");
 
-    /**
+  /**
      * \fn Tenseur propagation(Tenseur t)
      * \brief Methode permettant la propagation d'une couche a une autre.
      * \param t le tenseur d'entree
      * \return la sortie de la fonction tanH
      */
-    Tenseur propagation(Tenseur t);
+  Tenseur* propagation(Tenseur *t);
 
-    /**
+  /**
      * \fn Tenseur derivee(Tenseur t);
      * \brief Methode permettant la derivation des composantes d'un tenseur
      * \param t le tenseur d'entree
      * \return le tenseur avec toutes ses composantes derivees
      */
-    Tenseur derivee(Tenseur t);
-
-    /**
-     * \fn double calcul(double d)
-     * \brief Méthode qui calcule la valeur pour une fonction tangente hyperbolique
-     * \param d la valeur d'entrée
-     * \return le résultat de la fonction
-     */
-    // double calcul(double x);
+  Tenseur* derivee(Tenseur *t);
 };
 
 #endif

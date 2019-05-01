@@ -1,9 +1,9 @@
 #include "CoucheActivation.hpp"
 
-CoucheActivation::CoucheActivation(DimTenseur din,std::string no):Couche(din,din,no)
+CoucheActivation::CoucheActivation( const std::string no):Couche(no)
 {
 }
 
-CoucheActivation::CoucheActivation(std::string no):Couche(std::vector<int>{},std::vector<int>{},no)
+CoucheActivation::CoucheActivation(DimTenseur din, const std::string no):Couche(din,din,no)
 {
 }

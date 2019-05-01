@@ -1,30 +1,34 @@
 #include "Sigmoid.hpp"
 
+Sigmoid::Sigmoid(std::string no):CoucheActivation(no)
+{
+}
+
 Sigmoid::Sigmoid(DimTenseur din, std::string no):CoucheActivation(din,no)
 {
 }
 
-double calcul(double x)
+double calcul_sigmoid(double x)
 {
 	return 1.0/(1.0+exp(-x));
 }
 
-Tenseur Sigmoid::propagation(Tenseur t)
+double calcul_derive_sigmoid(double x)
 {
-	double (*f)(double);
-	f = calcul;
-	return t.appliquerFonction(f,t);
+	return calcul_sigmoid(x)*(1-calcul_sigmoid(x));
 }
 
-double calcul_derive(double x)
+Tenseur* Sigmoid::propagation(Tenseur* t)
 {
-	return calcul(x)*(1-calcul(x));
+	double (*f)	(double);
+	f=calcul_sigmoid;
+	return t->appliquerFonction(f);
 }
 
-Tenseur Sigmoid::derivee(Tenseur t)
+Tenseur* Sigmoid::derivee(Tenseur* t)
 {
 	double (*df)(double);
-	df = calcul_derive;
-	return t.appliquerFonction(df,t);
+	df = calcul_derive_sigmoid;
+	return t->appliquerFonction(df);
 }
 

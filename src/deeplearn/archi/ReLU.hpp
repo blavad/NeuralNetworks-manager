@@ -18,35 +18,32 @@
 class ReLU : public CoucheActivation
 {
 
-  public:
-    /**
+public:
+  /**
      * \brief Constructeur de la fonction ReLU
      */
-    ReLU(DimTenseur din, std::string no);
+  ReLU(const std::string no="ReLU");
 
-    /**
+  /**
+     * \brief Constructeur de la fonction ReLU
+     */
+  ReLU(DimTenseur dout, const std::string no="ReLU");
+
+  /**
      * \fn Tenseur propagation(Tenseur t)
      * \brief Méthode permettant la propagation d'une couche à une autre.
      * \param t le tenseur d'entree
 	   * \return la sortie de la fonction ReLU
      */
-    Tenseur propagation(Tenseur t);
+  Tenseur* propagation(Tenseur* t);
 
-    /**
+  /**
      * \fn Tenseur derivee(Tenseur t);
      * \brief Methode permettant la derivation des composantes d'un tenseur 
      * \param t le tenseur d'entree
      * \return le tenseur avec toutes ses composantes derivees
      */
-    Tenseur derivee(Tenseur t);
-
-    /**
-     * \fn double calcul(double d)
-     * \brief Méthode qui calcule la valeur pour une fonction ReLu
-     * \param d la valeur d'entrée
-     * \return le résultat de la fonction
-     */
-    // double calcul(double x);
+  Tenseur* derivee(Tenseur* t);
 };
 
 #endif
