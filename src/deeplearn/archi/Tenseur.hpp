@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "DimTenseur.hpp"
+#include "exception/DimensionsIncompatiblesException.hpp"
 
 /** 
  * \class Tenseur
@@ -91,13 +92,12 @@ public:
   friend Tenseur operator-(const Tenseur &, const Tenseur &);
 
   /**
-     *  \fn bool operator*(const Tenseur &, const Tenseur &)
+     *  \fn Tenseur operator*(const Tenseur &t)
      *  \brief Multiplie deux tenseurs
-     *  \param t1 le 1er tenseur de la multiplication
-     *  \param t2 le 2nd tenseur de la multiplication
+     *  \param t le 2nd tenseur de la multiplication
      *  \return la multiplication
      */
-  friend Tenseur operator*(const Tenseur &, const Tenseur &);
+  virtual Tenseur operator*(const Tenseur &t);
 
   /**
    * \fn bool nextInd(std::vector<int> &)
@@ -105,7 +105,7 @@ public:
    * \param ind liste d'indices
    * \return booleen vérifiant si un indice suivant existe
    */
-  bool nextInd(std::vector<int> &ind);
+  bool nextInd(std::vector<int> &ind) const;
 
   /**
     * \fn Tenseur* appliquerFonction((double (*f)(double),Tenseur)

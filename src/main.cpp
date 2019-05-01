@@ -21,7 +21,25 @@
  * <BR><BR>
  *
  */
+#include "Tenseur.hpp"
+#include "DimTenseur.hpp"
+#include <vector>
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+#include <random>
+#include <boost/archive/text_iarchive.hpp>
+#include <boost/archive/text_oarchive.hpp>
+
+using namespace std;
 
 int main(){
+	
+	Tenseur tenseur(std::vector(2,2));
+std::ofstream ofile(filename);
+boost::archive::text_oarchive oTextArchive(ofile);
+oTextArchive << t;
+
+
     return 0;
 }

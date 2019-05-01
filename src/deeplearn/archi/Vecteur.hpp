@@ -1,7 +1,7 @@
 #ifndef __VECTEUR_HPP__
 #define __VECTEUR_HPP__
 
-#include "Tenseur.hpp"
+#include "Matrice.hpp"
 
 /** 
  * \class Vecteur
@@ -15,7 +15,7 @@
  *
  */
 
-class Vecteur : public Tenseur {
+class Vecteur : public Matrice {
  
     public :
 
@@ -24,12 +24,7 @@ class Vecteur : public Tenseur {
          * \brief Constructeur d'un vecteur de longueur l
          */
         Vecteur(int l);
-
-        /**
-         * \brief Constructeur d'un vecteur de longueur l
-         */
-        Vecteur(double* vl, int l);
-
+        
 };
 
 #endif

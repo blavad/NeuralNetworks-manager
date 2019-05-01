@@ -16,7 +16,7 @@ void TestGraphe :: testAjouterArc(){
 }
 
 void TestGraphe :: testSupprimerNoeud(){
-	int n[3] = {2,3,4}; 
+	std::vector<int> n{2,3,4}; 
 	Graphe<int> g1 (n);
 	g1.ajouterArc(2,3);
 	g1.ajouterArc(3,4);
@@ -27,7 +27,7 @@ void TestGraphe :: testSupprimerNoeud(){
 	bool noeudPresent = false;
 	unsigned int i=0;
 	while (i<g1.getListAdj().size() && noeudPresent == false) {
-		if (g1.getNoeudAdj(i) == 2){
+		if (g1.getNoeudAdj((int)i) == 2){
 			noeudPresent = true;
 		}
 		i++;
@@ -37,7 +37,7 @@ void TestGraphe :: testSupprimerNoeud(){
 	noeudPresent = false;
 	i=0;
 	while (i<g1.getListAnt().size() && noeudPresent == false) {
-		if (g1.getNoeudAnt(i) == 2){
+		if (g1.getNoeudAnt((int)i) == 2){
 			noeudPresent = true;
 		}
 		i++;
@@ -49,7 +49,7 @@ void TestGraphe :: testSupprimerNoeud(){
 	i=0;
 	std::vector<int> v1;
 	while (i<g1.getListAdj().size() && noeudPresent == false) {
-		v1 = g1.getListNoeudAdj(i);
+		v1 = g1.getListNoeudAdj((int)i);
 		if (std::find(v1.begin(), v1.end(), 2) != v1.end()){
 			noeudPresent = true;
 		}
@@ -60,7 +60,7 @@ void TestGraphe :: testSupprimerNoeud(){
 	noeudPresent = false;
 	i=0;
 	while (i<g1.getListAnt().size() && noeudPresent == false) {
-		v1 = g1.getListNoeudAnt(i);
+		v1 = g1.getListNoeudAnt((int)i);
 		if (std::find(v1.begin(), v1.end(), 2) != v1.end()){
 			noeudPresent = true;
 		}
@@ -70,7 +70,7 @@ void TestGraphe :: testSupprimerNoeud(){
 }
 
 void TestGraphe :: testSupprimerArc(){
-	int n[3] = {2,3,4}; 
+	std::vector<int> n{2,3,4}; 
 	Graphe<int> g1 (n);
 	g1.ajouterArc(2,3);
 	g1.ajouterArc(2,4);
@@ -81,8 +81,8 @@ void TestGraphe :: testSupprimerArc(){
 	unsigned int i=0;
 	std::vector<int> v1;
 	while (i<g1.getListAnt().size() && noeudPresent == false) {
-		if (g1.getNoeudAnt(i) == 3){
-			v1 = g1.getListNoeudAnt(i);
+		if (g1.getNoeudAnt((int)i) == 3){
+			v1 = g1.getListNoeudAnt((int)i);
 			if (std::find(v1.begin(), v1.end(), 2) != v1.end()){
 				noeudPresent = true;
 			}
@@ -95,8 +95,8 @@ void TestGraphe :: testSupprimerArc(){
 	noeudPresent = false;
 	i=0;
 	while (i<g1.getListAdj().size() && noeudPresent == false) {
-		if (g1.getNoeudAdj(i) == 3){
-			v1 = g1.getListNoeudAdj(i);
+		if (g1.getNoeudAdj((int)i) == 3){
+			v1 = g1.getListNoeudAdj((int)i);
 			if (std::find(v1.begin(), v1.end(), 2) != v1.end()){
 				noeudPresent = true;
 			}
@@ -121,7 +121,7 @@ void TestGraphe :: testSupprimerArc(){
 }
 
 void TestGraphe :: testContientCycle(){
-	int n[3] = {2,3,4}; 
+	std::vector<int> n{2,3,4}; 
 	Graphe<int> g1 (n);
 	g1.ajouterArc(2,3);
 	g1.ajouterArc(3,4);
@@ -134,7 +134,7 @@ void TestGraphe :: testContientCycle(){
 }
 
 void TestGraphe :: testEstConnexe(){
-	int n[3] = {2,3,4}; 
+	std::vector<int> n{2,3,4}; 
 	Graphe<int> g1 (n);
 	g1.ajouterArc(2,3);
 	g1.ajouterArc(3,4);

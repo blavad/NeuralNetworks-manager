@@ -18,15 +18,15 @@
  * 
  */
 
-class ReseauNeurones : public Graphe<Couche>, public Couche
+class ReseauNeurones : public Graphe<Couche *>, public Couche
 {
 
 protected:
   /** \brief La liste correspondant à la première couche du réseau */
-  std::vector<Couche> couche_initiale;
+  std::vector<Couche *> couche_initiale;
 
   /** \brief La liste correspondant à la dernière couche du réseau */
-  std::vector<Couche> couche_finale;
+  std::vector<Couche *> couche_finale;
 
 public:
   /**
@@ -60,28 +60,28 @@ public:
    * \brief Ajout d'une la couche initiale.
    * \param c une couche déjà créée.
    */
-  void ajouterCoucheInitiale(Couche c);
+  void ajouterCoucheInitiale(Couche *c);
 
   /**
    * \fn void ajouterCoucheFinale(Couche c)
    * \brief Ajout d'une couche finale.
    * \param c une couche déjà créée.
    */
-  void ajouterCoucheFinale(Couche c);
+  void ajouterCoucheFinale(Couche *c);
 
   /**
    * \fn void supprimerCoucheInitiale(Couche c)
    * \brief Suppression d'une couche initiale.
    * \param c une couche présente dans le réseau.
    */
-  void supprimerCoucheInitiale(Couche c);
+  void supprimerCoucheInitiale(Couche *c);
 
   /**
    * \fn void supprimerCoucheFinale(Couche c)
    * \brief Suppression d'une couche finale.
    * \param c une couche présente dans le réseau.
    */
-  void supprimerCoucheFinale(Couche c);
+  void supprimerCoucheFinale(Couche *c);
 
   /**
    * \fn void ajouterArc(Couche noeud_init,Couche noeud_final)
@@ -89,7 +89,7 @@ public:
    * \param noeud_init la couche d'où sortent les données.
    * \param noeud_final la couche où entrent les données.
    */
-  void ajouterArc(Couche noeud_init, Couche noeud_final);
+  void ajouterArc(Couche *noeud_init, Couche *noeud_final);
 
   /**
    * \fn void supprimerArc(Couche noeud_init,Couche noeud_final)
@@ -97,7 +97,15 @@ public:
    * \param noeud_init la couche d'où sortent les données.
    * \param noeud_final la couche où entrent les données.
    */
-  void supprimerArc(Couche noeud_init, Couche noeud_final);
+  void supprimerArc(Couche *noeud_init, Couche *noeud_final);
+  
+  /**
+   * \fn void sauvegarderReseau(Reseau reseau)
+   * \brief Sauvegarde d'un réseau de neurones.
+   * \param reseau le réseau qu'on veut sauvegarder.
+   */
+  void sauvegarderReseau(Reseau reseau);
+  
 };
 
 #endif
