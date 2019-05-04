@@ -8,6 +8,7 @@
 #include "exception/NoeudDejaExistantException.hpp"
 #include "exception/ArcInexistantException.hpp"
 #include "exception/BoucleException.hpp"
+#include "exception/NonConnexeException.hpp"
 #include <algorithm> // pour pouvoir utiliser find
 
 /**
@@ -112,8 +113,10 @@ class Graphe {
 		}
 		
 		/**
+		 * \fn bool presenceGrapheNoeud (Type noeud)
 		 * \brief Renvoie vrai si le noeud appartient au graphe
 		 * faux sinon
+		 * \param noeud un noeud du graphe.
 		 */
 		bool presenceGrapheNoeud (Type noeud){
 			bool present = false;
@@ -321,6 +324,25 @@ class Graphe {
 				};
 			};
 		}
+		
+		/**
+		 * \fn int positionNoeud (Type noeud)
+		 * \brief Retourne la position du noeud dans la list_adj
+		 * \return un entier
+		 */ 
+		 
+		 int positionNoeud (Type noeud){
+			 unsigned int i = 0;
+			 while (i<list_adj.size() && getNoeudAdj(i)!=noeud){
+				 i++;
+			 };		 
+			 if (i==list_adj.size()){
+				 throw NoeudInexistantException("Le noeud n'existe pas");
+			 }
+			 else {
+				 return (i);
+			 }
+		 }
 
         /**
          * \fn bool contientCycle()
@@ -328,8 +350,71 @@ class Graphe {
          * \return un booléen.
          */
         bool contientCycle(){
-			bool cycle = false;
-			return (cycle);
+			if (estConnexe()==false){
+				throw NonConnexeException("Le graphe n'est pas connexe.");
+			}
+			else {
+				bool cycle = false;
+				unsigned int k;
+				unsigned int l;
+				unsigned int i = 0;
+				int pos = 0;
+				std::vector<Type> v1 = {};
+				std::vector<Type> vNoeudsNonCycle = {};
+				
+				// Initialisation vecteur cycle
+				while (getListNoeudAnt(i).size()==0 && i<getListAnt().size()){
+					i++;
+				};
+				v1.push_back(getNoeudAnt(i));
+				for (k=0; k<getListNoeudAnt(i).size();k++){
+					v1.push_back(getListNoeudAnt(i)[k]);
+				}
+				l=1;
+				while (cycle == false && vNoeudsNonCycle.size()<getListAnt().size()){
+					pos = positionNoeud(v1[l]);
+					for (k=0; k<getListNoeudAnt(pos).size();k++){
+						bool presentV1 = std::find(v1.begin(), v1.end(), getListNoeudAnt(pos)[k]) != v1.end();
+						bool presentVNoeudsNonCycle = std::find(vNoeudsNonCycle.begin(), vNoeudsNonCycle.end(), getListNoeudAnt(pos)[k]) != vNoeudsNonCycle.end();
+						if (!(presentV1)){
+							if (!(presentVNoeudsNonCycle)){
+								v1.push_back(getListNoeudAnt(pos)[k]);
+							};
+						}
+						else {
+							if (l != 1){
+								cycle = true;
+							}
+						};
+					};
+					l++;
+					// Si ts les noeuds n'ont pas été parcourus
+					if (l == v1.size()){
+						for (k=0; k<v1.size(); k++){
+							bool presentVNoeudsNonCycle = std::find(vNoeudsNonCycle.begin(), vNoeudsNonCycle.end(), v1[k]) != vNoeudsNonCycle.end();
+							if (!presentVNoeudsNonCycle){
+								vNoeudsNonCycle.push_back(v1[k]);
+							};
+						};
+						v1.clear();
+						bool present = (std::find(vNoeudsNonCycle.begin(), vNoeudsNonCycle.end(), getNoeudAnt(i)) != vNoeudsNonCycle.end());
+						while ((present == true || getListNoeudAnt(i).size()==0) && i<getListAnt().size()){
+							i++;
+							if (i<list_ant.size()){
+								present = (std::find(vNoeudsNonCycle.begin(), vNoeudsNonCycle.end(), getNoeudAnt(i)) != vNoeudsNonCycle.end());
+							};
+						};
+						if (i<list_ant.size()){
+							v1.push_back(getNoeudAnt(i));
+							for (k=0; k<getListNoeudAnt(i).size();k++){
+								v1.push_back(getListNoeudAnt(i)[k]);
+							}
+							l=1;
+						};
+					}
+				};			
+				return (cycle);
+			};
 		}
 
         /**
