@@ -141,6 +141,16 @@ void Tenseur::initValeurNulle()
 	}
 }
 
+void Tenseur::initValeur(double nb)
+{
+	vector<int> indice(dimT.getOrdre(), 0);
+	setValeur(nb, indice);
+	while (nextInd(indice))
+	{
+		setValeur(nb, indice);
+	}
+}
+
 void Tenseur::initValeurUnif()
 {
 	vector<int> indice(dimT.getOrdre(), 0);

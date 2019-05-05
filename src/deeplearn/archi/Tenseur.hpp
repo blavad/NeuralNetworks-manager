@@ -126,6 +126,12 @@ public:
   void initValeurNulle();
 
   /**
+   * \fn void initValeur(double nb)
+   * \brief Initialise le tenseur avec une valeur donnee
+   */
+  void initValeur(double nb);
+
+  /**
    * \fn void initValeurUnif()
    * \brief Initialise le tenseur selon une loi uniforme
    */
