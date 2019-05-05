@@ -3,9 +3,9 @@
 ErreurQuadratique::ErreurQuadratique(){}
 
 Tenseur ErreurQuadratique::eval(Tenseur sortieRN, Tenseur label){
-  return (label - sortieRN)*(label - sortieRN);
+  return (sortieRN-label)*(sortieRN-label);
 }
 
-Tenseur ErreurQuadratique::derivee(Tenseur t){
-  return t+t; //2*t
+Tenseur ErreurQuadratique::derivee(Tenseur sortieRN, Tenseur label){
+  return (sortieRN-label)+(sortieRN-label);
 }
