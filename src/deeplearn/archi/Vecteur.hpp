@@ -1,7 +1,7 @@
 #ifndef __VECTEUR_HPP__
 #define __VECTEUR_HPP__
 
-#include "Matrice.hpp"
+#include "Tenseur.hpp"
 
 /** 
  * \class Vecteur
@@ -15,16 +15,25 @@
  *
  */
 
-class Vecteur : public Matrice {
- 
-    public :
+class Vecteur : public Tenseur
+{
 
+public:
+  /**
+     * \brief Constructeur d'un vecteur de longueur l
+     */
+  Vecteur(int l);
 
-        /**
-         * \brief Constructeur d'un vecteur de longueur l
-         */
-        Vecteur(int l);
-        
-};
+  virtual Vecteur &operator=(const Vecteur &copy);
+
+  virtual Vecteur &operator+(const Vecteur &copy);
+
+  virtual Vecteur &operator-(const Vecteur &copy);
+
+  virtual Tenseur &operator*(const Tenseur &t);
+
+  int getLength() const;  
+
+  };
 
 #endif

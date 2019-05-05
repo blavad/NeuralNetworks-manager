@@ -12,7 +12,8 @@ CoucheConnectee::CoucheConnectee(DimTenseur din, int nb_sorties, std::string no)
 
 Tenseur* CoucheConnectee::propagation(Tenseur* t)
 {
-	return t->operator*(params); */
+	Tenseur res = params.operator*(*t);
+	return &res;
 }
 
 Tenseur* CoucheConnectee::derivee(Tenseur* t)
