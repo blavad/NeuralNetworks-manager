@@ -57,7 +57,6 @@ class Tenseur
    */
    void allocate();
 
-
    virtual Tenseur &operator=(const Tenseur &copy);
 
    /**
