@@ -6,6 +6,7 @@
 #include "Erreur.hpp"
 #include "Donnees.hpp"
 #include "ParametresApprentissage.hpp"
+#include "ErreurL1.hpp"
 
 
 /** 
@@ -96,7 +97,7 @@ class Apprentissage {
          * \brief Met a jour l'optimisateur.
          * \param optimisateur l'optimisateur de l'apprentissage.
          */
-        void setOptimisateut(Optimisateur optimisateur);
+        void setOptimisateur(Optimisateur optimisateur);
 
         /**
          * \fn void setDonnees(Donnees d)
