@@ -32,6 +32,9 @@ class Graphe {
 
         /** \brief La liste dynamique d'antécédence. */
         std::vector<std::pair<Type, std::vector<Type>>> list_ant;
+        
+        /** \brief La liste dynamique de successeurs */
+        std::vector<std::pair<Type, std::vector<Type>>> list_succ;
 
     public :
 
@@ -69,6 +72,13 @@ class Graphe {
         std::vector<std::pair<Type, std::vector<Type>>> getListAnt(){
 			return (list_ant);
 		}
+		
+		/**
+         * \brief Récupère list_succ
+         */
+        std::vector<std::pair<Type, std::vector<Type>>> getListSucc(){
+			return (list_succ);
+		}
 
         /**
          * \brief Récupère la kième paire de list_adj
@@ -82,6 +92,13 @@ class Graphe {
          */
         std::pair<Type, std::vector<Type>> getPairAnt(int k){
 			return (list_ant[k]);
+		}
+		
+		/**
+         * \brief Récupère la kième paire de list_succ
+         */
+        std::pair<Type, std::vector<Type>> getPairSucc(int k){
+			return (list_succ[k]);
 		}
 
         /**
@@ -97,6 +114,13 @@ class Graphe {
         Type getNoeudAnt(int k){
 			return (list_ant[k].first);
 		}
+		
+		/**
+         * \brief Récupère le premier élément de la kième paire de list_succ
+         */
+        Type getNoeudSucc(int k){
+			return (list_succ[k].first);
+		}
 
         /**
          * \brief Récupère le deuxième élément de la kième paire de list_adj
@@ -110,6 +134,13 @@ class Graphe {
          */
         std::vector<Type> getListNoeudAnt(int k){
 			return (list_ant[k].second);
+		}
+		
+		/**
+         * \brief Récupère le deuxième élément de la kième paire de list_succ
+         */
+        std::vector<Type> getListNoeudSucc(int k){
+			return (list_succ[k].second);
 		}
 		
 		/**
@@ -152,6 +183,7 @@ class Graphe {
 				std::pair<Type, std::vector<Type>> p (noeud,vect);
 				list_adj.push_back(p);
 				list_ant.push_back(p);
+				list_succ.push_back(p);
 			}
 		}
 
@@ -180,6 +212,7 @@ class Graphe {
 							}
 							else {
 								list_adj[i].second.push_back(noeud_final);
+								list_succ[i].second.push_back(noeud_final);
 								trouveNI = true;
 							}
 						};
