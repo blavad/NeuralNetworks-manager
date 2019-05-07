@@ -32,7 +32,7 @@ int DimTenseur::getOrdre() const
 
 int DimTenseur::getDim(int i) const
 {
-	return dim[i];
+	return dim[dim.size() - i -1];
 }
 
 std::vector<int> DimTenseur::getDims() const

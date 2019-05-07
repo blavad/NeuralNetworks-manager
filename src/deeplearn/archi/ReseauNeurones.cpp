@@ -13,7 +13,7 @@ ReseauNeurones::ReseauNeurones()
 }
 
 
-ReseauNeurones::ReseauNeurones(std::vector<Couche*> couches)
+ReseauNeurones::ReseauNeurones(std::vector<Couche> couches)
 {
 	
 }

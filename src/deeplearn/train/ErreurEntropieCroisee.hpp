@@ -2,6 +2,8 @@
 #define __ERREUR_ENTROPIE_CROISEE_HPP__
 
 #include "Erreur.hpp"
+#include <math.h>
+#include "../archi/Tenseur.hpp"
 
 /** 
  * \class ErreurEntropieCroisee
@@ -35,11 +37,12 @@ class ErreurEntropieCroisee : public Erreur
     Tenseur eval(Tenseur sortieRN, Tenseur label);
 
     /**
-      * \fn void derivee(Tenseur t)
-      * \brief Méthode pour avoir la derivee d'un tenseur donnee en entree
-      * \param t le tenseur pour lequel on veut la derivee
+      * \fn void derivee(Tenseur sortieRN, Tenseur label)
+      * \brief Méthode pour avoir la derivee de l'erreur effectuee entre la sortie et la prediction
+      * \param sortieRN le tenseur de sortie du reseau de neurones.
+      * \param label la sortie souhaitée du reseau de neurones.
       */
-    Tenseur derivee(Tenseur t);
+    Tenseur derivee(Tenseur sortieRN, Tenseur label);
 };
 
 #endif
