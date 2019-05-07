@@ -243,10 +243,5 @@ double Tenseur::getValeur(int i) const
 }
 int Tenseur::getTaille() const
 {
-	int prod = 1;
-	for (int d : dimT.getDims())
-	{
-		prod = prod * d;
-	}
-	return prod;
+	return dimT.getTaille();
 }

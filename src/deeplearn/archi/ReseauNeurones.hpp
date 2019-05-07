@@ -37,7 +37,7 @@ public:
   /**
    * \brief Constructeur du réseau à partir de couches déjà créées. 
    */
-  ReseauNeurones(std::vector<Couche> couches);
+  ReseauNeurones(std::vector<Couche*> couches);
 
   /**
    * \fn Tenseur* propagation(Tenseur* t)
@@ -104,7 +104,7 @@ public:
    * \brief Sauvegarde d'un réseau de neurones.
    * \param reseau le réseau qu'on veut sauvegarder.
    */
-  void sauvegarderReseau(Reseau reseau);
+  void sauvegarderReseau(ReseauNeurones reseau);
   
 };
 
