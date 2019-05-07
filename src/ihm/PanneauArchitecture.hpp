@@ -1,9 +1,9 @@
 #ifndef __PANNEAU_ARCHITECTURE_HPP__
 #define __PANNEAU_ARCHITECTURE_HPP__
 
-#include "BoiteChoixCouche.hpp"
-#include "../deeplearn/archi/Couche.hpp"
-#include "BoiteChoixReseauNeurones.hpp"
+//#include "BoiteChoixCouche.hpp"
+//#include "../deeplearn/archi/Couche.hpp"
+//#include "BoiteChoixReseauNeurones.hpp"
 #include "BoiteConnexionCouche.hpp"
 #include "Panneau.hpp"
 
@@ -23,19 +23,19 @@ class PanneauArchitecture : public Panneau {
 
     protected :
         /** \brief Boite de choix des couches à travailler */
-        BoiteChoixCouche choixCouche;
+       // BoiteChoixCouche choixCouche;
 
         /** \brief Boite de choix du Reseau de Neurone à travailler */
-        BoiteChoixReseauNeurones choixRN;
+        //BoiteChoixReseauNeurones choixRN;
 
         /** \brief Boite de choix du Reseau de Neurone à travailler */
-        BoiteConnexionCouche choixConnexion;
+        //BoiteConnexionCouche choixConnexion;
 
         /** \brief une Couche  */
-        Couche* couche;
+        //Couche* couche;
         
         /** \brief une paire de Couche*/
-        pair < Couche*, Couche*> liaisonSelect; 
+        //pair < Couche*, Couche*> liaisonSelect; 
 
     public :
 
@@ -87,7 +87,14 @@ class PanneauArchitecture : public Panneau {
         /**
          * \brief Méthode permettant d'acceder à la liaisonn selectionnée
          */
-        pair<Couche*, Couche*> getLiaison();    
+        pair<Couche*, Couche*> getLiaison();  
+
+
+        /**
+        * \fn void afficherContenu()
+        * \brief Affiche le contenu spécifique du panneau
+        */
+        void afficherContenu(int argc, char* argv[]);  
         
     
 };

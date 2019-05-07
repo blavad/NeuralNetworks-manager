@@ -1,10 +1,11 @@
-#ifndef __PANNEAU_HPP__
-#define __PANNEAU_HPP__
+#ifndef __PANNEAU_MENU_PRINCIPAL_HPP__
+#define __PANNEAU_MENU_PRINCIPAL_HPP__
 
 //#include "../deeplearn/archi/ReseauNeurones.hpp"
-#include <gtkmm.h>
+//#include <gtkmm.h>
 #include "BoiteArchitecture.hpp"
 #include "Boite.hpp"
+#include "Panneau.hpp"
 #include <string>
 
 using namespace std;
@@ -20,7 +21,7 @@ using namespace std;
  *
  */
 
-class Panneau 
+class PanneauMenuPrincipal : public Panneau 
 {
 
   private:
@@ -41,7 +42,7 @@ class Panneau
     /**
      * \brief Constructeur du panneau vide.
      */
-    Panneau();
+    PanneauMenuPrincipal();
 
 
     /**
@@ -63,5 +64,13 @@ class Panneau
 	* \return le Reseau de neurones en attribut de la classe Panneau
      */
     ReseauNeurones getReseauNeurones();
+
+    /**
+     * \fn void afficherContenu()
+     * \brief Affiche le contenu spécifique du panneau
+     */
+    void afficherContenu(int argc, char* argv[]);
+
+
 };
 #endif
