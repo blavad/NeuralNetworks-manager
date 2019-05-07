@@ -3,9 +3,7 @@
 
 #include "../deeplearn/archi/ReseauNeurones.hpp"
 #include <gtkmm.h>
-
- using namespace std;
-
+#include "Boite.hpp"
 /** 
  * \class BoiteArchitecture
  * \brief Composant graphique qui gère l'affichage du réseau de neurones
@@ -16,14 +14,24 @@
  * Ce module gère l'affichage de l architecture du reseau de neurones utilisé par le logiciel 
  */
 
-class Panneau : public Boite {
+class BoiteArchitecture : public Boite {
+
+//class BoiteArchitecture : public Gtk::Frame {
+
+    Gtk::VBox nomCouche;
+    Gtk::VBox dimE;
+    Gtk::VBox dimS;
+
+	Gtk::Label labelnomCouche;
+	Gtk::Label labeldimE;
+	Gtk::Label labeldimS;	
 
     public :
-
+	
         /**
          * \brief Constructeur d'une boite d'architecture.
          */
-        BoiteArchitecture();
+        BoiteArchitecture() ;
 
         /**
          * \fn BoiteArchitecture(ReseauNeurones rn)
@@ -33,7 +41,7 @@ class Panneau : public Boite {
         BoiteArchitecture(ReseauNeurones rn);
 
 
-		/**
+	/**
          * \fn void afficher(ReseauNeurones rn)
          * \brief Méthode permettant l'affichage d'un reseau de neurones
          * \param rn le réseau de neurones
