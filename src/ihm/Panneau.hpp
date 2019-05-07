@@ -1,9 +1,11 @@
 #ifndef __PANNEAU_HPP__
 #define __PANNEAU_HPP__
 
-#include "../deeplearn/archi/ReseauNeurones.hpp"
+//#include "../deeplearn/archi/ReseauNeurones.hpp"
 #include <gtkmm.h>
 #include "BoiteArchitecture.hpp"
+#include "Boite.hpp"
+#include "Panneau.hpp"
 #include <string>
 
 using namespace std;
@@ -19,24 +21,29 @@ using namespace std;
  *
  */
 
-class Panneau
+class Panneau : public Gtk::Window 
 {
 
   private:
     /** \brief Bouton de sauvegarde */
-    GtkButton sauvegarder;
+    Gtk::Button sauvegarder;
+
+    /** \brief Emplacement du bouton sauvegarder */
+    Gtk::VBox boiteV;
 
     /** \brief un Reseau de Neurones*/
-    ReseauNeurones reseauNeurones;
+    //ReseauNeurones reseauNeurones;
 
     /** \brief une Boite Architecture */
     BoiteArchitecture boiteArchi;
+
 
   public:
     /**
      * \brief Constructeur du panneau vide.
      */
     Panneau();
+
 
     /**
      * \fn void sauvegarderRN()

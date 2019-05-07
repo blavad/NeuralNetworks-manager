@@ -5,7 +5,6 @@
 #include <gtkmm/frame.h>
 #include <string>
  
- using namespace std;
 
 /** 
  * \class Boite
@@ -15,24 +14,19 @@
  * \date avril 2019
  *
  *
- * Cette classe hérite de gtkmm::Frame. Elle contient un nom des des composants graphiques dépendants du type de boite.
+ * Cette classe hérite de gtkmm::Frame.
  */
 
-class Boite : public Frame {
-
-    private :
-        /** 
-	     * \brief Le nom de la boite 
-         */
-        string nom;
-
+class Boite : public Gtk::Frame {
 
     public :
 
         /**
          * \brief Constructeur d'une boite avec un nom 
          */
-        Boite(string nom);
+        Boite(std::string nom);
+	//Boite();
+
 
 };
 #endif
