@@ -27,6 +27,12 @@ protected:
 
   /** \brief La liste correspondant à la dernière couche du réseau */
   std::vector<Couche *> couche_finale;
+  
+  /** \brief La liste des tenseurs de sortie avec leur couche */
+  std::vector<std::pair<Couche*, Tenseur*>> l;
+  
+  /** \brief La liste des couches visitees */
+  std::vector<Couche *> visite;
 
 public:
   /**
@@ -37,7 +43,7 @@ public:
   /**
    * \brief Constructeur du réseau à partir de couches déjà créées. 
    */
-  ReseauNeurones(std::vector<Couche> couches);
+  ReseauNeurones(std::vector<Couche*> couches);
 
   /**
    * \fn Tenseur* propagation(Tenseur* t)
@@ -46,6 +52,10 @@ public:
 	 * \return la sortie du reseau de neurones
    */
   Tenseur* propagation(Tenseur* t);
+  
+  
+  void propagationS(Couche *c, Tenseur *t);
+
 
    /**
      * \fn Tenseur* derivee(Tenseur* t);
@@ -104,7 +114,7 @@ public:
    * \brief Sauvegarde d'un réseau de neurones.
    * \param reseau le réseau qu'on veut sauvegarder.
    */
-  void sauvegarderReseau(Reseau reseau);
+  void sauvegarderReseau(ReseauNeurones reseau);
   
 };
 
