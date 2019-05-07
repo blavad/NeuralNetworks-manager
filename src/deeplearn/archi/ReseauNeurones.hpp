@@ -27,6 +27,12 @@ protected:
 
   /** \brief La liste correspondant à la dernière couche du réseau */
   std::vector<Couche *> couche_finale;
+  
+  /** \brief La liste des tenseurs de sortie avec leur couche */
+  std::vector<std::pair<Couche*, Tenseur*>> l;
+  
+  /** \brief La liste des couches visitees */
+  std::vector<Couche *> visite;
 
 public:
   /**
@@ -46,6 +52,10 @@ public:
 	 * \return la sortie du reseau de neurones
    */
   Tenseur* propagation(Tenseur* t);
+  
+  
+  void propagationS(Couche *c, Tenseur *t);
+
 
    /**
      * \fn Tenseur* derivee(Tenseur* t);

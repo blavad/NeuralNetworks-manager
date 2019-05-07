@@ -20,7 +20,33 @@ Tenseur *ReseauNeurones::propagation(Tenseur *t)
 	return t;
 }
 
-Tenseur *ReseauNeurones::derivee(Tenseur *t)
+void ReseauNeurones::propagationS(Couche *c, Tenseur *t)
+{
+	//std::vector<Couche*>::iterator s;
+	
+	for( auto s = getListNoeudSucc(positionNoeud(c)).begin(); s!=getListNoeudSucc(positionNoeud(c)).end(); ++s){
+        if (std::find(visite.begin(), visite.end(), *s) == visite.end()){
+			//std::vector<Couche*>::iterator a;
+			bool test = true;
+			for (auto a = getListNoeudAnt(positionNoeud(*s)).begin(); a!=getListNoeudAnt(positionNoeud(*s)).end(); ++a) {
+				if (std::find(visite.begin(), visite.end(), *a) == visite.end()) {
+					test = false;
+					break;
+				}
+			}
+			if (test){
+				visite.push_back(*s);
+				if (std::find(couche_finale.begin(), couche_finale.end(), *s) == couche_finale.end()) {
+					int i = 0;
+					while (l[i].first != *s) i++;
+				
+				}
+			}
+		}
+    }
+}
+
+Tenseur* ReseauNeurones::derivee(Tenseur* t)
 {
 	return t;
 }
