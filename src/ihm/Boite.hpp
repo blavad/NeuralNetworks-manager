@@ -29,4 +29,5 @@ class Boite : public Gtk::Frame {
 
 
 };
+
 #endif

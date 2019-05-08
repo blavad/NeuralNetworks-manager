@@ -243,33 +243,33 @@ double Tenseur::getValeur(int i) const
 }
 int Tenseur::getTaille() const
 {
-	int prod = 1;
-	for (int d : dimT.getDims())
-	{
-		prod = prod * d;
-	}
-	return prod;
+	return dimT.getTaille();
 }
 
-void Tenseur::lineariser(){
-	setDim(std::vector<int> {getTaille()});
+void Tenseur::lineariser()
+{
+	setDim(std::vector<int>{getTaille()});
 }
 
-Tenseur Tenseur::concatener(Tenseur t2){
-	Tenseur t(std::vector<int> {getTaille()+t2.getTaille()});
+Tenseur Tenseur::concatener(Tenseur t2)
+{
+	Tenseur t(std::vector<int>{getTaille() + t2.getTaille()});
 	t.initValeurNulle();
 
 	vector<int> i(getOrdre(), 0);
-    vector<int> ind(t.getOrdre(),0);
-    vector<int> j(t2.getOrdre(), 0);
+	vector<int> ind(t.getOrdre(), 0);
+	vector<int> j(t2.getOrdre(), 0);
 
 	t.setValeur(getValeur(i), ind);
-	while(nextInd(i) && t.nextInd(ind)){
-        t.setValeur(getValeur(i),ind);
-    }
-    if(t.nextInd(ind)) t.setValeur(t2.getValeur(j),ind);
-    while(t2.nextInd(j) && t.nextInd(ind)){
-        t.setValeur(t2.getValeur(j),ind);
-    }
+	while (nextInd(i) && t.nextInd(ind))
+	{
+		t.setValeur(getValeur(i), ind);
+	}
+	if (t.nextInd(ind))
+		t.setValeur(t2.getValeur(j), ind);
+	while (t2.nextInd(j) && t.nextInd(ind))
+	{
+		t.setValeur(t2.getValeur(j), ind);
+	}
 	return t;
 }

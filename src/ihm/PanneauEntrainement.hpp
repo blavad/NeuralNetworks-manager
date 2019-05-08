@@ -1,12 +1,12 @@
 #ifndef __PANNEAU_ENTRAINEMENT_HPP__
 #define __PANNEAU_ENTRAINEMENT_HPP__
 
-#include "BoiteChoixErreur.hpp"
-#include "BoiteChoixDonnees.hpp"
-#include "BoiteChoixReseauNeurones.hpp"
-#include "BoiteParametrage.hpp"
+//#include "BoiteChoixErreur.hpp"
+//#include "BoiteChoixDonnees.hpp"
+//#include "BoiteChoixReseauNeurones.hpp"
+//#include "BoiteParametrage.hpp"
 #include "Panneau.hpp"
-#include "../deeplearn/train/Apprentissage.hpp"
+//#include "../deeplearn/train/Apprentissage.hpp"
 
 using namespace std;
 /** 
@@ -25,19 +25,19 @@ class PanneauEntrainement : public Panneau
 
   protected:
     /** \brief Apprentissage */
-    Apprentissage apprentissage;
+    //Apprentissage apprentissage;
 
     /** \brief Boite de choix de l'erreur*/
-    BoiteChoixErreur choixErreur;
+    //BoiteChoixErreur choixErreur;
 
     /** \brief Boite de choix des donnees*/
-    BoiteChoDonnees choixDonnees;
+    //BoiteChoixDonnees choixDonnees;
 
     /** \brief Boite de choix du RN*/
-    BoiteReseauNeurones choixRN;
+    //BoiteReseauNeurones choixRN;
 
     /** \brief Bouton de démarrage de l'entrainement */
-    GtkButton demarrerEntrainement;
+    //GtkButton demarrerEntrainement;
 
   public:
     /**
@@ -69,3 +69,14 @@ class PanneauEntrainement : public Panneau
      * \brief Méthode permettant de verifier si les parametres sont coherents. 
      */
     bool verifierOptions();
+
+
+     /**
+     * \fn void afficherContenu()
+     * \brief Affiche le contenu spécifique du panneau
+     */
+    void afficherContenu(int argc, char* argv[]);
+
+};
+
+#endif
