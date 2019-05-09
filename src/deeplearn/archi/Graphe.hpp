@@ -279,6 +279,7 @@ class Graphe {
 				while (i<list_ant.size()){
 					if (getNoeudAnt(i)==noeud){
 						list_ant.erase(list_ant.begin() + (int)i);
+						list_succ.erase(list_succ.begin() + (int)i);
 					};
 					while (j<getListNoeudAnt(i).size() && trouveP == false){
 						if (getListNoeudAnt(i)[j]==noeud){
@@ -287,6 +288,15 @@ class Graphe {
 						};
 						j++;
 					};
+					j = 0;
+					trouveP = false;
+					while (j<getListNoeudSucc(i).size() && trouveP == false){
+						if (getListNoeudSucc(i)[j]==noeud){
+							list_succ[i].second.erase(list_succ[i].second.begin()+(int)j);
+							trouveP = true;
+						};
+						j++;
+					}
 					j = 0;
 					trouveP = false;
 					i++;
@@ -335,6 +345,15 @@ class Graphe {
 						while (j<getListNoeudAdj(i).size() && stop1 == false){
 							if (getListNoeudAdj(i)[j] == noeud_final){
 								list_adj[i].second.erase(list_adj[i].second.begin()+ (int)j);
+								stop1 = true;
+							}
+							j++;
+						};
+						j = 0;
+						stop1 = false;
+						while (j<getListNoeudSucc(i).size() && stop1 == false){
+							if (getListNoeudSucc(i)[j] == noeud_final){
+								list_succ[i].second.erase(list_succ[i].second.begin()+ (int)j);
 								stop1 = true;
 							}
 							j++;
