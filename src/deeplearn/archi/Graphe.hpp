@@ -412,6 +412,7 @@ class Graphe {
 				unsigned int i = 0;
 				int pos = 0;
 				std::vector<Type> v1 = {};
+				int tIntv1;
 				std::vector<Type> vNoeudsNonCycle = {};
 				
 				// Initialisation vecteur cycle
@@ -423,6 +424,7 @@ class Graphe {
 					v1.push_back(getListNoeudAnt(i)[k]);
 				}
 				l=1;
+				tIntv1 = v1.size();
 				while (cycle == false && vNoeudsNonCycle.size()<getListAnt().size()){
 					pos = positionNoeud(v1[l]);
 					for (k=0; k<getListNoeudAnt(pos).size();k++){
@@ -434,7 +436,7 @@ class Graphe {
 							};
 						}
 						else {
-							if (l != 1){
+							if (l >= tIntv1){
 								cycle = true;
 							}
 						};
@@ -462,6 +464,7 @@ class Graphe {
 								v1.push_back(getListNoeudAnt(i)[k]);
 							}
 							l=1;
+							tIntv1 = v1.size();
 						};
 					}
 				};			
