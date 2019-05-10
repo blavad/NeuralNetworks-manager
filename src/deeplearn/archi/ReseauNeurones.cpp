@@ -1,5 +1,6 @@
 #include "ReseauNeurones.hpp"
 #include "DimTenseur.hpp"
+#include "exception/CycleException.hpp"
 #include "Couche.hpp"
 #include <vector>
 #include "Vecteur.hpp"
@@ -43,10 +44,10 @@ void ReseauNeurones :: miseAJourDims(Couche* cIn, Couche* cOut, bool signe){
 
 Tenseur *ReseauNeurones::propagation(Tenseur *t)
 {
-	/*if (contientCycle()){
-		throw BoucleException("Le graphe contient un cycle.");
+	if (contientCycle()){
+		throw CycleException("Le graphe contient un cycle.");
 	}
-	else {*/
+	else {
 		for (auto c : couche_initiale)
 		{
 			//visite.push_back(c);
@@ -69,7 +70,7 @@ Tenseur *ReseauNeurones::propagation(Tenseur *t)
 		}
 
 		return res;
-	//}
+	}
 }
 
 
