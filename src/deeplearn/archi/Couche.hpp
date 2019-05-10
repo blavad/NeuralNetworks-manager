@@ -60,6 +60,8 @@ public:
    */
   virtual bool afficher();
 
+  virtual void upDateDimOutput();
+
   /**
    * \fn string getNom()
    * \brief Méthode pour obtenir le nom de la couche

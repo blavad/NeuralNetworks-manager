@@ -7,6 +7,9 @@
 #include "Couche.hpp"
 #include "Tenseur.hpp"
 
+using namespace std;
+
+
 /** 
  * \class ReseauNeurones
  * \brief Module permettant la manipulation de réseaux de neurones.
@@ -27,12 +30,12 @@ protected:
 
   /** \brief La liste correspondant à la dernière couche du réseau */
   std::vector<Couche *> couche_finale;
-  
+
   /** \brief La liste des tenseurs de sortie avec leur couche */
-  std::vector<std::pair<Couche*, Tenseur*>> l;
-  
+  std::vector<std::pair<Couche *, Tenseur *>> l;
+
   /** \brief La liste des couches visitees */
-  std::vector<Couche *> visite;
+  std::vector<std::pair<Couche *, Couche *>> visite;
 
 public:
   /**
@@ -43,7 +46,9 @@ public:
   /**
    * \brief Constructeur du réseau à partir de couches déjà créées. 
    */
-  ReseauNeurones(std::vector<Couche*> couches);
+  ReseauNeurones(std::vector<Couche *> couches);
+
+  void miseAJourDims(Couche* cIn, Couche* cOut, bool signe);
 
   /**
    * \fn Tenseur* propagation(Tenseur* t)
@@ -51,19 +56,17 @@ public:
    * \param t l'entree du reseau de neurone
 	 * \return la sortie du reseau de neurones
    */
-  Tenseur* propagation(Tenseur* t);
-  
-  
+  Tenseur *propagation(Tenseur *t);
+
   void propagationS(Couche *c, Tenseur *t);
 
-
-   /**
+  /**
      * \fn Tenseur* derivee(Tenseur* t);
      * \brief Methode permettant la backpropagation d'un réseau de neurones
      * \param t le tenseur d'entree
      * \return le tenseur avec toutes ses composantes derivees
      */
-  Tenseur* derivee(Tenseur* t);
+  Tenseur *derivee(Tenseur *t);
 
   /**
    * \fn void ajouterCoucheInitiale(Couche c)
@@ -108,14 +111,15 @@ public:
    * \param noeud_final la couche où entrent les données.
    */
   void supprimerArc(Couche *noeud_init, Couche *noeud_final);
-  
+
   /**
    * \fn void sauvegarderReseau(Reseau reseau)
    * \brief Sauvegarde d'un réseau de neurones.
    * \param reseau le réseau qu'on veut sauvegarder.
    */
   void sauvegarderReseau(ReseauNeurones reseau);
-  
+
+  void display();
 };
 
 #endif

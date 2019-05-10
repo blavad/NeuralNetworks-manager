@@ -26,7 +26,7 @@
 template <class Type>
 class Graphe {
 
-    protected :
+    public :
         /** \brief La liste dynamique d'adjacence. */
         std::vector<std::pair<Type, std::vector<Type>>> list_adj;
 
@@ -215,13 +215,13 @@ class Graphe {
 								list_succ[i].second.push_back(noeud_final);
 								trouveNI = true;
 							}
-						};
+						}
 						if (getNoeudAdj(i)==noeud_final){
 							list_adj[i].second.push_back(noeud_init);
 							trouveNF = true;
-						};
+						}
 						i++;
-					};
+					}
 					
 					trouveNF = false;
 					i = 0;
@@ -229,15 +229,15 @@ class Graphe {
 						if (getNoeudAnt(i)==noeud_final){
 							list_ant[i].second.push_back(noeud_init);
 							trouveNF = true;
-						};
+						}
 						i++;
-					};
+					}
 					
 				}
 				else{
 					throw NoeudInexistantException("Au moins un des noeuds n'existe pas");
-				};
-			};
+				}
+			}
 		}
 
         /**
@@ -307,10 +307,10 @@ class Graphe {
 			bool trouveF = false;
 			bool trouveI = false;
 
-			while (i<list_ant.size() && trouveF == false){
+			while (i<list_ant.size() && !trouveF){
 				if (getNoeudAnt(i)==noeud_final){
 					trouveF = true;
-					while (j<getListNoeudAnt(i).size() && trouveI == false){
+					while (j<getListNoeudAnt(i).size() && !trouveI){
 						if (getListNoeudAnt(i)[j] == noeud_init){
 							list_ant[i].second.erase(list_ant[i].second.begin()+j);
 							trouveI = true;
@@ -482,6 +482,7 @@ class Graphe {
 			}
 			return(connexe);
 		}
+
 };
 
 #endif

@@ -59,6 +59,8 @@ public:
    */
    bool operator!=(const DimTenseur &dimT) const;
 
+   DimTenseur operator+(const DimTenseur dt);
+
    /**
      * \fn int getOrdre()
      * \brief Méthode pour obtenir l'ordre du tenseur
