@@ -13,6 +13,9 @@ ReseauNeurones::ReseauNeurones()
 
 ReseauNeurones::ReseauNeurones(std::vector<Couche *> couches)
 {
+	for (Couche* c : couches){
+		ajouterNoeud(c);
+	}
 }
 
 Tenseur *ReseauNeurones::propagation(Tenseur *t)
@@ -65,9 +68,7 @@ void ReseauNeurones::ajouterCoucheFinale(Couche *c)
 
 void ReseauNeurones::supprimerCoucheInitiale(Couche *c)
 {
-
 	Graphe<Couche *>::supprimerNoeud(c);
-
 	for (auto tmp = couche_initiale.begin(); tmp != couche_initiale.end(); ++tmp)
 	{
 		if (*tmp == c)
@@ -79,7 +80,6 @@ void ReseauNeurones::supprimerCoucheInitiale(Couche *c)
 }
 void ReseauNeurones::supprimerCoucheFinale(Couche *c)
 {
-
 	Graphe<Couche *>::supprimerNoeud(c);
 	for (auto tmp = couche_finale.begin(); tmp != couche_initiale.end(); ++tmp)
 	{

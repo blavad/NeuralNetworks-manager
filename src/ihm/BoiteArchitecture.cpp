@@ -1,82 +1,58 @@
-#ifndef __BOITE_ARCHITECTURE_CPP__
-#define __BOITE_ARCHITECTURE_CPP__
-
 #include "../deeplearn/archi/ReseauNeurones.hpp"
 #include <gtkmm.h>
 #include "BoiteArchitecture.hpp"
 #include "Boite.hpp"
- using namespace std;
+#include <cairomm/context.h>
+#include <cmath>
 
-BoiteArchitecture::BoiteArchitecture() : Boite ("Boite Architecture") {} 
+using namespace std;
 
-/*BoiteArchitecture::BoiteArchitecture() : nomCouche(), labelnomCouche(){
-	set_label("Boite Architecture");
+BoiteArchitecture::BoiteArchitecture()
+{	
+	coords.push_back(make_pair(100, 100));
+	coords.push_back(make_pair(50, 50));
+	coords.push_back(make_pair(80, 120));
+	coords.push_back(make_pair(150, 120));
+}
 
-	labelnomCouche.set_label("label 1");
-	
-	nomCouche.pack_start(labelnomCouche);
-	labelnomCouche.set_label("label");
-	nomCouche.pack_start(labelnomCouche);
-	dimE.pack_start(labeldimE);
-	dimS.pack_start(labeldimS);
-	
-	add(nomCouche);
-	add(dimE);
-	add(dimS);
-	
-	show_all();
-} 
+BoiteArchitecture::BoiteArchitecture(ReseauNeurones *res) : rn(res)
+{
+}
 
-BoiteArchitecture::BoiteArchitecture(ReseauNeurones rn) {
+BoiteArchitecture::~BoiteArchitecture()
+{
+}
 
-	set_label("Boite Architecture");
-	
-	Gtk::VBox nomCouche;
-	Gtk::VBox dimE;
-	Gtk::VBox dimS;
-	Gtk::Label labelnomCouche("1");
-	Gtk::Label labeldimE("1");
-	Gtk::Label labeldimS("1");
-	
-	nomCouche.pack_start(labelnomCouche);
-	dimE.pack_start(labeldimE);
-	dimS.pack_start(labeldimS);
-	
-	add(nomCouche);
-	add(dimE);
-	add(dimS);
-	
-	show_all();
+void setReseauNeurones(ReseauNeurones *res){
+	rn = res;
+}
 
-	//for taille rn :
-	//	nomCouche.pack_start()
+bool BoiteArchitecture::on_draw(const Cairo::RefPtr<Cairo::Context> &cr)
+{
+	// This is where we draw on the window
+	Gtk::Allocation allocation = get_allocation();
+	const int width = allocation.get_width();
+	const int height = allocation.get_height();
+	const int lesser = MIN(width, height);
 
-	//Gtk::Grid g;
-	
-	//add(grid);
+	// coordinates for the center of the window
+	int xc, yc;
+	xc = width / 2;
+	yc = height / 2;
 
-} */
+	cout << xc << "  " << yc << endl;
 
+	cr->set_line_width(EPAISSEUR_TRAIT);
 
+	for (int i = 0; i < coords.size(); i++)
+	{
+		cr->save();
+		cr->arc(coords[i].first, coords[i].second, zoom * RAYON_COUCHE, 0.0, 2.0 * M_PI);
+		cr->set_source_rgba(0.0, 0.6, 0.6, 0.6);
+		cr->fill_preserve();
+		cr->restore();
+		cr->stroke();
+	}
 
-#endif
-
-
-/*
-main(int argc, char* argv[]) {
-	
-	Gtk::Main app(argc, argv);
-	Gtk::Window fenetre;
-	BoiteArchitecture b;
-	b.show();
-	fenetre.add(b);
-
-	/*Gtk::VBox boiteV(true);
-	Gtk::Label l("label");
-	boiteV.pack_end(l);
-	fenetre.add(boiteV);///
-
-	fenetre.show_all();
-	Gtk::Main::run(fenetre);
-}*/
-
+	return true;
+}

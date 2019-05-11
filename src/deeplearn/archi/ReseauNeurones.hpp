@@ -57,6 +57,8 @@ public:
   void propagationS(Couche *c, Tenseur *t);
 
 
+  void updateDimensions();
+
    /**
      * \fn Tenseur* derivee(Tenseur* t);
      * \brief Methode permettant la backpropagation d'un réseau de neurones
