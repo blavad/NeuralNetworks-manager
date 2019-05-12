@@ -43,6 +43,8 @@ public:
    * \return la derivee de la couche
    */
   Tenseur* derivee(Tenseur* t);
+
+  void upDateDimOutput();
 };
 
 #endif

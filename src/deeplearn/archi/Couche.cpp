@@ -16,6 +16,10 @@ Tenseur* Couche::derivee(Tenseur* t){
 
 }
 
+void Couche::upDateDimOutput(){
+
+}
+
 bool Couche::afficher(){
 	return true;
 }

@@ -1,12 +1,13 @@
-
 #ifndef __BOITE_ARCHITECTURE_HPP__
 #define __BOITE_ARCHITECTURE_HPP__
 
-#include "../deeplearn/archi/ReseauNeurones.hpp"
 #include <gtkmm.h>
 #include <gtkmm/drawingarea.h>
 #include <vector>
 
+#include <gtk/gtk.h>
+
+#include "../deeplearn/archi/ReseauNeurones.hpp"
 
 using namespace std;
 
@@ -23,13 +24,17 @@ using namespace std;
 class BoiteArchitecture : public Gtk::DrawingArea
 {
 protected:
-
-    static const int RAYON_COUCHE = 30;
-    static const int EPAISSEUR_TRAIT = 3;
+    static const int RAYON_COUCHE = 35;
+    static const int EPAISSEUR_TRAIT = 2;
     double zoom = 1.;
+    int height, width;
 
     ReseauNeurones *rn;
-    std::vector<std::pair<int,int>> coords;
+
+    Couche *selected_couche;
+    Couche *input;
+    Couche *output;
+
 
 public:
     /**
@@ -46,6 +51,27 @@ public:
 
     virtual ~BoiteArchitecture();
 
+    bool on_button_press_event(GdkEventButton *event);
+    bool on_key_press_event(GdkEventKey *event);
+   
+    void setReseauNeurones(ReseauNeurones *res);
+
+    Couche *selectCouche(double x, double y);
+
+    bool isInputSelected();
+
+    bool isOutputSelected();
+
     bool on_draw(const Cairo::RefPtr<Cairo::Context> &cr) override;
+
+    void draw_arcs(const Cairo::RefPtr<Cairo::Context> &cr);
+
+    void draw_noeuds(const Cairo::RefPtr<Cairo::Context> &cr);
+
+    void draw_text_couche(const Cairo::RefPtr<Cairo::Context> &cr, Couche *couche, int x, int y, int rayon);
+
+    void draw_text(const Cairo::RefPtr<Cairo::Context> &cr, std::string str, int x, int y, int size = 6);
+
+    void draw_circle(const Cairo::RefPtr<Cairo::Context> &cr, int x, int y, int rayon, double r = 0., double v = 0.6, double b = 0.6);
 };
 #endif

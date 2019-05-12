@@ -26,7 +26,7 @@
 template <class Type>
 class Graphe {
 
-    protected :
+    public :
         /** \brief La liste dynamique d'adjacence. */
         std::vector<std::pair<Type, std::vector<Type>>> list_adj;
 
@@ -215,13 +215,13 @@ class Graphe {
 								list_succ[i].second.push_back(noeud_final);
 								trouveNI = true;
 							}
-						};
+						}
 						if (getNoeudAdj(i)==noeud_final){
 							list_adj[i].second.push_back(noeud_init);
 							trouveNF = true;
-						};
+						}
 						i++;
-					};
+					}
 					
 					trouveNF = false;
 					i = 0;
@@ -229,15 +229,15 @@ class Graphe {
 						if (getNoeudAnt(i)==noeud_final){
 							list_ant[i].second.push_back(noeud_init);
 							trouveNF = true;
-						};
+						}
 						i++;
-					};
+					}
 					
 				}
 				else{
 					throw NoeudInexistantException("Au moins un des noeuds n'existe pas");
-				};
-			};
+				}
+			}
 		}
 
         /**
@@ -279,6 +279,7 @@ class Graphe {
 				while (i<list_ant.size()){
 					if (getNoeudAnt(i)==noeud){
 						list_ant.erase(list_ant.begin() + (int)i);
+						list_succ.erase(list_succ.begin() + (int)i);
 					};
 					while (j<getListNoeudAnt(i).size() && trouveP == false){
 						if (getListNoeudAnt(i)[j]==noeud){
@@ -287,6 +288,15 @@ class Graphe {
 						};
 						j++;
 					};
+					j = 0;
+					trouveP = false;
+					while (j<getListNoeudSucc(i).size() && trouveP == false){
+						if (getListNoeudSucc(i)[j]==noeud){
+							list_succ[i].second.erase(list_succ[i].second.begin()+(int)j);
+							trouveP = true;
+						};
+						j++;
+					}
 					j = 0;
 					trouveP = false;
 					i++;
@@ -307,10 +317,10 @@ class Graphe {
 			bool trouveF = false;
 			bool trouveI = false;
 
-			while (i<list_ant.size() && trouveF == false){
+			while (i<list_ant.size() && !trouveF){
 				if (getNoeudAnt(i)==noeud_final){
 					trouveF = true;
-					while (j<getListNoeudAnt(i).size() && trouveI == false){
+					while (j<getListNoeudAnt(i).size() && !trouveI){
 						if (getListNoeudAnt(i)[j] == noeud_init){
 							list_ant[i].second.erase(list_ant[i].second.begin()+j);
 							trouveI = true;
@@ -335,6 +345,15 @@ class Graphe {
 						while (j<getListNoeudAdj(i).size() && stop1 == false){
 							if (getListNoeudAdj(i)[j] == noeud_final){
 								list_adj[i].second.erase(list_adj[i].second.begin()+ (int)j);
+								stop1 = true;
+							}
+							j++;
+						};
+						j = 0;
+						stop1 = false;
+						while (j<getListNoeudSucc(i).size() && stop1 == false){
+							if (getListNoeudSucc(i)[j] == noeud_final){
+								list_succ[i].second.erase(list_succ[i].second.begin()+ (int)j);
 								stop1 = true;
 							}
 							j++;
@@ -393,6 +412,7 @@ class Graphe {
 				unsigned int i = 0;
 				int pos = 0;
 				std::vector<Type> v1 = {};
+				int tIntv1;
 				std::vector<Type> vNoeudsNonCycle = {};
 				
 				// Initialisation vecteur cycle
@@ -404,6 +424,7 @@ class Graphe {
 					v1.push_back(getListNoeudAnt(i)[k]);
 				}
 				l=1;
+				tIntv1 = v1.size();
 				while (cycle == false && vNoeudsNonCycle.size()<getListAnt().size()){
 					pos = positionNoeud(v1[l]);
 					for (k=0; k<getListNoeudAnt(pos).size();k++){
@@ -415,7 +436,7 @@ class Graphe {
 							};
 						}
 						else {
-							if (l != 1){
+							if (l >= tIntv1){
 								cycle = true;
 							}
 						};
@@ -443,6 +464,7 @@ class Graphe {
 								v1.push_back(getListNoeudAnt(i)[k]);
 							}
 							l=1;
+							tIntv1 = v1.size();
 						};
 					}
 				};			
@@ -482,6 +504,7 @@ class Graphe {
 			}
 			return(connexe);
 		}
+
 };
 
 #endif

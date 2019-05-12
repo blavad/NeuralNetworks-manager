@@ -119,7 +119,7 @@ bool Tenseur::nextInd(std::vector<int> &ind) const
 	int n = ind.size();
 	for (int i = 0; i < n; i++)
 	{
-		if (ind[n - i - 1] + 1 >= getDim(i))
+		if (ind[n - i - 1] + 1 >= getDim(n-1-i))
 		{
 			ind[n - i - 1] = 0;
 		}
@@ -218,16 +218,13 @@ void Tenseur::setDim(DimTenseur di)
 
 int Tenseur::getInd(std::vector<int> indices) const
 {
-	int n = indices.size() - 1;
-	int ind = indices[n];
-	for (int k = n - 1; k >= 0; k--)
-	{
-		int prod = 1;
-		for (int i = n; i > k; i--)
-		{
-			prod *= dimT.getDim(i);
+	int ind=0;
+	for(int i=0; i<indices.size();i++){
+		int prod=1;
+		for(int d=i+1;d<indices.size(); d++){
+			prod *= getDim(d);
 		}
-		ind += (indices[k]) * prod;
+		ind+= indices[i]*prod;
 	}
 	return ind;
 }
@@ -244,4 +241,30 @@ double Tenseur::getValeur(int i) const
 int Tenseur::getTaille() const
 {
 	return dimT.getTaille();
+}
+
+void Tenseur::lineariser()
+{
+	setDim(DimTenseur(std::vector<int>{getTaille()}));
+}
+
+Tenseur Tenseur::concatener(Tenseur t2)
+{
+	int taille = (valeur == NULL) ? 0 : getTaille();
+	int taille2 = (t2.valeur == NULL) ? 0 : t2.getTaille();
+
+	Tenseur t(std::vector<int>{taille + taille2});
+	t.allocate();
+	t.initValeurNulle();
+
+	int m = 0;
+	for (int j = 0; j < taille; j++)
+	{
+		t.setValeur(getValeur(j), j);
+	}
+	for (int i = 0; i < taille2; i++)
+	{
+		t.setValeur(t2.getValeur(i), taille + i);
+	}
+	return t;
 }

@@ -216,6 +216,10 @@ class Tenseur
    void setValeur(double val, int indice);
 
    double getValeur(int i) const;
+
+   void lineariser();
+
+   Tenseur concatener(Tenseur t2);
 };
 
 #endif

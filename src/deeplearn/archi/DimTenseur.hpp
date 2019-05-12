@@ -2,6 +2,7 @@
 #define __DIM_TENSEUR_HPP__
 
 #include <vector>
+#include <string>
 
 /** 
  * \class DimTenseur
@@ -20,72 +21,82 @@ class DimTenseur
 {
 
 protected:
-   /** \brief la liste des dimensions du tenseur */
-   std::vector<int> dim;
+  /** \brief la liste des dimensions du tenseur */
+  std::vector<int> dim;
 
 public:
-   /**
+  /**
      * \brief Constructeur par défault.
      */
-   DimTenseur();
+  DimTenseur();
 
-   /**
+  /**
      * \brief Constructeur standard.
      * \param di la liste des dimensions
      */
-   DimTenseur(std::vector<int> di);
+  DimTenseur(std::vector<int> di);
 
-   /**
+  /**
      *  \fn bool operator=(const DimTenseur &dimT)
      *  \brief Affectation de dimensions tensorielles  
      *  \param dimT la dimension tensorielle à affecter
      *  \return booleen
      */
-   DimTenseur &operator=(const DimTenseur &dimT);
+  DimTenseur &operator=(const DimTenseur &dimT);
 
-   /**
+  /**
      *  \fn bool operator==(const DimTenseur dimT)
      *  \brief Compare des dimensions tensorielles  
      *  \param dimT la dimension tensorielle à comparer
      *  \return booleen
      */
-   bool operator==(const DimTenseur &dimT) const;
+  bool operator==(const DimTenseur &dimT) const;
 
-   /**
+  /**
    *  \fn bool operator!=(const DimTenseur dimT)
    *  \brief Compare des dimensions tensorielles
    *  \param dimT la dimension tensorielle à comparer
    *  \return booleen
    */
-   bool operator!=(const DimTenseur &dimT) const;
+  bool operator!=(const DimTenseur &dimT) const;
 
-   /**
+  DimTenseur operator+(const DimTenseur dt);
+
+  /**
      * \fn int getOrdre()
      * \brief Méthode pour obtenir l'ordre du tenseur
      * \return l'ordre du tenseur
      */
-   int getOrdre() const;
+  int getOrdre() const;
 
-   /**
+  /**
      * \fn int getDim(int)
      * \brief Méthode pour obtenir la i ème dimension d'un tenseur
      * \param i la dimension souhaitée
      * \return la i ème dimension du tenseur
      */
-   int getDim(int) const;
+  int getDim(int) const;
 
-   /**
+  /**
      * \fn std::vector<int> getDims()
      * \brief Méthode pour obtenir les dimensions d'un tenseur
      * \return le vecteur de dimensions
      */
-   std::vector<int> getDims() const;
+  std::vector<int> getDims() const;
 
-   /**
+  /**
    * \fn int getTaille()
    * \brief Récupère le nombre de valeurs présentent dans le tenseur
    */
-   int getTaille() const;
+  int getTaille() const;
+
+  /**
+   * \fn std::string toString()
+   * \brief Récupère les dimension sous forme de string
+   */
+  std::string toString();
+
+
 };
 
 #endif
