@@ -29,6 +29,9 @@ protected:
   /** \brief Le nom de la couche */
   std::string nom;
 
+  /** \brief Les coordonnées x, y de la couche dans le dessin */
+  std::pair<double,double> coords;
+
 public:
   Couche(const std::string no="Couche");
 
@@ -68,6 +71,28 @@ public:
    * \return Le nom de la couche
    */
   std::string getNom() const;
+
+   /**
+   * \fn int getX()
+   * \brief Méthode pour obtenir la coordonnée x de la couche
+   * \return La coordonnée x de la couche
+   */
+  double getX() const;
+
+  /**
+   * \fn int getY()
+   * \brief Méthode pour obtenir la coordonnée y de la couche
+   * \return La coordonnée y de la couche
+   */
+  double getY() const;
+
+/**
+   * \fn void setPos(int, int);
+   * \brief Méthode pour obtenir la coordonnée x de la couche
+   * \return La coordonnée x de la couche
+   */
+  void setPos(double, double);
+
 
   /**
    * \fn DimTenseur getDimInput()

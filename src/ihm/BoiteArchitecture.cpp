@@ -10,8 +10,9 @@
 
 using namespace std;
 
-BoiteArchitecture::BoiteArchitecture()
+BoiteArchitecture::BoiteArchitecture() : input(new Couche("I")), output(new Couche("O"))
 {
+	add_events(Gdk::BUTTON_PRESS_MASK);
 }
 
 BoiteArchitecture::BoiteArchitecture(ReseauNeurones *res) : rn(res), input(new Couche("I")), output(new Couche("O"))
@@ -79,7 +80,7 @@ Couche *BoiteArchitecture::selectCouche(double x, double y)
 // Echap key pressed
 bool BoiteArchitecture::on_key_press_event(GdkEventKey *event)
 {
-	cout << "Suppression noeud : " <<endl;
+	cout << "Suppression noeud : " << endl;
 	if (event->keyval == GDK_KEY_Escape)
 	{
 		if (selected_couche != NULL && selected_couche != input && selected_couche != output)
@@ -87,52 +88,64 @@ bool BoiteArchitecture::on_key_press_event(GdkEventKey *event)
 			rn->supprimerNoeud(selected_couche);
 		}
 	}
-
 	return true;
 }
-
-
 
 // Mouse button press event
 bool BoiteArchitecture::on_button_press_event(GdkEventButton *event)
 {
-	// Check if the event is a left(1) button click.
-	if ((event->type == GDK_BUTTON_PRESS) && (event->button == 1))
+	if ((event->type == GDK_2BUTTON_PRESS) && (event->button == 1))
 	{
 		selected_couche = selectCouche(event->x, event->y);
-		queue_draw();
-		return true;
-	}
-	else if ((event->type == GDK_BUTTON_PRESS) && (event->button == 3))
-	{
-		Couche *c_final = selectCouche(event->x, event->y);
-		if (selected_couche != NULL)
+		if (selected_couche != NULL && !isOutputSelected() && !isInputSelected())
 		{
-			if (c_final != NULL && !isOutputSelected())
+			if (rn->isInitiale(selected_couche))
+				rn->supprimerCoucheInitiale(selected_couche);
+			if (rn->isFinale(selected_couche))
+				rn->supprimerCoucheFinale(selected_couche);
+			rn->supprimerNoeud(selected_couche);
+			selected_couche = NULL;
+		}
+	}
+	else
+	{
+		// Check if the event is a left(1) button click.
+		if ((event->type == GDK_BUTTON_PRESS) && (event->button == 1))
+		{
+			selected_couche = selectCouche(event->x, event->y);
+		}
+		else if ((event->type == GDK_BUTTON_PRESS) && (event->button == 3))
+		{
+			Couche *c_final = selectCouche(event->x, event->y);
+			if (selected_couche != NULL)
 			{
-				if (isInputSelected())
+				if (c_final != NULL && !isOutputSelected() && c_final != selected_couche)
 				{
-					rn->ajouterCoucheInitiale(c_final);
-					c_final->setDimInput(input->getDimOutput());
-					c_final->upDateDimOutput();
-				}
-				else if (c_final == output)
-				{
-					rn->ajouterCoucheFinale(selected_couche);
+					if (isInputSelected() && !rn->isInitiale(c_final))
+					{
+						rn->ajouterCoucheInitiale(c_final);
+						c_final->setDimInput(input->getDimOutput());
+						c_final->upDateDimOutput();
+					}
+					else if ((c_final == output) && !rn->isFinale(selected_couche))
+					{
+						rn->ajouterCoucheFinale(selected_couche);
+					}
+					else
+					{
+						rn->ajouterArc(selected_couche, c_final);
+					}
 				}
 				else
 				{
-					rn->ajouterArc(selected_couche, c_final);
+					selected_couche->setPos(event->x, event->y);
 				}
 			}
-			else
-			{
-				selected_couche->setPos(event->x, event->y);
-			}
 		}
-		queue_draw();
-		return true;
 	}
+
+	queue_draw();
+	return true;
 }
 
 bool BoiteArchitecture::on_draw(const Cairo::RefPtr<Cairo::Context> &cr)

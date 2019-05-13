@@ -9,7 +9,6 @@
 
 using namespace std;
 
-
 /** 
  * \class ReseauNeurones
  * \brief Module permettant la manipulation de réseaux de neurones.
@@ -41,14 +40,14 @@ public:
   /**
    * \brief Constructeur du réseau vide.
    */
-  ReseauNeurones(const std::string no="ReseauNeurones");
+  ReseauNeurones(const std::string no = "ReseauNeurones");
 
   /**
    * \brief Constructeur du réseau à partir de couches déjà créées. 
    */
-  ReseauNeurones(std::vector<Couche *> couches,const std::string no="ReseauNeurones");
+  ReseauNeurones(std::vector<Couche *> couches, const std::string no = "ReseauNeurones");
 
-  void miseAJourDims(Couche* cIn, Couche* cOut, bool signe);
+  void miseAJourDims(Couche *cIn, Couche *cOut, bool signe);
 
   /**
    * \fn Tenseur* propagation(Tenseur* t)
@@ -119,8 +118,32 @@ public:
    */
   void sauvegarderReseau(ReseauNeurones reseau);
 
-  std::vector<Couche*> getCouchesInitiales();
-  std::vector<Couche*> getCouchesFinales();
+  /**
+   * \fn std::vector<Couche*> getCouchesInitiales()
+   * \brief Retourne la liste des couches initiales
+   * \return la liste des couches initiales
+   */
+  std::vector<Couche *> getCouchesInitiales();
+
+  /**
+   * \fn std::vector<Couche*> getCouchesFinales()
+   * \brief Retourne la liste des couches finales
+   * \return la liste des couches finales
+   */
+  std::vector<Couche *> getCouchesFinales();
+
+  /** 
+   * \fn bool isInitiale(Couche *)
+   * \brief teste si la couche est initiale
+   */
+  bool isInitiale(Couche *);
+  
+  /** 
+   * \fn bool isFinale(Couche *)
+   * \brief teste si la couche est finale
+   */
+  bool isFinale(Couche *);
+
 
   void display();
 };

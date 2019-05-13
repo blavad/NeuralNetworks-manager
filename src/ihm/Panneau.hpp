@@ -4,10 +4,11 @@
 //#include "../deeplearn/archi/ReseauNeurones.hpp"
 #include <gtkmm.h>
 #include "BoiteArchitecture.hpp"
-#include "Boite.hpp"
 #include <string>
 
 using namespace std;
+
+class BoiteChoixMultiple;
 
 /** 
  * \class Panneau
@@ -20,48 +21,55 @@ using namespace std;
  *
  */
 
-class Panneau 
+class Panneau : public Gtk::Window
 {
 
-  private:
-    /** \brief Bouton de sauvegarde */
-    //Gtk::Button sauvegarder;
+protected:
+  /** \brief Bouton de sauvegarde */
+  //Gtk::Button sauvegarder;
 
-    /** \brief Emplacement du bouton sauvegarder */
-    //Gtk::VBox boiteV;
+  /** \brief Emplacement du bouton sauvegarder */
+  //Gtk::VBox boiteV;
 
-    /** \brief un Reseau de Neurones*/
-    //ReseauNeurones reseauNeurones;
+  /** \brief un Reseau de Neurones*/
+  ReseauNeurones *reseauNeurones = new ReseauNeurones();
 
-    /** \brief une Boite Architecture */
-    //BoiteArchitecture boiteArchi;
+  Gtk::VBox boiteV1;
 
+  /** \brief L'affichage de l'architecture du réseau de neurones */
+  BoiteArchitecture boiteArchi;
+  /** \brief La liste de couches possibles */
+  BoiteChoixMultiple* choixCouche;
 
-  public:
-    /**
+  //   Gtk::ComboBoxText listeChoixCouche;
+
+public:
+  /**
      * \brief Constructeur du panneau vide.
      */
-    Panneau();
+  Panneau();
 
-
-    /**
+  /**
      * \fn void sauvegarderRN()
      * \brief Méthode permettant la sauvegarde d'un Reseau de Neurones. 
      */
-    void sauvegarderRN();
+  void sauvegarderRN();
 
-    /**
+  /**
      * \fn void sauvegarderRN(string nomFichier)
      * \brief Méthode permettant la sauvegarde d'un reseau de neurones sous un nom donnée
      * \param nomFichier le nom du fichier en sortie
      */
-    void sauvegarderRN(string nomFichier);
+  void sauvegarderRN(string nomFichier);
 
-    /**
+  /**
      * \fn ReseauNeurones getReseauNeurones()
      * \brief getteur permettant d'acceder au Reseau de Neurones en attribut de la classe
-	* \return le Reseau de neurones en attribut de la classe Panneau
+	   * \return le Reseau de neurones en attribut de la classe Panneau
      */
-    ReseauNeurones getReseauNeurones();
+  ReseauNeurones *getReseauNeurones();
+
+  void ajouterCouche();
 };
+
 #endif

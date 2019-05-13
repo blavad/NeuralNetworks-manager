@@ -196,36 +196,33 @@ Tenseur *ReseauNeurones::derivee(Tenseur *t)
 
 void ReseauNeurones::ajouterCoucheInitiale(Couche *c)
 {
-	// Graphe<Couche *>::ajouterNoeud(c);
 	couche_initiale.push_back(c);
 }
 
 void ReseauNeurones::ajouterCoucheFinale(Couche *c)
 {
-	// Graphe<Couche *>::ajouterNoeud(c);
 	couche_finale.push_back(c);
 }
 
 void ReseauNeurones::supprimerCoucheInitiale(Couche *c)
 {
-	Graphe<Couche *>::supprimerNoeud(c);
-	for (auto tmp = couche_initiale.begin(); tmp != couche_initiale.end(); ++tmp)
+	for (int i = 0; i < couche_initiale.size(); i++)
 	{
-		if (*tmp == c)
+		if (couche_initiale[i] == c)
 		{
-			couche_initiale.erase(tmp);
+			couche_initiale.erase(couche_initiale.begin() + i);
 			break;
 		}
 	}
 }
+
 void ReseauNeurones::supprimerCoucheFinale(Couche *c)
 {
-	Graphe<Couche *>::supprimerNoeud(c);
-	for (auto tmp = couche_finale.begin(); tmp != couche_initiale.end(); ++tmp)
+	for (int i = 0; i < couche_finale.size(); i++)
 	{
-		if (*tmp == c)
+		if (couche_finale[i] == c)
 		{
-			couche_finale.erase(tmp);
+			couche_finale.erase(couche_finale.begin() + i);
 			break;
 		}
 	}
@@ -285,6 +282,30 @@ std::vector<Couche *> ReseauNeurones::getCouchesInitiales()
 std::vector<Couche *> ReseauNeurones::getCouchesFinales()
 {
 	return couche_finale;
+}
+
+bool ReseauNeurones::isFinale(Couche *c)
+{
+	for (Couche *c_fin : getCouchesFinales())
+	{
+		if (c == c_fin)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+bool ReseauNeurones::isInitiale(Couche *c)
+{
+	for (Couche *c_init : getCouchesInitiales())
+	{
+		if (c == c_init)
+		{
+			return true;
+		}
+	}
+	return false;
 }
 
 void ReseauNeurones::display()
