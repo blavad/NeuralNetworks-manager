@@ -38,11 +38,11 @@ public:
 
   virtual Matrice &operator=(const Matrice &copy);
 
-  virtual Matrice &operator+(const Matrice &copy);
+  virtual Matrice &operator+(const Matrice &m);
 
-  virtual Matrice &operator-(const Matrice &copy);
+  virtual Matrice &operator-(const Matrice &m);
 
-  Tenseur &operator*(const Tenseur &t);
+  virtual Tenseur &operator*(const Tenseur &t);
 
   int getNbLignes() const;
   int getNbColonnes() const;

@@ -58,10 +58,15 @@ public:
   
   /**
    * \fn virtual bool afficher()
-   * \brief Méthode pour savoir si la couche est affichée ou non
-   * \return booléen vérifiant si l'affiche s'est bien déroulé
+   * \brief Méthode virtuelle pour savoir si la couche est affichée ou non
+   * \return booléen vérifiant si l'affichage s'est bien déroulé
    */
   virtual bool afficher();
+
+  /**
+   * \fn virtual void upDateDimOutput()
+   * \brief Méthode virtuelle pour mettre à jour la dimension de sortie
+   */
 
   virtual void upDateDimOutput();
 
@@ -86,10 +91,10 @@ public:
    */
   double getY() const;
 
-/**
+  /**
    * \fn void setPos(int, int);
-   * \brief Méthode pour obtenir la coordonnée x de la couche
-   * \return La coordonnée x de la couche
+   * \brief Méthode pour fixer les coordonnées de la couche
+   * \param Les positions en x et en y 
    */
   void setPos(double, double);
 

@@ -31,6 +31,11 @@ public:
      * \param no le nom de la couche
      */
   CoucheActivation(DimTenseur din, const std::string no = "Activation");
+  
+  /**
+   * \fn void upDateDimOutput()
+   * \brief Méthode pour mettre à jour la dimension de sortie
+   */
 
   void upDateDimOutput();
 };

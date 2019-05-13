@@ -44,6 +44,10 @@ public:
    */
   Tenseur* derivee(Tenseur* t);
 
+  /**
+   * \fn void upDateDimOutput()
+   * \brief Méthode pour mettre à jour la dimension de sortie
+   */
   void upDateDimOutput();
 };
 

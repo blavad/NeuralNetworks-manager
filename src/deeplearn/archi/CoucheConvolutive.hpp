@@ -83,7 +83,7 @@ class CoucheConvolutive : public CoucheCombinaison
     void getL_Filtre();
 
     /**
-     * \fn void getParams()
+     * \fn void getH_Filtre()
      * \brief Recupere la largeur de chaque filtre
      */
     void getH_Filtre();

@@ -26,9 +26,9 @@ public:
 
   virtual Vecteur &operator=(const Vecteur &copy);
 
-  virtual Vecteur &operator+(const Vecteur &copy);
+  virtual Vecteur &operator+(const Vecteur &v);
 
-  virtual Vecteur &operator-(const Vecteur &copy);
+  virtual Vecteur &operator-(const Vecteur &v);
 
   virtual Tenseur &operator*(const Tenseur &t);
 
