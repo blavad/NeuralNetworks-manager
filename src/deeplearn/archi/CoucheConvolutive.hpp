@@ -81,8 +81,13 @@ public:
      */
   void getL_Filtre();
 
+<<<<<<< HEAD
   /**
      * \fn void getParams()
+=======
+    /**
+     * \fn void getH_Filtre()
+>>>>>>> a06e8349f79647660719e55d38d6fa1f913c9068
      * \brief Recupere la largeur de chaque filtre
      */
   void getH_Filtre();

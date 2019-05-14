@@ -68,14 +68,14 @@ public:
   Tenseur *derivee(Tenseur *t);
 
   /**
-   * \fn void ajouterCoucheInitiale(Couche c)
+   * \fn void ajouterCoucheInitiale(Couche *c)
    * \brief Ajout d'une la couche initiale.
    * \param c une couche déjà créée.
    */
   void ajouterCoucheInitiale(Couche *c);
 
   /**
-   * \fn void ajouterCoucheFinale(Couche c)
+   * \fn void ajouterCoucheFinale(Couche *c)
    * \brief Ajout d'une couche finale.
    * \param c une couche déjà créée.
    */
@@ -133,16 +133,16 @@ public:
   std::vector<Couche *> getCouchesFinales();
 
   /** 
-   * \fn bool isInitiale(Couche *)
+   * \fn bool isInitiale(Couche *c)
    * \brief teste si la couche est initiale
    */
-  bool isInitiale(Couche *);
+  bool isInitiale(Couche *c);
   
   /** 
-   * \fn bool isFinale(Couche *)
+   * \fn bool isFinale(Couche *c)
    * \brief teste si la couche est finale
    */
-  bool isFinale(Couche *);
+  bool isFinale(Couche *c);
 
 
   void display();

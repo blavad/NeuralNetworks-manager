@@ -5,6 +5,7 @@
 #include "Optimisateur.hpp"
 #include "Erreur.hpp"
 #include "Donnees.hpp"
+#include "Donnee.hpp"
 #include "ParametresApprentissage.hpp"
 #include "ErreurL1.hpp"
 

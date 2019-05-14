@@ -57,11 +57,22 @@ public:
   virtual Tenseur* derivee(Tenseur* t);
   
   /**
+<<<<<<< HEAD
    * \fn virtual std::string type()
    * \brief Méthode pour savoir le type de la couche
    * \return le type de la couche
+=======
+   * \fn virtual bool afficher()
+   * \brief Méthode virtuelle pour savoir si la couche est affichée ou non
+   * \return booléen vérifiant si l'affichage s'est bien déroulé
+>>>>>>> a06e8349f79647660719e55d38d6fa1f913c9068
    */
   virtual std::string type();
+
+  /**
+   * \fn virtual void upDateDimOutput()
+   * \brief Méthode virtuelle pour mettre à jour la dimension de sortie
+   */
 
   virtual void upDateDimOutput();
 
@@ -86,10 +97,10 @@ public:
    */
   double getY() const;
 
-/**
+  /**
    * \fn void setPos(int, int);
-   * \brief Méthode pour obtenir la coordonnée x de la couche
-   * \return La coordonnée x de la couche
+   * \brief Méthode pour fixer les coordonnées de la couche
+   * \param Les positions en x et en y 
    */
   void setPos(double, double);
 

@@ -11,12 +11,12 @@
 
 using namespace std;
 
-BoiteArchitecture::BoiteArchitecture(Gtk::Window* parent) : input(new Couche("I")), output(new Couche("O")), parent(parent)
+BoiteArchitecture::BoiteArchitecture(Gtk::Window *parent) : input(new Couche("I")), output(new Couche("O")), parent(parent)
 {
 	add_events(Gdk::BUTTON_PRESS_MASK);
 }
 
-BoiteArchitecture::BoiteArchitecture(Gtk::Window* parent, ReseauNeurones *res) : rn(res), input(new Couche("I")), output(new Couche("O")), parent(parent)
+BoiteArchitecture::BoiteArchitecture(Gtk::Window *parent, ReseauNeurones *res) : rn(res), input(new Couche("I")), output(new Couche("O")), parent(parent)
 {
 	add_events(Gdk::BUTTON_PRESS_MASK);
 	// add_events(Gdk::KEY_PRESS_MASK);
@@ -122,13 +122,12 @@ bool BoiteArchitecture::on_button_press_event(GdkEventButton *event)
 			else
 			{
 				DialogueParamCouche dialogue("Paramétrage " + selected_couche->getNom(), parent, selected_couche);
-
 				int reponse = dialogue.run();
-
 				if (reponse == Gtk::RESPONSE_OK)
 				{
 					selected_couche->setNom(dialogue.getNomC());
 				}
+				rn->upDateDimOutput
 			}
 		}
 	}

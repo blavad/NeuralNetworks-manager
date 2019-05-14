@@ -1,45 +1,26 @@
-/* Documentation tag for Doxygen
- */
-
-/*! \mainpage PLEGAT Documentation
- *
- * \section intro_sec Introduction
- *
- * This is the Plegat documentation.
- *
- * \section install_sec Installation
- *
- * \subsection tools_subsec Tools required&#58;
- * - Java Runtime Environment &#40;JRE&#41; 1.4.2 or later &#40;<small><a href="http&#58;//java.sun.com/">Java Web Site etc etc...
- *
- * \subsection running Running the program
- * In a command window, etc etc...
- *
- * \section copyright Copyright and License
- * This license applies to etc etc...
- *
- * <BR><BR>
- *
- */
-#include "Tenseur.hpp"
-#include "DimTenseur.hpp"
+#include <gtkmm.h>
+#include <gtkmm/application.h>
+#include <gtkmm/window.h>
 #include <vector>
-#include <iostream>
-#include <stdlib.h>
-#include <time.h>
-#include <random>
-#include <boost/archive/text_iarchive.hpp>
-#include <boost/archive/text_oarchive.hpp>
+
+#include "ihm/Panneau.hpp"
 
 using namespace std;
 
-int main(){
-	
-	Tenseur tenseur(std::vector(2,2));
-std::ofstream ofile(filename);
-boost::archive::text_oarchive oTextArchive(ofile);
-oTextArchive << t;
+int main(int argc, char **argv)
+{
+  auto app = Gtk::Application::create(argc, argv, "grn.reseauneurones.affichage");
+  Panneau win;
+  // Gtk::Window win;
 
+  /* Couche *c = new TanH("TanH_1"), *c2 = new TanH("TanH_2"), *c3 = new TanH("TanH_3"), *c4 = new TanH("TanH_4"), *c5 = new TanH("TanH_5"), *c6 = new TanH("TanH_6"), *c7 = new TanH("TanH_7");
+  vector<Couche *> c_init{c, c2, c3, c4, c5};
+  ReseauNeurones *rn = new ReseauNeurones(c_init, "RN_Test_FC");
+  rn->setDimInput(vector<int>{5, 5, 3});
 
-    return 0;
+  BoiteArchitecture archiDraw(rn);
+  archiDraw.show();
+  win.add(archiDraw); */
+
+  return app->run(win);
 }

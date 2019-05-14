@@ -92,7 +92,7 @@ public:
 
   /**
    * \fn std::string toString()
-   * \brief Récupère les dimension sous forme de string
+   * \brief Récupère les dimensions sous forme de string
    */
   std::string toString();
 

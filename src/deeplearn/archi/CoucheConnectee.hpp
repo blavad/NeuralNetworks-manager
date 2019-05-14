@@ -48,6 +48,10 @@ public:
 
   std::string type();
 
+  /**
+   * \fn void upDateDimOutput()
+   * \brief Méthode pour mettre à jour la dimension de sortie
+   */
   void upDateDimOutput();
 };
 

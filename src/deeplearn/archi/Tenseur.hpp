@@ -60,38 +60,38 @@ class Tenseur
    virtual Tenseur &operator=(const Tenseur &copy);
 
    /**
-     *  \fn bool operator==(const Tenseur &)
+     *  \fn bool operator==(const Tenseur &t)
      *  \brief Compare deux tenseurs
      *  \param t le tenseur à comparer
      *  \return booleen
      */
-   bool operator==(const Tenseur &);
+   bool operator==(const Tenseur &t);
 
    /**
-     *  \fn bool operator!=(const Tenseur &)
+     *  \fn bool operator!=(const Tenseur &t)
      *  \brief Compare deux tenseurs
      *  \param t le tenseur à comparer
      *  \return booleen
      */
-   bool operator!=(const Tenseur &);
+   bool operator!=(const Tenseur &t);
 
    /**
-     *  \fn bool operator+(const Tenseur &, const Tenseur &)
+     *  \fn bool operator+(const Tenseur &, const Tenseur &t)
      *  \brief Additionne deux tenseurs
      *  \param t1 le 1er tenseur de la addition
      *  \param t2 le 2nd tenseur de la addition
      *  \return l'addition des tenseurs
      */
-   virtual Tenseur &operator+(const Tenseur &);
+   virtual Tenseur &operator+(const Tenseur &t);
 
    /**
-     *  \fn bool operator+(const Tenseur &, const Tenseur &)
+     *  \fn bool operator+(const Tenseur &, const Tenseur &t)
      *  \brief Soustrait deux tenseurs
      *  \param t1 le 1er tenseur de la soustraction
      *  \param t2 le 2nd tenseur de la soustraction
      *  \return la soustraction
      */
-   virtual Tenseur &operator-(const Tenseur &);
+   virtual Tenseur &operator-(const Tenseur &t);
 
    /**
      *  \fn Tenseur operator*(const Tenseur &t)
@@ -99,7 +99,7 @@ class Tenseur
      *  \param t le 2nd tenseur de la multiplication
      *  \return la multiplication
      */
-   virtual Tenseur &operator*(const Tenseur &);
+   virtual Tenseur &operator*(const Tenseur &t);
 
    /**
    * \fn bool nextInd(std::vector<int> &)
@@ -110,7 +110,7 @@ class Tenseur
    bool nextInd(std::vector<int> &ind) const;
 
    /**
-    * \fn Tenseur* appliquerFonction((double (*f)(double),Tenseur)
+    * \fn Tenseur* appliquerFonction((double (*f)(double))
     * 
     */
    Tenseur *appliquerFonction(double (*f)(double));
@@ -123,9 +123,9 @@ class Tenseur
 
    /**
    * \fn void initValeurConstant(double)
-   * \brief Initialise le tenseur avec des valeurs donnée en paramètre
+   * \brief Initialise le tenseur avec des valeurs données en paramètre
    */
-   void initValeurConstant(double);
+   void initValeurConstant(double v);
 
    /**
    * \fn void initValeurNulle()

@@ -30,20 +30,20 @@ public:
   ReLU(DimTenseur dout, const std::string no="ReLU");
 
   /**
-     * \fn Tenseur propagation(Tenseur t)
+     * \fn Tenseur propagation(Tenseur *t)
      * \brief Méthode permettant la propagation d'une couche à une autre.
      * \param t le tenseur d'entree
 	   * \return la sortie de la fonction ReLU
      */
-  Tenseur* propagation(Tenseur* t);
+  Tenseur* propagation(Tenseur *t);
 
   /**
-     * \fn Tenseur derivee(Tenseur t);
+     * \fn Tenseur derivee(Tenseur *t);
      * \brief Methode permettant la derivation des composantes d'un tenseur 
      * \param t le tenseur d'entree
      * \return le tenseur avec toutes ses composantes derivees
      */
-  Tenseur* derivee(Tenseur* t);
+  Tenseur* derivee(Tenseur *t);
 };
 
 #endif
