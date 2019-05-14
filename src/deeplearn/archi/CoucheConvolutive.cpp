@@ -6,8 +6,7 @@ CoucheConvolutive::CoucheConvolutive(DimTenseur din,
 									 int nb_fil,
 									 std::string no,
 									 int pas,
-									 int pad) : CoucheCombinaison(din,
-																	  DimTenseur(std::vector<int>{}), no),l_filtre(l_fil), h_filtre(h_fil),nb_filtres(nb_fil),padding(pad),pas(pas)
+									 int pad) : CoucheCombinaison(din,DimTenseur(std::vector<int>{}), no),l_filtre(l_fil), h_filtre(h_fil),nb_filtres(nb_fil),padding(pad),pas(pas)
 {
 }
 
