@@ -2,8 +2,8 @@
 #define __PRETRAITEMENT_HPP__
 
 #include <string>
-#include "Donnees.hpp"
-#include "ReseauNeurones.hpp"
+#include "../deeplearn/train/Donnees.hpp"
+#include "../deeplearn/archi/ReseauNeurones.hpp"
 
 /** 
  * \class Pretraitement

@@ -31,7 +31,6 @@ void ReseauNeurones ::miseAJourDims(Couche *cIn, Couche *cOut, bool signe)
 	{
 		sum = sum + cIn->getDimOutput();
 	}
-
 	cOut->setDimInput(sum);
 	cOut->upDateDimOutput();
 
@@ -232,42 +231,12 @@ void ReseauNeurones::ajouterArc(Couche *noeud_init, Couche *noeud_final)
 {
 	Graphe<Couche *>::ajouterArc(noeud_init, noeud_final);
 	miseAJourDims(noeud_init, noeud_final, true);
-	/* std::vector<Couche *> ant = getListNoeudAnt(positionNoeud(noeud_final));
-	if (ant.empty())
-	{
-		noeud_final->setDimInput(noeud_init->getDimOutput());
-	}
-	else
-	{
-		int new_dim = noeud_init->getDimOutput().getTaille() + noeud_final->getDimInput().getTaille();
-		noeud_final->setDimInput(DimTenseur(std::vector<int>{new_dim}));
-	} */
 }
 
 void ReseauNeurones::supprimerArc(Couche *noeud_init, Couche *noeud_final)
 {
 	miseAJourDims(noeud_init, noeud_final, false);
-
 	Graphe<Couche *>::supprimerArc(noeud_init, noeud_final);
-
-	/* std::vector<Couche *> ant = getListNoeudAnt(positionNoeud(noeud_final));
-	if (ant.empty())
-	{
-		throw exception();
-	}
-	else if (ant.size() == 1)
-	{
-		noeud_final->setDimInput(DimTenseur());
-	}
-	else if (ant.size() == 2)
-	{
-		noeud_final->setDimInput(noeud_init->getDimOutput());
-	}
-	else
-	{
-		int new_dim = noeud_init->getDimOutput().getTaille() + noeud_final->getDimInput().getTaille();
-		noeud_final->setDimInput(DimTenseur(std::vector<int>{new_dim}));
-	} */
 }
 
 void ReseauNeurones::sauvegarderReseau(ReseauNeurones reseau)

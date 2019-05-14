@@ -74,15 +74,6 @@ class Donnees {
          * \return le nombre de donnees
          */
         int getNbDonnees();
-        
-        
-        /**
-         * \fn int nombreAleatoire(int i)
-         * \brief permet de créer un nombre aléatoire afin de pouvoir ensuite effectuer le mélange des données
-         * \param i un entier 
-         * \return retour un nombre entier aléatoire
-         */
-         int nombreAleatoire(int i)
 
 };
 

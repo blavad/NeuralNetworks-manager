@@ -20,9 +20,8 @@ void Couche::upDateDimOutput()
 {
 }
 
-bool Couche::afficher()
+std::string Couche::type()
 {
-	return true;
 }
 
 void Couche::setDimInput(DimTenseur dimIn)

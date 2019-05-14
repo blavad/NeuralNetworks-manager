@@ -1,5 +1,11 @@
 #include "Neurone.hpp"
 
-Neurone::Neurone(DimTenseur din, std::string no):CoucheConnectee(din,1,no)
+Neurone::Neurone(std::string no):CoucheConnectee(1,no)
 {
+}
+
+
+std::string Neurone::type()
+{
+    return "Neurone";
 }

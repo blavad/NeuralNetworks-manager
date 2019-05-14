@@ -57,11 +57,11 @@ public:
   virtual Tenseur* derivee(Tenseur* t);
   
   /**
-   * \fn virtual bool afficher()
-   * \brief Méthode pour savoir si la couche est affichée ou non
-   * \return booléen vérifiant si l'affiche s'est bien déroulé
+   * \fn virtual std::string type()
+   * \brief Méthode pour savoir le type de la couche
+   * \return le type de la couche
    */
-  virtual bool afficher();
+  virtual std::string type();
 
   virtual void upDateDimOutput();
 

@@ -1,54 +1,74 @@
 #include "Apprentissage.hpp"
 
-Apprentissage::Apprentissage(){}
+Apprentissage::Apprentissage() {}
 
-Apprentissage::Apprentissage(ReseauNeurones reseauN, Erreur erreur){
-    rn = reseauN;
-    err = erreur;
+Apprentissage::Apprentissage(ReseauNeurones *reseauN, Erreur *erreur) : rn(reseauN), err(erreur)
+{
 }
 
-ReseauNeurones Apprentissage::getRN(){
+ReseauNeurones *Apprentissage::getRN()
+{
     return rn;
 }
 
-Optimisateur Apprentissage::getOptimisateur(){
+Optimisateur Apprentissage::getOptimisateur()
+{
     return opt;
 }
 
-Erreur Apprentissage::getErreur(){
+Erreur *Apprentissage::getErreur()
+{
     return err;
 }
 
-Donnees Apprentissage::getDonnees(){
+Donnees Apprentissage::getDonnees()
+{
     return donnees;
 }
 
-ParametresApprentissage Apprentissage::getParam(){
+ParametresApprentissage Apprentissage::getParam()
+{
     return param;
 }
 
-void Apprentissage::setOptimisateur(Optimisateur optimisateur){
-    opt=optimisateur;
+void Apprentissage::setRN(ReseauNeurones *res)
+{
+    rn = res;
 }
 
-void Apprentissage::setDonnees(Donnees d){
-    donnees=d;
+void Apprentissage::setErreur(Erreur *erreur)
+{
+    err = erreur;
 }
 
-void Apprentissage::setParam(ParametresApprentissage paramApp){
-     param=paramApp;
+void Apprentissage::setOptimisateur(Optimisateur optimisateur)
+{
+    opt = optimisateur;
 }
 
-void Apprentissage::apprendre(){
-    for (int i=0;i++;param.getNbEpoques){
-        for (int j=0;j++;donnees.getNbDonnees){
-            Tenseur* t;
+void Apprentissage::setDonnees(Donnees d)
+{
+    donnees = d;
+}
+
+void Apprentissage::setParam(ParametresApprentissage paramApp)
+{
+    param = paramApp;
+}
+
+void Apprentissage::apprendre()
+{
+    for (int i = 0; i < param.getNbEpoques(); i++)
+    {
+        for (int j = 0; j < donnees.getNbDonnees(); j++)
+        {
             Tenseur x = donnees.getDonnee(j).getEntree();
-            t = &x;
             Tenseur l = donnees.getDonnee(j).getSortie();
-            Tenseur* y = rn.propagation(t);
-            Tenseur e = err.eval(*y,l);
-            opt.minimiser(err);
+            Tenseur *t;
+            t = &x;
+            Tenseur *y = rn->propagation(t);
+            Tenseur e = err->eval(*y, l);
+            opt.minimiser(*err);
         }
         donnees.melanger();
     }

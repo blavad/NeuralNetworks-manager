@@ -18,13 +18,15 @@
 class Erreur
 {
 
-  public:
+public:
+    Erreur();
+
     /**
-         * \fn virtual Tenseur eval(Tenseur sortieRN, Tenseur prediction)
-         * \brief Methode virtuelle pour evaluer l'erreur effectuee entre la sortie et la prediction.
-         * \param sortieRN le tenseur de sortie du reseau de neurones.
-         * \param label la sortie souhaitée du reseau de neurones.
-         */
+     * \fn virtual Tenseur eval(Tenseur sortieRN, Tenseur prediction)
+     * \brief Methode virtuelle pour evaluer l'erreur effectuee entre la sortie et la prediction.
+     * \param sortieRN le tenseur de sortie du reseau de neurones.
+     * \param label la sortie souhaitée du reseau de neurones.
+     */
     virtual Tenseur eval(Tenseur sortieRN, Tenseur label);
 
     /**

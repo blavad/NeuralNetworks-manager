@@ -1,7 +1,7 @@
 #ifndef __OPTIMISATEUR_HPP__
 #define __OPTIMISATEUR_HPP__
 
-#include "../archi/ReseauNeurones.hpp";
+#include "../archi/ReseauNeurones.hpp"
 #include "Erreur.hpp"
 
 
@@ -23,6 +23,8 @@ class Optimisateur {
         ReseauNeurones *rn;
 
     public :
+
+        Optimisateur();
 
         /**
          * \brief Constructeur d'un otpimisateur a partir d'un reseau de neurones

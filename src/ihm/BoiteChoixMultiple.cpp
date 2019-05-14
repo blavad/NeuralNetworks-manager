@@ -17,8 +17,6 @@ BoiteChoixMultiple::BoiteChoixMultiple(Panneau *parent, void (Panneau::*f)(void)
     // Mise en place de la valeure par défault
     listeChoix.set_active(0);
 
-    cout << listeChoix.get_active_text() << endl;
-
     validerSelection.signal_clicked().connect(sigc::mem_fun(*parent, f));
     agencement.pack_start(listeChoix);
     agencement.pack_end(validerSelection);

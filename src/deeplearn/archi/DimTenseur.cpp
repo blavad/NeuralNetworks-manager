@@ -59,6 +59,9 @@ std::vector<int> DimTenseur::getDims() const
 
 int DimTenseur::getTaille() const
 {
+	if ((getDims().size()==0) || ((getDims().size()==1) && (getDim(0)==0))){
+		return 0;
+	}
 	int prod = 1;
 	for (int d : getDims())
 	{
@@ -76,7 +79,6 @@ std::string DimTenseur::toString()
 	}
 	else
 	{
-
 		for (int i = 0; i < getOrdre() - 1; i++)
 		{
 			str += std::to_string(getDim(i)) + "x";

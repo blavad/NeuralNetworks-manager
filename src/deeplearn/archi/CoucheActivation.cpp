@@ -8,6 +8,11 @@ CoucheActivation::CoucheActivation(DimTenseur din, const std::string no):Couche(
 {
 }
 
+std::string CoucheActivation::type()
+{
+    return "CoucheActivation";
+}
+
 void CoucheActivation::upDateDimOutput(){
     setDimOutput(getDimInput());
 }

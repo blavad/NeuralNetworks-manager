@@ -3,6 +3,7 @@
 #include <math.h>
 
 #include "BoiteArchitecture.hpp"
+#include "DialogueParamCouche.hpp"
 #include "Boite.hpp"
 
 #include "../deeplearn/archi/ReseauNeurones.hpp"
@@ -10,12 +11,12 @@
 
 using namespace std;
 
-BoiteArchitecture::BoiteArchitecture() : input(new Couche("I")), output(new Couche("O"))
+BoiteArchitecture::BoiteArchitecture(Gtk::Window* parent) : input(new Couche("I")), output(new Couche("O")), parent(parent)
 {
 	add_events(Gdk::BUTTON_PRESS_MASK);
 }
 
-BoiteArchitecture::BoiteArchitecture(ReseauNeurones *res) : rn(res), input(new Couche("I")), output(new Couche("O"))
+BoiteArchitecture::BoiteArchitecture(Gtk::Window* parent, ReseauNeurones *res) : rn(res), input(new Couche("I")), output(new Couche("O")), parent(parent)
 {
 	add_events(Gdk::BUTTON_PRESS_MASK);
 	// add_events(Gdk::KEY_PRESS_MASK);
@@ -94,7 +95,7 @@ bool BoiteArchitecture::on_key_press_event(GdkEventKey *event)
 // Mouse button press event
 bool BoiteArchitecture::on_button_press_event(GdkEventButton *event)
 {
-	if ((event->type == GDK_2BUTTON_PRESS) && (event->button == 1))
+	if ((event->type == GDK_2BUTTON_PRESS) && (event->button == 3))
 	{
 		selected_couche = selectCouche(event->x, event->y);
 		if (selected_couche != NULL && !isOutputSelected() && !isInputSelected())
@@ -105,6 +106,30 @@ bool BoiteArchitecture::on_button_press_event(GdkEventButton *event)
 				rn->supprimerCoucheFinale(selected_couche);
 			rn->supprimerNoeud(selected_couche);
 			selected_couche = NULL;
+		}
+	}
+	else if ((event->type == GDK_2BUTTON_PRESS) && (event->button == 1))
+	{
+		selected_couche = selectCouche(event->x, event->y);
+		if (selected_couche != NULL)
+		{
+			if (isInputSelected())
+			{
+			}
+			else if (isOutputSelected())
+			{
+			}
+			else
+			{
+				DialogueParamCouche dialogue("Paramétrage " + selected_couche->getNom(), parent, selected_couche);
+
+				int reponse = dialogue.run();
+
+				if (reponse == Gtk::RESPONSE_OK)
+				{
+					selected_couche->setNom(dialogue.getNomC());
+				}
+			}
 		}
 	}
 	else

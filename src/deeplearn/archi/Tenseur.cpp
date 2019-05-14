@@ -15,18 +15,20 @@ Tenseur::Tenseur()
 
 Tenseur::Tenseur(std::vector<int> dims) : dimT(dims)
 {
-	allocate();
+	//allocate();
 }
 
 Tenseur::Tenseur(DimTenseur di) : dimT(di)
 {
-	allocate();
+	//allocate();
 }
 
 Tenseur::~Tenseur()
 {
 	free(valeur);
 }
+
+// GESTION DES VALEURS ET OPERATIONS SUR TENSEURS
 
 void Tenseur::allocate()
 {
@@ -196,6 +198,46 @@ void Tenseur::setValeur(double val, std::vector<int> indices) const
 	valeur[ind] = val;
 }
 
+double Tenseur::getValeur(int i) const
+{
+	return valeur[i];
+}
+
+int Tenseur::getTaille() const
+{
+	return dimT.getTaille();
+}
+
+void Tenseur::lineariser()
+{
+	setDim(DimTenseur(std::vector<int>{getTaille()}));
+}
+
+Tenseur Tenseur::concatener(Tenseur t2)
+{
+	int taille = (valeur == NULL) ? 0 : getTaille();
+	int taille2 = (t2.valeur == NULL) ? 0 : t2.getTaille();
+
+	Tenseur t(std::vector<int>{taille + taille2});
+	t.allocate();
+	t.initValeurNulle();
+
+	int m = 0;
+	for (int j = 0; j < taille; j++)
+	{
+		t.setValeur(getValeur(j), j);
+	}
+	for (int i = 0; i < taille2; i++)
+	{
+		t.setValeur(t2.getValeur(i), taille + i);
+	}
+	return t;
+}
+
+
+
+// GESTION DES DIMENSIONS DU TENSEUR
+
 DimTenseur Tenseur::getDim() const
 {
 	return dimT;
@@ -234,37 +276,3 @@ void Tenseur::setValeur(double val, int indice)
 	valeur[indice] = val;
 }
 
-double Tenseur::getValeur(int i) const
-{
-	return valeur[i];
-}
-int Tenseur::getTaille() const
-{
-	return dimT.getTaille();
-}
-
-void Tenseur::lineariser()
-{
-	setDim(DimTenseur(std::vector<int>{getTaille()}));
-}
-
-Tenseur Tenseur::concatener(Tenseur t2)
-{
-	int taille = (valeur == NULL) ? 0 : getTaille();
-	int taille2 = (t2.valeur == NULL) ? 0 : t2.getTaille();
-
-	Tenseur t(std::vector<int>{taille + taille2});
-	t.allocate();
-	t.initValeurNulle();
-
-	int m = 0;
-	for (int j = 0; j < taille; j++)
-	{
-		t.setValeur(getValeur(j), j);
-	}
-	for (int i = 0; i < taille2; i++)
-	{
-		t.setValeur(t2.getValeur(i), taille + i);
-	}
-	return t;
-}

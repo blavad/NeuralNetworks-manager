@@ -17,11 +17,13 @@
 class Neurone : public CoucheConnectee
 {
 
-  public:
-    /**
-     * \brief Constructeur d'un neurone
-     */
-    Neurone(DimTenseur din, std::string no);
+public:
+  /**
+   * \brief Constructeur d'un neurone
+   */
+  Neurone(std::string no = "Neurone");
+
+  std::string type();
 };
 
 #endif

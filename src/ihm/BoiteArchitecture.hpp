@@ -29,6 +29,7 @@ protected:
     double zoom = 1.;
     int height, width;
 
+    Gtk::Window* parent;
     ReseauNeurones *rn;
 
     Couche *selected_couche;
@@ -40,14 +41,14 @@ public:
     /**
      * \brief Constructeur d'une boite d'architecture.
      */
-    BoiteArchitecture();
+    BoiteArchitecture(Gtk::Window* parent);
 
     /**
      * \fn BoiteArchitecture(ReseauNeurones rn)
      * \brief Constucteur prenant en paramètre un reseau de neurones
      * \param rn un réseau de neurones préalablement défini
      */
-    BoiteArchitecture(ReseauNeurones *res);
+    BoiteArchitecture(Gtk::Window* parent,ReseauNeurones *res);
 
     virtual ~BoiteArchitecture();
 

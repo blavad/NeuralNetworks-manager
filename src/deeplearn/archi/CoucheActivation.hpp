@@ -32,6 +32,8 @@ public:
      */
   CoucheActivation(DimTenseur din, const std::string no = "Activation");
 
+   std::string type();
+
   void upDateDimOutput();
 };
 

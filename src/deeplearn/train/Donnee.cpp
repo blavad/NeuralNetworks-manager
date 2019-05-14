@@ -14,12 +14,12 @@ Donnee::Donnee(Tenseur entree, Tenseur sortie)
 }
 
 
-Tenseur Donnee::getEntree();
+Tenseur Donnee::getEntree()
 {
 	return entree;
 }
 
-Tenseur Donnee::getSortie();
+Tenseur Donnee::getSortie()
 {
 	return sortie;
 }

@@ -96,7 +96,6 @@ public:
    */
   std::string toString();
 
-
 };
 
 #endif
