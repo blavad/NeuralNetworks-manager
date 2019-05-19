@@ -9,6 +9,16 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
+
+  Gtk::Main::init_gtkmm_internals();
+
+  /* Apprentissage *app = new Apprentissage();
+  ReseauNeurones *rn = new ReseauNeurones();
+
+  app->setRN(rn);
+
+  cout << "bon"; */
+
   auto app = Gtk::Application::create(argc, argv, "grn.reseauneurones.affichage");
   Panneau win;
   // Gtk::Window win;

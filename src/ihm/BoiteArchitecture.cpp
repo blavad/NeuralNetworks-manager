@@ -127,7 +127,6 @@ bool BoiteArchitecture::on_button_press_event(GdkEventButton *event)
 				{
 					selected_couche->setNom(dialogue.getNomC());
 				}
-				rn->upDateDimOutput
 			}
 		}
 	}

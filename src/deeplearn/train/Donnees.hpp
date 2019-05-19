@@ -4,7 +4,6 @@
 #include <vector>
 #include "Donnee.hpp"
 
-
 /** 
  * \class Donnees
  * \brief Gère les donnees necessaire a l'apprentissage.

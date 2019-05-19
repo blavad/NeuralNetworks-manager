@@ -16,6 +16,10 @@
 #include "../deeplearn/archi/Neurone.hpp"
 #include "../deeplearn/archi/ReseauNeurones.hpp"
 #include "../deeplearn/train/Apprentissage.hpp"
+#include "../deeplearn/train/Erreur.hpp"
+#include "../deeplearn/train/ErreurL1.hpp"
+#include "../deeplearn/train/ErreurQuadratique.hpp"
+#include "../deeplearn/train/ErreurEntropieCroisee.hpp"
 
 using namespace std;
 
@@ -39,10 +43,12 @@ protected:
   /** \brief un Reseau de Neurones*/
   ReseauNeurones *reseauNeurones = new ReseauNeurones();
 
+  /** \brief un objet de la classe apprentissage */
   Apprentissage *appr = new Apprentissage();
 
   /** Conteneur principal */
   Gtk::VBox boiteV1;
+
   /** Conteneur secondaire */
   Gtk::HBox conteneur_secondaire;
 
@@ -52,32 +58,32 @@ protected:
   /** \brief La liste de couches possibles */
   BoiteChoixMultiple *choixCouche;
 
-  /** \brief Bouton de sauvegarde */
-  Gtk::Button sauvegarder;
+  /** \brief La liste des erreurs possibles */
+  BoiteChoixMultiple *choixErreur;
 
 public:
   /**
     * \brief Constructeur du panneau vide.
     */
   Panneau();
+
+  void updateParams(Gtk::SpinButton *param, std::string type = "nb_epocs");
+  void ajouterCouche();
+  void changerErreur();
+  void ouvrirRN();
   /**
     * \fn void sauvegarderRN()
     * \brief Méthode permettant la sauvegarde d'un Reseau de Neurones. 
     */
   void sauvegarderRN();
-  /**
-    * \fn void sauvegarderRN(string nomFichier)
-    * \brief Méthode permettant la sauvegarde d'un reseau de neurones sous un nom donnée
-    * \param nomFichier le nom du fichier en sortie
-    */
-  void sauvegarderRN(string nomFichier);
+  void lancerEntrainement();
+
   /**
     * \fn ReseauNeurones getReseauNeurones()
     * \brief getteur permettant d'acceder au Reseau de Neurones en attribut de la classe
 	  * \return le Reseau de neurones en attribut de la classe Panneau
     */
   ReseauNeurones *getReseauNeurones();
-  void ajouterCouche();
 };
 
 #endif
