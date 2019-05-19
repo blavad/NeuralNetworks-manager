@@ -37,8 +37,11 @@ class Pretraitement {
          * \fn static Tenseur imageToTenseur(string nomFichier)
          * \brief Transforme l'image d'entree en un tenseur
          * \param nomFichier le nom du fichier image a transformer en tenseur
+         * \param longueur la longueur de l'image redimensionnée
+         * \param largeur la largeur de l'image redimensionnée
+         * \param couleur vrai si l'image est en couleur
          */
-        static Tenseur imageToTenseur(std::string nomFichier);
+        static Tenseur imageToTenseur(char* nomFichier,int longueur,int largeur,bool couleur);
 
         /**
          * \fn static Tenseur csvToTenseur(string nomFichier)
