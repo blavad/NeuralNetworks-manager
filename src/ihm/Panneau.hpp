@@ -77,6 +77,7 @@ public:
     */
   void sauvegarderRN();
   void lancerEntrainement();
+  void updateZoom(Gtk::Scale *zoom);
 
   /**
     * \fn ReseauNeurones getReseauNeurones()

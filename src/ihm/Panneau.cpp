@@ -53,6 +53,7 @@ Panneau::Panneau() : Gtk::Window(), boiteV1(false, 20), conteneur_secondaire(fal
 
 	// -----------------------------------------------------------------------
 	// Création choix params entrainement
+
 	Gtk::VBox *paramBox = new Gtk::VBox();
 	// Nb Epoques
 	Gtk::Label *lab_nb_epochs = new Gtk::Label("Nombre Epochs");
@@ -60,6 +61,7 @@ Panneau::Panneau() : Gtk::Window(), boiteV1(false, 20), conteneur_secondaire(fal
 	Gtk::SpinButton *nb_epochs = new Gtk::SpinButton(ajustement);
 	nb_epochs->signal_value_changed().connect(sigc::bind<Gtk::SpinButton *, std::string>(sigc::mem_fun(*this, &Panneau::updateParams), nb_epochs, "nb_epochs"));
 	nb_epochs->set_numeric();
+	updateParams(nb_epochs, "nb_epochs");
 
 	// Fréquence Affichage
 	Gtk::Label *lab_freq = new Gtk::Label("Fréquence Affichage");
@@ -67,6 +69,7 @@ Panneau::Panneau() : Gtk::Window(), boiteV1(false, 20), conteneur_secondaire(fal
 	Gtk::SpinButton *freq = new Gtk::SpinButton(ajustement_freq);
 	freq->signal_value_changed().connect(sigc::bind<Gtk::SpinButton *, std::string>(sigc::mem_fun(*this, &Panneau::updateParams), freq, "freq_affichage"));
 	freq->set_numeric();
+	updateParams(freq, "freq_affichage");
 
 	// Taux apprentissage
 	Gtk::Label *lab_taux_appr = new Gtk::Label("Taux d'apprentissage (x0.01)");
@@ -74,6 +77,7 @@ Panneau::Panneau() : Gtk::Window(), boiteV1(false, 20), conteneur_secondaire(fal
 	Gtk::SpinButton *taux_appr = new Gtk::SpinButton(ajustement_taux_appr);
 	taux_appr->signal_value_changed().connect(sigc::bind<Gtk::SpinButton *, std::string>(sigc::mem_fun(*this, &Panneau::updateParams), taux_appr, "taux_apprentissage"));
 	taux_appr->set_numeric();
+	updateParams(taux_appr, "taux_apprentissage");
 
 	paramBox->pack_start(*lab_nb_epochs);
 	paramBox->pack_start(*nb_epochs);
@@ -82,12 +86,27 @@ Panneau::Panneau() : Gtk::Window(), boiteV1(false, 20), conteneur_secondaire(fal
 	paramBox->pack_start(*lab_freq);
 	paramBox->pack_start(*freq);
 
+	// -------------------------------------------------------------------
+	// Autres
+	Glib::RefPtr<Gtk::Adjustment> m_adjustment(Gtk::Adjustment::create(1.0, 0.3, 3.0, 0.1, 1.0, 1.0));
+	Gtk::Scale *scale_barre = new Gtk::Scale(m_adjustment, Gtk::ORIENTATION_HORIZONTAL);
+	scale_barre->set_digits(1);
+	scale_barre->set_value_pos(Gtk::POS_TOP);
+	scale_barre->set_draw_value();
+	scale_barre->signal_value_changed().connect(sigc::bind<Gtk::Scale *>(sigc::mem_fun(*this, &Panneau::updateZoom), scale_barre));
+	updateZoom(scale_barre);
+
+	// -------------------------------------------------------------------
+	// Ajout des éléments
+
+	// Ajout des composants
 	conteneur_secondaire.pack_start(*multipleChoicheBox);
 	conteneur_secondaire.pack_start(*paramBox);
 	conteneur_secondaire.pack_start(*buttonBox);
 
 	// Ajout des composants au conteneur multiple
 	boiteV1.pack_start(boiteArchi);
+	boiteV1.pack_start(*scale_barre, Gtk::PACK_SHRINK);
 	boiteV1.pack_end(conteneur_secondaire, Gtk::PACK_SHRINK);
 
 	// Ajout à la fenetre
@@ -191,6 +210,11 @@ void Panneau::lancerEntrainement()
 	{
 		dialogue.stop();
 	} */
+}
+
+void Panneau::updateZoom(Gtk::Scale *zoom){
+	boiteArchi.setZoom(zoom->get_value());
+	boiteArchi.queue_draw();
 }
 
 ReseauNeurones *Panneau::getReseauNeurones()
