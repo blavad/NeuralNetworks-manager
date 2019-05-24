@@ -79,7 +79,7 @@ public:
      * \brief Recupere les donnees d'apprentissage.
      * \return les données d'apprentissage.
      */
-    Donnees getDonnees();
+    Donnees& getDonnees();
     /**
      * \fn ParametresApprentissage getParam()
      * \brief Recupere les parametres d'apprentissage du reseau.

@@ -1,4 +1,5 @@
 #include "CoucheActivation.hpp"
+#include <iostream>
 
 CoucheActivation::CoucheActivation( const std::string no):Couche(no)
 {

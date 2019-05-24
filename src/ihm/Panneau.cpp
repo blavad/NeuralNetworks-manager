@@ -116,7 +116,7 @@ Panneau::Panneau() : Gtk::Window(), boiteV1(false, 20), conteneur_secondaire(fal
 
 void Panneau::updateParams(Gtk::SpinButton *param, std::string type)
 {
-	cout << "Changement Params " << type << " to : " << param->get_value() << endl;
+	cout << "#> Changement Params " << type << " to : " << param->get_value() << endl;
 	if (type == "taux_apprentissage")
 	{
 		appr->getParam().setTauxApprentissage(0.01 * param->get_value());
@@ -162,7 +162,7 @@ void Panneau::ajouterCouche()
 
 	if (reponse == Gtk::RESPONSE_OK)
 	{
-		cout << "Ajout " << val << " : " << dialogue.getNomC() << endl;
+		cout << "#> Ajout " << val << " : " << dialogue.getNomC() << endl;
 		new_c->setNom(dialogue.getNomC());
 		reseauNeurones->ajouterNoeud(new_c);
 	}
@@ -172,7 +172,7 @@ void Panneau::ajouterCouche()
 void Panneau::changerErreur()
 {
 	string val = choixErreur->getValeurSectionnee();
-	cout << "Changement Erreur : " << val << endl;
+	cout << "#> Changement Erreur : " << val << endl;
 	Erreur *new_err;
 	if (val == "Erreur L1")
 	{
@@ -192,17 +192,17 @@ void Panneau::changerErreur()
 
 void Panneau::ouvrirRN()
 {
-	cout << "Ouvrir ... " << endl;
+	cout << "#> Ouvrir ... " << endl;
 }
 
 void Panneau::sauvegarderRN()
 {
-	cout << "Sauvegarde de " << reseauNeurones->getNom() << endl;
+	cout << "#> Sauvegarde de " << reseauNeurones->getNom() << endl;
 }
 
 void Panneau::lancerEntrainement()
 {
-	cout << "Lancement Entrainement" << endl;
+	cout << "#> Lancement Entrainement" << endl;
 	//appr->train();
 	/* DialogueEntrainement dialogue("Entrainement " + reseauNeurones->getNom(), this, appr);
 	int reponse = dialogue.run();
@@ -217,7 +217,7 @@ void Panneau::updateZoom(Gtk::Scale *zoom){
 	boiteArchi.queue_draw();
 }
 
-ReseauNeurones *Panneau::getReseauNeurones()
+Apprentissage *Panneau::getApprentissage()
 {
-	return reseauNeurones;
+	return appr;
 }

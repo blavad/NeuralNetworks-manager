@@ -27,3 +27,18 @@ string BoiteChoixMultiple::getValeurSectionnee()
 {
     return listeChoix.get_active_text();
 }
+
+void BoiteChoixMultiple::ajouterChoix(string valeur)
+{
+    listeChoix.append(valeur);
+}
+
+void BoiteChoixMultiple::supprimerChoix(string valeur)
+{
+    /* for (string s : listeChoix){
+        if (s==valeur){
+            listeChoix.remove_text(1);
+            break;
+        }
+    } */
+}

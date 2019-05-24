@@ -5,6 +5,7 @@
 
 #include <gtkmm.h>
 #include "../deeplearn/archi/Couche.hpp"
+#include "../deeplearn/archi/DimTenseur.hpp"
 
 class DialogueParamCouche : public Gtk::Dialog
 {
@@ -20,7 +21,8 @@ protected:
 public:
     DialogueParamCouche(std::string titre, Gtk::Window *parent, Couche *new_c);
     std::string getNomC();
-    void updateDim();
+    DimTenseur getDimOutput();
+    void updateParams();
 };
 
 #endif

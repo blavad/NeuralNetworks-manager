@@ -16,38 +16,160 @@ ReseauNeurones::ReseauNeurones(std::vector<Couche *> couches, const std::string 
 {
 }
 
-void ReseauNeurones ::miseAJourDims(Couche *cIn, Couche *cOut, bool signe)
+bool ReseauNeurones::tousArcsAntVisites(Couche *s)
 {
-	DimTenseur sum;
-
-	for (auto a : getListNoeudAnt(positionNoeud(cOut)))
+	//verifie si tous les antecedents ont ete visites
+	for (Couche *c : getListNoeudAnt(positionNoeud(s)))
 	{
-		if (a != cIn)
+		if (std::find(visite.begin(), visite.end(), make_pair(c, s)) == visite.end())
 		{
-			sum = sum + a->getDimOutput();
+			return false;
 		}
 	}
-	if (signe)
+	return true;
+}
+
+DimTenseur getSumDimOutput(vector<Couche *> c)
+{
+	DimTenseur sum;
+	for (Couche *couche : c)
 	{
-		sum = sum + cIn->getDimOutput();
+		sum = sum + couche->getDimOutput();
 	}
-	cOut->setDimInput(sum);
-	cOut->upDateDimOutput();
+	return sum;
+}
 
-	// si cO n'est pas une couche finale
-	if (std::find(couche_finale.begin(), couche_finale.end(), cOut) == couche_finale.end())
+void ReseauNeurones::miseAJourDims()
+{
+	visite.clear();
+	for (pair<Couche *, vector<Couche *>> c : getListSucc())
 	{
-
-		for (auto s : getListNoeudSucc(positionNoeud(cOut)))
+		Couche *tmp = c.first;
+		if (getListNoeudAnt(positionNoeud(tmp)).size() == 0)
 		{
-			if (signe)
-				miseAJourDims(cOut, s, signe);
+			if (isInitiale(tmp))
+			{
+				tmp->setDimInput(getDimInput());
+			}
 			else
-				miseAJourDims(cOut, s, !signe);
+			{
+				tmp->setDimInput(DimTenseur());
+			}
+			tmp->upDateDimOutput();
+			miseAJourDims(tmp);
+		}
+	}
+	upDateDimOutput();
+}
+
+void ReseauNeurones::miseAJourDims(Couche *cIn, Couche *cOut)
+{
+	if (std::find(visite.begin(), visite.end(), make_pair(cIn, cOut)) == visite.end())
+	{
+		//on ajoute l'arc a la liste des arcs visites
+		visite.push_back(make_pair(cIn, cOut));
+		// si tous les antecedents ont ete visites
+		if (tousArcsAntVisites(cOut))
+		{
+			// On somme toutes les dimensions de tenseur qui arrivent
+			cOut->setDimInput(getSumDimOutput(getListNoeudAnt(positionNoeud(cOut))));
+			cOut->upDateDimOutput();
+			miseAJourDims(cOut);
 		}
 	}
 }
 
+void ReseauNeurones::miseAJourDims(Couche *c)
+{
+	if (isInitiale(c))
+	{
+		c->setDimInput(getDimInput());
+	}
+	else
+	{
+		for (Couche *cSucc : getListNoeudSucc(positionNoeud(c)))
+		{
+			cout << "Update : " << cSucc->getNom() << endl;
+			miseAJourDims(c, cSucc);
+		}
+	}
+}
+
+void ReseauNeurones::upDateDimOutput()
+{
+	setDimOutput(getSumDimOutput(couche_finale));
+}
+
+/* void ReseauNeurones ::miseAJourDims(Couche *cIn, Couche *cOut, bool signe)
+{
+	if ((signe) && (std::find(couche_finale.begin(), couche_finale.end(), cIn) == couche_finale.end()))
+	{
+		if (couche_finale.size() > 1)
+		{
+			int sum2 = 0;
+			for (auto f : couche_finale)
+			{
+				sum2 = sum2 + f->getDimOutput().getTaille();
+			}
+			this->setDimOutput(vector<int>{sum2});
+		}
+		else
+		{
+			this->setDimOutput(couche_finale[0]->getDimOutput());
+		}
+	}
+	else
+	{
+
+		DimTenseur sum;
+
+		for (auto a : getListNoeudAnt(positionNoeud(cOut)))
+		{
+			if (a != cIn)
+			{
+				sum = sum + a->getDimOutput();
+			}
+		}
+		if (signe)
+		{
+			sum = sum + cIn->getDimOutput();
+		}
+		cOut->setDimInput(sum);
+		cOut->upDateDimOutput();
+
+		// si cO n'est pas une couche finale
+		if (std::find(couche_finale.begin(), couche_finale.end(), cOut) == couche_finale.end())
+		{
+			for (auto s : getListNoeudSucc(positionNoeud(cOut)))
+			{
+				if (signe)
+					miseAJourDims(cOut, s, signe);
+				else
+					miseAJourDims(cOut, s, !signe);
+			}
+		}
+		else
+		{
+			if (signe)
+			{
+				if (couche_finale.size() > 1)
+				{
+					int sum2 = 0;
+					for (auto f : couche_finale)
+					{
+						sum2 = sum2 + f->getDimOutput().getTaille();
+					}
+					this->setDimOutput(vector<int>{sum2});
+				}
+				else
+				{
+					this->setDimOutput(couche_finale[0]->getDimOutput());
+				}
+			}
+		}
+	}
+}
+ */
 Tenseur *ReseauNeurones::propagation(Tenseur *t)
 {
 	if (contientCycle())
@@ -196,11 +318,19 @@ Tenseur *ReseauNeurones::derivee(Tenseur *t)
 void ReseauNeurones::ajouterCoucheInitiale(Couche *c)
 {
 	couche_initiale.push_back(c);
+	miseAJourDims();
 }
 
 void ReseauNeurones::ajouterCoucheFinale(Couche *c)
 {
 	couche_finale.push_back(c);
+	upDateDimOutput();
+}
+
+void ReseauNeurones::supprimerNoeud(Couche *noeud)
+{
+	Graphe<Couche *>::supprimerNoeud(noeud);
+	miseAJourDims();
 }
 
 void ReseauNeurones::supprimerCoucheInitiale(Couche *c)
@@ -230,13 +360,13 @@ void ReseauNeurones::supprimerCoucheFinale(Couche *c)
 void ReseauNeurones::ajouterArc(Couche *noeud_init, Couche *noeud_final)
 {
 	Graphe<Couche *>::ajouterArc(noeud_init, noeud_final);
-	miseAJourDims(noeud_init, noeud_final, true);
+	miseAJourDims();
 }
 
 void ReseauNeurones::supprimerArc(Couche *noeud_init, Couche *noeud_final)
 {
-	miseAJourDims(noeud_init, noeud_final, false);
 	Graphe<Couche *>::supprimerArc(noeud_init, noeud_final);
+	miseAJourDims();
 }
 
 void ReseauNeurones::sauvegarderReseau(ReseauNeurones reseau)

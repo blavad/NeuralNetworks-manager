@@ -84,7 +84,7 @@ public:
     * \brief getteur permettant d'acceder au Reseau de Neurones en attribut de la classe
 	  * \return le Reseau de neurones en attribut de la classe Panneau
     */
-  ReseauNeurones *getReseauNeurones();
+  Apprentissage *getApprentissage();
 };
 
 #endif

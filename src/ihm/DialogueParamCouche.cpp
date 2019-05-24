@@ -8,13 +8,13 @@ DialogueParamCouche::DialogueParamCouche(std::string titre, Gtk::Window *parent,
     boiteV->pack_start(lab_nom);
     nom_couche.set_text(new_c->getNom());
     boiteV->pack_start(nom_couche);
-    Gtk::Label lab_nbS("Nombre de sorties");
     if (new_c->type() == "CoucheConnectee")
     {
+        Gtk::Label *lab_nbS = new Gtk::Label("Nombre de sorties");
+        ajustement->set_value(new_c->getDimOutput().getDim(0));
         compteurNbOutput.set_numeric();
-        boiteV->pack_start(lab_nbS);
+        boiteV->pack_start(*lab_nbS);
         boiteV->pack_start(compteurNbOutput);
-        compteurNbOutput.signal_value_changed().connect(sigc::mem_fun(*this, &DialogueParamCouche::updateDim));
     }
     else if (new_c->type() == "CoucheConvolution")
     {
@@ -25,13 +25,26 @@ DialogueParamCouche::DialogueParamCouche(std::string titre, Gtk::Window *parent,
     show_all();
 }
 
-void DialogueParamCouche::updateDim()
+DimTenseur DialogueParamCouche::getDimOutput()
 {
-    string str = compteurNbOutput.get_text();
-    couche->setDimOutput(vector<int>{std::stoi(str)});
+    DimTenseur dimO;
+    if (couche->type() == "CoucheConnectee")
+    {
+        dimO = DimTenseur(vector<int>{std::stoi(compteurNbOutput.get_text())});
+    }
+    return dimO;
 }
 
 std::string DialogueParamCouche::getNomC()
 {
     return nom_couche.get_text();
+}
+
+void DialogueParamCouche::updateParams()
+{
+    if (couche->type() == "CoucheConnectee")
+    {
+        couche->setDimOutput(getDimOutput());
+    }
+    couche->setNom(getNomC());
 }

@@ -25,7 +25,7 @@ Erreur *Apprentissage::getErreur()
     return err;
 }
 
-Donnees Apprentissage::getDonnees()
+Donnees& Apprentissage::getDonnees()
 {
     return donnees;
 }

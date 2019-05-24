@@ -47,7 +47,10 @@ public:
    */
   ReseauNeurones(std::vector<Couche *> couches, const std::string no = "ReseauNeurones");
 
-  void miseAJourDims(Couche *cIn, Couche *cOut, bool signe);
+  void miseAJourDims();
+  void miseAJourDims(Couche *c);
+  void miseAJourDims(Couche *cIn, Couche *cOut);
+  void upDateDimOutput();
 
   /**
    * \fn Tenseur* propagation(Tenseur* t)
@@ -80,6 +83,13 @@ public:
    * \param c une couche déjà créée.
    */
   void ajouterCoucheFinale(Couche *c);
+
+  /**
+   * 
+   * 
+   * 
+   */
+  void supprimerNoeud(Couche *noeud);
 
   /**
    * \fn void supprimerCoucheInitiale(Couche c)
@@ -137,13 +147,14 @@ public:
    * \brief teste si la couche est initiale
    */
   bool isInitiale(Couche *c);
-  
+
   /** 
    * \fn bool isFinale(Couche *c)
    * \brief teste si la couche est finale
    */
   bool isFinale(Couche *c);
 
+  bool tousArcsAntVisites(Couche *s);
 
   void display();
 };

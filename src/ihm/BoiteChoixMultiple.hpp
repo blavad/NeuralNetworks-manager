@@ -10,7 +10,6 @@ using namespace std;
 
 class Panneau;
 
-
 /** 
  * \class BoiteChoixMultiple
  * \brief Composant graphique qui gère une boite de contenant un choix multiple
@@ -32,7 +31,7 @@ protected:
     /** \brief Un bouton pour valider le choix de l'utilisateur */
     Gtk::Button validerSelection;
     /** Panneau qui appel */
-    Panneau* parent;
+    Panneau *parent;
     /** Fonction a appliquer lors de la validation */
     void (Panneau::*f)(void);
 
@@ -43,7 +42,7 @@ public:
      * \param nom un string correspondant au nom de la boite
      * \param choix la liste des choix possibles
      */
-    BoiteChoixMultiple(class Panneau *parent, void (Panneau::*f)(void),string nom, vector<string> choix = vector<string>{});
+    BoiteChoixMultiple(class Panneau *parent, void (Panneau::*f)(void), string nom, vector<string> choix = vector<string>{});
 
     void on_combo_changed();
 
@@ -53,6 +52,9 @@ public:
 	 * \return le choix de l'utilisateur
      */
     std::string getValeurSectionnee();
+
+    void ajouterChoix(string valeur);
+    void supprimerChoix(string valeur);
 };
 
 #endif

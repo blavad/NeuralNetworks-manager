@@ -2,8 +2,10 @@
 #include <cairomm/context.h>
 #include <math.h>
 
+#include "Panneau.hpp"
 #include "BoiteArchitecture.hpp"
 #include "DialogueParamCouche.hpp"
+#include "DialogueParamData.hpp"
 #include "Boite.hpp"
 
 #include "../deeplearn/archi/ReseauNeurones.hpp"
@@ -81,7 +83,7 @@ Couche *BoiteArchitecture::selectCouche(double x, double y)
 // Echap key pressed
 bool BoiteArchitecture::on_key_press_event(GdkEventKey *event)
 {
-	cout << "Suppression noeud : " << endl;
+	cout << "#> Suppression noeud : " << endl;
 	if (event->keyval == GDK_KEY_Escape)
 	{
 		if (selected_couche != NULL && selected_couche != input && selected_couche != output)
@@ -95,49 +97,71 @@ bool BoiteArchitecture::on_key_press_event(GdkEventKey *event)
 // Mouse button press event
 bool BoiteArchitecture::on_button_press_event(GdkEventButton *event)
 {
-	if ((event->type == GDK_2BUTTON_PRESS) && (event->button == 3))
+	if (event->type == GDK_2BUTTON_PRESS)
 	{
-		selected_couche = selectCouche(event->x, event->y);
-		if (selected_couche != NULL && !isOutputSelected() && !isInputSelected())
+		// Cas du double clic droit = suppression du noeud et de ses arcs
+		if (event->button == 3)
 		{
-			if (rn->isInitiale(selected_couche))
-				rn->supprimerCoucheInitiale(selected_couche);
-			if (rn->isFinale(selected_couche))
-				rn->supprimerCoucheFinale(selected_couche);
-			rn->supprimerNoeud(selected_couche);
-			selected_couche = NULL;
+			selected_couche = selectCouche(event->x, event->y);
+			if (selected_couche != NULL && !isOutputSelected() && !isInputSelected())
+			{
+				if (rn->isInitiale(selected_couche))
+					rn->supprimerCoucheInitiale(selected_couche);
+				if (rn->isFinale(selected_couche))
+					rn->supprimerCoucheFinale(selected_couche);
+				rn->supprimerNoeud(selected_couche);
+				selected_couche = NULL;
+			}
 		}
-	}
-	else if ((event->type == GDK_2BUTTON_PRESS) && (event->button == 1))
-	{
-		selected_couche = selectCouche(event->x, event->y);
-		if (selected_couche != NULL)
+		// Cas du double clic gauche = Paramétrage de la couche
+		else if (event->button == 1)
 		{
-			if (isInputSelected())
+			selected_couche = selectCouche(event->x, event->y);
+			if (selected_couche != NULL)
 			{
-			}
-			else if (isOutputSelected())
-			{
-			}
-			else
-			{
-				DialogueParamCouche dialogue("Paramétrage " + selected_couche->getNom(), parent, selected_couche);
-				int reponse = dialogue.run();
-				if (reponse == Gtk::RESPONSE_OK)
+				if (isInputSelected())
 				{
-					selected_couche->setNom(dialogue.getNomC());
+					DialogueParamData dialogue("Paramétrage des données", parent, ((Panneau *)parent)->getApprentissage()->getDonnees().getDossiersDonnees());
+					int reponse = dialogue.run();
+					if (reponse == Gtk::RESPONSE_OK)
+					{
+						Donnees& d = ((Panneau *)parent)->getApprentissage()->getDonnees();
+						d.setDossiersDonnees(dialogue.getNomDossiers());
+						d.setDimDonneesEntree(DimTenseur(dialogue.getDimDonneesEntree()));
+						rn->setDimInput(DimTenseur(dialogue.getDimDonneesEntree()));
+						d.setDimDonneesSortie(DimTenseur(vector<int>{dialogue.getNomDossiers().size()}));
+						cout << "#> Dossiers de données mis à jour.\n";
+						rn->miseAJourDims();
+					}
+				}
+				else if (isOutputSelected())
+				{
+				}
+				else
+				{
+					DialogueParamCouche dialogue("Paramétrage " + selected_couche->getNom(), parent, selected_couche);
+					int reponse = dialogue.run();
+					if (reponse == Gtk::RESPONSE_OK)
+					{
+						dialogue.updateParams();
+						rn->miseAJourDims();
+						rn->upDateDimOutput();
+					}
 				}
 			}
 		}
 	}
-	else
+
+	// Cas clic gauche = Selection de la couche
+	else if ((event->type == GDK_BUTTON_PRESS))
 	{
-		// Check if the event is a left(1) button click.
-		if ((event->type == GDK_BUTTON_PRESS) && (event->button == 1))
+		if (event->button == 1)
 		{
 			selected_couche = selectCouche(event->x, event->y);
 		}
-		else if ((event->type == GDK_BUTTON_PRESS) && (event->button == 3))
+
+		// Cas clic droit = ajout de liaisons
+		if (event->button == 3)
 		{
 			Couche *c_final = selectCouche(event->x, event->y);
 			if (selected_couche != NULL)
@@ -147,8 +171,6 @@ bool BoiteArchitecture::on_button_press_event(GdkEventButton *event)
 					if (isInputSelected() && !rn->isInitiale(c_final))
 					{
 						rn->ajouterCoucheInitiale(c_final);
-						c_final->setDimInput(input->getDimOutput());
-						c_final->upDateDimOutput();
 					}
 					else if ((c_final == output) && !rn->isFinale(selected_couche))
 					{
@@ -253,13 +275,29 @@ void BoiteArchitecture::draw_noeuds(const Cairo::RefPtr<Cairo::Context> &cr)
 	{
 		int xCouche = couche.first->getX(), yCouche = couche.first->getY();
 		cr->move_to(xCouche + zoom * RAYON_COUCHE, yCouche);
+		double c1 = 0.6, c2 = 0.5;
+
 		if (couche.first == selected_couche)
 		{
-			draw_circle(cr, xCouche, yCouche, zoom * RAYON_COUCHE, 0., 0.5, 0.5);
+			if (couche.first->type() == "CoucheActivation")
+			{
+				draw_circle(cr, xCouche, yCouche, zoom * RAYON_COUCHE, c1 + 0.2, c2 + 0.2, 0.);
+			}
+			else
+			{
+				draw_circle(cr, xCouche, yCouche, zoom * RAYON_COUCHE, 0., c1, c2);
+			}
 		}
 		else
 		{
-			draw_circle(cr, xCouche, yCouche, zoom * RAYON_COUCHE, 0., 0.9, 0.8);
+			if (couche.first->type() == "CoucheActivation")
+			{
+				draw_circle(cr, xCouche, yCouche, zoom * RAYON_COUCHE, c1 + 0.4, c2 + 0.4, 0.);
+			}
+			else
+			{
+				draw_circle(cr, xCouche, yCouche, zoom * RAYON_COUCHE, 0., c1 + 0.3, c2 + 0.3);
+			}
 		}
 		cr->set_source_rgba(0.0, 0., 0., 1.);
 		draw_text_couche(cr, couche.first, xCouche, yCouche, zoom * RAYON_COUCHE);
