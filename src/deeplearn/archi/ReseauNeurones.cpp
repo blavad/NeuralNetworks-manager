@@ -172,9 +172,9 @@ void ReseauNeurones::upDateDimOutput()
  */
 Tenseur *ReseauNeurones::propagation(Tenseur *t)
 {
-	if (contientCycle())
+	if (estConnexe())
 	{
-		throw CycleException("Le graphe contient un cycle.");
+		throw NonConnexeException("Le graphe n'est pas connexe");
 	}
 	else
 	{
@@ -222,10 +222,8 @@ void ReseauNeurones::propagationS(Couche *c, Tenseur *sortie)
 				if (std::find(visite.begin(), visite.end(), make_pair(a, s)) == visite.end())
 				{
 					test = false;
-					cout << "FAUX" << endl;
 					break;
 				}
-				cout << "Tous les antécédents visités ? " << test << endl;
 			}
 			// si tous les antecedents ont ete visites
 			if (test)
@@ -306,6 +304,48 @@ void ReseauNeurones::propagationS(Couche *c, Tenseur *sortie)
 					*(l[i].second) = l[i].second->concatener(*t);
 				}
 			}
+		}
+	}
+}
+
+void ReseauNeurones::retro(std::vector<Couche*> liste_Couches, Couche *f, Tenseur *t, double alpha){
+	Tenseur* t2;
+	int pos =0;
+	int pos2=0;
+	for (auto d : liste_Couches){
+		pos2=pos+d->getDimOutput().getTaille();
+		*t2=t->copie(pos, pos2);
+		pos = pos2;
+		visite.push_back(make_pair(d,f));
+		retro(d,t2, alpha);
+		
+	}
+}
+
+void ReseauNeurones::retro(Couche *d, Tenseur *t, double alpha){ 
+	if (d->type()=="Combinaison"){
+		d->setTmp(d->getTmp().concatener(*t));
+		bool test=true;
+		for(auto s : getListNoeudSucc(positionNoeud(d)))
+			if (std::find(visite.begin(), visite.end(), make_pair(d, s)) == visite.end()){
+				test=false;
+				break;
+			}
+		if(test){
+			d->update(d->getTmp() * *(d->derivee(&d->getEntree())), alpha); //pblm de multiplication, ecrire multiplication terme a terme
+			retro(getListNoeudAnt(positionNoeud(d)), d, &(d->getTmp()), alpha);
+		}
+	}
+	else {
+		d->setTmp(d->getTmp()+*t); 
+		bool test=true;
+		for(auto s : getListNoeudSucc(positionNoeud(d)))
+			if (std::find(visite.begin(), visite.end(), make_pair(d, s)) == visite.end()){
+				test=false;
+				break;
+			}
+		if(test){
+			retro(getListNoeudAnt(positionNoeud(d)), d, d->derivee(&(d->getEntree() * d->getTmp())), alpha); //stocker l'entree
 		}
 	}
 }

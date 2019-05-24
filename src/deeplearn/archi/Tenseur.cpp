@@ -276,3 +276,11 @@ void Tenseur::setValeur(double val, int indice)
 	valeur[indice] = val;
 }
 
+Tenseur Tenseur::copie(int debut, int fin)
+{
+	Tenseur t(std::vector<int> {fin-debut});
+	for(int i=debut;i<fin;i++){
+		t.setValeur(getValeur(i), i-debut);
+	}
+	return t;
+}

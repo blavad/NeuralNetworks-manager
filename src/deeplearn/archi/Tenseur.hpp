@@ -220,6 +220,8 @@ class Tenseur
    void lineariser();
 
    Tenseur concatener(Tenseur t2);
+
+   Tenseur copie(int debut, int fin);
 };
 
 #endif

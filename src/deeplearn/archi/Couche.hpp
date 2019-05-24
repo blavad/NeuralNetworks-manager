@@ -32,6 +32,10 @@ protected:
   /** \brief Les coordonnées x, y de la couche dans le dessin */
   std::pair<double,double> coords;
 
+  Tenseur tmp;
+
+  Tenseur entree;
+
 public:
   Couche(const std::string no="Couche");
 
@@ -133,6 +137,16 @@ public:
    * \param dimIn La dimension du tenseur de sortie
    */
   void setDimOutput(DimTenseur dimOut);
+
+  void setTmp(Tenseur t);
+
+  Tenseur getTmp();
+
+  virtual void update(Tenseur t, double alpha);
+
+  Tenseur getEntree();
+
+  void setEntree(Tenseur t);
 
 };
 #endif

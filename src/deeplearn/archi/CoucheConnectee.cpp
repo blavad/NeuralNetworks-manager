@@ -15,6 +15,7 @@ CoucheConnectee::CoucheConnectee(DimTenseur din, int nb_sorties, std::string no)
 
 Tenseur *CoucheConnectee::propagation(Tenseur *t)
 {
+	Couche::propagation(t);
 	t->lineariser();
 	return &params.operator*(*t);
 }
