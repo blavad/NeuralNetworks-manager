@@ -2,6 +2,7 @@
 #include "DimTenseur.hpp"
 #include "exception/CycleException.hpp"
 #include "Couche.hpp"
+#include "CoucheCombinaison.hpp"
 #include <vector>
 #include "Vecteur.hpp"
 #include "Tenseur.hpp"
@@ -332,8 +333,8 @@ void ReseauNeurones::retro(Couche *d, Tenseur *t, double alpha){
 				break;
 			}
 		if(test){
-			d->update(d->getTmp() * *(d->derivee(&d->getEntree())), alpha); //pblm de multiplication, ecrire multiplication terme a terme
-			retro(getListNoeudAnt(positionNoeud(d)), d, &(d->getTmp()), alpha);
+			((CoucheCombinaison*)d)->update(d->getTmp() * *(d->derivee(&d->getEntree())), alpha); //pblm de multiplication, ecrire multiplication terme a terme
+			retro(getListNoeudAnt(positionNoeud(d)), d, &d->getTmp(), alpha);
 		}
 	}
 	else {

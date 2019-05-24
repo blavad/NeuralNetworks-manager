@@ -79,12 +79,12 @@ void Couche::setTmp(Tenseur t)
 	tmp = t;
 }
 
-Tenseur Couche::getTmp()
+Tenseur& Couche::getTmp()
 {
 	return tmp;
 }
 
-Tenseur Couche::getEntree()
+Tenseur& Couche::getEntree()
 {
 	return entree;
 }

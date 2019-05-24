@@ -140,11 +140,11 @@ public:
 
   void setTmp(Tenseur t);
 
-  Tenseur getTmp();
+  Tenseur& getTmp();
 
-  virtual void update(Tenseur t, double alpha);
+  //virtual void update(Tenseur t, double alpha);
 
-  Tenseur getEntree();
+  Tenseur& getEntree();
 
   void setEntree(Tenseur t);
 
