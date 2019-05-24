@@ -32,6 +32,10 @@ protected:
   /** \brief Les coordonnées x, y de la couche dans le dessin */
   std::pair<double,double> coords;
 
+  Tenseur tmp;
+
+  Tenseur entree;
+
 public:
   Couche(const std::string no="Couche");
 
@@ -57,15 +61,9 @@ public:
   virtual Tenseur* derivee(Tenseur* t);
   
   /**
-<<<<<<< HEAD
    * \fn virtual std::string type()
    * \brief Méthode pour savoir le type de la couche
    * \return le type de la couche
-=======
-   * \fn virtual bool afficher()
-   * \brief Méthode virtuelle pour savoir si la couche est affichée ou non
-   * \return booléen vérifiant si l'affichage s'est bien déroulé
->>>>>>> a06e8349f79647660719e55d38d6fa1f913c9068
    */
   virtual std::string type();
 
@@ -139,6 +137,16 @@ public:
    * \param dimIn La dimension du tenseur de sortie
    */
   void setDimOutput(DimTenseur dimOut);
+
+  void setTmp(Tenseur t);
+
+  Tenseur getTmp();
+
+  virtual void update(Tenseur t, double alpha);
+
+  Tenseur getEntree();
+
+  void setEntree(Tenseur t);
 
 };
 #endif

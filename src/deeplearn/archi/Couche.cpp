@@ -10,6 +10,10 @@ Couche::Couche(DimTenseur din, DimTenseur dout, const std::string no) : dim_in(d
 
 Tenseur *Couche::propagation(Tenseur *t)
 {
+	setEntree(*t);
+	Tenseur tmp(t->getDim());
+	tmp.initValeurNulle();
+	setTmp(tmp);
 }
 
 Tenseur *Couche::derivee(Tenseur *t)
@@ -68,4 +72,24 @@ double Couche::getX() const
 double Couche::getY() const
 {
 	return coords.second;
+}
+
+void Couche::setTmp(Tenseur t)
+{
+	tmp = t;
+}
+
+Tenseur Couche::getTmp()
+{
+	return tmp;
+}
+
+Tenseur Couche::getEntree()
+{
+	return entree;
+}
+
+void Couche::setEntree(Tenseur t)
+{
+	entree = t;
 }

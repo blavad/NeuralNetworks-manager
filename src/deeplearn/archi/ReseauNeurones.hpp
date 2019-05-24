@@ -59,6 +59,10 @@ public:
 
   void propagationS(Couche *c, Tenseur *t);
 
+  void retro(std::vector<Couche*> liste_Couches, Couche *f, Tenseur *t, double alpha);
+
+  void retro(Couche *d, Tenseur *t, double alpha);
+
   /**
      * \fn Tenseur* derivee(Tenseur* t);
      * \brief Methode permettant la backpropagation d'un réseau de neurones

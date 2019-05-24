@@ -58,7 +58,7 @@ class CoucheCombinaison : public Couche
      * \brief Met à jour les paramètres
      * \param t les parametres mis a jour
      */
-    void update(Tenseur t);
+    void update(Tenseur t, double alpha=1.0);
 
 };
 

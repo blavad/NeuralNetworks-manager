@@ -17,12 +17,13 @@ void CoucheCombinaison::setParams(Tenseur nouvParams)
 }
 
 
-
 Tenseur CoucheCombinaison::getParams()
 {
 	return params;
 }
 
-void CoucheCombinaison::update(Tenseur t){
-
+void CoucheCombinaison::update(Tenseur t, double alpha){
+	Tenseur talpha(t.getDim());
+	talpha.initValeurConstant(alpha);
+	setParams(params + talpha*t); //multiplication terme a terme
 }

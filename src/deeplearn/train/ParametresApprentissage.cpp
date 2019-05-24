@@ -1,7 +1,6 @@
 #include "ParametresApprentissage.hpp" 
 
 
-
 ParametresApprentissage::ParametresApprentissage()
 {
 	

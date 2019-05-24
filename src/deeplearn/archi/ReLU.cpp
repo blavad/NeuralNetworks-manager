@@ -22,6 +22,7 @@ double calcul_derive_relu(double x)
 
 Tenseur* ReLU::propagation(Tenseur* t)
 {
+	Couche::propagation(t);
 	double (*f)	(double);
 	f=calcul_relu;
 	return t->appliquerFonction(f);

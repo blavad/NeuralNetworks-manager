@@ -20,6 +20,7 @@ double calcul_derive_sigmoid(double x)
 
 Tenseur* Sigmoid::propagation(Tenseur* t)
 {
+	Couche::propagation(t);
 	double (*f)	(double);
 	f=calcul_sigmoid;
 	return t->appliquerFonction(f);
