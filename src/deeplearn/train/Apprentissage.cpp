@@ -2,6 +2,10 @@
 
 Apprentissage::Apprentissage() {}
 
+Apprentissage::Apprentissage(ReseauNeurones *reseauN) : rn(reseauN)
+{
+}
+
 Apprentissage::Apprentissage(ReseauNeurones *reseauN, Erreur *erreur) : rn(reseauN), err(erreur)
 {
 }

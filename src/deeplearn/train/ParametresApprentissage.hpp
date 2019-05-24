@@ -22,6 +22,12 @@ class ParametresApprentissage {
         /** \brief vitesse d'apprentissage du reseau */
         double taux_apprentissage;
 
+        /** \brief fréquence d'affichage du résultat de la propagation dans le réseau de neurones */
+        int freq_affichage;
+
+        /** \brief fréquence de sauvegarde du réseau de neurones */
+        int freq_sauvegarde;
+
     public :
 
         /**
@@ -39,9 +45,23 @@ class ParametresApprentissage {
         /**
          * \fn double getTauxApprentissage()
          * \brief Retourne le taux d'apprentissage du reseau
-         * \return le tauc d'apprentissage         * 
+         * \return le taux d'apprentissage         * 
          */
         double getTauxApprentissage();
+
+        /**
+         * \fn int getFreqAffichage()
+         * \brief Retourne la fréquence à laquelle sera afficher le résultat de la propagation du réseau de neurones
+         * \return fr la fréquence d'affichage
+         */
+        int getFreqAffichage();
+
+        /**
+         * \fn int getFreqSauvegarde()
+         * \brief Retourne la fréquence à laquelle sera sauvegarder le réseau de neurones
+         * \return fr la fréquence de sauvegarde
+         */
+        int getFreqSauvegarde();
 
         /**
          * \fn void setNbEpoques(int ep)
@@ -57,6 +77,19 @@ class ParametresApprentissage {
          */
         void setTauxApprentissage(double ta);
 
+        /**
+         * \fn void setFreqAffichage(int fr)
+         * \brief Met a jour le nombre d'itérations avant affichage
+         * \param fr la fréquence d'affichage
+         */
+        void setFreqAffichage(int fr);
+
+        /**
+         * \fn void setFreqSauvegarde(int fr)
+         * \brief Met a jour le nombre d'itérations avant de sauvegarder le réseau de neurones
+         * \param fr la fréquence de sauvegarde
+         */
+        void setFreqSauvegarde(int fr);
 
 };
 

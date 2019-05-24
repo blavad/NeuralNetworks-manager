@@ -74,5 +74,9 @@ public:
     void draw_text(const Cairo::RefPtr<Cairo::Context> &cr, std::string str, int x, int y, int size = 6);
 
     void draw_circle(const Cairo::RefPtr<Cairo::Context> &cr, int x, int y, int rayon, double r = 0., double v = 0.6, double b = 0.6);
+
+    void setZoom(double z);
+
+
 };
 #endif

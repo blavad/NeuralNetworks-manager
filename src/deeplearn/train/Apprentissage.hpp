@@ -45,6 +45,8 @@ public:
      * \brief Constructeur d'une session d'apprentissage vide.
      */
     Apprentissage();
+
+    Apprentissage(ReseauNeurones *reseauN);
     /**
      * \brief Contructeur d'une session d'apprentissage avec un reseau de neurones et une erreur donnes.
      */

@@ -127,7 +127,6 @@ bool BoiteArchitecture::on_button_press_event(GdkEventButton *event)
 				{
 					selected_couche->setNom(dialogue.getNomC());
 				}
-				rn->upDateDimOutput
 			}
 		}
 	}
@@ -178,10 +177,6 @@ bool BoiteArchitecture::on_draw(const Cairo::RefPtr<Cairo::Context> &cr)
 	width = allocation.get_width();
 	height = allocation.get_height();
 
-	int xc, yc;
-	xc = width / 2;
-	yc = height / 2;
-
 	cr->set_line_width(EPAISSEUR_TRAIT);
 
 	draw_arcs(cr);
@@ -193,18 +188,33 @@ bool BoiteArchitecture::on_draw(const Cairo::RefPtr<Cairo::Context> &cr)
 void BoiteArchitecture::draw_arcs(const Cairo::RefPtr<Cairo::Context> &cr)
 {
 
+	int ep_arrow = 10;
+
 	for (Couche *c : rn->getCouchesInitiales())
 	{
 		cr->move_to(input->getX(), input->getY());
-		cr->line_to(c->getX(), c->getY());
-		draw_circle(cr, c->getX(), c->getY(), 20, 0., 0., 0.);
+		double x_arrow, y_arrow, sign_x, sign_y;
+		sign_x = (c->getX() - input->getX() > 0) ? -1.0 : 1.0;
+		sign_y = (c->getY() - input->getY() > 0) ? -1.0 : 1.0;
+		x_arrow = c->getX() + sign_x * zoom * RAYON_COUCHE;
+		y_arrow = c->getY() + sign_y * zoom * RAYON_COUCHE;
+		cr->line_to(x_arrow, y_arrow);
+		cr->move_to(x_arrow, y_arrow);
+		draw_circle(cr, x_arrow, y_arrow, ep_arrow * zoom, 0., 0., 0.);
 	}
 
 	for (Couche *c : rn->getCouchesFinales())
 	{
 		cr->move_to(c->getX(), c->getY());
-		cr->line_to(output->getX(), output->getY());
-		draw_circle(cr, output->getX(), output->getY(), 20, 0., 0., 0.);
+		double x_arrow, y_arrow, sign_x, sign_y;
+		sign_x = (output->getX() - c->getX() > 0) ? -1.0 : 1.0;
+		sign_y = (output->getY() - c->getY() > 0) ? -1.0 : 1.0;
+		x_arrow = output->getX() + sign_x * zoom * RAYON_COUCHE;
+		y_arrow = output->getY() + sign_y * zoom * RAYON_COUCHE;
+		cr->line_to(x_arrow, y_arrow);
+		cr->move_to(x_arrow, y_arrow);
+		draw_circle(cr, x_arrow, y_arrow, ep_arrow * zoom, 0., 0., 0.);
+		;
 	}
 
 	for (std::pair<Couche *, std::vector<Couche *>> couche : rn->getListSucc())
@@ -214,8 +224,14 @@ void BoiteArchitecture::draw_arcs(const Cairo::RefPtr<Cairo::Context> &cr)
 		for (Couche *s : couche.second)
 		{
 			cr->move_to(init->getX(), init->getY());
-			cr->line_to(s->getX(), s->getY());
-			draw_circle(cr, s->getX(), s->getY(), 20, 0., 0., 0.);
+			double x_arrow, y_arrow, sign_x, sign_y;
+			sign_x = (s->getX() - init->getX() > 0) ? -1.0 : 1.0;
+			sign_y = (s->getY() - init->getY() > 0) ? -1.0 : 1.0;
+			x_arrow = s->getX() + sign_x * zoom * RAYON_COUCHE;
+			y_arrow = s->getY() + sign_y * zoom * RAYON_COUCHE;
+			cr->line_to(x_arrow, y_arrow);
+			cr->move_to(x_arrow, y_arrow);
+			draw_circle(cr, x_arrow, y_arrow, ep_arrow * zoom, 0., 0., 0.);
 		}
 	}
 }
@@ -293,8 +309,8 @@ void BoiteArchitecture::draw_text(const Cairo::RefPtr<Cairo::Context> &cr, std::
 void BoiteArchitecture::draw_text_couche(const Cairo::RefPtr<Cairo::Context> &cr, Couche *couche, int x, int y, int rayon)
 {
 	cr->move_to(x, y);
-
-	Pango::FontDescription font("sans bold " + std::to_string(((int)(6 * zoom))));
+	int taille = (zoom >= 0.7) ? ((int)(8 * zoom)) : ((int)(8 * 0.7));
+	Pango::FontDescription font("sans bold " + std::to_string(taille));
 	auto nomC = create_pango_layout(couche->getNom());
 	nomC->set_font_description(font);
 
@@ -318,4 +334,9 @@ void BoiteArchitecture::draw_text_couche(const Cairo::RefPtr<Cairo::Context> &cr
 	dimOut->get_pixel_size(text_w, text_h);
 	cr->move_to(x - text_w * 0.5, y + rayon * 0.5);
 	dimOut->show_in_cairo_context(cr);
+}
+
+void BoiteArchitecture::setZoom(double z)
+{
+	zoom = z;
 }
