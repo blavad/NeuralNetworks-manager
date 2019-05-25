@@ -19,7 +19,6 @@
  * Module permettant le lancement de l'apprentissage.
  * Il permet également la récupération des données et paramètres d'apprentissage.
  * 
- * 
  */
 class Apprentissage
 {

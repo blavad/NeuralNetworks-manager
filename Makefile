@@ -13,7 +13,7 @@ SRC= $(wildcard $(SRC_DIR)/*.cpp) \
 $(wildcard $(SRC_DIR_IHM)/*.cpp) \
 $(wildcard $(SRC_DIR_ARCHI)/*.cpp) \
 $(wildcard $(SRC_DIR_TRAIN)/*.cpp) \
-$(wildcard $(SRC_DIR_PRETRAIT)/*.cpp)
+# $(wildcard $(SRC_DIR_PRETRAIT)/*.cpp)
 
 OBJ= $(SRC:.cpp=.o)
 
@@ -37,8 +37,8 @@ $(SRC_DIR_ARCHI)/%.o : $(SRC_DIR_ARCHI)/%.cpp
 $(SRC_DIR_TRAIN)/%.o : $(SRC_DIR_TRAIN)/%.cpp
 	$(CXX) -o $@ -c $< $(CXXFLAGS)
 
-$(SRC_DIR_PRETRAIT)/%.o : $(SRC_DIR_PRETRAIT)/%.cpp
-	$(CXX) -o $@ -c $< $(CXXFLAGS)
+# $(SRC_DIR_PRETRAIT)/%.o : $(SRC_DIR_PRETRAIT)/%.cpp
+	# $(CXX) -o $@ -c $< $(CXXFLAGS)
 
 $(SRC_DIR_IHM)/%.o : $(SRC_DIR_IHM)/%.cpp
 	$(CXX) -o $@ -c $< $(CXXFLAGS) $(GTKMFLAG)

@@ -82,17 +82,9 @@ void ReseauNeurones::miseAJourDims(Couche *cIn, Couche *cOut)
 
 void ReseauNeurones::miseAJourDims(Couche *c)
 {
-	if (isInitiale(c))
+	for (Couche *cSucc : getListNoeudSucc(positionNoeud(c)))
 	{
-		c->setDimInput(getDimInput());
-	}
-	else
-	{
-		for (Couche *cSucc : getListNoeudSucc(positionNoeud(c)))
-		{
-			cout << "Update : " << cSucc->getNom() << endl;
-			miseAJourDims(c, cSucc);
-		}
+		miseAJourDims(c, cSucc);
 	}
 }
 
@@ -171,6 +163,12 @@ void ReseauNeurones::upDateDimOutput()
 	}
 }
  */
+
+std::string ReseauNeurones::type()
+{
+	return "ReseauNeurones";
+}
+
 Tenseur *ReseauNeurones::propagation(Tenseur *t)
 {
 	if (estConnexe())
@@ -309,43 +307,51 @@ void ReseauNeurones::propagationS(Couche *c, Tenseur *sortie)
 	}
 }
 
-void ReseauNeurones::retro(std::vector<Couche*> liste_Couches, Couche *f, Tenseur *t, double alpha){
-	Tenseur* t2;
-	int pos =0;
-	int pos2=0;
-	for (auto d : liste_Couches){
-		pos2=pos+d->getDimOutput().getTaille();
-		*t2=t->copie(pos, pos2);
+void ReseauNeurones::retro(std::vector<Couche *> liste_Couches, Couche *f, Tenseur *t, double alpha)
+{
+	Tenseur *t2;
+	int pos = 0;
+	int pos2 = 0;
+	for (auto d : liste_Couches)
+	{
+		pos2 = pos + d->getDimOutput().getTaille();
+		*t2 = t->copie(pos, pos2);
 		pos = pos2;
-		visite.push_back(make_pair(d,f));
-		retro(d,t2, alpha);
-		
+		visite.push_back(make_pair(d, f));
+		retro(d, t2, alpha);
 	}
 }
 
-void ReseauNeurones::retro(Couche *d, Tenseur *t, double alpha){ 
-	if (d->type()=="Combinaison"){
+void ReseauNeurones::retro(Couche *d, Tenseur *t, double alpha)
+{
+	if (d->type() == "Combinaison")
+	{
 		d->setTmp(d->getTmp().concatener(*t));
-		bool test=true;
-		for(auto s : getListNoeudSucc(positionNoeud(d)))
-			if (std::find(visite.begin(), visite.end(), make_pair(d, s)) == visite.end()){
-				test=false;
+		bool test = true;
+		for (auto s : getListNoeudSucc(positionNoeud(d)))
+			if (std::find(visite.begin(), visite.end(), make_pair(d, s)) == visite.end())
+			{
+				test = false;
 				break;
 			}
-		if(test){
-			((CoucheCombinaison*)d)->update(d->getTmp() * *(d->derivee(&d->getEntree())), alpha); //pblm de multiplication, ecrire multiplication terme a terme
+		if (test)
+		{
+			((CoucheCombinaison *)d)->update(d->getTmp() * *(d->derivee(&d->getEntree())), alpha); //pblm de multiplication, ecrire multiplication terme a terme
 			retro(getListNoeudAnt(positionNoeud(d)), d, &d->getTmp(), alpha);
 		}
 	}
-	else {
-		d->setTmp(d->getTmp()+*t); 
-		bool test=true;
-		for(auto s : getListNoeudSucc(positionNoeud(d)))
-			if (std::find(visite.begin(), visite.end(), make_pair(d, s)) == visite.end()){
-				test=false;
+	else
+	{
+		d->setTmp(d->getTmp() + *t);
+		bool test = true;
+		for (auto s : getListNoeudSucc(positionNoeud(d)))
+			if (std::find(visite.begin(), visite.end(), make_pair(d, s)) == visite.end())
+			{
+				test = false;
 				break;
 			}
-		if(test){
+		if (test)
+		{
 			retro(getListNoeudAnt(positionNoeud(d)), d, d->derivee(&(d->getEntree() * d->getTmp())), alpha); //stocker l'entree
 		}
 	}

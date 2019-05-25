@@ -125,7 +125,7 @@ bool BoiteArchitecture::on_button_press_event(GdkEventButton *event)
 					int reponse = dialogue.run();
 					if (reponse == Gtk::RESPONSE_OK)
 					{
-						Donnees& d = ((Panneau *)parent)->getApprentissage()->getDonnees();
+						Donnees &d = ((Panneau *)parent)->getApprentissage()->getDonnees();
 						d.setDossiersDonnees(dialogue.getNomDossiers());
 						d.setDimDonneesEntree(DimTenseur(dialogue.getDimDonneesEntree()));
 						rn->setDimInput(DimTenseur(dialogue.getDimDonneesEntree()));
@@ -215,9 +215,12 @@ void BoiteArchitecture::draw_arcs(const Cairo::RefPtr<Cairo::Context> &cr)
 	for (Couche *c : rn->getCouchesInitiales())
 	{
 		cr->move_to(input->getX(), input->getY());
-		double x_arrow, y_arrow, sign_x, sign_y;
-		sign_x = (c->getX() - input->getX() > 0) ? -1.0 : 1.0;
-		sign_y = (c->getY() - input->getY() > 0) ? -1.0 : 1.0;
+		double x_arrow, y_arrow, sign_x, sign_y, dx, dy;
+		dx = c->getX() - input->getX();
+		dy = c->getY() - input->getY();
+		double alpha = (atan(dy / dx) < 1000) ? atan(dy / dx) : 1000;
+		sign_x = (dx > 0) ? -cos(alpha) : cos(alpha);
+		sign_y = (dx > 0) ? -sin(alpha) : sin(alpha);
 		x_arrow = c->getX() + sign_x * zoom * RAYON_COUCHE;
 		y_arrow = c->getY() + sign_y * zoom * RAYON_COUCHE;
 		cr->line_to(x_arrow, y_arrow);
@@ -228,9 +231,12 @@ void BoiteArchitecture::draw_arcs(const Cairo::RefPtr<Cairo::Context> &cr)
 	for (Couche *c : rn->getCouchesFinales())
 	{
 		cr->move_to(c->getX(), c->getY());
-		double x_arrow, y_arrow, sign_x, sign_y;
-		sign_x = (output->getX() - c->getX() > 0) ? -1.0 : 1.0;
-		sign_y = (output->getY() - c->getY() > 0) ? -1.0 : 1.0;
+		double x_arrow, y_arrow, sign_x, sign_y, dx, dy;
+		dx = output->getX() - c->getX();
+		dy = output->getY() - c->getY();
+		double alpha = (atan(dy / dx) < 1000) ? atan(dy / dx) : 1000;
+		sign_x = (dx > 0) ? -cos(alpha) : cos(alpha);
+		sign_y = (dx > 0) ? -sin(alpha) : sin(alpha);
 		x_arrow = output->getX() + sign_x * zoom * RAYON_COUCHE;
 		y_arrow = output->getY() + sign_y * zoom * RAYON_COUCHE;
 		cr->line_to(x_arrow, y_arrow);
@@ -246,9 +252,12 @@ void BoiteArchitecture::draw_arcs(const Cairo::RefPtr<Cairo::Context> &cr)
 		for (Couche *s : couche.second)
 		{
 			cr->move_to(init->getX(), init->getY());
-			double x_arrow, y_arrow, sign_x, sign_y;
-			sign_x = (s->getX() - init->getX() > 0) ? -1.0 : 1.0;
-			sign_y = (s->getY() - init->getY() > 0) ? -1.0 : 1.0;
+			double x_arrow, y_arrow, sign_x, sign_y, dx, dy;
+			dx = s->getX() - init->getX();
+			dy = s->getY() - init->getY();
+			double alpha = (atan(dy / dx) < 1000) ? atan(dy / dx) : 1000;
+			sign_x = (dx > 0) ? -cos(alpha) : cos(alpha);
+			sign_y = (dx > 0) ? -sin(alpha) : sin(alpha);
 			x_arrow = s->getX() + sign_x * zoom * RAYON_COUCHE;
 			y_arrow = s->getY() + sign_y * zoom * RAYON_COUCHE;
 			cr->line_to(x_arrow, y_arrow);

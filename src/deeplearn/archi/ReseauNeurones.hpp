@@ -47,10 +47,11 @@ public:
    */
   ReseauNeurones(std::vector<Couche *> couches, const std::string no = "ReseauNeurones");
 
-  void miseAJourDims();
-  void miseAJourDims(Couche *c);
-  void miseAJourDims(Couche *cIn, Couche *cOut);
-  void upDateDimOutput();
+
+
+  // --------------------------------------------------------
+  // --------- Redéfinition méthodes de Couche --------------
+  // --------------------------------------------------------
 
   /**
    * \fn Tenseur* propagation(Tenseur* t)
@@ -60,54 +61,51 @@ public:
    */
   Tenseur *propagation(Tenseur *t);
 
-  void propagationS(Couche *c, Tenseur *t);
-
-  void retro(std::vector<Couche*> liste_Couches, Couche *f, Tenseur *t, double alpha);
-
-  void retro(Couche *d, Tenseur *t, double alpha);
-
   /**
-     * \fn Tenseur* derivee(Tenseur* t);
-     * \brief Methode permettant la backpropagation d'un réseau de neurones
-     * \param t le tenseur d'entree
-     * \return le tenseur avec toutes ses composantes derivees
-     */
+   * \fn Tenseur* derivee(Tenseur* t);
+   * \brief Methode permettant la backpropagation d'un réseau de neurones
+   * \param t le tenseur d'entree
+   * \return le tenseur avec toutes ses composantes derivees
+   */
   Tenseur *derivee(Tenseur *t);
 
   /**
-   * \fn void ajouterCoucheInitiale(Couche *c)
-   * \brief Ajout d'une la couche initiale.
-   * \param c une couche déjà créée.
+   * \fn void upDateDimOutput()
+   * \brief Met à jour la dimension de sortie du réseau de neurones
    */
-  void ajouterCoucheInitiale(Couche *c);
+  void upDateDimOutput();
 
   /**
-   * \fn void ajouterCoucheFinale(Couche *c)
-   * \brief Ajout d'une couche finale.
-   * \param c une couche déjà créée.
+   * \fn std::string type()
+   * \brief Méthode pour savoir le type de la couche
+   * \return le type de la couche
    */
-  void ajouterCoucheFinale(Couche *c);
+  std::string type();
 
   /**
-   * 
-   * 
-   * 
+   * \fn void miseAJourDims()
+   * \brief Met à jour les dimensions dans tout le réseau de neurones
+   */
+  void miseAJourDims();
+
+  void propagationS(Couche *c, Tenseur *t);
+
+  void retro(std::vector<Couche *> liste_Couches, Couche *f, Tenseur *t, double alpha);
+
+  void retro(Couche *d, Tenseur *t, double alpha);
+
+
+
+  // -----------------------------------------------------------------
+  // --------- Redéfinition méthodes de Graphe<Couche*> --------------
+  // -----------------------------------------------------------------
+
+  /**
+   * \fn void supprimerNoeud(Couche* noeud)
+   * \brief Suppression d'un noeud du réseau de neurones.
+   * \param noeud un noeud du Réseau de neurones.
    */
   void supprimerNoeud(Couche *noeud);
-
-  /**
-   * \fn void supprimerCoucheInitiale(Couche c)
-   * \brief Suppression d'une couche initiale.
-   * \param c une couche présente dans le réseau.
-   */
-  void supprimerCoucheInitiale(Couche *c);
-
-  /**
-   * \fn void supprimerCoucheFinale(Couche c)
-   * \brief Suppression d'une couche finale.
-   * \param c une couche présente dans le réseau.
-   */
-  void supprimerCoucheFinale(Couche *c);
 
   /**
    * \fn void ajouterArc(Couche noeud_init,Couche noeud_final)
@@ -124,6 +122,34 @@ public:
    * \param noeud_final la couche où entrent les données.
    */
   void supprimerArc(Couche *noeud_init, Couche *noeud_final);
+
+  /**
+   * \fn void ajouterCoucheInitiale(Couche *c)
+   * \brief Ajout d'une la couche initiale.
+   * \param c une couche déjà créée.
+   */
+  void ajouterCoucheInitiale(Couche *c);
+
+  /**
+   * \fn void ajouterCoucheFinale(Couche *c)
+   * \brief Ajout d'une couche finale.
+   * \param c une couche déjà créée.
+   */
+  void ajouterCoucheFinale(Couche *c);
+
+  /**
+   * \fn void supprimerCoucheInitiale(Couche c)
+   * \brief Suppression d'une couche initiale.
+   * \param c une couche présente dans le réseau.
+   */
+  void supprimerCoucheInitiale(Couche *c);
+
+  /**
+   * \fn void supprimerCoucheFinale(Couche c)
+   * \brief Suppression d'une couche finale.
+   * \param c une couche présente dans le réseau.
+   */
+  void supprimerCoucheFinale(Couche *c);
 
   /**
    * \fn void sauvegarderReseau(Reseau reseau)
@@ -149,18 +175,22 @@ public:
   /** 
    * \fn bool isInitiale(Couche *c)
    * \brief teste si la couche est initiale
+   * \return vrai si c'est une couche initiale
    */
   bool isInitiale(Couche *c);
 
   /** 
    * \fn bool isFinale(Couche *c)
    * \brief teste si la couche est finale
+   * \return vrai si c'est une couche finale
    */
   bool isFinale(Couche *c);
 
-  bool tousArcsAntVisites(Couche *s);
-
   void display();
+
+  bool tousArcsAntVisites(Couche *s);
+  void miseAJourDims(Couche *c);
+  void miseAJourDims(Couche *cIn, Couche *cOut);
 };
 
 #endif
