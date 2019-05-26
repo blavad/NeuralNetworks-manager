@@ -34,7 +34,7 @@ public:
      * \param t le tenseur d'entree
      * \return la sortie de la fonction sigmoid = 1./1-e^(-t)
      */
-  Tenseur *propagation(Tenseur *t);
+  Tenseur &propagation(Tenseur &t);
 
   /**
      * \fn Tenseur derivee(Tenseur t);

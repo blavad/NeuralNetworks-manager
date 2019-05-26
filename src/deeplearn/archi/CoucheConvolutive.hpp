@@ -41,7 +41,7 @@ public:
      * \param t le tenseur d'entree
 	   * \return la sortie de la couche
      */
-  Tenseur* propagation(Tenseur* t);
+  Tenseur &propagation(Tenseur &t);
 
   std::string type();
 

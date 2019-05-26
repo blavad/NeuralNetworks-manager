@@ -3,12 +3,12 @@
 Vecteur::Vecteur(int l) : Tenseur(std::vector<int>{l})
 {
 }
-
-Vecteur &Vecteur::operator=(const Vecteur &copy)
+/* 
+Vecteur Vecteur::operator=(const Vecteur copy)
 {
     Tenseur::operator=(copy);
     return (*this);
-}
+} */
 
 Vecteur &Vecteur::operator+(const Vecteur &m)
 {
@@ -42,9 +42,9 @@ Vecteur &Vecteur::operator-(const Vecteur &m)
     return *res;
 }
 
-Tenseur &Vecteur::operator*(const Tenseur &t)
+Tenseur &Vecteur::operator*(Tenseur &t)
 {
-    if ((t.getOrdre()>1) || (getLength() != t.getDim(0)))
+    if ((t.getOrdre() > 1) || (getLength() != t.getDim(0)))
         throw DimensionsIncompatiblesException(getLength(), t.getDim(0));
     else
     {

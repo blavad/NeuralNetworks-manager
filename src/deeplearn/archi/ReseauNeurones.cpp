@@ -169,8 +169,64 @@ std::string ReseauNeurones::type()
 	return "ReseauNeurones";
 }
 
-Tenseur *ReseauNeurones::propagation(Tenseur *t)
+Tenseur &ReseauNeurones::propagation(Tenseur &t)
 {
+	entree = &t;
+	for (Couche *c : couche_initiale)
+	{
+		t = &entree;
+		cout << "Couche Init : " << c->getNom() << endl;
+		propagation(c, c->propagation(t));
+	} /*
+	Tenseur *res = new Tenseur();
+	for (Couche *c : couche_finale)
+	{
+		if (couche_finale.size() > 1)
+			*res = res->concatener(c->getEntree());
+		else
+			*res = c->getEntree();
+	}
+	return res; */
+	return entree;
+}
+
+void ReseauNeurones::propagation(Couche *cIn, Couche *cOut, Tenseur &t)
+{
+	//on ajoute l'arc a la liste des arcs visites
+	visite.push_back(make_pair(cIn, cOut));
+	cout << "Visite " << cIn->getNom() << " -- " << cOut->getNom() << endl;
+	// si tous les antecedents ont ete visites
+	if (tousArcsAntVisites(cOut))
+	{
+		// On somme toutes les dimensions de tenseur qui arrivent
+		cOut->setEntree(cOut->getEntree().concatener(t));
+		Tenseur tmp = cOut->getEntree();
+		cout << "Propage dans " << cOut->getNom() << endl;
+		propagation(cOut, cOut->propagation(tmp));
+	}
+	else
+	{
+		cOut->setEntree(cOut->getEntree().concatener(t));
+	}
+}
+
+void ReseauNeurones::propagation(Couche *c, Tenseur &t)
+{
+	if (!isFinale(c))
+	{
+		for (Couche *cSucc : getListNoeudSucc(positionNoeud(c)))
+		{
+			propagation(c, cSucc, t);
+		}
+	}
+}
+
+/* 
+Tenseur *ReseauNeurones::propagation(Tenseur *tens)
+{
+	visite.clear();
+	Tenseur *t = new Tenseur();
+
 	if (estConnexe())
 	{
 		throw NonConnexeException("Le graphe n'est pas connexe");
@@ -180,8 +236,11 @@ Tenseur *ReseauNeurones::propagation(Tenseur *t)
 		for (auto c : couche_initiale)
 		{
 			//visite.push_back(c);
-			cout << "Prop dans " << c->getNom() << " " << t->getTaille() << endl;
-			propagationS(c, c->propagation(t));
+			*t = *tens;
+			cout << "Prop dans " << c->getNom() << " " << t->getDim().toString() << " et " << t->getTaille() << endl;
+			cout << t->getValeur(0) << endl;
+			t = c->propagation(t);
+			propagationS(c, t);
 		}
 		Tenseur *res = new Tenseur();
 		for (auto c : couche_finale)
@@ -204,82 +263,58 @@ Tenseur *ReseauNeurones::propagation(Tenseur *t)
 
 void ReseauNeurones::propagationS(Couche *c, Tenseur *sortie)
 {
+	Tenseur *t = new Tenseur();
 	for (auto s : getListNoeudSucc(positionNoeud(c)))
 	{
-		Tenseur *t = new Tenseur();
+		cout << " Noeud suiv " << s->getNom() << endl;
 		*t = *sortie;
-		// si l'arc n'a pas deja ete visite
-		if (std::find(visite.begin(), visite.end(), make_pair(c, s)) == visite.end())
+		//on ajoute l'arc a la liste des arcs visites
+		visite.push_back(make_pair(c, s));
+		//std::vector<Couche*>::iterator a;
+		bool test = true;
+		//verifie si tous les antecedents ont ete visites
+		for (auto a : getListNoeudAnt(positionNoeud(s)))
 		{
-			//on ajoute l'arc a la liste des arcs visites
-			visite.push_back(make_pair(c, s));
-			//std::vector<Couche*>::iterator a;
-			bool test = true;
-			//verifie si tous les antecedents ont ete visites
-			for (auto a : getListNoeudAnt(positionNoeud(s)))
+			if (std::find(visite.begin(), visite.end(), make_pair(a, s)) == visite.end())
 			{
-				if (std::find(visite.begin(), visite.end(), make_pair(a, s)) == visite.end())
-				{
-					test = false;
-					break;
-				}
+				test = false;
+				break;
 			}
-			// si tous les antecedents ont ete visites
-			if (test)
+		}
+		cout << " Valeur test : " << test << endl;
+		// si tous les antecedents ont ete visites
+		if (test)
+		{
+			//visite.push_back(s);
+			// si le noeud n'est pas une couche finale
+			if (std::find(couche_finale.begin(), couche_finale.end(), s) == couche_finale.end())
 			{
-				//visite.push_back(s);
-				// si le noeud n'est pas une couche finale
-				if (std::find(couche_finale.begin(), couche_finale.end(), s) == couche_finale.end())
+				cout << "Pas couche finale et passe " << endl;
+
+				int i = 0;
+				while ((i < l.size()) && (l[i].first != s))
+					i++;
+				// si le noeud est deja en attente dans la liste
+				if (l.begin() + i != l.end())
 				{
-					cout << "Pas couche finale et passe " << endl;
+					//on concatene et on propoage
+					t->lineariser();
+					t->concatener(*(l[i].second));
+					cout << "Prop dans " << s->getNom() << " " << t->getTaille() << endl;
 
-					int i = 0;
-					while ((i < l.size()) && (l[i].first != s))
-						i++;
-					// si le noeud est deja en attente dans la liste
-					if (l.begin() + i != l.end())
-					{
-						//on concatene et on propoage
-						t->lineariser();
-						*t = t->concatener(*(l[i].second));
-						cout << "Prop dans " << s->getNom() << " " << t->getTaille() << endl;
-
-						propagationS(s, s->propagation(t));
-						// on supprime de la liste
-						l.erase(l.begin() + i);
-					}
-					// le noeud n'est pas dans la liste
-					else
-					{
-						//on propage car tous les arcs antecedents ont ete visites
-						cout << "Propag dans " << s->getNom() << " " << t->getTaille() << endl;
-						propagationS(s, s->propagation(t));
-					}
+					propagationS(s, s->propagation(t));
+					// on supprime de la liste
+					l.erase(l.begin() + i);
 				}
-				// si le noeud est une couche finale
+				// le noeud n'est pas dans la liste
 				else
 				{
-					// on cherche le noeud dans la liste
-					int i = 0;
-					while ((i < l.size()) && (l[i].first != s))
-						i++;
-					// si le noeud n'est pas dans la liste on le rajoute
-					if (i == l.size())
-					{
-						//t->lineariser();
-						l.push_back(make_pair(s, t));
-					}
-					// sinon on linearise et concatene dans la liste
-					else
-					{
-						//display(*t);
-						t->lineariser();
-						l[i].second->lineariser();
-						*(l[i].second) = l[i].second->concatener(*t);
-					}
+					//on propage car tous les arcs antecedents ont ete visites
+					cout << "Propag dans " << s->getNom() << " " << t->getTaille() << endl;
+					propagationS(s, s->propagation(t));
 				}
 			}
-			// si des arcs antecedents n'ont pas ete visite
+			// si le noeud est une couche finale
 			else
 			{
 				// on cherche le noeud dans la liste
@@ -289,9 +324,7 @@ void ReseauNeurones::propagationS(Couche *c, Tenseur *sortie)
 				// si le noeud n'est pas dans la liste on le rajoute
 				if (i == l.size())
 				{
-					//display(*t);
-					t->lineariser();
-					// display(*t);
+					//t->lineariser();
 					l.push_back(make_pair(s, t));
 				}
 				// sinon on linearise et concatene dans la liste
@@ -304,9 +337,33 @@ void ReseauNeurones::propagationS(Couche *c, Tenseur *sortie)
 				}
 			}
 		}
+		// si des arcs antecedents n'ont pas ete visite
+		else
+		{
+			// on cherche le noeud dans la liste
+			int i = 0;
+			while ((i < l.size()) && (l[i].first != s))
+				i++;
+			// si le noeud n'est pas dans la liste on le rajoute
+			if (i == l.size())
+			{
+				//display(*t);
+				t->lineariser();
+				// display(*t);
+				l.push_back(make_pair(s, t));
+			}
+			// sinon on linearise et concatene dans la liste
+			else
+			{
+				//display(*t);
+				t->lineariser();
+				l[i].second->lineariser();
+				*(l[i].second) = l[i].second->concatener(*t);
+			}
+		}
 	}
-}
-
+} */
+/* 
 void ReseauNeurones::retro(std::vector<Couche *> liste_Couches, Couche *f, Tenseur *t, double alpha)
 {
 	Tenseur *t2;
@@ -356,7 +413,7 @@ void ReseauNeurones::retro(Couche *d, Tenseur *t, double alpha)
 		}
 	}
 }
-
+ */
 Tenseur *ReseauNeurones::derivee(Tenseur *t)
 {
 	return t;
@@ -458,6 +515,6 @@ void ReseauNeurones::display()
 {
 	for (int i = 0; i < getListAdj().size(); i++)
 	{
-		cout << "Couche : " << getListAdj()[i].first->getNom() << " dim entree : " << getListAdj()[i].first->getDimInput().getTaille() << " dim sortie : " << getListAdj()[i].first->getDimOutput().getTaille() << endl;
+		cout << "Couche : " << getListAdj()[i].first->getNom() << " dim entree : " << getListAdj()[i].first->getDimInput().toString() << " dim sortie : " << getListAdj()[i].first->getDimOutput().toString() << endl;
 	}
 }

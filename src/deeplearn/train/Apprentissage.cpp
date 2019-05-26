@@ -70,8 +70,8 @@ void Apprentissage::apprendre()
             Tenseur l = donnees.getDonnee(j).getSortie();
             Tenseur *t;
             t = &x;
-            Tenseur *y = rn->propagation(t);
-            Tenseur e = err->eval(*y, l);
+            Tenseur y = rn->propagation(*t);
+            Tenseur e = err->eval(y, l);
             opt.minimiser(*err);
         }
         donnees.melanger();

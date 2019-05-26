@@ -1,4 +1,5 @@
 #include "Couche.hpp"
+#include <iostream>
 
 Couche::Couche(const std::string no) : nom(no), coords(std::make_pair(50, 50))
 {
@@ -8,12 +9,8 @@ Couche::Couche(DimTenseur din, DimTenseur dout, const std::string no) : dim_in(d
 {
 }
 
-Tenseur *Couche::propagation(Tenseur *t)
+Tenseur &Couche::propagation(Tenseur &t)
 {
-	setEntree(*t);
-	Tenseur tmp(t->getDim());
-	tmp.initValeurNulle();
-	setTmp(tmp);
 }
 
 Tenseur *Couche::derivee(Tenseur *t)
@@ -84,7 +81,7 @@ Tenseur& Couche::getTmp()
 	return tmp;
 }
 
-Tenseur& Couche::getEntree()
+Tenseur Couche::getEntree()
 {
 	return entree;
 }

@@ -15,12 +15,12 @@ Tenseur::Tenseur()
 
 Tenseur::Tenseur(std::vector<int> dims) : dimT(dims)
 {
-	//allocate();
+	allocate();
 }
 
 Tenseur::Tenseur(DimTenseur di) : dimT(di)
 {
-	//allocate();
+	allocate();
 }
 
 Tenseur::~Tenseur()
@@ -33,6 +33,7 @@ Tenseur::~Tenseur()
 void Tenseur::allocate()
 {
 	int prod = getTaille();
+
 	if (valeur == NULL)
 	{
 		valeur = (double *)malloc(prod * sizeof(double));
@@ -43,19 +44,47 @@ void Tenseur::allocate()
 	}
 }
 
-Tenseur &Tenseur::operator=(const Tenseur &copy)
+void Tenseur::copy(Tenseur copy)
 {
 	int n = copy.getTaille();
 	setDim(copy.getDim());
+	this->allocate();
+	for (int i = 0; i < n; i++)
+	{
+		setValeur(copy.getValeur(i), i);
+	}
+
+	for (int i = 0; i < copy.getTaille(); i++)
+	{
+		cout << "Copy[" << i << "] = "<< copy.getValeur(i)<< endl;
+	}
+	for (int i = 0; i < getTaille(); i++)
+	{
+		cout << "this[" << i << "] = "<< getValeur(i)<< endl;
+	}
+}
+
+void Tenseur::operator=(Tenseur* copy)
+{
+	int n = copy->getTaille();
+	setDim(copy->getDim());
 	allocate();
 	for (int i = 0; i < n; i++)
 	{
-		setValeur(copy.valeur[i], i);
+		setValeur(copy->getValeur(i), i);
 	}
-	return *this;
+
+	/* for (int i = 0; i < copy.getTaille(); i++)
+	{
+		cout << "Copy(=tout)[" << i << "] = "<< copy.getValeur(i)<< endl;
+	}
+	for (int i = 0; i < getTaille(); i++)
+	{
+		cout << "this(=res)[" << i << "] = "<< getValeur(i)<< endl;
+	}  */
 }
 
-bool Tenseur::operator==(const Tenseur &t)
+bool Tenseur::operator==(Tenseur &t)
 {
 	bool res;
 	if (getDim() != t.getDim())
@@ -74,12 +103,12 @@ bool Tenseur::operator==(const Tenseur &t)
 	}
 }
 
-bool Tenseur::operator!=(const Tenseur &t)
+bool Tenseur::operator!=(Tenseur &t)
 {
 	return !(operator==(t));
 }
 
-Tenseur &Tenseur::operator+(const Tenseur &tt)
+Tenseur &Tenseur::operator+(Tenseur &tt)
 {
 	Tenseur *res = new Tenseur(getDim());
 	if (getDim() != tt.getDim())
@@ -95,7 +124,7 @@ Tenseur &Tenseur::operator+(const Tenseur &tt)
 	return *res;
 }
 
-Tenseur &Tenseur::operator-(const Tenseur &tt)
+Tenseur &Tenseur::operator-(Tenseur &tt)
 {
 	Tenseur *res = new Tenseur(getDim());
 	if (getDim() != tt.getDim())
@@ -111,7 +140,7 @@ Tenseur &Tenseur::operator-(const Tenseur &tt)
 	return *res;
 }
 
-Tenseur &Tenseur::operator*(const Tenseur &)
+Tenseur &Tenseur::operator*(Tenseur &)
 {
 	cout << "Erreur !!! " << endl;
 }
@@ -121,7 +150,7 @@ bool Tenseur::nextInd(std::vector<int> &ind) const
 	int n = ind.size();
 	for (int i = 0; i < n; i++)
 	{
-		if (ind[n - i - 1] + 1 >= getDim(n-1-i))
+		if (ind[n - i - 1] + 1 >= getDim(n - 1 - i))
 		{
 			ind[n - i - 1] = 0;
 		}
@@ -186,21 +215,27 @@ void Tenseur::initValeurUnif()
 	}
 }
 
+double Tenseur::getValeur(int i) const
+{
+	return valeur[i];
+}
+
 double Tenseur::getValeur(std::vector<int> indices) const
 {
 	int ind = getInd(indices);
 	return valeur[ind];
 }
 
+
+void Tenseur::setValeur(double val, int indice)
+{
+	valeur[indice] = val;
+}
+
 void Tenseur::setValeur(double val, std::vector<int> indices) const
 {
 	int ind = getInd(indices);
 	valeur[ind] = val;
-}
-
-double Tenseur::getValeur(int i) const
-{
-	return valeur[i];
 }
 
 int Tenseur::getTaille() const
@@ -234,8 +269,6 @@ Tenseur Tenseur::concatener(Tenseur t2)
 	return t;
 }
 
-
-
 // GESTION DES DIMENSIONS DU TENSEUR
 
 DimTenseur Tenseur::getDim() const
@@ -260,27 +293,26 @@ void Tenseur::setDim(DimTenseur di)
 
 int Tenseur::getInd(std::vector<int> indices) const
 {
-	int ind=0;
-	for(int i=0; i<indices.size();i++){
-		int prod=1;
-		for(int d=i+1;d<indices.size(); d++){
+	int ind = 0;
+	for (int i = 0; i < indices.size(); i++)
+	{
+		int prod = 1;
+		for (int d = i + 1; d < indices.size(); d++)
+		{
 			prod *= getDim(d);
 		}
-		ind+= indices[i]*prod;
+		ind += indices[i] * prod;
 	}
 	return ind;
 }
 
-void Tenseur::setValeur(double val, int indice)
-{
-	valeur[indice] = val;
-}
 
 Tenseur Tenseur::copie(int debut, int fin)
 {
-	Tenseur t(std::vector<int> {fin-debut});
-	for(int i=debut;i<fin;i++){
-		t.setValeur(getValeur(i), i-debut);
+	Tenseur t(std::vector<int>{fin - debut});
+	for (int i = debut; i < fin; i++)
+	{
+		t.setValeur(getValeur(i), i - debut);
 	}
 	return t;
 }

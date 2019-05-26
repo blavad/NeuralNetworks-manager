@@ -55,7 +55,7 @@ public:
    * \param t le tenseur d'entree
 	 * \return la sortie de la couche
    */
-  virtual Tenseur *propagation(Tenseur *t);
+  virtual Tenseur &propagation(Tenseur &t);
 
   /**
    * \fn virtual Tenseur* derivee(Tenseur* t)
@@ -151,7 +151,7 @@ public:
   //virtual void update(Tenseur t, double alpha);
 
   /**\brief Getter de la dernière entrée */
-  Tenseur &getEntree();
+  Tenseur getEntree();
 
   /**\brief Setter de la dernière entrée */
   void setEntree(Tenseur t);

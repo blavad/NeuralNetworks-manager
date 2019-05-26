@@ -34,7 +34,7 @@ public:
      * \param t le tenseur d'entree
      * \return la sortie de la fonction tanH
      */
-  Tenseur* propagation(Tenseur *t);
+  Tenseur& propagation(Tenseur &t);
 
   /**
      * \fn Tenseur derivee(Tenseur t);

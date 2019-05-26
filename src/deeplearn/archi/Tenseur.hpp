@@ -58,54 +58,62 @@ public:
   void allocate();
 
   /**
-     *  \fn Tenseur &operator=(const Tenseur &t)
+     *  \fn Tenseur &operator=(Tenseur &t)
      *  \brief Affecte un Tenseur à un autre
      *  \param copy la référence sur le tenseur à affecter
      *  \return une référence sur un tenseur
      */
-  virtual Tenseur &operator=(const Tenseur &copy);
+   void operator=(Tenseur *copy);
+   
+   /**
+     *  \fn Tenseur &operator=(Tenseur &t)
+     *  \brief Affecte un Tenseur à un autre
+     *  \param copy la référence sur le tenseur à affecter
+     *  \return une référence sur un tenseur
+     */
+   void copy(Tenseur copy);
 
   /**
-     *  \fn bool operator==(const Tenseur &t)
+     *  \fn bool operator==(Tenseur &t)
      *  \brief Compare deux tenseurs
      *  \param t le tenseur à comparer
      *  \return booleen
      */
-  bool operator==(const Tenseur &t);
+  bool operator==(Tenseur &t);
 
   /**
-     *  \fn bool operator!=(const Tenseur &t)
+     *  \fn bool operator!=(Tenseur &t)
      *  \brief Compare deux tenseurs
      *  \param t le tenseur à comparer
      *  \return booleen
      */
-  bool operator!=(const Tenseur &t);
+  bool operator!=(Tenseur &t);
 
   /**
-     *  \fn bool operator+(const Tenseur &, const Tenseur &t)
+     *  \fn bool operator+(Tenseur &, Tenseur &t)
      *  \brief Additionne deux tenseurs
      *  \param t1 le 1er tenseur de la addition
      *  \param t2 le 2nd tenseur de la addition
      *  \return l'addition des tenseurs
      */
-  virtual Tenseur &operator+(const Tenseur &t);
+  virtual Tenseur &operator+(Tenseur &t);
 
   /**
-     *  \fn bool operator+(const Tenseur &, const Tenseur &t)
+     *  \fn bool operator+(Tenseur &, Tenseur &t)
      *  \brief Soustrait deux tenseurs
      *  \param t1 le 1er tenseur de la soustraction
      *  \param t2 le 2nd tenseur de la soustraction
      *  \return la soustraction
      */
-  virtual Tenseur &operator-(const Tenseur &t);
+  virtual Tenseur &operator-(Tenseur &t);
 
   /**
-     *  \fn Tenseur operator*(const Tenseur &t)
+     *  \fn Tenseur operator*(Tenseur &t)
      *  \brief Multiplie deux tenseurs
      *  \param t le 2nd tenseur de la multiplication
      *  \return la multiplication
      */
-  virtual Tenseur &operator*(const Tenseur &t);
+  virtual Tenseur &operator*(Tenseur &t);
 
   /**
    * \fn bool nextInd(std::vector<int> &)

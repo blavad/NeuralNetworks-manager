@@ -24,13 +24,13 @@ public:
      */
   Vecteur(int l);
 
-  virtual Vecteur &operator=(const Vecteur &copy);
+  // virtual Vecteur operator=(const Vecteur copy);
 
   virtual Vecteur &operator+(const Vecteur &v);
 
   virtual Vecteur &operator-(const Vecteur &v);
 
-  virtual Tenseur &operator*(const Tenseur &t);
+  virtual Tenseur &operator*(Tenseur &t);
 
   int getLength() const;  
 

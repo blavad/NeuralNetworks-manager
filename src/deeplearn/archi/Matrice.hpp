@@ -36,13 +36,13 @@ public:
      */
   Matrice(double *valeur, int l, int c);
 
-  virtual Matrice &operator=(const Matrice &copy);
+//   virtual Matrice operator=(const Matrice copy);
 
   virtual Matrice &operator+(const Matrice &m);
 
   virtual Matrice &operator-(const Matrice &m);
 
-  virtual Tenseur &operator*(const Tenseur &t);
+  virtual Tenseur &operator*(Tenseur &t);
 
   int getNbLignes() const;
   int getNbColonnes() const;

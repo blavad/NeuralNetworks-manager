@@ -10,10 +10,11 @@ CoucheConvolutive::CoucheConvolutive(DimTenseur din,
 {
 }
 
-Tenseur* CoucheConvolutive::propagation(Tenseur* t)
+Tenseur& CoucheConvolutive::propagation(Tenseur& t)
 {
 	Couche::propagation(t);
-	return t;
+	Tenseur res;
+	return res;
 }
 
 std::string CoucheConvolutive::type()

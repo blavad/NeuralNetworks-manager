@@ -47,8 +47,6 @@ public:
    */
   ReseauNeurones(std::vector<Couche *> couches, const std::string no = "ReseauNeurones");
 
-
-
   // --------------------------------------------------------
   // --------- Redéfinition méthodes de Couche --------------
   // --------------------------------------------------------
@@ -59,7 +57,9 @@ public:
    * \param t l'entree du reseau de neurone
 	 * \return la sortie du reseau de neurones
    */
-  Tenseur *propagation(Tenseur *t);
+  Tenseur &propagation(Tenseur &t);
+  void propagation(Couche *c, Tenseur &t);
+  void propagation(Couche *cIn, Couche *cOut, Tenseur &t);
 
   /**
    * \fn Tenseur* derivee(Tenseur* t);
@@ -88,13 +88,9 @@ public:
    */
   void miseAJourDims();
 
-  void propagationS(Couche *c, Tenseur *t);
-
   void retro(std::vector<Couche *> liste_Couches, Couche *f, Tenseur *t, double alpha);
 
   void retro(Couche *d, Tenseur *t, double alpha);
-
-
 
   // -----------------------------------------------------------------
   // --------- Redéfinition méthodes de Graphe<Couche*> --------------

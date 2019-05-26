@@ -12,12 +12,12 @@ Matrice::Matrice(double *vl, int l, int c) : Tenseur(DimTenseur(std::vector<int>
 {
     // setValeurs(vl);
 }
-
-Matrice &Matrice::operator=(const Matrice &copy)
+/* 
+Matrice Matrice::operator=(const Matrice copy)
 {
     Tenseur::operator=(copy);
     return (*this);
-}
+} */
 
 Matrice &Matrice::operator+(const Matrice &m)
 {
@@ -51,7 +51,7 @@ Matrice &Matrice::operator-(const Matrice &m)
     return *res;
 }
 
-Tenseur &Matrice::operator*(const Tenseur &t)
+Tenseur &Matrice::operator*(Tenseur &t)
 {
     if (t.getOrdre() > 2)
     {

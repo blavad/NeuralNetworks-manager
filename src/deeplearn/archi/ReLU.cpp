@@ -20,12 +20,14 @@ double calcul_derive_relu(double x)
 	else return 1.0;
 }
 
-Tenseur* ReLU::propagation(Tenseur* t)
+Tenseur& ReLU::propagation(Tenseur& t)
 {
 	Couche::propagation(t);
+	Tenseur res = t;
 	double (*f)	(double);
 	f=calcul_relu;
-	return t->appliquerFonction(f);
+	res.appliquerFonction(f);
+	return res;
 }
 
 Tenseur* ReLU::derivee(Tenseur* t)

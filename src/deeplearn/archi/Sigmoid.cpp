@@ -18,12 +18,14 @@ double calcul_derive_sigmoid(double x)
 	return calcul_sigmoid(x)*(1-calcul_sigmoid(x));
 }
 
-Tenseur* Sigmoid::propagation(Tenseur* t)
+Tenseur& Sigmoid::propagation(Tenseur& t)
 {
 	Couche::propagation(t);
+	Tenseur res = t;
 	double (*f)	(double);
 	f=calcul_sigmoid;
-	return t->appliquerFonction(f);
+	res.appliquerFonction(f);
+	return res;
 }
 
 Tenseur* Sigmoid::derivee(Tenseur* t)
