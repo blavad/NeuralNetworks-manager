@@ -22,10 +22,10 @@ double calcul_derive_tanh(double x)
 Tenseur &TanH::propagation(Tenseur &t)
 {
 	Couche::propagation(t);
-	double (*f)	(double);
-	f=calcul_tanh;
 	Tenseur* res = new Tenseur();
 	*res = t;
+	double (*f)	(double);
+	f=calcul_tanh;
 	res->appliquerFonction(f);
 	return *res;
 }
