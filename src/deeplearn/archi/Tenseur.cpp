@@ -23,6 +23,14 @@ Tenseur::Tenseur(DimTenseur di) : dimT(di)
 	allocate();
 }
 
+Tenseur::Tenseur(const Tenseur &t) : Tenseur(t.getDim())
+{
+	for (int i = 0; i < t.getTaille(); i++)
+	{
+		setValeur(t.getValeur(i), i);
+	}
+}
+
 Tenseur::~Tenseur()
 {
 	free(valeur);
@@ -44,44 +52,16 @@ void Tenseur::allocate()
 	}
 }
 
-void Tenseur::copy(Tenseur copy)
+Tenseur &Tenseur::operator=(const Tenseur &copy)
 {
 	int n = copy.getTaille();
 	setDim(copy.getDim());
-	this->allocate();
+	allocate();
 	for (int i = 0; i < n; i++)
 	{
 		setValeur(copy.getValeur(i), i);
 	}
-
-	for (int i = 0; i < copy.getTaille(); i++)
-	{
-		cout << "Copy[" << i << "] = "<< copy.getValeur(i)<< endl;
-	}
-	for (int i = 0; i < getTaille(); i++)
-	{
-		cout << "this[" << i << "] = "<< getValeur(i)<< endl;
-	}
-}
-
-void Tenseur::operator=(Tenseur* copy)
-{
-	int n = copy->getTaille();
-	setDim(copy->getDim());
-	allocate();
-	for (int i = 0; i < n; i++)
-	{
-		setValeur(copy->getValeur(i), i);
-	}
-
-	/* for (int i = 0; i < copy.getTaille(); i++)
-	{
-		cout << "Copy(=tout)[" << i << "] = "<< copy.getValeur(i)<< endl;
-	}
-	for (int i = 0; i < getTaille(); i++)
-	{
-		cout << "this(=res)[" << i << "] = "<< getValeur(i)<< endl;
-	}  */
+	return *this;
 }
 
 bool Tenseur::operator==(Tenseur &t)
@@ -140,9 +120,24 @@ Tenseur &Tenseur::operator-(Tenseur &tt)
 	return *res;
 }
 
-Tenseur &Tenseur::operator*(Tenseur &)
+Tenseur &Tenseur::operator*(Tenseur &t)
 {
 	cout << "Erreur !!! " << endl;
+}
+
+std::ostream &operator<<(std::ostream &os, Tenseur &t)
+{
+	DimTenseur dtmp = t.getDim();
+	os << "Tenseur (" << dtmp << ")\n";
+	vector<int> ind(t.getOrdre(), 0);
+	dtmp = ind;
+	if (t.getOrdre()>0) os << "T("  << dtmp << ")=" << t.getValeur(ind) << endl;
+	while (t.nextInd(ind))
+	{
+		dtmp = ind;
+		os << "T("  << dtmp<< ")=" << t.getValeur(ind) << endl;
+	}
+	return os;
 }
 
 bool Tenseur::nextInd(std::vector<int> &ind) const
@@ -161,6 +156,11 @@ bool Tenseur::nextInd(std::vector<int> &ind) const
 		}
 	}
 	return false;
+}
+
+bool Tenseur::nextInd(DimTenseur &dind) const
+{
+	return nextInd(dind);
 }
 
 Tenseur *Tenseur::appliquerFonction(double (*f)(double))
@@ -225,7 +225,6 @@ double Tenseur::getValeur(std::vector<int> indices) const
 	int ind = getInd(indices);
 	return valeur[ind];
 }
-
 
 void Tenseur::setValeur(double val, int indice)
 {
@@ -305,7 +304,6 @@ int Tenseur::getInd(std::vector<int> indices) const
 	}
 	return ind;
 }
-
 
 Tenseur Tenseur::copie(int debut, int fin)
 {

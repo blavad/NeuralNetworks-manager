@@ -21,11 +21,12 @@ double calcul_derive_sigmoid(double x)
 Tenseur& Sigmoid::propagation(Tenseur& t)
 {
 	Couche::propagation(t);
-	Tenseur res = t;
+	Tenseur* res = new Tenseur();
+	*res = t;
 	double (*f)	(double);
 	f=calcul_sigmoid;
-	res.appliquerFonction(f);
-	return res;
+	res->appliquerFonction(f);
+	return *res;
 }
 
 Tenseur* Sigmoid::derivee(Tenseur* t)

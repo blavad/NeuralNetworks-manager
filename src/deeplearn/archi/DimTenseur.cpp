@@ -16,6 +16,12 @@ DimTenseur &DimTenseur::operator=(const DimTenseur &dimT)
 	return *this;
 }
 
+DimTenseur &DimTenseur::operator=(std::vector<int> &dimT)
+{
+	dim = dimT;
+	return *this;
+}
+
 bool DimTenseur::operator==(const DimTenseur &dimT) const
 {
 	return (dim == dimT.getDims());
@@ -42,6 +48,24 @@ DimTenseur DimTenseur::operator+(const DimTenseur dt)
 	}
 }
 
+std::ostream &operator<<(std::ostream &os, DimTenseur &d)
+{
+	std::string str;
+	if (d.getDims().size() == 0)
+	{
+		os << 0;
+	}
+	else
+	{
+		for (int i = 0; i < d.getOrdre() - 1; i++)
+		{
+			os << d.getDim(i) << "x";
+		}
+		os << d.getDim(d.getOrdre() - 1);
+	}
+	return os;
+}
+
 int DimTenseur::getOrdre() const
 {
 	return dim.size();
@@ -59,7 +83,8 @@ std::vector<int> DimTenseur::getDims() const
 
 int DimTenseur::getTaille() const
 {
-	if ((getDims().size()==0) || ((getDims().size()==1) && (getDim(0)==0))){
+	if ((getDims().size() == 0) || ((getDims().size() == 1) && (getDim(0) == 0)))
+	{
 		return 0;
 	}
 	int prod = 1;
@@ -83,7 +108,7 @@ std::string DimTenseur::toString()
 		{
 			str += std::to_string(getDim(i)) + "x";
 		}
-		str += std::to_string(getDim(getOrdre()-1));
+		str += std::to_string(getDim(getOrdre() - 1));
 		return str;
 	}
 }

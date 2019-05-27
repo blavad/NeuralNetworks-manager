@@ -171,23 +171,28 @@ std::string ReseauNeurones::type()
 
 Tenseur &ReseauNeurones::propagation(Tenseur &t)
 {
-	entree = &t;
+	visite.clear();
+	entree = t;
+	cout << "TENSEUR ENTREE \n"<< entree<<endl;
 	for (Couche *c : couche_initiale)
 	{
-		t = &entree;
-		cout << "Couche Init : " << c->getNom() << endl;
+		cout << "Couche Init : " << c->getNom() << "\n" << endl;
 		propagation(c, c->propagation(t));
-	} /*
-	Tenseur *res = new Tenseur();
+		t = entree;
+	} 
+	Tenseur *sortie_rn = new Tenseur();
 	for (Couche *c : couche_finale)
 	{
-		if (couche_finale.size() > 1)
-			*res = res->concatener(c->getEntree());
+		Tenseur ent(c->getEntree());
+		Tenseur sortie_couche = c->propagation(ent);
+		if (couche_finale.size() > 1){
+			cout << " Couche Finale : " << c->getNom() << "\n" << endl;	
+			*sortie_rn = sortie_rn->concatener(sortie_couche);
+		}
 		else
-			*res = c->getEntree();
+			*sortie_rn = sortie_couche;
 	}
-	return res; */
-	return entree;
+	return *sortie_rn;
 }
 
 void ReseauNeurones::propagation(Couche *cIn, Couche *cOut, Tenseur &t)
@@ -201,7 +206,8 @@ void ReseauNeurones::propagation(Couche *cIn, Couche *cOut, Tenseur &t)
 		// On somme toutes les dimensions de tenseur qui arrivent
 		cOut->setEntree(cOut->getEntree().concatener(t));
 		Tenseur tmp = cOut->getEntree();
-		cout << "Propage dans " << cOut->getNom() << endl;
+		cout << "Propage dans " << cOut->getNom() << " avec " << tmp << endl;
+
 		propagation(cOut, cOut->propagation(tmp));
 	}
 	else
@@ -218,6 +224,9 @@ void ReseauNeurones::propagation(Couche *c, Tenseur &t)
 		{
 			propagation(c, cSucc, t);
 		}
+	}
+	else {
+		c->setEntree(c->getEntree().concatener(t));
 	}
 }
 
