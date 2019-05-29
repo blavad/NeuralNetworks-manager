@@ -60,6 +60,10 @@ void Apprentissage::setParam(ParametresApprentissage paramApp)
     param = paramApp;
 }
 
+void chargerDonnees()
+{
+}
+
 void Apprentissage::apprendre()
 {
     enCours = true;
