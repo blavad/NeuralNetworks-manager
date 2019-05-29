@@ -130,6 +130,13 @@ public:
      * \param paramApp les parametres d'apprentissage.
      */
     void setParam(ParametresApprentissage paramApp);
+    
+    /**
+     * \fn void chargerDonnees()
+     * \brief Charge les donnees
+     * \param couleur booleen pour savoir si on est en couleur ou en noir et blanc
+     */
+    void chargerDonnees(bool couleur);
 };
 
 #endif

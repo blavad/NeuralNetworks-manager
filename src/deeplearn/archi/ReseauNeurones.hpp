@@ -187,6 +187,7 @@ public:
   bool tousArcsAntVisites(Couche *s);
   void miseAJourDims(Couche *c);
   void miseAJourDims(Couche *cIn, Couche *cOut);
+  friend std::ostream &operator<<(std::ostream &os, const ReseauNeurones &r);
 };
 
 #endif

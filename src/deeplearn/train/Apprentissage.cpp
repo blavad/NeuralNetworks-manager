@@ -1,4 +1,5 @@
 #include "Apprentissage.hpp"
+#include <dirent.h>
 
 Apprentissage::Apprentissage() {}
 
@@ -60,8 +61,47 @@ void Apprentissage::setParam(ParametresApprentissage paramApp)
     param = paramApp;
 }
 
-void chargerDonnees()
+void Apprentissage::chargerDonnees(bool couleur)
 {
+
+    DIR *rep;
+    std::vector<std::string> dossiersDonnees = donnees.getDossiersDonnees();
+    for (unsigned int i = 0; i < dossiersDonnees.size(); i++)
+    {
+        std::string dossierEnCours = dossiersDonnees[i];
+        rep = opendir(dossierEnCours.c_str());
+        if (rep != NULL)
+        {
+            struct dirent *fichierLu;
+            while ((fichierLu = readdir(rep)) != NULL)
+            {
+                std::string image = fichierLu->d_name;
+                std::size_t found = image.find(".png");
+                if (found != std::string::npos)
+                {
+                    std::string nomEntierImage{dossierEnCours + image};
+                }
+                found = image.find(".jpeg");
+                if (found != std::string::npos)
+                {
+                    std::string nomEntierImage{dossierEnCours + image};
+                }
+                found = image.find(".jpg");
+                if (found != std::string::npos)
+                {
+                    std::string nomEntierImage{dossierEnCours + image};
+                    ;
+                }
+                Tenseur t;
+                std::vector<int> dims;
+                dims.push_back(dossiersDonnees.size());
+                dims.push_back(1);
+                t = Tenseur(dims);
+                //donnees.ajouter(imageToTenseur(nomEntierImage,couleur), t);
+            }
+            closedir(rep);
+        }
+    }
 }
 
 void Apprentissage::apprendre()
