@@ -64,7 +64,7 @@ public:
 
    DimTenseur operator+(const DimTenseur dt);
 
-   friend std::ostream &operator<<(std::ostream &os, DimTenseur &t);
+   friend std::ostream &operator<<(std::ostream &os, const DimTenseur &t);
 
    /**
      * \fn int getOrdre()

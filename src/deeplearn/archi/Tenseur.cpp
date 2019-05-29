@@ -13,6 +13,17 @@ Tenseur::Tenseur()
 {
 }
 
+Tenseur::Tenseur(std::initializer_list<int> dims)
+{
+	vector<int> dimTmp;
+	for (int dim : dims)
+	{
+		dimTmp.push_back(dim);
+	}
+	setDim(DimTenseur(dimTmp));
+	allocate();
+}
+
 Tenseur::Tenseur(std::vector<int> dims) : dimT(dims)
 {
 	allocate();
@@ -52,14 +63,24 @@ void Tenseur::allocate()
 	}
 }
 
-Tenseur &Tenseur::operator=(const Tenseur &copy)
+Tenseur &Tenseur::operator=(const Tenseur &t)
 {
-	int n = copy.getTaille();
-	setDim(copy.getDim());
+	setDim(t.getDim());
+	allocate();
+	for (int i = 0; i < t.getTaille(); i++)
+	{
+		setValeur(t.getValeur(i), i);
+	}
+	return *this;
+}
+
+Tenseur &Tenseur::operator=(const double &v)
+{
+	int n = getTaille();
 	allocate();
 	for (int i = 0; i < n; i++)
 	{
-		setValeur(copy.getValeur(i), i);
+		setValeur(v, i);
 	}
 	return *this;
 }
@@ -74,10 +95,10 @@ bool Tenseur::operator==(Tenseur &t)
 	else
 	{
 		vector<int> indice(t.getOrdre(), 0);
-		res = getValeur(indice) == t.getValeur(indice);
+		res = (getValeur(indice) == t.getValeur(indice));
 		while (res && nextInd(indice))
 		{
-			res = getValeur(indice) == t.getValeur(indice);
+			res = (getValeur(indice) == t.getValeur(indice));
 		}
 		return res;
 	}
@@ -122,7 +143,62 @@ Tenseur &Tenseur::operator-(Tenseur &tt)
 
 Tenseur &Tenseur::operator*(Tenseur &t)
 {
-	cout << "Erreur !!! " << endl;
+	if (t.getOrdre() > 2 || getOrdre() > 2)
+	{
+		throw MethodeNonImplException("Multiplication avec tenseur ordre > 3");
+	}
+	if (getOrdre() == 2)
+		if (getDim(1) != t.getDim(0))
+			throw DimensionsIncompatiblesException(getDim(1), t.getDim(0));
+		else
+		{
+			if (t.getOrdre() == 2)
+			{
+				Tenseur *res;
+				int nb_l = getDim(0), nb_c = t.getDim(1), longueur = getDim(1);
+				res = new Tenseur(std::vector<int>{nb_l, nb_c});
+				for (int l = 0; l < nb_l; l++)
+				{
+					for (int c = 0; c < nb_c; c++)
+					{
+						for (int d = 0; d < longueur; d++)
+						{
+							res->setValeur(res->getValeur(std::vector<int>{l, c}) + getValeur(std::vector<int>{l, d}) * t.getValeur(std::vector<int>{d, c}), std::vector<int>{l, c});
+						}
+					}
+				}
+				return *res;
+			}
+			else if (t.getOrdre() == 1)
+			{
+				Tenseur *res;
+				int nb_l = getDim(0), nb_c = getDim(0);
+				res = new Tenseur(std::vector<int>{nb_l});
+				for (int l = 0; l < nb_l; l++)
+				{
+					for (int c = 0; c < nb_c; c++)
+					{
+						res->setValeur(res->getValeur(l) + getValeur(std::vector<int>{l, c}) * t.getValeur(c), l);
+					}
+				}
+				return *res;
+			}
+		}
+	else
+	{
+		Tenseur *res = new Tenseur(vector<int>{1});
+		if (getDim() != t.getDim())
+			throw DimensionsIncompatiblesException();
+		else
+		{
+			int n = getTaille();
+			for (int i = 0; i < n; i++)
+			{
+				res->setValeur(res->getValeur(0) + getValeur(i) * t.getValeur(i), 0);
+			}
+		}
+		return *res;
+	}
 }
 
 std::ostream &operator<<(std::ostream &os, Tenseur &t)
@@ -131,13 +207,27 @@ std::ostream &operator<<(std::ostream &os, Tenseur &t)
 	os << "Tenseur (" << dtmp << ")\n";
 	vector<int> ind(t.getOrdre(), 0);
 	dtmp = ind;
-	if (t.getOrdre()>0) os << "T("  << dtmp << ")=" << t.getValeur(ind) << endl;
+	if (t.getOrdre() > 0)
+		os << "T(" << dtmp << ")=" << t.getValeur(ind) << endl;
 	while (t.nextInd(ind))
 	{
 		dtmp = ind;
-		os << "T("  << dtmp<< ")=" << t.getValeur(ind) << endl;
+		os << "T(" << dtmp << ")=" << t.getValeur(ind) << endl;
 	}
 	return os;
+}
+
+Tenseur &Tenseur::transpose(int d1, int d2)
+{
+	Tenseur *res = new Tenseur(getDim().getDims());
+
+	if (getDim().getDims().size() < 2)
+		throw DimensionsIncompatiblesException();
+	else
+	{
+		throw MethodeNonImplException("Transpose");
+	}
+	return *res;
 }
 
 bool Tenseur::nextInd(std::vector<int> &ind) const
@@ -293,10 +383,10 @@ void Tenseur::setDim(DimTenseur di)
 int Tenseur::getInd(std::vector<int> indices) const
 {
 	int ind = 0;
-	for (int i = 0; i < indices.size(); i++)
+	for (unsigned i = 0; i < indices.size(); i++)
 	{
 		int prod = 1;
-		for (int d = i + 1; d < indices.size(); d++)
+		for (unsigned d = i + 1; d < indices.size(); d++)
 		{
 			prod *= getDim(d);
 		}

@@ -10,27 +10,68 @@ using namespace std;
 int main(int argc, char **argv)
 {
 
+  // -------------------------------------------------
+  // PROGRAMME PRINCIPAL
+
   Gtk::Main::init_gtkmm_internals();
-
-  /* Apprentissage *app = new Apprentissage();
-  ReseauNeurones *rn = new ReseauNeurones();
-
-  app->setRN(rn);
-
-  cout << "bon"; */
-
   auto app = Gtk::Application::create(argc, argv, "grn.reseauneurones.affichage");
   Panneau win;
-  // Gtk::Window win;
-
-  /* Couche *c = new TanH("TanH_1"), *c2 = new TanH("TanH_2"), *c3 = new TanH("TanH_3"), *c4 = new TanH("TanH_4"), *c5 = new TanH("TanH_5"), *c6 = new TanH("TanH_6"), *c7 = new TanH("TanH_7");
-  vector<Couche *> c_init{c, c2, c3, c4, c5};
-  ReseauNeurones *rn = new ReseauNeurones(c_init, "RN_Test_FC");
-  rn->setDimInput(vector<int>{5, 5, 3});
-
-  BoiteArchitecture archiDraw(rn);
-  archiDraw.show();
-  win.add(archiDraw); */
-
+  
   return app->run(win);
+
+  // -------------------------------
+  // EXEMPLE UTILISATION DE TENSEURS
+
+  // Différentes initialisations de tenseurs grâce à ses dimensions
+  /* Tenseur t1({3,5}), t2({5,5}), tGaussien = {3,5}, tMoins = tGaussien, tRes;
+  t1 = 3.1; // Les valeurs du tenseurs seront mises à 5.1
+  t2 = 5.2;
+  tGaussien.initValeurGaussienne();
+  tMoins = 29.3;
+  
+  tRes = (t1 * t2) + tGaussien - tMoins;
+
+  cout << "Resultat : " << tRes << endl; */
+
+  // -------------------------------------------------
+  // EXEMPLE CREATION RESEAU DE NEURONE ET PROPAGATION
+
+  /* Tenseur *tout = new Tenseur({5}), *res = new Tenseur({5, 5});
+  res->initValeurConstant(5.5);
+  tout->initValeurConstant(3.);
+
+  ReseauNeurones *r2 = new ReseauNeurones("MonRN");
+  r2->setDimInput(tout->getDim());
+
+  Couche *c1 = new CoucheConnectee(10, "FC_1");
+  Couche *c2 = new CoucheConnectee(10, "FC_2");
+  Couche *c3 = new CoucheConnectee(10, "FC_3");
+  Couche *c4 = new Sigmoid("Sigmoid2");
+  Couche *c5 = new TanH("Tanh3");
+  Couche *c6 = new Sigmoid("Sigmoid3");
+
+  r2->ajouterNoeud(c1);
+  r2->ajouterNoeud(c2);
+  r2->ajouterNoeud(c3);
+  r2->ajouterNoeud(c4);
+  r2->ajouterNoeud(c5);
+  r2->ajouterNoeud(c6);
+
+  r2->ajouterCoucheInitiale(c1);
+  r2->ajouterCoucheInitiale(c2);
+  r2->ajouterCoucheInitiale(c3);
+  r2->ajouterCoucheFinale(c5);
+  r2->ajouterCoucheFinale(c6);
+
+  r2->ajouterArc(c1, c5);
+  r2->ajouterArc(c1, c4);
+  r2->ajouterArc(c2, c4);
+  r2->ajouterArc(c3, c4);
+  r2->ajouterArc(c4, c5);
+  r2->ajouterArc(c4, c6);
+
+  // *res = r2->propagation(*tout);
+
+  cout << "RESULTAT FINAL !!! \n\n"
+       << *res << endl; */
 }

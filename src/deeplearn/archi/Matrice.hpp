@@ -45,6 +45,7 @@ public:
   virtual Tenseur &operator*(Tenseur &t);
 
   int getNbLignes() const;
+  
   int getNbColonnes() const;
 
 };

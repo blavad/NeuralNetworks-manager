@@ -48,7 +48,7 @@ DimTenseur DimTenseur::operator+(const DimTenseur dt)
 	}
 }
 
-std::ostream &operator<<(std::ostream &os, DimTenseur &d)
+std::ostream &operator<<(std::ostream &os, const DimTenseur &d)
 {
 	std::string str;
 	if (d.getDims().size() == 0)

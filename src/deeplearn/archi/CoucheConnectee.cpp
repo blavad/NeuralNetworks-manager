@@ -16,9 +16,9 @@ CoucheConnectee::CoucheConnectee(DimTenseur din, int nb_sorties, std::string no)
 Tenseur &CoucheConnectee::propagation(Tenseur &t)
 {
 	Couche::propagation(t);
-	Tenseur res = t;
-	res.lineariser();
-	return params*res;
+	Tenseur *res = new Tenseur(t);
+	res->lineariser();
+	return params * (*res);
 }
 
 Tenseur *CoucheConnectee::derivee(Tenseur *t)
@@ -33,7 +33,7 @@ void CoucheConnectee::setDimInput(DimTenseur dimIn)
 
 std::string CoucheConnectee::type()
 {
-    return "CoucheConnectee";
+	return "CoucheConnectee";
 }
 
 void CoucheConnectee::upDateDimOutput()
@@ -44,6 +44,8 @@ void CoucheConnectee::upDateDimOutput()
 	}
 	else
 	{
-		params.setDim(DimTenseur(std::vector<int>{getDimInput().getDim(0), getDimOutput().getDim(0)}));
+		params.setDim(DimTenseur({getDimOutput().getDim(0),getDimInput().getTaille()}));
 	}
+	params.allocate();
+	if (params.getTaille()!=0) params.initValeurGaussienne();
 }

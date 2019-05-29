@@ -203,13 +203,14 @@ void Panneau::sauvegarderRN()
 void Panneau::lancerEntrainement()
 {
 	cout << "#> Lancement Entrainement" << endl;
-	//appr->train();
-	/* DialogueEntrainement dialogue("Entrainement " + reseauNeurones->getNom(), this, appr);
+	appr->apprendre();
+
+	DialogueEntrainement dialogue("Entrainement " + reseauNeurones->getNom(), this, appr);
 	int reponse = dialogue.run();
 	if (reponse == Gtk::RESPONSE_OK)
 	{
 		dialogue.stop();
-	} */
+	}
 }
 
 void Panneau::updateZoom(Gtk::Scale *zoom){

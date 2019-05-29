@@ -173,11 +173,10 @@ Tenseur &ReseauNeurones::propagation(Tenseur &t)
 {
 	visite.clear();
 	entree = t;
-	cout << "TENSEUR ENTREE \n"<< entree<<endl;
 	for (Couche *c : couche_initiale)
 	{
-		cout << "Couche Init : " << c->getNom() << "\n" << endl;
-		propagation(c, c->propagation(t));
+		cout << "#> Couche Init : " << c->getNom() <<endl;
+		propagation(c,c->propagation(t));
 		t = entree;
 	} 
 	Tenseur *sortie_rn = new Tenseur();
@@ -186,7 +185,7 @@ Tenseur &ReseauNeurones::propagation(Tenseur &t)
 		Tenseur ent(c->getEntree());
 		Tenseur sortie_couche = c->propagation(ent);
 		if (couche_finale.size() > 1){
-			cout << " Couche Finale : " << c->getNom() << "\n" << endl;	
+			cout << "#> Couche Finale : " << c->getNom() << endl;	
 			*sortie_rn = sortie_rn->concatener(sortie_couche);
 		}
 		else
@@ -199,14 +198,14 @@ void ReseauNeurones::propagation(Couche *cIn, Couche *cOut, Tenseur &t)
 {
 	//on ajoute l'arc a la liste des arcs visites
 	visite.push_back(make_pair(cIn, cOut));
-	cout << "Visite " << cIn->getNom() << " -- " << cOut->getNom() << endl;
+	cout << "#> Visite " << cIn->getNom() << " -- " << cOut->getNom() << endl;
 	// si tous les antecedents ont ete visites
 	if (tousArcsAntVisites(cOut))
 	{
 		// On somme toutes les dimensions de tenseur qui arrivent
 		cOut->setEntree(cOut->getEntree().concatener(t));
 		Tenseur tmp = cOut->getEntree();
-		cout << "Propage dans " << cOut->getNom() << " avec " << tmp << endl;
+		cout << "#> Propage dans " << cOut->getNom() << endl;
 
 		propagation(cOut, cOut->propagation(tmp));
 	}
@@ -224,9 +223,6 @@ void ReseauNeurones::propagation(Couche *c, Tenseur &t)
 		{
 			propagation(c, cSucc, t);
 		}
-	}
-	else {
-		c->setEntree(c->getEntree().concatener(t));
 	}
 }
 

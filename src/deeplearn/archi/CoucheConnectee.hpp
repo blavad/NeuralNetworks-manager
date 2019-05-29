@@ -46,6 +46,10 @@ public:
 
   void setDimInput(DimTenseur dimIn);
 
+  Tenseur &getParams(){
+     return params;
+  }
+
   std::string type();
 
   /**

@@ -25,7 +25,7 @@ Erreur *Apprentissage::getErreur()
     return err;
 }
 
-Donnees& Apprentissage::getDonnees()
+Donnees &Apprentissage::getDonnees()
 {
     return donnees;
 }
@@ -62,17 +62,26 @@ void Apprentissage::setParam(ParametresApprentissage paramApp)
 
 void Apprentissage::apprendre()
 {
-    for (int i = 0; i < param.getNbEpoques(); i++)
+    enCours = true;
+    int epochs = 0;
+    while (enCours && epochs < param.getNbEpoques())
     {
+        epochs++;
         for (int j = 0; j < donnees.getNbDonnees(); j++)
         {
             Tenseur x = donnees.getDonnee(j).getEntree();
-            Tenseur l = donnees.getDonnee(j).getSortie();
-            Tenseur *t;
-            t = &x;
-            Tenseur y = rn->propagation(*t);
-            Tenseur e = err->eval(y, l);
-            opt.minimiser(*err);
+            Tenseur label = donnees.getDonnee(j).getSortie();
+            Tenseur y = rn->propagation(x);
+            if (j % getParam().getFreqAffichage() == 0)
+            {
+                cout << y << endl;
+            }
+            if (j % getParam().getFreqSauvegarde() == 0)
+            {
+                cout << "Save " << endl;
+            }
+            //Tenseur e = err->eval(y, l);
+            //opt.minimiser(*err);
         }
         donnees.melanger();
     }
