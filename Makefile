@@ -13,23 +13,24 @@ SRC= $(wildcard $(SRC_DIR)/*.cpp) \
 $(wildcard $(SRC_DIR_IHM)/*.cpp) \
 $(wildcard $(SRC_DIR_ARCHI)/*.cpp) \
 $(wildcard $(SRC_DIR_TRAIN)/*.cpp) \
-# $(wildcard $(SRC_DIR_PRETRAIT)/*.cpp)
+$(wildcard $(SRC_DIR_PRETRAIT)/*.cpp)
 
 OBJ= $(SRC:.cpp=.o)
 
 CXXFLAGS=-Wall -pedantic -I$(INCLUDEDIR)
 LDFLAGS=
 GTKMFLAG=`pkg-config gtkmm-3.0 --cflags --libs`
+MAGICKFLAG=`Magick++-config --ldflags --libs`
 
 EXEC=GestionRN
 
 all : $(BINDIR)/$(EXEC)
 
 $(BINDIR)/GestionRN : $(OBJ)
-	$(CXX) -o $@ $^ $(GTKMFLAG)
+	$(CXX) -o $@ $^ $(GTKMFLAG) $(MAGICKFLAG)
 
 $(SRC_DIR)/%.o : $(SRC_DIR)/%.cpp
-	$(CXX) -o $@ -c $< $(CXXFLAGS) $(GTKMFLAG)
+	$(CXX) -o $@ -c $< $(CXXFLAGS) $(GTKMFLAG) $(MAGICKFLAG)
 
 $(SRC_DIR_ARCHI)/%.o : $(SRC_DIR_ARCHI)/%.cpp
 	$(CXX) -o $@ -c $< $(CXXFLAGS)
@@ -37,8 +38,8 @@ $(SRC_DIR_ARCHI)/%.o : $(SRC_DIR_ARCHI)/%.cpp
 $(SRC_DIR_TRAIN)/%.o : $(SRC_DIR_TRAIN)/%.cpp
 	$(CXX) -o $@ -c $< $(CXXFLAGS)
 
-# $(SRC_DIR_PRETRAIT)/%.o : $(SRC_DIR_PRETRAIT)/%.cpp
-	# $(CXX) -o $@ -c $< $(CXXFLAGS)
+$(SRC_DIR_PRETRAIT)/%.o : $(SRC_DIR_PRETRAIT)/%.cpp
+	$(CXX) -o $@ -c $< $(CXXFLAGS) $(MAGICKFLAG)
 
 $(SRC_DIR_IHM)/%.o : $(SRC_DIR_IHM)/%.cpp
 	$(CXX) -o $@ -c $< $(CXXFLAGS) $(GTKMFLAG)

@@ -205,12 +205,12 @@ void Panneau::lancerEntrainement()
 	cout << "#> Lancement Entrainement" << endl;
 	appr->apprendre();
 
-	DialogueEntrainement dialogue("Entrainement " + reseauNeurones->getNom(), this, appr);
+	/* DialogueEntrainement dialogue("Entrainement " + reseauNeurones->getNom(), this, appr);
 	int reponse = dialogue.run();
 	if (reponse == Gtk::RESPONSE_OK)
 	{
 		dialogue.stop();
-	}
+	} */
 }
 
 void Panneau::updateZoom(Gtk::Scale *zoom){

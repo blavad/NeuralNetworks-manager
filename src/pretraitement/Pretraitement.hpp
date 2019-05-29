@@ -1,9 +1,12 @@
 #ifndef __PRETRAITEMENT_HPP__
 #define __PRETRAITEMENT_HPP__
 
-#include <string>
 #include "../deeplearn/train/Donnees.hpp"
 #include "../deeplearn/archi/ReseauNeurones.hpp"
+#include "../deeplearn/archi/Tenseur.hpp"
+#include <string>
+
+#include "Magick++.h"
 
 /** 
  * \class Pretraitement
@@ -15,25 +18,27 @@
  * Module permettant le pretraitement des donnees necessaires avant l'apprentissage.
  * 
  */
-class Pretraitement {
+class Pretraitement
+{
 
-    public :
+public:
+     Pretraitement();
 
-        /**
+     /**
          * \fn static Donnees chargerDonnees(string nomDossier)
          * \brief Charge les donnees du dossier
          * \param nomDossier le nom du dossier dans lequel se trouve les donnees a recuperer
          */
-        static Donnees chargerDonnees(std::string nomDossier);
+     Donnees chargerDonnees(std::string nomDossier);
 
-        /**
+     /**
          * \fn static ReseauNeurones chargerRN(string nomFichier)
          * \brief Charge le reseau de neurones contenu dans un fichier
          * \param nomFichier le nom du fichier dans lequel se trouve le reseau de neurones a recuperer
          */
-        static ReseauNeurones chargerRN(std::string nomFichier);
+     ReseauNeurones chargerRN(std::string nomFichier);
 
-        /**
+     /**
          * \fn static Tenseur imageToTenseur(string nomFichier)
          * \brief Transforme l'image d'entree en un tenseur
          * \param nomFichier le nom du fichier image a transformer en tenseur
@@ -41,16 +46,16 @@ class Pretraitement {
          * \param largeur la largeur de l'image redimensionnée
          * \param couleur vrai si l'image est en couleur
          */
-        static Tenseur imageToTenseur(char* nomFichier,int longueur,int largeur,bool couleur);
+     Tenseur &imageToTenseur(std::string nomFichier, int longueur = 100, int largeur = 100, bool couleur = true);
 
-        /**
+     /**
          * \fn static Tenseur csvToTenseur(string nomFichier)
          * \brief Transforme un fichier csv en tenseur
          * \param nomFichier le nom du fichier csv a transformer en tenseur 
          */
-        static Tenseur csvToTenseur(std::string nomFichier);
+     Tenseur csvToTenseur(std::string nomFichier);
 
-        /**
+     /**
          * \fn static void normaliser(Tenseur& t, double minNorm, double maxNorm, double minValeur, double maxValeur)
          * \brief Normalise le tenseur passe en entree en fonction des autres parametres
          * \param t le tenseur a normalise
@@ -59,9 +64,9 @@ class Pretraitement {
          * \param minValeur la valeur minimale
          * \param maxValeur la valeur maximale
          */
-        static void normaliser(Tenseur& t, double minNorm, double maxNorm, double minValeur, double maxValeur);
+     void normaliser(Tenseur &t, double minNorm, double maxNorm, double minValeur, double maxValeur);
 
-        /**
+     /**
          * \fn static void denormaliser(Tenseur& t, double minNorm, double maxNorm, double minValeur, double maxValeur)
          * \brief Denormalise le tenseur passe en entree en fonction des autres parametres
          * \param t le tenseur a normalise
@@ -70,8 +75,7 @@ class Pretraitement {
          * \param minValeur la valeur minimale
          * \param maxValeur la valeur maximale
          */
-        static void denormaliser(Tenseur& t, double minNorm, double maxNorm, double minValeur, double maxValeur);
-
+     void denormaliser(Tenseur &t, double minNorm, double maxNorm, double minValeur, double maxValeur);
 };
 
 #endif

@@ -5,10 +5,20 @@ DimTenseur::DimTenseur() : dim(std::vector<int>{})
 {
 }
 
+DimTenseur::DimTenseur(std::initializer_list<int> dims)
+{
+	for (int d : dims)
+	{
+		dim.push_back(d);
+	};
+}
+
 DimTenseur::DimTenseur(std::vector<int> d)
 {
 	dim = d;
 }
+
+DimTenseur::DimTenseur(const DimTenseur &d) : DimTenseur(d.getDims()) {}
 
 DimTenseur &DimTenseur::operator=(const DimTenseur &dimT)
 {

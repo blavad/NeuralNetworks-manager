@@ -1,64 +1,71 @@
 #include "Pretraitement.hpp"
 #include <stdio.h>
-#include "opencv2/opencv.hpp"
 #include <vector>
 
-using namespace cv;
+using namespace Magick;
 
-
-static Donnees chargerDonnees(std::string nomDossier)
+Pretraitement::Pretraitement()
 {
 }
 
-static ReseauNeurones chargerRN(std::string nomFichier)
+Donnees Pretraitement::chargerDonnees(std::string nomDossier)
 {
-}
-
-static Tenseur imageToTenseur(char* nomFichier, int longueur=400, int largeur=400,bool couleur = true)
-{
-	Tenseur t;
-	std::vector<int> dims;
-	dims.push_back(longueur);
-	dims.push_back(largeur);
-	dims.push_back(3);
-	t = Tenseur(dims);
-	
-	Mat image;
-	// On redimensionne l'image et on la met en noir et blanc
-	if (couleur) {
-		image = imread(nomFichier, IMREAD_GRAYSCALE); // lecture image + mise en noir et blanc
-		resize(image,image,cv::Size(longueur,largeur),0,0); // Redimensionnement de l'image, modifier longueur et largeur pour modifier la taille souhaitée.
-    }
-    else {
-		image = imread(nomFichier);
-		resize(image,image,cv::Size(longueur,largeur),0,0);
+	vector<std::string> files;
+	for (std::string file : files)
+	{
 	}
-	
-   // cout << image << endl; // Affiche les valeurs des pixels. 3 valeurs par pixel.
-   
-   
-    /*   Si on veut afficher l'image. Il faut créer un fichier CMakeLists.txt (comme celui que j'ai ajouté) puis compiler de la manière suivante :
-     * 1 ) cmake .
-     * 2 ) make
-     * 3 )./DisplayImage Photo.jpg
-     * 
-     *  
-    namedWindow("Display Image", WINDOW_AUTOSIZE );
-    imshow("Display Image", image);
-    waitKey(0);
-    
-    * */
-    
-    
-    return t ;
-	
-	
 }
 
-static Tenseur csvToTenseur(std::string nomFichier) {
-	
+ReseauNeurones Pretraitement::chargerRN(std::string nomFichier)
+{
+}
+
+Tenseur &Pretraitement::imageToTenseur(std::string nomFichier, int longueur, int hauteur, bool couleur)
+{
+	char *c;
+	InitializeMagick(c);
+
+	Image img(nomFichier);
+	img.resize(to_string(longueur) + "x" + to_string(hauteur));
+	if (!couleur)
+	{
+		img.type(GrayscaleType);
 	}
 
-static void normaliser(Tenseur &t, double minNorm, double maxNorm, double minValeur, double maxValeur) {}
+	Tenseur *t;
+	if (couleur)
+		t = new Tenseur({longueur, hauteur, 3});
+	else
+		t = new Tenseur({longueur, hauteur});
 
-static void denormaliser(Tenseur &t, double minNorm, double maxNorm, double minValeur, double maxValeur) {}
+	for (int l = 0; l < longueur; l++)
+	{
+		for (int h = 0; h < hauteur; h++)
+		{
+			if (couleur)
+			{
+				ColorRGB *pix = new ColorRGB();
+				*pix = img.pixelColor(l, h);
+				t->setValeur(pix->red(), {l, h, 0});
+				t->setValeur(pix->green(), {l, h, 1});
+				t->setValeur(pix->blue(), {l, h, 2});
+			}
+			else
+			{
+				ColorGray *pix = new ColorGray();
+				pix = new ColorGray();
+				*pix = img.pixelColor(l, h);
+				t->setValeur(pix->shade(), {l, h});
+			}
+		}
+	}
+
+	return *t;
+}
+
+Tenseur Pretraitement::csvToTenseur(std::string nomFichier)
+{
+}
+
+void Pretraitement::normaliser(Tenseur &t, double minNorm, double maxNorm, double minValeur, double maxValeur) {}
+void Pretraitement::denormaliser(Tenseur &t, double minNorm, double maxNorm, double minValeur, double maxValeur) {}
