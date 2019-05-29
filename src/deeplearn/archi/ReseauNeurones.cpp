@@ -523,3 +523,24 @@ void ReseauNeurones::display()
 		cout << "Couche : " << getListAdj()[i].first->getNom() << " dim entree : " << getListAdj()[i].first->getDimInput().toString() << " dim sortie : " << getListAdj()[i].first->getDimOutput().toString() << endl;
 	}
 }
+
+std::ostream &operator<<(std::ostream &os, ReseauNeurones &r)
+{
+	
+	std::vector<Couche *> ci = r.getCouchesInitiales();
+	std::vector<Couche *> cf = r.getCouchesFinales();
+	
+	
+	os << "Couches Initiales : ";
+	
+	for (unsigned  i = 0; i < ci.size(); i++){
+		os <<ci[i] <<"\n";
+		}
+	
+	os << "\nCouches Finales : ";
+	for (unsigned i = 0; i < cf.size(); i++){
+		os <<cf[i] <<"\n";
+		}
+
+	return os;
+}

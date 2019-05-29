@@ -155,5 +155,8 @@ public:
 
   /**\brief Setter de la dernière entrée */
   void setEntree(Tenseur t);
+
+  friend std::ostream &operator<<(std::ostream &os, const Couche &t);
+
 };
 #endif
