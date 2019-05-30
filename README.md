@@ -38,4 +38,4 @@ make all
 
 ## Fonctionnement
 
-![alt text](https://gitlab.insa-rouen.fr/dalbert/gestion_reseau_neurones/blob/master/res/ImageLogiciel.png)
+![alt text](https://gitlab.insa-rouen.fr/dalbert/gestion_reseau_neurones/raw/master/res/ImageLogiciel.png)
