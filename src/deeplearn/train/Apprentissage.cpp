@@ -16,11 +16,6 @@ ReseauNeurones *Apprentissage::getRN()
     return rn;
 }
 
-Optimisateur Apprentissage::getOptimisateur()
-{
-    return opt;
-}
-
 Erreur *Apprentissage::getErreur()
 {
     return err;
@@ -46,11 +41,6 @@ void Apprentissage::setErreur(Erreur *erreur)
     err = erreur;
 }
 
-void Apprentissage::setOptimisateur(Optimisateur optimisateur)
-{
-    opt = optimisateur;
-}
-
 void Apprentissage::setDonnees(Donnees d)
 {
     donnees = d;
@@ -61,10 +51,18 @@ void Apprentissage::setParam(ParametresApprentissage paramApp)
     param = paramApp;
 }
 
+void Apprentissage::stop()
+{
+    enCours = false;
+}
+
 void Apprentissage::chargerDonnees(bool couleur)
 {
-
+    couleur = false;
     DIR *rep;
+    Pretraitement pr;
+    Tenseur *timg;
+
     std::vector<std::string> dossiersDonnees = donnees.getDossiersDonnees();
     for (unsigned int i = 0; i < dossiersDonnees.size(); i++)
     {
@@ -76,28 +74,39 @@ void Apprentissage::chargerDonnees(bool couleur)
             while ((fichierLu = readdir(rep)) != NULL)
             {
                 std::string image = fichierLu->d_name;
+                std::string nomEntierImage;
                 std::size_t found = image.find(".png");
                 if (found != std::string::npos)
                 {
-                    std::string nomEntierImage{dossierEnCours + image};
+                    nomEntierImage = dossierEnCours + "/" + image;
                 }
                 found = image.find(".jpeg");
                 if (found != std::string::npos)
                 {
-                    std::string nomEntierImage{dossierEnCours + image};
+                    nomEntierImage = dossierEnCours + "/" + image;
                 }
                 found = image.find(".jpg");
                 if (found != std::string::npos)
                 {
-                    std::string nomEntierImage{dossierEnCours + image};
-                    ;
+                    nomEntierImage = dossierEnCours + "/" + image;
                 }
-                Tenseur t;
-                std::vector<int> dims;
-                dims.push_back(dossiersDonnees.size());
-                dims.push_back(1);
-                t = Tenseur(dims);
-                //donnees.ajouter(imageToTenseur(nomEntierImage,couleur), t);
+                if (nomEntierImage != "")
+                {
+
+                    Tenseur t({dossiersDonnees.size()});
+                    t.initValeurNulle();
+                    t.setValeur(1., i);
+
+                    int c = (couleur) ? 3 : 1;
+                    cout << "Ajout donnée : " << nomEntierImage << " - " << donnees.getDimDonneesEntree().getDim(0) << "x" << donnees.getDimDonneesEntree().getDim(1) << "x" << c << endl;
+                    timg = pr.imageToTenseur(nomEntierImage, donnees.getDimDonneesEntree().getDim(0), donnees.getDimDonneesEntree().getDim(1), couleur);
+                    if (timg != NULL)
+                    {
+
+                        Donnee *d = new Donnee(*timg, t);
+                        donnees.ajouterDonnee(*d);
+                    }
+                }
             }
             closedir(rep);
         }

@@ -8,6 +8,7 @@
 #include "Donnee.hpp"
 #include "ParametresApprentissage.hpp"
 #include "ErreurL1.hpp"
+#include "../../pretraitement/Pretraitement.hpp"
 
 /** 
  * \class Apprentissage 
@@ -26,9 +27,6 @@ class Apprentissage
 private:
     /** \brief le reseau de neurones qui va apprendre */
     ReseauNeurones *rn;
-
-    /** \brief l'optimisateur choisi */
-    Optimisateur opt;
 
     /** \brief  l'erreur commise a la fin de l'apprentissage */
     Erreur *err;
@@ -49,7 +47,7 @@ public:
     Apprentissage();
 
     Apprentissage(ReseauNeurones *reseauN);
-    
+
     /**
      * \brief Contructeur d'une session d'apprentissage avec un reseau de neurones et une erreur donnes.
      */
@@ -60,6 +58,19 @@ public:
      * \brief Lance l'apprentissage.
      */
     void apprendre();
+
+    /**
+     * \fn void chargerDonnees()
+     * \brief Charge les donnees
+     * \param couleur booleen pour savoir si on est en couleur ou en noir et blanc
+     */
+    void chargerDonnees(bool couleur = true);
+
+    /**
+     * \fn void stop()
+     * \brief Arrete l'apprentissage si celui ci est en cours
+     */
+    void stop();
 
     /**
      * \fn ReseauNeurones getRN()
@@ -130,13 +141,6 @@ public:
      * \param paramApp les parametres d'apprentissage.
      */
     void setParam(ParametresApprentissage paramApp);
-    
-    /**
-     * \fn void chargerDonnees()
-     * \brief Charge les donnees
-     * \param couleur booleen pour savoir si on est en couleur ou en noir et blanc
-     */
-    void chargerDonnees(bool couleur);
 };
 
 #endif

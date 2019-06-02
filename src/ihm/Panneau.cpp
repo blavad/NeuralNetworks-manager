@@ -2,6 +2,7 @@
 #include "Panneau.hpp"
 #include "BoiteChoixMultiple.hpp"
 #include "DialogueParamCouche.hpp"
+#include "DialogueEntrainement.hpp"
 
 Panneau::Panneau() : Gtk::Window(), boiteV1(false, 20), conteneur_secondaire(false, 10), boiteArchi(this)
 {
@@ -203,17 +204,14 @@ void Panneau::sauvegarderRN()
 void Panneau::lancerEntrainement()
 {
 	cout << "#> Lancement Entrainement" << endl;
+	DialogueEntrainement dialogue("Entrainement " + reseauNeurones->getNom(), this);
+	appr->chargerDonnees();
 	appr->apprendre();
-
-	/* DialogueEntrainement dialogue("Entrainement " + reseauNeurones->getNom(), this, appr);
 	int reponse = dialogue.run();
-	if (reponse == Gtk::RESPONSE_OK)
-	{
-		dialogue.stop();
-	} */
 }
 
-void Panneau::updateZoom(Gtk::Scale *zoom){
+void Panneau::updateZoom(Gtk::Scale *zoom)
+{
 	boiteArchi.setZoom(zoom->get_value());
 	boiteArchi.queue_draw();
 }

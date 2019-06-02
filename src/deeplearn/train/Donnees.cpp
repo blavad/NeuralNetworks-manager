@@ -35,7 +35,7 @@ int Donnees::getNbDonnees()
 	return donnees.size();
 }
 
-void Donnees::ajouterDonnee(Donnee d)
+void Donnees::ajouterDonnee(Donnee &d)
 {
 	donnees.emplace_back(d); // Emplace_back et push_back font la même chose apparement mais emplace est plus efficace (voir infos sur "geeksforgeeks")
 }

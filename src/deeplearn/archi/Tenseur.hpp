@@ -73,7 +73,7 @@ public:
   void allocate();
 
   /**
-     *  \fn Tenseur &operator=(Tenseur &t)
+     *  \fn Tenseur &operator=(Tenseur &copy)
      *  \brief Affecte un Tenseur à un autre
      *  \param copy la référence sur le tenseur à affecter
      *  \return une référence sur un tenseur
@@ -105,25 +105,23 @@ public:
   bool operator!=(Tenseur &t);
 
   /**
-     *  \fn bool operator+(Tenseur &, Tenseur &t)
+     *  \fn Tenseur &operator+(Tenseur &t)
      *  \brief Additionne deux tenseurs
-     *  \param t1 le 1er tenseur de la addition
-     *  \param t2 le 2nd tenseur de la addition
+     *  \param t le tenseur a additionner
      *  \return l'addition des tenseurs
      */
   virtual Tenseur &operator+(Tenseur &t);
 
   /**
-     *  \fn bool operator+(Tenseur &, Tenseur &t)
+     *  \fn Tenseur &operator-(Tenseur &t);
      *  \brief Soustrait deux tenseurs
-     *  \param t1 le 1er tenseur de la soustraction
-     *  \param t2 le 2nd tenseur de la soustraction
+     *  \param t1 le tenseur a soustraire
      *  \return la soustraction
      */
   virtual Tenseur &operator-(Tenseur &t);
 
   /**
-     *  \fn Tenseur operator*(Tenseur &t)
+     *  \fn Tenseur &operator*(Tenseur &t)
      *  \brief Multiplie deux tenseurs
      *  \param t le 2nd tenseur de la multiplication
      *  \return la multiplication
@@ -140,8 +138,8 @@ public:
   friend std::ostream &operator<<(std::ostream &os, Tenseur &t);
 
   /**
-     *  \fn Tenseur &transpose()
-     *  \brief Transpose le tenseur
+     *  \fn Tenseur &transpose(int d1 = 0, int d2 = 1))
+     *  \brief Transpose le tenseur selon la direction d1->d2
      *  \return le tenseur transposé
      */
   Tenseur &transpose(int d1 = 0, int d2 = 1);
