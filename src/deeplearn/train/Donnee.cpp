@@ -1,16 +1,14 @@
 #include "Donnee.hpp" 
 #include "../archi/Tenseur.hpp"
-
+#include <iostream>
 
 Donnee::Donnee()
 {
-	
 }
 
 
-Donnee::Donnee(Tenseur entree, Tenseur sortie)
+Donnee::Donnee(Tenseur &ent, Tenseur &sor): entree(ent),sortie(sor)
 {
-	
 }
 
 
@@ -35,4 +33,3 @@ void Donnee::setEntree(Tenseur e)
 {
 	sortie = s;
 }
- 	

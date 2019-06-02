@@ -2,13 +2,16 @@
 #include <gtkmm/application.h>
 #include <gtkmm/window.h>
 #include <vector>
-
+#include "pretraitement/Pretraitement.hpp"
 #include "ihm/Panneau.hpp"
+#include "Magick++.h"
 
 using namespace std;
 
 int main(int argc, char **argv)
 {
+
+  Magick::InitializeMagick(*argv);
 
   // -------------------------------------------------
   // PROGRAMME PRINCIPAL
@@ -19,6 +22,17 @@ int main(int argc, char **argv)
   
   return app->run(win); */
 
+  // -------------------------------
+  // EXEMPLE UTILISATION DE TENSEURS
+
+  /* Pretraitement p;
+  Tenseur *timg;
+  timg = p.imageToTenseur("/home/david/Images/albert.png", 50, 50);
+
+  cout << *timg;
+  timg = p.imageToTenseur("/home/david/Images/albert.png", 50, 50);
+
+  cout << *timg; */
   // -------------------------------
   // EXEMPLE UTILISATION DE TENSEURS
 

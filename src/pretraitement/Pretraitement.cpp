@@ -10,57 +10,57 @@ Pretraitement::Pretraitement()
 
 Donnees Pretraitement::chargerDonnees(std::string nomDossier)
 {
-	vector<std::string> files;
-	for (std::string file : files)
-	{
-	}
 }
 
 ReseauNeurones Pretraitement::chargerRN(std::string nomFichier)
 {
 }
 
-Tenseur &Pretraitement::imageToTenseur(std::string nomFichier, int longueur, int hauteur, bool couleur)
+Tenseur *Pretraitement::imageToTenseur(std::string nomFichier, int longueur, int hauteur, bool couleur)
 {
-	char *c;
-	InitializeMagick(c);
-
-	Image img(nomFichier);
-	img.resize(to_string(longueur) + "x" + to_string(hauteur));
-	if (!couleur)
+	try
 	{
-		img.type(GrayscaleType);
-	}
 
-	Tenseur *t;
-	if (couleur)
-		t = new Tenseur({longueur, hauteur, 3});
-	else
-		t = new Tenseur({longueur, hauteur});
-
-	for (int l = 0; l < longueur; l++)
-	{
-		for (int h = 0; h < hauteur; h++)
+		Image img(nomFichier);
+		img.resize(to_string(longueur) + "x" + to_string(hauteur));
+		if (!couleur)
 		{
-			if (couleur)
+			img.type(GrayscaleType);
+		}
+
+		Tenseur *t;
+		if (couleur)
+			t = new Tenseur({longueur, hauteur, 3});
+		else
+			t = new Tenseur({longueur, hauteur});
+		for (int l = 0; l < longueur; l++)
+		{
+			for (int h = 0; h < hauteur; h++)
 			{
-				ColorRGB *pix = new ColorRGB();
-				*pix = img.pixelColor(l, h);
-				t->setValeur(pix->red(), {l, h, 0});
-				t->setValeur(pix->green(), {l, h, 1});
-				t->setValeur(pix->blue(), {l, h, 2});
-			}
-			else
-			{
-				ColorGray *pix = new ColorGray();
-				pix = new ColorGray();
-				*pix = img.pixelColor(l, h);
-				t->setValeur(pix->shade(), {l, h});
+				if (couleur)
+				{
+					ColorRGB *pix = new ColorRGB();
+					*pix = img.pixelColor(l, h);
+					t->setValeur(pix->red(), {l, h, 0});
+					t->setValeur(pix->green(), {l, h, 1});
+					t->setValeur(pix->blue(), {l, h, 2});
+				}
+				else
+				{
+					ColorGray *pix = new ColorGray();
+					pix = new ColorGray();
+					*pix = img.pixelColor(l, h);
+					t->setValeur(pix->shade(), {l, h});
+				}
 			}
 		}
+		return t;
 	}
-
-	return *t;
+	catch (Exception)
+	{
+		cout << "Exception";
+		return NULL;
+	}
 }
 
 Tenseur Pretraitement::csvToTenseur(std::string nomFichier)

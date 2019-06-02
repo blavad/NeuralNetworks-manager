@@ -33,7 +33,7 @@ class Donnee {
         /**
          * \brief Constructeur de Donnee avec l'entree et la sortie 
          */
-        Donnee(Tenseur entree, Tenseur sortie);
+        Donnee(Tenseur& entree, Tenseur& sortie);
 
         /**
          * \fn Tenseur getEntree()

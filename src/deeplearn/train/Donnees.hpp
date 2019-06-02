@@ -54,7 +54,7 @@ public:
      * \brief Ajoute une donnee a l'ensemble des donnees
      * \param d la donnee a ajouter
      */
-    void ajouterDonnee(Donnee d);
+    void ajouterDonnee(Donnee &d);
 
     /**
      * \fn void melanger()
