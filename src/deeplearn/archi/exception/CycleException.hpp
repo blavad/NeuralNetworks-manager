@@ -4,15 +4,32 @@
 #ifndef __CYCLE_EXCEPTION_HPP__
 #define __CYCLE_EXCEPTION_HPP__
 
+/**
+ * \class CycleException
+ * \brief Gestion de l'erreur CycleException
+ *
+ * Erreur appelée lorsqu'on trouve un cycle dans le graphe
+ *
+ */
 class CycleException {
 	private :
+	    /** \brief Le message d'erreur */
 		std::string m_error;
-	
-	public : 
+
+	public :
+	    /**
+         * \brief Constructeur de CycleException
+         * \param error : Un message d'erreur
+         */
 		CycleException(std::string error) : m_error(error){}
-		
+
+		/**
+         * \fn const char * messageErreur()
+         * \brief Renvoie le message d'erreur
+         * \return const char *
+         */
 		const char * messageErreur() const {return m_error.c_str();}
-	
+
 };
 
 #endif

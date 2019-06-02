@@ -3,17 +3,16 @@
 
 #include "CoucheCombinaison.hpp"
 
-/** 
+/**
  * \class CoucheConvolutive
  * \brief Gère les couche convolutive
  * \author Adrien
- * \version 1.0 
+ * \version 1.0
  * \date avril 2019
  *
  * Classe permettant la création d'une couche de combinaison de "type" convolutive.
- * 
+ *
  */
-
 class CoucheConvolutive : public CoucheCombinaison
 {
 
@@ -22,7 +21,7 @@ protected:
   int l_filtre;
   /** \brief La hauteur de chaque filtre */
   int h_filtre;
-  /** \brief Le nombre de filtre de la couche */
+  /** \brief Le nombre de filtres de la couche */
   int nb_filtres;
   /** \brief Le pas, le décalage appliqué */
   int pas;
@@ -31,18 +30,23 @@ protected:
 
 public:
   /**
-     * \brief Constructeur d'une couche convolutive à partir de la longeur du filtre, de la hauteur du filtre, du nombre de filtres et du padding
+     * \brief Constructeur d'une couche convolutive à partir de la longueur du filtre, de la hauteur du filtre, du nombre de filtres
      */
   CoucheConvolutive(DimTenseur din, int l_fil, int h_fil, int nb_fil, std::string no, int pas = 1, int pad = 0);
 
   /**
-     * \fn Tenseur propagation(Tenseur t)
+     * \fn Tenseur& propagation(Tenseur &t)
      * \brief Méthode permettant la propagation dans la couche convolutive.
      * \param t le tenseur d'entree
-	   * \return la sortie de la couche
+     * \return la sortie de la couche
      */
   Tenseur &propagation(Tenseur &t);
 
+  /**
+   * \fn std::string type()
+   * \brief Méthode qui donne le type de couche : CoucheConvolutive
+   * \return string
+   */
   std::string type();
 
   /**
@@ -53,7 +57,7 @@ public:
 
   /**
      * \fn void setH_Filtre(int h_fil)
-     * \brief Changer la largeur de chaque filtre
+     * \brief Changer la hauteur de chaque filtre
      */
   void setH_Filtre(int h_fil);
 
@@ -82,7 +86,8 @@ public:
   void getL_Filtre();
 
     /**
-     * \brief Recupere la largeur de chaque filtre
+     * \fn void getH_Filtre()
+     * \brief Recupere la hauteur de chaque filtre
      */
   void getH_Filtre();
 

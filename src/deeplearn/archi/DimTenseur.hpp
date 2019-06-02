@@ -5,19 +5,18 @@
 #include <string>
 #include <ostream>
 
-/** 
+/**
  * \class DimTenseur
  * \brief Classe qui gere la dimension d'un tenseur.
  * \author Adrien
  * \author David
- * \version 1.0 
+ * \version 1.0
  * \date avril 2019
  *
  * Classe stockant les dimensions d'un tenseur.
  * La dimension d'un tenseur est représentée comme une suite de dimensions dans chaque direction.
- * 
+ *
  */
-
 class DimTenseur
 {
 
@@ -27,13 +26,13 @@ protected:
 
 public:
   /**
-     * \brief Constructeur par défault.
+     * \brief Constructeur par défaut.
      */
   DimTenseur();
 
   /**
-   * \brief Constructeur d'une dimension tensorielle fixée grâce à une suite d'entier de type {5,5,3}. 
-   * \param dims suite de dimensions sous la forme d'un ensemble {d1,d2,d3,d4}
+   * \brief Constructeur d'une dimension tensorielle fixée grâce à une suite d'entier de type {5,5,3}.
+   * \param dims suite de dimensions sous la forme d'un ensemble {d1,d2,d3}
    */
   DimTenseur(std::initializer_list<int> dims);
 
@@ -50,17 +49,24 @@ public:
   DimTenseur(const DimTenseur &d);
 
   /**
-     *  \fn bool operator=(const DimTenseur &dimT)
-     *  \brief Affectation de dimensions tensorielles  
+     *  \fn DimTenseur operator=(const DimTenseur &dimT)
+     *  \brief Affectation de dimensions tensorielles
      *  \param dimT la dimension tensorielle à affecter
-     *  \return booleen
+     *  \return DimTenseur
      */
   DimTenseur &operator=(const DimTenseur &dimT);
+
+  /**
+     *  \fn DimTenseur operator=(std::vector<int &dimT)
+     *  \brief Affectation de dimensions tensorielles
+     *  \param dimT la dimension tensorielle à affecter
+     *  \return DimTenseur
+     */
   DimTenseur &operator=(std::vector<int> &dimT);
 
   /**
      *  \fn bool operator==(const DimTenseur dimT)
-     *  \brief Compare des dimensions tensorielles  
+     *  \brief Compare des dimensions tensorielles
      *  \param dimT la dimension tensorielle à comparer
      *  \return booleen
      */
@@ -74,8 +80,18 @@ public:
    */
   bool operator!=(const DimTenseur &dimT) const;
 
+  /**
+     *  \fn DimTenseur operator+(const DimTenseur dt)
+     *  \brief Somme de dimensions tensorielles
+     *  \param dT la dimension tensorielle à affecter
+     *  \return DimTenseur
+     */
   DimTenseur operator+(const DimTenseur dt);
 
+  /**
+     *  \fn friend std::ostream &operator<<(std::ostream &os, const DimTenseur &t)
+     *  \brief Surcharge de l'opérateur <<
+     */
   friend std::ostream &operator<<(std::ostream &os, const DimTenseur &t);
 
   /**
@@ -91,7 +107,7 @@ public:
      * \param i la dimension souhaitée
      * \return la i ème dimension du tenseur
      */
-  int getDim(int) const;
+  int getDim(int i) const;
 
   /**
      * \fn std::vector<int> getDims()
@@ -102,7 +118,7 @@ public:
 
   /**
    * \fn int getTaille()
-   * \brief Récupère le nombre de valeurs présentent dans le tenseur
+   * \brief Récupère le nombre de valeurs présentes dans le tenseur
    */
   int getTaille() const;
 

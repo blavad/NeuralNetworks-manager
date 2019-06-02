@@ -8,19 +8,18 @@
 #include "DimTenseur.hpp"
 #include "exception/DimensionsIncompatiblesException.hpp"
 
-/** 
+/**
  * \class Tenseur
- * \brief Module permettant la manipulation de tenseurs 
+ * \brief Module permettant la manipulation de tenseurs
  * \author Adrien
  * \author David
- * \version 1.0 
+ * \version 1.0
  * \date avril 2019
  *
- * Module permettant la manipulation de tenseurs de la taille souhaitée. 
+ * Module permettant la manipulation de tenseurs de la taille souhaitée.
  * Les tenseurs sont une généralisation des vecteurs (tenseur d'ordre 1) et matrices (tenseur d'ordre 2).
- * 
+ *
  */
-
 class Tenseur
 {
 
@@ -33,24 +32,24 @@ protected:
 
 public:
   /**
-   * \brief Constructeur par défault d'un tenseur. 
+   * \brief Constructeur par défaut d'un tenseur.
    */
   Tenseur();
 
   /**
-   * \brief Constructeur d'un tenseur dont la dimension tensorielle est fixée grâce à la liste des dimensions dans cahque direction. 
-   * \param dims suite de dimensions 
+   * \brief Constructeur d'un tenseur dont la dimension tensorielle est fixée grâce à la liste des dimensions dans cahque direction.
+   * \param dims suite de dimensions
    */
   Tenseur(std::vector<int> dims);
 
   /**
-   * \brief Constructeur d'un tenseur dont la dimension tensorielle est fixée grâce à une suite d'entier de type {5,5,3}. 
-   * \param dims suite de dimensions sous la forme d'un ensemble {d1,d2,d3,d4}
+   * \brief Constructeur d'un tenseur dont la dimension tensorielle est fixée grâce à une suite d'entier de type {5,5,3}.
+   * \param dims suite de dimensions sous la forme d'un ensemble {d1,d2,d3}
    */
   Tenseur(std::initializer_list<int> dims);
 
   /**
-   * \brief Constructeur d'un tenseur dont la taille est fixée grâce à un objet DimTenseur. 
+   * \brief Constructeur d'un tenseur dont la taille est fixée grâce à un objet DimTenseur.
    * \param di dimension tensorielle du tenseur
    */
   Tenseur(DimTenseur di);
@@ -104,6 +103,12 @@ public:
      */
   bool operator!=(Tenseur &t);
 
+  /**
+     *  \fn virtual Tenseur &mulTermeATerme(Tenseur &tt)
+     *  \brief Multiplie deux tenseurs terme à terme
+     *  \param tt le 2nd tenseur de la multiplication
+     *  \return la multiplication
+     */
   virtual Tenseur &mulTermeATerme(Tenseur &tt);
 
   /**
@@ -213,7 +218,7 @@ public:
   * \fn int getDim(int)
   * \brief Méthode pour obtenir la i ème dimension tensorielle
   * \param i l'indice de la dimension
-  * \return La ième dimension 
+  * \return La ième dimension
   */
   int getDim(int i) const;
 
@@ -247,7 +252,7 @@ public:
 
   /**
    * \fn setValeur(double val, int indice)
-   * \brief Modifie la valeur d'un parametre 
+   * \brief Modifie la valeur d'un parametre
    * \param val la nouvelle valeur
    * \param indice la position absolu (indice de la représentation physique)
    */
