@@ -33,7 +33,7 @@ class Graphe {
 
         /** \brief La liste dynamique d'antécédence. */
         std::vector<std::pair<Type, std::vector<Type>>> list_ant;
-        
+
         /** \brief La liste dynamique de successeurs */
         std::vector<std::pair<Type, std::vector<Type>>> list_succ;
 
@@ -73,7 +73,7 @@ class Graphe {
         std::vector<std::pair<Type, std::vector<Type>>> getListAnt(){
 			return (list_ant);
 		}
-		
+
 		/**
          * \brief Récupère list_succ
          */
@@ -94,7 +94,7 @@ class Graphe {
         std::pair<Type, std::vector<Type>> getPairAnt(int k){
 			return (list_ant[k]);
 		}
-		
+
 		/**
          * \brief Récupère la kième paire de list_succ
          */
@@ -115,7 +115,7 @@ class Graphe {
         Type getNoeudAnt(int k){
 			return (list_ant[k].first);
 		}
-		
+
 		/**
          * \brief Récupère le premier élément de la kième paire de list_succ
          */
@@ -136,23 +136,22 @@ class Graphe {
         std::vector<Type> getListNoeudAnt(int k){
 			return (list_ant[k].second);
 		}
-		
+
 		/**
          * \brief Récupère le deuxième élément de la kième paire de list_succ
          */
         std::vector<Type> getListNoeudSucc(int k){
 			return (list_succ[k].second);
 		}
-		
+
 		/**
 		 * \fn bool presenceGrapheNoeud (Type noeud)
-		 * \brief Renvoie vrai si le noeud appartient au graphe
-		 * faux sinon
+		 * \brief Renvoie vrai si le noeud appartient au graphe faux sinon
 		 * \param noeud un noeud du graphe.
 		 */
 		bool presenceGrapheNoeud (Type noeud){
 			bool present = false;
-			unsigned int i = 0; 
+			unsigned int i = 0;
 			while (i<list_adj.size() && present == false){
 				if (getNoeudAdj(i) == noeud){
 					present = true;
@@ -198,7 +197,7 @@ class Graphe {
 			bool trouveNI = false;
 			bool trouveNF = false;
 			unsigned int i=0;
-			
+
 			if (noeud_init == noeud_final){
 				throw BoucleException("Boucle d'un noeud sur lui-même");
 			}
@@ -223,7 +222,7 @@ class Graphe {
 						}
 						i++;
 					}
-					
+
 					trouveNF = false;
 					i = 0;
 					while (i<list_ant.size() && trouveNF == false){
@@ -241,7 +240,7 @@ class Graphe {
 							std::cerr << "!> Une exception a été soulevée : " << e.messageErreur() << "\n";
 						}
 						throw CycleException("Impossible d'ajouter cet arc car il crée un cycle");
-					}				
+					}
 				}
 				else{
 					throw NoeudInexistantException("Au moins un des noeuds n'existe pas");
@@ -318,7 +317,7 @@ class Graphe {
          * \fn void supprimerArc(Type noeud_init,Type noeud_final)
          * \brief Suppression d'un arc.
          * \param noeud_init le noeud de départ de l'arc.
-         * \param noeud_final le noeud d'arrivé de l'arc.
+         * \param noeud_final le noeud d'arrivée de l'arc.
          */
         void supprimerArc(Type noeud_init,Type noeud_final){
 			unsigned int i = 0;
@@ -385,18 +384,17 @@ class Graphe {
 				};
 			};
 		}
-		
+
 		/**
 		 * \fn int positionNoeud (Type noeud)
 		 * \brief Retourne la position du noeud dans la list_adj
 		 * \return un entier
-		 */ 
-		 
+		 */
 		 int positionNoeud (Type noeud){
 			 unsigned int i = 0;
 			 while (i<list_adj.size() && getNoeudAdj(i)!=noeud){
 				 i++;
-			 };		 
+			 };
 			 if (i==list_adj.size()){
 				 throw NoeudInexistantException("Le noeud n'existe pas");
 			 }
@@ -411,7 +409,7 @@ class Graphe {
          * \return un booléen.
          */
         bool contientCycle(){
-			
+
 			bool cycle = false;
 			unsigned int k;
 			unsigned int l;
@@ -420,13 +418,13 @@ class Graphe {
 			std::vector<Type> v1 = {};
 			unsigned int tIntv1;
 			std::vector<Type> vNoeudsNonCycle = {};
-			
+
 			// Initialisation vecteur cycle
 			while (i<getListAnt().size() && getListNoeudAnt(i).size()==0){
 				vNoeudsNonCycle.push_back(getNoeudAnt(i));
 				i++;
 			};
-			
+
 			if (i!=getListAnt().size()){
 				v1.push_back(getNoeudAnt(i));
 				for (k=0; k<getListNoeudAnt(i).size();k++){
@@ -475,7 +473,7 @@ class Graphe {
 								present = (std::find(vNoeudsNonCycle.begin(), vNoeudsNonCycle.end(), getNoeudAnt(i)) != vNoeudsNonCycle.end());
 							};
 						};
-						
+
 						if (i<list_ant.size()){
 							v1.push_back(getNoeudAnt(i));
 							for (k=0; k<getListNoeudAnt(i).size();k++){
@@ -485,8 +483,8 @@ class Graphe {
 							tIntv1 = v1.size();
 						};
 					}
-				};	
-			};		
+				};
+			};
 			return (cycle);
 		}
 
@@ -499,7 +497,7 @@ class Graphe {
 			bool connexe = false;
 			unsigned int k;
 			std::vector<Type> v1 = {};
-			
+
 			if (getListNoeudAdj(0).size()!=0) {
 				v1.push_back(getNoeudAdj(0));
 				for (k=0; k<getListNoeudAdj(0).size();k++){

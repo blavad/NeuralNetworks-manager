@@ -91,7 +91,6 @@ void Couche::setEntree(Tenseur t)
 	entree = t;
 }
 
-
 std::ostream &operator<<(std::ostream &os, const Couche &c)
 {
 	std::string str;

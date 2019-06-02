@@ -3,11 +3,11 @@
 
 #include "CoucheConnectee.hpp"
 
-/** 
+/**
  * \class CoucheConnectée
  * \brief Gère un neurone
  * \author Adrien
- * \version 1.0 
+ * \version 1.0
  * \date avril 2019
  *
  * Classe permettant la création d'un neurone.
@@ -23,6 +23,11 @@ public:
    */
   Neurone(std::string no = "Neurone");
 
+  /**
+   * \fn std::string type()
+   * \brief Méthode qui donne le type de couche : Neurone
+   * \return string
+   */
   std::string type();
 };
 

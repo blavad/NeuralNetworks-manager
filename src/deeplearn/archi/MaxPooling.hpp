@@ -3,20 +3,17 @@
 
 #include "Couche.hpp"
 
-/** 
- * \class MaxPooling 
+/**
+ * \class MaxPooling
  * \brief Classe gérant une couche de MaxPooling.
  * \author Adrien
- * \version 1.0 
+ * \version 1.0
  * \date avril 2019
  *
  * Classe qui va effectuer l'opération de redimensionnement des images par la technique du MaxPooling.
- * 
+ *
  */
-
-
 class MaxPooling : public Couche {
-
 
     private :
      /** \brief Nombre de pixels dimension 1*/
@@ -25,23 +22,29 @@ class MaxPooling : public Couche {
     /** \brief Nombre de pixels dimension 2*/
     int pool_y;
 
-
     public :
         /**
          * \brief Constructeur afin d'obtenir une image de taille pool_x par pool_y.
+         * \param din : DimTenseur
+         * \param no : string
+         * \param pl_x : int
+         * \param pl_y : int
          */
         MaxPooling(DimTenseur din, std::string no, int pl_x, int pl_y);
 
        /**
          * \brief Constructeur afin d'obtenir une image de taille pool par pool.
+         * \param din : DimTenseur
+         * \param no : string
+         * \param pl : int
          */
         MaxPooling(DimTenseur din, std::string no, int pl);
-	
+
 	/**
          * \fn Tenseur propagation(Tenseur t)
          * \brief Méthode permettant la propagation d'une couche à une autre.
          * \param t le tenseur
-	 * \return Le tenseur à l'étape d'après
+         * \return Le tenseur à l'étape d'après
          */
         Tenseur propagation(Tenseur t);
 
@@ -49,14 +52,14 @@ class MaxPooling : public Couche {
          /**
          * \fn void setPoolX(int pl_x)
          * \brief Méthode pour fixer le nombre de pixels en dimension x
-         * \param dimIn La dimension du tenseur d'entrée
+         * \param pl_x : le nombre de pixels en x
          */
         void setPoolX(int pl_x );
 
         /**
          * \fn void setPoolY(int pl_y)
          * \brief Méthode pour fixer le nombre de pixels en dimension y
-         * \param dimIn La dimension du tenseur de sortie
+         * \param pl_y : le nombre de pixels en y
          */
         void setPoolY(int pl_y);
 
@@ -72,7 +75,7 @@ class MaxPooling : public Couche {
          * \brief Méthode pour obtenir le nombre de pixels fixé pour les images en dimension y
          * \return Le nombre de pixels en dimension y
          */
-        int getPoolY() const; 
+        int getPoolY() const;
 
 };
 

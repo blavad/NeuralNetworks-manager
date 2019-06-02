@@ -9,17 +9,16 @@
 
 using namespace std;
 
-/** 
+/**
  * \class ReseauNeurones
  * \brief Module permettant la manipulation de réseaux de neurones.
  * \author Adrien
- * \version 1.0 
+ * \version 1.0
  * \date avril 2019
  *
- * Cette classe permet de créer un réseau de neurones : on peut ajouter/supprimer des couches/noeuds/arcs. 
- * 
+ * Cette classe permet de créer un réseau de neurones : on peut ajouter/supprimer des couches/noeuds/arcs.
+ *
  */
-
 class ReseauNeurones : public Graphe<Couche *>, public Couche
 {
 
@@ -39,11 +38,14 @@ protected:
 public:
   /**
    * \brief Constructeur du réseau vide.
+   * \param no : string
    */
   ReseauNeurones(const std::string no = "ReseauNeurones");
 
   /**
-   * \brief Constructeur du réseau à partir de couches déjà créées. 
+   * \brief Constructeur du réseau à partir de couches déjà créées
+   * \param no : string
+   * \param couches : vecteur de couches
    */
   ReseauNeurones(std::vector<Couche *> couches, const std::string no = "ReseauNeurones");
 
@@ -52,17 +54,32 @@ public:
   // --------------------------------------------------------
 
   /**
-   * \fn Tenseur* propagation(Tenseur* t)
+   * \fn Tenseur& propagation(Tenseur& t)
    * \brief Méthode permettant la propagation dans un reseau de neurone.
    * \param t l'entree du reseau de neurone
-	 * \return la sortie du reseau de neurones
+   * \return la sortie du reseau de neurones
    */
   Tenseur &propagation(Tenseur &t);
+
+  /**
+   * \fn void propagation(Couche *c, Tenseur &t)
+   * \brief Méthode permettant la propagation
+   * \param c : Couche
+   * \param t : tenseur
+   */
   void propagation(Couche *c, Tenseur &t);
+
+  /**
+   * \fn void propagation(Couche *c, Tenseur &t)
+   * \brief Méthode permettant la propagation
+   * \param cIn: Couche d'entrée
+   * \param cOut: Couche de sortie
+   * \param t : tenseur
+   */
   void propagation(Couche *cIn, Couche *cOut, Tenseur &t);
 
   /**
-   * \fn Tenseur* derivee(Tenseur* t);
+   * \fn Tenseur& derivee(Tenseur& t);
    * \brief Methode permettant la backpropagation d'un réseau de neurones
    * \param t le tenseur d'entree
    * \return le tenseur avec toutes ses composantes derivees
@@ -88,8 +105,23 @@ public:
    */
   void miseAJourDims();
 
+  /**
+   * \fn void retro(std::vector<Couche *> liste_Couches, Couche *f, Tenseur &t, double alpha)
+   * \brief Applique la rétropropagation
+   * \param liste_Couches : vecteur de couches
+   * \param f : Couche
+   * \param t : tenseur
+   * \param alpha : double
+   */
   void retro(std::vector<Couche *> liste_Couches, Couche *f, Tenseur &t, double alpha);
 
+  /**
+   * \fn void retro(std::vector<Couche *> liste_Couches, Couche *f, Tenseur &t, double alpha)
+   * \brief Applique la rétropropagation
+   * \param d : Couche
+   * \param t : tenseur
+   * \param alpha : double
+   */
   void retro(Couche *d, Tenseur &t, double alpha);
 
   // -----------------------------------------------------------------
@@ -104,7 +136,7 @@ public:
   void supprimerNoeud(Couche *noeud);
 
   /**
-   * \fn void ajouterArc(Couche noeud_init,Couche noeud_final)
+   * \fn void ajouterArc(Couche *noeud_init, Couche *noeud_final)
    * \brief Ajout d'une connexion entre couches.
    * \param noeud_init la couche d'où sortent les données.
    * \param noeud_final la couche où entrent les données.
@@ -112,7 +144,7 @@ public:
   void ajouterArc(Couche *noeud_init, Couche *noeud_final);
 
   /**
-   * \fn void supprimerArc(Couche noeud_init,Couche noeud_final)
+   * \fn void supprimerArc(Couche *noeud_init, Couche *noeud_final)
    * \brief Suppression d'une connexion entre couches.
    * \param noeud_init la couche d'où sortent les données.
    * \param noeud_final la couche où entrent les données.
@@ -168,25 +200,53 @@ public:
    */
   std::vector<Couche *> getCouchesFinales();
 
-  /** 
+  /**
    * \fn bool isInitiale(Couche *c)
    * \brief teste si la couche est initiale
    * \return vrai si c'est une couche initiale
    */
   bool isInitiale(Couche *c);
 
-  /** 
+  /**
    * \fn bool isFinale(Couche *c)
    * \brief teste si la couche est finale
    * \return vrai si c'est une couche finale
    */
   bool isFinale(Couche *c);
 
+  /**
+   * \fn void display()
+   * \brief Affiche le réseau de neurones
+   */
   void display();
 
+  /**
+   * \fn bool tousArcsAntVisites(Couche *s)
+   * \brief Verifie si tous les antecedents ont ete visites
+   * \param s : une couche
+   * \return vrai si tous les antecedents ont été visités
+   */
   bool tousArcsAntVisites(Couche *s);
+
+  /**
+   * \fn void miseAJourDims(Couche *c)
+   * \brief Met à jour les dimensions
+   * \param c : une couche
+   */
   void miseAJourDims(Couche *c);
+
+  /**
+   * \fn void miseAJourDims(Couche *cIn, Couche *cOut)
+   * \brief Met à jour les dimensions
+   * \param cIn : couche d'entrée
+   * \param cOut : couche de sortie
+   */
   void miseAJourDims(Couche *cIn, Couche *cOut);
+
+  /**
+   * \fn friend std::ostream &operator<<(std::ostream &os, const ReseauNeurones &r)
+   * \brief Surcharge de l'opérateur <<
+   */
   friend std::ostream &operator<<(std::ostream &os, const ReseauNeurones &r);
 };
 

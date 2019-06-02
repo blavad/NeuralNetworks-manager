@@ -28,10 +28,10 @@ protected:
   /** \brief Le nom de la couche */
   std::string nom;
 
-  /** Garde la dernière entrée de la propagation utile à la rétropropagation */
+  /** \brief Garde La dernière entrée de la propagation utile à la rétropropagation */
   Tenseur entree;
 
-  /** */
+  /** \brief Variable utilisée lors de la rétropropagation*/
   Tenseur tmp;
 
   /** \brief Les coordonnées x, y de la couche pour l'affichage */
@@ -41,27 +41,31 @@ public:
 
   /**
    * \brief Constructeur d'une couche par défault
+   * \param no Le nom de la couche
    */
   Couche(const std::string no = "Couche");
 
   /**
    * \brief Constructeur d'une couche à partir de la taille des tenseurs d'entrée/sortie
+   * \param din La dimension d'entrée
+   * \param dout La dimension de sortie
+   * \param no Le nom de la couche
    */
   Couche(DimTenseur din, DimTenseur dout, const std::string no = "Couche");
 
   /**
    * \brief Methode virtuelle permettant la propagation d'une couche à une autre.
-   * \fn virtual Tenseur* propagation(Tenseur* t)
-   * \param t le tenseur d'entree
-	 * \return la sortie de la couche
+   * \fn virtual Tenseur& propagation(Tenseur& t)
+   * \param t Le tenseur d'entree
+   * \return La sortie de la couche
    */
   virtual Tenseur &propagation(Tenseur &t);
 
   /**
-   * \fn virtual Tenseur* derivee(Tenseur* t)
-   * \brief Methode virtuelle pour avoir la derivee de la couche
-   * \param t le tenseur pour lequel on veut la derivee
-   * \return la derivee de la couche
+   * \fn virtual Tenseur& derivee(Tenseur& t)
+   * \brief Méthode virtuelle pour avoir la derivee de la couche
+   * \param t Le tenseur pour lequel on veut la derivee
+   * \return La derivee de la couche
    */
   virtual Tenseur& derivee(Tenseur &t);
 
@@ -74,7 +78,7 @@ public:
   /**
    * \fn virtual std::string type()
    * \brief Méthode pour savoir le type de la couche
-   * \return le type de la couche
+   * \return Le type de la couche
    */
   virtual std::string type();
 
@@ -117,7 +121,7 @@ public:
   /**
    * \fn void setDimOutput(DimTenseur dimOut)
    * \brief Méthode pour fixer la taille du tenseur à la sortie de la couche
-   * \param dimIn La dimension du tenseur de sortie
+   * \param dimOut La dimension du tenseur de sortie
    */
   void setDimOutput(DimTenseur dimOut);
 
@@ -142,20 +146,34 @@ public:
    */
   void setPos(double, double);
 
-  /**\brief Getter */
+  /**
+  * \fn &getTmp
+  * \brief Getter
+  * \return L'attribut tmp
+  */
   Tenseur &getTmp();
 
-  /**\brief Setter */
+  /**
+  * \brief Setter
+  * \param Un tenseur
+  */
   void setTmp(Tenseur t);
 
-  //virtual void update(Tenseur t, double alpha);
-
-  /**\brief Getter de la dernière entrée */
+  /**
+  * \brief Getter de la dernière entrée
+  * \return  L'entrée de la couche
+  */
   Tenseur getEntree() const;
 
-  /**\brief Setter de la dernière entrée */
+  /**
+  * \brief Setter de la dernière entrée 
+  * \param Un tenseur
+  */
   void setEntree(Tenseur t);
 
+  /**
+  * \brief Surcharge de l'opérateur <<
+  */
   friend std::ostream &operator<<(std::ostream &os, const Couche &t);
 
 };

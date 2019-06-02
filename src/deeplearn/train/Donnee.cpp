@@ -22,14 +22,12 @@ Tenseur Donnee::getSortie()
 	return sortie;
 }
 
-
 void Donnee::setEntree(Tenseur e)
 {
 	entree = e;
 }
- 	
- 	
- 	void Donnee::setSortie(Tenseur s)
+ 	 	
+void Donnee::setSortie(Tenseur s)
 {
 	sortie = s;
 }

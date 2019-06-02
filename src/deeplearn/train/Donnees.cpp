@@ -37,7 +37,7 @@ int Donnees::getNbDonnees()
 
 void Donnees::ajouterDonnee(Donnee &d)
 {
-	donnees.emplace_back(d); // Emplace_back et push_back font la même chose apparement mais emplace est plus efficace (voir infos sur "geeksforgeeks")
+	donnees.emplace_back(d);
 }
 
 void Donnees::ajouterDonnees(Donnees d)
@@ -74,9 +74,5 @@ int nombreAleatoire(int i)
 
 void Donnees::melanger()
 {
-	random_shuffle(donnees.begin(), donnees.end(), nombreAleatoire); // On est obligé de mettre nombreAleatoire sinon on a toujours le même mélange.
-																	 // J'ai pas réussi à comprendre pourquoi on est obligé d'utiliser la méthode nombreAleatoire
-																	 // mais c'est la seule façon que j'ai trouvé pour que ça marche (j'ai testé sur des entiers)
-																	 // Je me demande également si on va mélanger plusieurs fois ou qu'une seule fois ? Si on mélange
-																	 // qu'une seule fois, on pourra dégager l'histoire du nb aléatoire.
+	random_shuffle(donnees.begin(), donnees.end(), nombreAleatoire);								  
 }

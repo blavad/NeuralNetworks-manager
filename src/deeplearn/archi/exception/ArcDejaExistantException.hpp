@@ -4,15 +4,32 @@
 #ifndef __ARC_DEJA_EXISTANT_EXCEPTION_HPP__
 #define __ARC_DEJA_EXISTANT_EXCEPTION_HPP__
 
+/**
+ * \class ArcDejaExistantException
+ * \brief Gestion de l'erreur ArcDejaExistantException
+ *
+ * Erreur appelée lorsqu'un arc existe déjà
+ *
+ */
 class ArcDejaExistantException {
 	private :
+	    /** \brief Le message d'erreur */
 		std::string m_error;
-	
-	public : 
+
+	public :
+	    /**
+         * \brief Constructeur de ArcDejaExistantException
+         * \param error : Un message d'erreur
+         */
 		ArcDejaExistantException(std::string error) : m_error(error){}
-		
+
+        /**
+         * \fn const char * messageErreur()
+         * \brief Renvoie le message d'erreur
+         * \return const char *
+         */
 		const char * messageErreur() const {return m_error.c_str();}
-	
+
 };
 
 #endif
