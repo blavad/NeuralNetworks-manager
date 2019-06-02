@@ -30,9 +30,12 @@ Tenseur &TanH::propagation(Tenseur &t)
 	return *res;
 }
 
-Tenseur *TanH::derivee(Tenseur *t)
+Tenseur& TanH::derivee(Tenseur &t)
 {
+	Tenseur* res = new Tenseur();
+	*res = t;
 	double (*df)(double);
 	df = calcul_derive_tanh;
-	return t->appliquerFonction(df);
+	res->appliquerFonction(df);
+	return *res;
 }

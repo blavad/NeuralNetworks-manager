@@ -63,7 +63,7 @@ public:
    * \param t le tenseur pour lequel on veut la derivee
    * \return la derivee de la couche
    */
-  virtual Tenseur *derivee(Tenseur *t);
+  virtual Tenseur& derivee(Tenseur &t);
 
   /**
    * \fn virtual void upDateDimOutput()
@@ -151,7 +151,7 @@ public:
   //virtual void update(Tenseur t, double alpha);
 
   /**\brief Getter de la dernière entrée */
-  Tenseur getEntree();
+  Tenseur getEntree() const;
 
   /**\brief Setter de la dernière entrée */
   void setEntree(Tenseur t);

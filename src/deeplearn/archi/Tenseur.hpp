@@ -104,6 +104,8 @@ public:
      */
   bool operator!=(Tenseur &t);
 
+  virtual Tenseur &mulTermeATerme(Tenseur &tt);
+
   /**
      *  \fn bool operator+(Tenseur &, Tenseur &t)
      *  \brief Additionne deux tenseurs

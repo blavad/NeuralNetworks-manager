@@ -42,7 +42,7 @@ public:
    * \param t le tenseur pour lequel on veut la derivee
    * \return la derivee de la couche
    */
-  Tenseur *derivee(Tenseur *t);
+  Tenseur& derivee(Tenseur &t);
 
   void setDimInput(DimTenseur dimIn);
 

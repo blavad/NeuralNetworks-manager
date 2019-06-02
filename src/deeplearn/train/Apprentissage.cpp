@@ -124,8 +124,10 @@ void Apprentissage::apprendre()
             {
                 cout << "Save " << endl;
             }
-            //Tenseur e = err->eval(y, l);
-            //opt.minimiser(*err);
+            Tenseur e = err->eval(y, label);
+            for (auto cf : rn->getCouchesFinales()){
+                rn->retro(cf, &y, param.getTauxApprentissage());
+            } 
         }
         donnees.melanger();
     }

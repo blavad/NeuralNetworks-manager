@@ -67,7 +67,7 @@ public:
    * \param t le tenseur d'entree
    * \return le tenseur avec toutes ses composantes derivees
    */
-  Tenseur *derivee(Tenseur *t);
+  Tenseur &derivee(Tenseur &t);
 
   /**
    * \fn void upDateDimOutput()
@@ -88,9 +88,9 @@ public:
    */
   void miseAJourDims();
 
-  void retro(std::vector<Couche *> liste_Couches, Couche *f, Tenseur *t, double alpha);
+  void retro(std::vector<Couche *> liste_Couches, Couche *f, Tenseur &t, double alpha);
 
-  void retro(Couche *d, Tenseur *t, double alpha);
+  void retro(Couche *d, Tenseur &t, double alpha);
 
   // -----------------------------------------------------------------
   // --------- Redéfinition méthodes de Graphe<Couche*> --------------

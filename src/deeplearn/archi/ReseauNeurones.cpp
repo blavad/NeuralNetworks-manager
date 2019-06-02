@@ -226,150 +226,7 @@ void ReseauNeurones::propagation(Couche *c, Tenseur &t)
 	}
 }
 
-/* 
-Tenseur *ReseauNeurones::propagation(Tenseur *tens)
-{
-	visite.clear();
-	Tenseur *t = new Tenseur();
-
-	if (estConnexe())
-	{
-		throw NonConnexeException("Le graphe n'est pas connexe");
-	}
-	else
-	{
-		for (auto c : couche_initiale)
-		{
-			//visite.push_back(c);
-			*t = *tens;
-			cout << "Prop dans " << c->getNom() << " " << t->getDim().toString() << " et " << t->getTaille() << endl;
-			cout << t->getValeur(0) << endl;
-			t = c->propagation(t);
-			propagationS(c, t);
-		}
-		Tenseur *res = new Tenseur();
-		for (auto c : couche_finale)
-		{
-			int i = 0;
-			while ((i < l.size()) && (l[i].first != c))
-				i++;
-			// Rajouter erreur si couche finale pas dans l
-			Tenseur *ttemp = l[i].first->propagation(l[i].second);
-			cout << "Propprop dans " << l[i].first->getNom() << " " << ttemp->getTaille() << endl;
-			if (couche_finale.size() > 1)
-				*res = res->concatener(*ttemp);
-			else
-				*res = *ttemp;
-		}
-
-		return res;
-	}
-}
-
-void ReseauNeurones::propagationS(Couche *c, Tenseur *sortie)
-{
-	Tenseur *t = new Tenseur();
-	for (auto s : getListNoeudSucc(positionNoeud(c)))
-	{
-		cout << " Noeud suiv " << s->getNom() << endl;
-		*t = *sortie;
-		//on ajoute l'arc a la liste des arcs visites
-		visite.push_back(make_pair(c, s));
-		//std::vector<Couche*>::iterator a;
-		bool test = true;
-		//verifie si tous les antecedents ont ete visites
-		for (auto a : getListNoeudAnt(positionNoeud(s)))
-		{
-			if (std::find(visite.begin(), visite.end(), make_pair(a, s)) == visite.end())
-			{
-				test = false;
-				break;
-			}
-		}
-		cout << " Valeur test : " << test << endl;
-		// si tous les antecedents ont ete visites
-		if (test)
-		{
-			//visite.push_back(s);
-			// si le noeud n'est pas une couche finale
-			if (std::find(couche_finale.begin(), couche_finale.end(), s) == couche_finale.end())
-			{
-				cout << "Pas couche finale et passe " << endl;
-
-				int i = 0;
-				while ((i < l.size()) && (l[i].first != s))
-					i++;
-				// si le noeud est deja en attente dans la liste
-				if (l.begin() + i != l.end())
-				{
-					//on concatene et on propoage
-					t->lineariser();
-					t->concatener(*(l[i].second));
-					cout << "Prop dans " << s->getNom() << " " << t->getTaille() << endl;
-
-					propagationS(s, s->propagation(t));
-					// on supprime de la liste
-					l.erase(l.begin() + i);
-				}
-				// le noeud n'est pas dans la liste
-				else
-				{
-					//on propage car tous les arcs antecedents ont ete visites
-					cout << "Propag dans " << s->getNom() << " " << t->getTaille() << endl;
-					propagationS(s, s->propagation(t));
-				}
-			}
-			// si le noeud est une couche finale
-			else
-			{
-				// on cherche le noeud dans la liste
-				int i = 0;
-				while ((i < l.size()) && (l[i].first != s))
-					i++;
-				// si le noeud n'est pas dans la liste on le rajoute
-				if (i == l.size())
-				{
-					//t->lineariser();
-					l.push_back(make_pair(s, t));
-				}
-				// sinon on linearise et concatene dans la liste
-				else
-				{
-					//display(*t);
-					t->lineariser();
-					l[i].second->lineariser();
-					*(l[i].second) = l[i].second->concatener(*t);
-				}
-			}
-		}
-		// si des arcs antecedents n'ont pas ete visite
-		else
-		{
-			// on cherche le noeud dans la liste
-			int i = 0;
-			while ((i < l.size()) && (l[i].first != s))
-				i++;
-			// si le noeud n'est pas dans la liste on le rajoute
-			if (i == l.size())
-			{
-				//display(*t);
-				t->lineariser();
-				// display(*t);
-				l.push_back(make_pair(s, t));
-			}
-			// sinon on linearise et concatene dans la liste
-			else
-			{
-				//display(*t);
-				t->lineariser();
-				l[i].second->lineariser();
-				*(l[i].second) = l[i].second->concatener(*t);
-			}
-		}
-	}
-} */
-/* 
-void ReseauNeurones::retro(std::vector<Couche *> liste_Couches, Couche *f, Tenseur *t, double alpha)
+void ReseauNeurones::retro(std::vector<Couche *> liste_Couches, Couche *f, Tenseur &t, double alpha)
 {
 	Tenseur *t2;
 	int pos = 0;
@@ -377,18 +234,19 @@ void ReseauNeurones::retro(std::vector<Couche *> liste_Couches, Couche *f, Tense
 	for (auto d : liste_Couches)
 	{
 		pos2 = pos + d->getDimOutput().getTaille();
-		*t2 = t->copie(pos, pos2);
+		*t2 = t.copie(pos, pos2);
 		pos = pos2;
 		visite.push_back(make_pair(d, f));
-		retro(d, t2, alpha);
+		retro(d, *t2, alpha);
 	}
 }
 
-void ReseauNeurones::retro(Couche *d, Tenseur *t, double alpha)
+void ReseauNeurones::retro(Couche *d, Tenseur &t, double alpha)
 {
+	cout << "Retro dans " << d <<endl;
 	if (d->type() == "Combinaison")
 	{
-		d->setTmp(d->getTmp().concatener(*t));
+		d->setTmp(d->getTmp().concatener(t));
 		bool test = true;
 		for (auto s : getListNoeudSucc(positionNoeud(d)))
 			if (std::find(visite.begin(), visite.end(), make_pair(d, s)) == visite.end())
@@ -398,13 +256,14 @@ void ReseauNeurones::retro(Couche *d, Tenseur *t, double alpha)
 			}
 		if (test)
 		{
-			((CoucheCombinaison *)d)->update(d->getTmp() * *(d->derivee(&d->getEntree())), alpha); //pblm de multiplication, ecrire multiplication terme a terme
-			retro(getListNoeudAnt(positionNoeud(d)), d, &d->getTmp(), alpha);
+			Tenseur tmp = d->getEntree();
+			((CoucheCombinaison *)d)->update(d->getTmp().mulTermeATerme(d->derivee(tmp)), alpha);
+			retro(getListNoeudAnt(positionNoeud(d)), d, d->getTmp(), alpha);
 		}
 	}
 	else
 	{
-		d->setTmp(d->getTmp() + *t);
+		d->setTmp(d->getTmp() + t);
 		bool test = true;
 		for (auto s : getListNoeudSucc(positionNoeud(d)))
 			if (std::find(visite.begin(), visite.end(), make_pair(d, s)) == visite.end())
@@ -414,12 +273,14 @@ void ReseauNeurones::retro(Couche *d, Tenseur *t, double alpha)
 			}
 		if (test)
 		{
-			retro(getListNoeudAnt(positionNoeud(d)), d, d->derivee(&(d->getEntree() * d->getTmp())), alpha); //stocker l'entree
+			Tenseur tmp = d->getTmp();
+			Tenseur entree = d->getEntree();
+			retro(getListNoeudAnt(positionNoeud(d)), d, d->derivee(entree * tmp), alpha); 
 		}
 	}
 }
- */
-Tenseur *ReseauNeurones::derivee(Tenseur *t)
+ 
+Tenseur &ReseauNeurones::derivee(Tenseur &t)
 {
 	return t;
 }

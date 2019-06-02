@@ -42,7 +42,7 @@ public:
      * \param t le tenseur d'entree
      * \return le tenseur avec toutes ses composantes derivees
      */
-  Tenseur *derivee(Tenseur *t);
+  Tenseur& derivee(Tenseur &t);
   
 };
 
