@@ -12,9 +12,9 @@
  * \version 1.0 
  * \date avril 2019
  *
- * Module permettant le traitement de l'erreur commise suivant l'entropie croisee lors d'un apprentissage.
+ * Module permettant le traitement de l'erreur commise suivant l'entropie croisée lors d'un apprentissage.
  * Il permet également la récupération des données liées aux erreurs.
- * Il herite de la classe Erreur.
+ * Il hérite de la classe Erreur.
  * 
  * 
  */
@@ -23,24 +23,24 @@ class ErreurEntropieCroisee : public Erreur
 
   public:
     /**
-    * \brief Constructeur de l'erreur d'entropie croisee.
+    * \brief Constructeur de l'erreur d'entropie croisee
     * 
     */
     ErreurEntropieCroisee();
 
     /**
       * \fn Tenseur eval(Tenseur sortieRN, Tenseur prediction)
-      * \brief Methode pour evaluer l'erreur entropie croisee effectuee entre la sortie et la prediction.
-      * \param sortieRN le tenseur de sortie du reseau de neurones.
-      * \param label la sortie souhaitée du reseau de neurones.
+      * \brief Methode Pour évaluer l'erreur entropie croisée effectuée entre la sortie et la prédiction
+      * \param sortieRN Le tenseur de sortie du reseau de neurones
+      * \param label La sortie souhaitée du reseau de neurones
       */
     Tenseur eval(Tenseur sortieRN, Tenseur label);
 
     /**
       * \fn void derivee(Tenseur sortieRN, Tenseur label)
-      * \brief Méthode pour avoir la derivee de l'erreur effectuee entre la sortie et la prediction
-      * \param sortieRN le tenseur de sortie du reseau de neurones.
-      * \param label la sortie souhaitée du reseau de neurones.
+      * \brief Méthode pour avoir la derivee de l'erreur effectuée entre la sortie et la prédiction
+      * \param sortieRN Le tenseur de sortie du reseau de neurones
+      * \param label La sortie souhaitée du reseau de neurones
       */
     Tenseur derivee(Tenseur sortieRN, Tenseur label);
 };

@@ -5,7 +5,7 @@
 
 /** 
  * \class Donnee
- * \brief Gère une des donnees necessaires a l'apprentissage.
+ * \brief Gère une des données nécessaires à l'apprentissage.
  * \author Marion
  * \version 1.0 
  * \date avril 2019
@@ -17,49 +17,49 @@
 class Donnee {
 
     private :
-        /** \brief l'entree */
+        /** \brief L'entree */
         Tenseur entree;
 
-        /** \brief la sortie */
+        /** \brief La sortie */
         Tenseur sortie;
 
     public :
 
         /**
-         * \brief Constructeur sans paramètre de Donnee
+         * \brief Constructeur standard
          */
         Donnee();
 
         /**
-         * \brief Constructeur de Donnee avec l'entree et la sortie 
+         * \brief Constructeur de Donnee avec l'entrée et la sortie 
          */
         Donnee(Tenseur& entree, Tenseur& sortie);
 
         /**
          * \fn Tenseur getEntree()
          * \brief Retourne l'entree de la donnee
-         * \return l'entree.         
+         * \return L'entree.         
          */
         Tenseur getEntree();
 
         /**
          * \fn Tenseur getSortie()
          * \brief Retourne la sortie de la donnee
-         * \return la sortie.  
+         * \return La sortie.  
          */
         Tenseur getSortie();
 
         /**
          * \fn void setEntree(Tenseur e)
          * \brief Met a jour l'entree de la donnee
-         * \param e le tenseur d'entree
+         * \param e Le tenseur d'entree
          */
         void setEntree(Tenseur e);
 
         /**
          * \fn void setSortie(Tenseur s)
          * \brief Met a jour la sortie de la donnee
-         * \param s le tenseur de sortie
+         * \param s Le tenseur de sortie
          */
         void setSortie(Tenseur s);
 

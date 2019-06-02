@@ -12,7 +12,7 @@
  *
  * Module permettant le traitement de l'erreur quadratique commise lors d'un apprentissage.
  * Il permet également la récupération des données liées aux erreurs.
- * Il herite de la classe Erreur.
+ * Il hérite de la classe Erreur.
  * 
  * 
  */
@@ -21,24 +21,24 @@ class ErreurQuadratique : public Erreur
 
   public:
     /**
-    * \brief Constructeur de l'erreur quadratique.
+    * \brief Constructeur de l'erreur quadratique
     * 
     */
     ErreurQuadratique();
 
     /**
       * \fn Tenseur eval(Tenseur sortieRN, Tenseur prediction)
-      * \brief Methode pour evaluer l'erreur quadratique effectuee entre la sortie et la prediction.
-      * \param sortieRN le tenseur de sortie du reseau de neurones.
-      * \param label la sortie souhaitée du reseau de neurones.
+      * \brief Methode pour évaluer l'erreur quadratique effectuée entre la sortie et la prediction
+      * \param sortieRN Le tenseur de sortie du reseau de neurones
+      * \param label La sortie souhaitée du reseau de neurones
       */
     Tenseur eval(Tenseur sortieRN, Tenseur label);
 
     /**
       * \fn void derivee(Tenseur sortieRN, Tenseur label)
-      * \brief Méthode pour avoir la derivee de l'erreur effectuee entre la sortie et la prediction
-      * \param sortieRN le tenseur de sortie du reseau de neurones.
-      * \param label la sortie souhaitée du reseau de neurones.
+      * \brief Méthode pour avoir la dérivée de l'erreur effectuée entre la sortie et la prédiction
+      * \param sortieRN Le tenseur de sortie du reseau de neurones
+      * \param label La sortie souhaitée du reseau de neurones
       */
     Tenseur derivee(Tenseur sortieRN, Tenseur label);
 };

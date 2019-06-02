@@ -24,44 +24,47 @@ class Apprentissage
 {
 
 private:
-    /** \brief le reseau de neurones qui va apprendre */
+    /** \brief Le reseau de neurones qui va apprendre */
     ReseauNeurones *rn;
 
-    /** \brief  l'erreur commise a la fin de l'apprentissage */
+    /** \brief  L'erreur commise a la fin de l'apprentissage */
     Erreur *err;
 
-    /** \brief les donnees utilisees pour l'apprentissage */
+    /** \brief Les données utilisées pour l'apprentissage */
     Donnees donnees;
 
-    /** \brief les parametres d'apprentissages qui definissent la facon d'apprendre */
+    /** \brief Les paramètres d'apprentissages qui definissent la facon d'apprendre */
     ParametresApprentissage param;
 
-    /** \brief un booleen pour savoir si l'apprentissage est en cours */
+    /** \brief Un booléen pour savoir si l'apprentissage est en cours */
     bool enCours;
 
 public:
     /**
-     * \brief Constructeur d'une session d'apprentissage vide.
+     * \brief Constructeur d'une session d'apprentissage vide
      */
     Apprentissage();
 
+    /**
+     * \brief Constructeur d'une session d'apprentissage avec un réseau de neurones
+     */
     Apprentissage(ReseauNeurones *reseauN);
 
     /**
-     * \brief Contructeur d'une session d'apprentissage avec un reseau de neurones et une erreur donnes.
+     * \brief Contructeur d'une session d'apprentissage avec un reseau de neurones et une erreur donnée
      */
     Apprentissage(ReseauNeurones *reseauN, Erreur *erreur);
 
     /**
      * \fn void apprendre()
-     * \brief Lance l'apprentissage.
+     * \brief Lance l'apprentissage
      */
     void apprendre();
 
     /**
      * \fn void chargerDonnees()
      * \brief Charge les donnees
-     * \param couleur booleen pour savoir si on est en couleur ou en noir et blanc
+     * \param couleur Booleen pour savoir si on est en couleur ou en noir et blanc
      */
     void chargerDonnees(bool couleur = true);
 
@@ -73,57 +76,57 @@ public:
 
     /**
      * \fn ReseauNeurones getRN()
-     * \brief Recupere le reseau de neurones
-     * \return le reseau de neurones.'         * 
+     * \brief Récupére le reseau de neurones
+     * \return Le réseau de neurones
      */
     ReseauNeurones *getRN();
 
     /**
      * \fn Erreur getErreur()
-     * \brief Recupere l'erreur
-     * \return l'erreur.       * 
+     * \brief Récupére l'erreur
+     * \return L'erreur
      */
     Erreur *getErreur();
 
     /**
-     * \fn Donnes getDonnees()
-     * \brief Recupere les donnees d'apprentissage.
-     * \return les données d'apprentissage.
+     * \fn Donnees getDonnees()
+     * \brief Récupère les données d'apprentissage
+     * \return Les données d'apprentissage
      */
     Donnees &getDonnees();
 
     /**
-     * \fn ParametresApprentissage getParam()
-     * \brief Recupere les parametres d'apprentissage du reseau.
-     * \return les parametres d'apprentissage actuels.
+     * \fn ParamètresApprentissage getParam()
+     * \brief Récupère les paramètres d'apprentissage du reseau
+     * \return Les paramètres d'apprentissage actuels
      */
     ParametresApprentissage getParam();
 
     /**
      * \fn void setRN(ReseauNeurones *rn)
      * \brief Met à jour le reseau
-     * \param rn un pointeur sur le reseau
+     * \param rn Un pointeur sur le reseau
      */
     void setRN(ReseauNeurones *res);
 
     /**
      * \fn void setErreur(Erreur *err)
      * \brief Met à jour l'erreur
-     * \param err un pointeur sur l'erreur
+     * \param err Un pointeur sur l'erreur
      */
     void setErreur(Erreur *err);
 
     /**
      * \fn void setDonnees(Donnees d)
-     * \brief Met a jour les donnees de l'apprentissage.
-     * \param d les donnees de l'apprentissage.
+     * \brief Met a jour les données de l'apprentissage
+     * \param d Les données de l'apprentissage
      */
     void setDonnees(Donnees d);
 
     /**
      * \fn void setParam(ParametresApprentissage paramApp)
-     * \brief Met a jour les parametres d'apprentissage du reseau de neurones.
-     * \param paramApp les parametres d'apprentissage.
+     * \brief Met a jour les paramètres d'apprentissage du réseau de neurones
+     * \param paramApp Les paramètres d'apprentissage
      */
     void setParam(ParametresApprentissage paramApp);
 };

@@ -41,7 +41,7 @@ class TestDonnees : public CppUnit::TestFixture
     /** \brief Vérifier que les données s'ajoutent bien */
     void testAjouterDonnees();
 
-    /** \brief Vérifier que la donnee s'ajoute bien */
+    /** \brief Vérifier que la donnée s'ajoute bien */
     void testAjouterDonnee();
 
     /** \brief Vérifier que les données se mélangent bien */

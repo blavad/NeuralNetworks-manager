@@ -23,17 +23,17 @@ public:
 
     /**
      * \fn virtual Tenseur eval(Tenseur sortieRN, Tenseur prediction)
-     * \brief Methode virtuelle pour evaluer l'erreur effectuee entre la sortie et la prediction.
-     * \param sortieRN le tenseur de sortie du reseau de neurones.
-     * \param label la sortie souhaitée du reseau de neurones.
+     * \brief Methode virtuelle Pour evaluer l'erreur effectuée entre la sortie et la prédiction
+     * \param sortieRN Le tenseur de sortie du reseau de neurones
+     * \param label La sortie souhaitée du reseau de neurones
      */
     virtual Tenseur eval(Tenseur sortieRN, Tenseur label);
 
     /**
-         * \fn virtual void derivee(Tenseur t)
-         * \brief Méthode virtuelle pour avoir la derivee d'un tenseur donnee en entree
-         * \param t le tenseur pour lequel on veut la derivee
-         */
+     * \fn virtual void derivee(Tenseur t)
+     * \brief Méthode virtuelle pour avoir la derivée d'un tenseur donnée en entree
+     * \param t Le tenseur pour lequel on veut la derivée
+     */
     virtual Tenseur derivee(Tenseur t);
 };
 

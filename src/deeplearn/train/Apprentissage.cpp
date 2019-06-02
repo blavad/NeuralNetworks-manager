@@ -102,7 +102,6 @@ void Apprentissage::chargerDonnees(bool couleur)
                     timg = pr.imageToTenseur(nomEntierImage, donnees.getDimDonneesEntree().getDim(0), donnees.getDimDonneesEntree().getDim(1), couleur);
                     if (timg != NULL)
                     {
-
                         Donnee *d = new Donnee(*timg, t);
                         donnees.ajouterDonnee(*d);
                     }
