@@ -6,7 +6,6 @@
 #include "BoiteArchitecture.hpp"
 #include "DialogueParamCouche.hpp"
 #include "DialogueParamData.hpp"
-#include "Boite.hpp"
 
 #include "../deeplearn/archi/ReseauNeurones.hpp"
 #include "../deeplearn/archi/Couche.hpp"
@@ -97,98 +96,117 @@ bool BoiteArchitecture::on_key_press_event(GdkEventKey *event)
 // Mouse button press event
 bool BoiteArchitecture::on_button_press_event(GdkEventButton *event)
 {
-	if (event->type == GDK_2BUTTON_PRESS)
+	try
 	{
-		// Cas du double clic droit = suppression du noeud et de ses arcs
-		if (event->button == 3)
+
+		if (event->type == GDK_2BUTTON_PRESS)
 		{
-			selected_couche = selectCouche(event->x, event->y);
-			if (selected_couche != NULL && !isOutputSelected() && !isInputSelected())
+			// Cas du double clic droit = suppression du noeud et de ses arcs
+			if (event->button == 3)
 			{
-				if (rn->isInitiale(selected_couche))
-					rn->supprimerCoucheInitiale(selected_couche);
-				if (rn->isFinale(selected_couche))
-					rn->supprimerCoucheFinale(selected_couche);
-				rn->supprimerNoeud(selected_couche);
-				selected_couche = NULL;
-			}
-		}
-		// Cas du double clic gauche = Paramétrage de la couche
-		else if (event->button == 1)
-		{
-			selected_couche = selectCouche(event->x, event->y);
-			if (selected_couche != NULL)
-			{
-				if (isInputSelected())
+				selected_couche = selectCouche(event->x, event->y);
+				if (selected_couche != NULL && !isOutputSelected() && !isInputSelected())
 				{
-					DialogueParamData dialogue("Paramétrage des données", parent, ((Panneau *)parent)->getApprentissage()->getDonnees().getDossiersDonnees());
-					int reponse = dialogue.run();
-					if (reponse == Gtk::RESPONSE_OK)
-					{
-						Donnees &d = ((Panneau *)parent)->getApprentissage()->getDonnees();
-						d.setDossiersDonnees(dialogue.getNomDossiers());
-						d.setDimDonneesEntree(DimTenseur(dialogue.getDimDonneesEntree()));
-						rn->setDimInput(DimTenseur(dialogue.getDimDonneesEntree()));
-						d.setDimDonneesSortie(DimTenseur(vector<int>{dialogue.getNomDossiers().size()}));
-						cout << "#> Dossiers de données mis à jour.\n";
-						rn->miseAJourDims();
-					}
-				}
-				else if (isOutputSelected())
-				{
-				}
-				else
-				{
-					DialogueParamCouche dialogue("Paramétrage " + selected_couche->getNom(), parent, selected_couche);
-					int reponse = dialogue.run();
-					if (reponse == Gtk::RESPONSE_OK)
-					{
-						dialogue.updateParams();
-						rn->miseAJourDims();
-						rn->upDateDimOutput();
-					}
+					if (rn->isInitiale(selected_couche))
+						rn->supprimerCoucheInitiale(selected_couche);
+					if (rn->isFinale(selected_couche))
+						rn->supprimerCoucheFinale(selected_couche);
+					rn->supprimerNoeud(selected_couche);
+					selected_couche = NULL;
 				}
 			}
-		}
-	}
-
-	// Cas clic gauche = Selection de la couche
-	else if ((event->type == GDK_BUTTON_PRESS))
-	{
-		if (event->button == 1)
-		{
-			selected_couche = selectCouche(event->x, event->y);
-		}
-
-		// Cas clic droit = ajout de liaisons
-		if (event->button == 3)
-		{
-			Couche *c_final = selectCouche(event->x, event->y);
-			if (selected_couche != NULL)
+			// Cas du double clic gauche = Paramétrage de la couche
+			else if (event->button == 1)
 			{
-				if (c_final != NULL && !isOutputSelected() && c_final != selected_couche)
+				selected_couche = selectCouche(event->x, event->y);
+				if (selected_couche != NULL)
 				{
-					if (isInputSelected() && !rn->isInitiale(c_final))
+					if (isInputSelected())
 					{
-						rn->ajouterCoucheInitiale(c_final);
+						DialogueParamData dialogue("Paramétrage des données", parent, ((Panneau *)parent)->getApprentissage()->getDonnees().getDossiersDonnees());
+						int reponse = dialogue.run();
+						if (reponse == Gtk::RESPONSE_OK)
+						{
+							Donnees &d = ((Panneau *)parent)->getApprentissage()->getDonnees();
+							d.setDossiersDonnees(dialogue.getNomDossiers());
+							d.setDimDonneesEntree(DimTenseur(dialogue.getDimDonneesEntree()));
+							rn->setDimInput(DimTenseur(dialogue.getDimDonneesEntree()));
+							d.setDimDonneesSortie(DimTenseur(vector<int>{dialogue.getNomDossiers().size()}));
+							cout << "#> Dossiers de données mis à jour.\n";
+							rn->miseAJourDims();
+						}
 					}
-					else if ((c_final == output) && !rn->isFinale(selected_couche))
+					else if (isOutputSelected())
 					{
-						rn->ajouterCoucheFinale(selected_couche);
 					}
 					else
 					{
-						rn->ajouterArc(selected_couche, c_final);
+						DialogueParamCouche dialogue("Paramétrage " + selected_couche->getNom(), parent, selected_couche);
+						int reponse = dialogue.run();
+						if (reponse == Gtk::RESPONSE_OK)
+						{
+							dialogue.updateParams();
+							rn->miseAJourDims();
+							rn->upDateDimOutput();
+						}
 					}
 				}
-				else
+			}
+		}
+
+		// Cas clic gauche = Selection de la couche
+		else if ((event->type == GDK_BUTTON_PRESS))
+		{
+			if (event->button == 1)
+			{
+				selected_couche = selectCouche(event->x, event->y);
+			}
+
+			// Cas clic droit = ajout de liaisons
+			if (event->button == 3)
+			{
+				Couche *c_final = selectCouche(event->x, event->y);
+				if (selected_couche != NULL)
 				{
-					selected_couche->setPos(event->x, event->y);
+					if (c_final != NULL && !isOutputSelected() && c_final != selected_couche)
+					{
+						if (isInputSelected() && !rn->isInitiale(c_final))
+						{
+							rn->ajouterCoucheInitiale(c_final);
+						}
+						else if ((c_final == output) && !rn->isFinale(selected_couche))
+						{
+							rn->ajouterCoucheFinale(selected_couche);
+						}
+						else
+						{
+							rn->ajouterArc(selected_couche, c_final);
+						}
+					}
+					else
+					{
+						selected_couche->setPos(event->x, event->y);
+					}
 				}
 			}
 		}
 	}
-
+	catch (BoucleException &eb)
+	{
+		cerr << "!> Impossible de créer l'arc. Boucle créée.\n";
+	}
+	catch (ArcDejaExistantException &ea)
+	{
+		cerr << "!> Impossible de créer l'arc. Arc déjà existant.\n";
+	}
+	catch (NoeudInexistantException &en)
+	{
+		cerr << "!> Impossible de créer l'arc. Noeud inexistant.\n";
+	}
+	catch (CycleException &ec)
+	{
+		cerr << "!> Impossible de créer l'arc. Création d'un cycle.\n";
+	}
 	queue_draw();
 	return true;
 }

@@ -57,7 +57,7 @@ Panneau::Panneau() : Gtk::Window(), boiteV1(false, 20), conteneur_secondaire(fal
 
 	Gtk::VBox *paramBox = new Gtk::VBox();
 	// Nb Epoques
-	Gtk::Label *lab_nb_epochs = new Gtk::Label("Nombre Epochs");
+	Gtk::Label *lab_nb_epochs = new Gtk::Label("Nombre Epoques");
 	Glib::RefPtr<Gtk::Adjustment> ajustement(Gtk::Adjustment::create(3, 1, 30, 1));
 	Gtk::SpinButton *nb_epochs = new Gtk::SpinButton(ajustement);
 	nb_epochs->signal_value_changed().connect(sigc::bind<Gtk::SpinButton *, std::string>(sigc::mem_fun(*this, &Panneau::updateParams), nb_epochs, "nb_epochs"));

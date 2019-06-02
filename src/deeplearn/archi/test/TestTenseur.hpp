@@ -38,14 +38,25 @@ class TestTenseur : public CppUnit::TestFixture
 	void setUp();
 	void tearDown();
 
+        /** \brief Vérifier l'égalité entre deux Tenseurs */
 	void testEgalite();
+
+        /** \brief Vérifier l'addition entre deux Tenseurs */
 	void testAddition();
+
+        /** \brief Vérifier la multiplication entre deux Tenseurs */
 	void testMultiplication();
 
+        /** \brief Vérifier que l'indice absolu est le bon */
 	void testGetIndAbs();
+
+	/** \brief Vérifier que l'initiaisation du vecteur est correcte */
 	void testSetValeurFromVector();
 
+        /** \brief Vérifier que le prochain indice est correcte */
 	void testNextIndice();
+
+        /** \brief Vérifier que le prochain indice est correcte avec une contrainte d'ordre */
 	void testNextIndice(int ordre);
 };
 #endif

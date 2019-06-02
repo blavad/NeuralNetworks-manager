@@ -237,7 +237,7 @@ class Graphe {
 							supprimerArc(noeud_init, noeud_final);
 						}
 						catch (NoeudInexistantException &e){
-							std::cerr << "Une exception a été soulevée : " << e.messageErreur() << "\n";
+							std::cerr << "!> Une exception a été soulevée : " << e.messageErreur() << "\n";
 						}
 						throw CycleException("Impossible d'ajouter cet arc car il crée un cycle");
 					}
