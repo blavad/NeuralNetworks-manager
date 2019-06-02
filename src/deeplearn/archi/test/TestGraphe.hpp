@@ -48,4 +48,4 @@ class TestGraphe : public CppUnit::TestFixture
 	void testEstConnexe();
 };
 
-#endif // TESTGRAPHE_HPP
+#endif
