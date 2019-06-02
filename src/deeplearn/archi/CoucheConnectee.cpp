@@ -21,7 +21,7 @@ Tenseur &CoucheConnectee::propagation(Tenseur &t)
 	return params * (*res);
 }
 
-Tenseur *CoucheConnectee::derivee(Tenseur *t)
+Tenseur& CoucheConnectee::derivee(Tenseur &t)
 {
 	return t;
 }

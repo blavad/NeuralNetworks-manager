@@ -109,6 +109,22 @@ bool Tenseur::operator!=(Tenseur &t)
 	return !(operator==(t));
 }
 
+Tenseur &Tenseur::mulTermeATerme(Tenseur &tt)
+{
+	Tenseur *res = new Tenseur(getDim());
+	if (getDim() != tt.getDim())
+		throw DimensionsIncompatiblesException();
+	else
+	{
+		int n = res->getTaille();
+		for (int i = 0; i < n; i++)
+		{
+			res->setValeur(getValeur(i) * tt.getValeur(i), i);
+		}
+	}
+	return *res;
+}
+
 Tenseur &Tenseur::operator+(Tenseur &tt)
 {
 	Tenseur *res = new Tenseur(getDim());

@@ -31,11 +31,14 @@ Tenseur& ReLU::propagation(Tenseur& t)
 	return *res;
 }
 
-Tenseur* ReLU::derivee(Tenseur* t)
+Tenseur& ReLU::derivee(Tenseur& t)
 {
+	Tenseur* res = new Tenseur();
+	*res = t;
 	double (*df)(double);
 	df = calcul_derive_relu;
-	return t->appliquerFonction(df);
+	res->appliquerFonction(df);
+	return *res;
 }
 
 

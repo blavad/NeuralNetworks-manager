@@ -13,7 +13,7 @@ Tenseur &Couche::propagation(Tenseur &t)
 {
 }
 
-Tenseur *Couche::derivee(Tenseur *t)
+Tenseur& Couche::derivee(Tenseur &t)
 {
 }
 
@@ -81,7 +81,7 @@ Tenseur& Couche::getTmp()
 	return tmp;
 }
 
-Tenseur Couche::getEntree()
+Tenseur Couche::getEntree() const
 {
 	return entree;
 }
