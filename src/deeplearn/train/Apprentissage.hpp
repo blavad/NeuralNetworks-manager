@@ -2,7 +2,6 @@
 #define __APPRENTISSAGE_HPP__
 
 #include "../archi/ReseauNeurones.hpp"
-#include "Optimisateur.hpp"
 #include "Erreur.hpp"
 #include "Donnees.hpp"
 #include "Donnee.hpp"
@@ -80,13 +79,6 @@ public:
     ReseauNeurones *getRN();
 
     /**
-     * \fn Optimisateur getOptimisateur()
-     * \brief Recupere l'optimisateur.
-     * \return l'optimisateur.'
-     */
-    Optimisateur getOptimisateur();
-
-    /**
      * \fn Erreur getErreur()
      * \brief Recupere l'erreur
      * \return l'erreur.       * 
@@ -120,13 +112,6 @@ public:
      * \param err un pointeur sur l'erreur
      */
     void setErreur(Erreur *err);
-
-    /**
-     * \fn void setOptimisateur(Optimisateur optimisateur)
-     * \brief Met a jour l'optimisateur.
-     * \param optimisateur l'optimisateur de l'apprentissage.
-     */
-    void setOptimisateur(Optimisateur optimisateur);
 
     /**
      * \fn void setDonnees(Donnees d)

@@ -1,7 +1,7 @@
 // #include "Panneau.hpp"
 #include <vector>
 #include <string>
-#include "Boite.hpp"
+#include <gtkmm.h>
 
 #ifndef __BOITE_CHOIX_MULTIPLE_HPP__
 #define __BOITE_CHOIX_MULTIPLE_HPP__
