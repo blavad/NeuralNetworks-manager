@@ -13,11 +13,11 @@ int main(int argc, char **argv)
   // -------------------------------------------------
   // PROGRAMME PRINCIPAL
 
-  Gtk::Main::init_gtkmm_internals();
+  /* Gtk::Main::init_gtkmm_internals();
   auto app = Gtk::Application::create(argc, argv, "grn.reseauneurones.affichage");
   Panneau win;
   
-  return app->run(win);
+  return app->run(win); */
 
   // -------------------------------
   // EXEMPLE UTILISATION DE TENSEURS
@@ -36,7 +36,7 @@ int main(int argc, char **argv)
   // -------------------------------------------------
   // EXEMPLE CREATION RESEAU DE NEURONE ET PROPAGATION
 
-  /* Tenseur *tout = new Tenseur({5}), *res = new Tenseur({5, 5});
+  Tenseur *tout = new Tenseur({5}), *res = new Tenseur({5, 5});
   res->initValeurConstant(5.5);
   tout->initValeurConstant(3.);
 
@@ -70,8 +70,24 @@ int main(int argc, char **argv)
   r2->ajouterArc(c4, c5);
   r2->ajouterArc(c4, c6);
 
-  // *res = r2->propagation(*tout);
+  *res = r2->propagation(*tout);
 
-  cout << "RESULTAT FINAL !!! \n\n"
-       << *res << endl; */
+  cout << "RESULTAT FINAL !!! \n\n" << *res << endl;
+
+  DimTenseur dim ;
+  dim = res->getDim();
+  Tenseur* label = new Tenseur(dim);
+  for (int i=0; i<label->getTaille();i++){
+    label->setValeur(res->getValeur(std::vector<int> {i}) + 1 , std::vector<int> {i});
+  }
+  cout << "Label \n" << *label << endl;
+
+  ErreurL1 *err = new ErreurL1();
+  Tenseur e = err->eval(*res, *label);
+
+  cout << "Erreur L1" << e <<endl;
+  CoucheActivation* ca = new CoucheActivation("fin");
+
+  r2->retro(r2->getCouchesFinales(), ca, res, 0.2);
+ 
 }
