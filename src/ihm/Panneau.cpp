@@ -204,10 +204,12 @@ void Panneau::sauvegarderRN()
 void Panneau::lancerEntrainement()
 {
 	cout << "#> Lancement Entrainement" << endl;
-	DialogueEntrainement dialogue("Entrainement " + reseauNeurones->getNom(), this);
 	appr->chargerDonnees();
-	appr->apprendre();
-	int reponse = dialogue.run();
+
+	DialogueEntrainement dialogue("Entrainement " + reseauNeurones->getNom(), this,appr->getDonnees().getDonnees().size(),appr->getParam().getNbEpoques());
+	dialogue.nextData();
+	int rep = dialogue.run();
+	//appr->apprendre();
 }
 
 void Panneau::updateZoom(Gtk::Scale *zoom)

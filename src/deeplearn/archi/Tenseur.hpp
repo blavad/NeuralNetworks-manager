@@ -276,7 +276,7 @@ public:
    * \param fin l'indice de fin
    * \return un tenseur contenant les indices copiés
    */
-  Tenseur copie(int debut, int fin);
+  Tenseur* copie(int debut, int fin);
 };
 
 #endif

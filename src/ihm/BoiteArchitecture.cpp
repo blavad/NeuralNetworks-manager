@@ -20,7 +20,6 @@ BoiteArchitecture::BoiteArchitecture(Gtk::Window *parent) : input(new Couche("I"
 BoiteArchitecture::BoiteArchitecture(Gtk::Window *parent, ReseauNeurones *res) : rn(res), input(new Couche("I")), output(new Couche("O")), parent(parent)
 {
 	add_events(Gdk::BUTTON_PRESS_MASK);
-	// add_events(Gdk::KEY_PRESS_MASK);
 }
 
 BoiteArchitecture::~BoiteArchitecture()
@@ -77,20 +76,6 @@ Couche *BoiteArchitecture::selectCouche(double x, double y)
 		}
 	}
 	return NULL;
-}
-
-// Echap key pressed
-bool BoiteArchitecture::on_key_press_event(GdkEventKey *event)
-{
-	cout << "#> Suppression noeud : " << endl;
-	if (event->keyval == GDK_KEY_Escape)
-	{
-		if (selected_couche != NULL && selected_couche != input && selected_couche != output)
-		{
-			rn->supprimerNoeud(selected_couche);
-		}
-	}
-	return true;
 }
 
 // Mouse button press event

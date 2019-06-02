@@ -97,7 +97,7 @@ public:
      * \brief Recupere les parametres d'apprentissage du reseau.
      * \return les parametres d'apprentissage actuels.
      */
-    ParametresApprentissage getParam();
+    ParametresApprentissage &getParam();
 
     /**
      * \fn void setRN(ReseauNeurones *rn)

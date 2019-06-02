@@ -26,7 +26,7 @@ Donnees &Apprentissage::getDonnees()
     return donnees;
 }
 
-ParametresApprentissage Apprentissage::getParam()
+ParametresApprentissage &Apprentissage::getParam()
 {
     return param;
 }
@@ -70,43 +70,50 @@ void Apprentissage::chargerDonnees(bool couleur)
         rep = opendir(dossierEnCours.c_str());
         if (rep != NULL)
         {
-            struct dirent *fichierLu;
-            while ((fichierLu = readdir(rep)) != NULL)
+            try
             {
-                std::string image = fichierLu->d_name;
-                std::string nomEntierImage;
-                std::size_t found = image.find(".png");
-                if (found != std::string::npos)
-                {
-                    nomEntierImage = dossierEnCours + "/" + image;
-                }
-                found = image.find(".jpeg");
-                if (found != std::string::npos)
-                {
-                    nomEntierImage = dossierEnCours + "/" + image;
-                }
-                found = image.find(".jpg");
-                if (found != std::string::npos)
-                {
-                    nomEntierImage = dossierEnCours + "/" + image;
-                }
-                if (nomEntierImage != "")
-                {
 
-                    Tenseur t({dossiersDonnees.size()});
-                    t.initValeurNulle();
-                    t.setValeur(1., i);
-
-                    int c = (couleur) ? 3 : 1;
-                    cout << "Ajout donnée : " << nomEntierImage << " - " << donnees.getDimDonneesEntree().getDim(0) << "x" << donnees.getDimDonneesEntree().getDim(1) << "x" << c << endl;
-                    timg = pr.imageToTenseur(nomEntierImage, donnees.getDimDonneesEntree().getDim(0), donnees.getDimDonneesEntree().getDim(1), couleur);
-                    if (timg != NULL)
+                struct dirent *fichierLu;
+                while ((fichierLu = readdir(rep)) != NULL)
+                {
+                    std::string image = fichierLu->d_name;
+                    std::string nomEntierImage;
+                    std::size_t found = image.find(".png");
+                    if (found != std::string::npos)
+                    {
+                        nomEntierImage = dossierEnCours + "/" + image;
+                    }
+                    found = image.find(".jpeg");
+                    if (found != std::string::npos)
+                    {
+                        nomEntierImage = dossierEnCours + "/" + image;
+                    }
+                    found = image.find(".jpg");
+                    if (found != std::string::npos)
+                    {
+                        nomEntierImage = dossierEnCours + "/" + image;
+                    }
+                    if (nomEntierImage != "")
                     {
 
-                        Donnee *d = new Donnee(*timg, t);
-                        donnees.ajouterDonnee(*d);
+                        Tenseur *t = new Tenseur({dossiersDonnees.size()});
+                        t->initValeurNulle();
+                        t->setValeur(1., i);
+
+                        int c = (couleur) ? 3 : 1;
+                        //cout << "Ajout donnée : " << nomEntierImage << " - " << donnees.getDimDonneesEntree().getDim(0) << "x" << donnees.getDimDonneesEntree().getDim(1) << "x" << c << endl;
+                        timg = pr.imageToTenseur(nomEntierImage, donnees.getDimDonneesEntree().getDim(0), donnees.getDimDonneesEntree().getDim(1), couleur);
+                        if (timg != NULL)
+                        {
+                            Donnee *d = new Donnee(*timg, *t);
+                            donnees.ajouterDonnee(*d);
+                        }
                     }
                 }
+            }
+            catch (...)
+            {
+                cerr << "!> Erreur d'ouverture" << endl;
             }
             closedir(rep);
         }
@@ -133,10 +140,8 @@ void Apprentissage::apprendre()
             {
                 cout << "Save " << endl;
             }
-            Tenseur e = err->eval(y, label);
-            for (auto cf : rn->getCouchesFinales()){
-                rn->retro(cf, &y, param.getTauxApprentissage());
-            } 
+            //Tenseur e = err->eval(y, label);
+            //rn->retro(rn->getCouchesFinales(), ca, y, param.getTauxApprentissage());
         }
         donnees.melanger();
     }

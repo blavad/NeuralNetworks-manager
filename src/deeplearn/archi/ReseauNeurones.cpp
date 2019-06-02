@@ -234,7 +234,7 @@ void ReseauNeurones::retro(std::vector<Couche *> liste_Couches, Couche *f, Tense
 	for (auto d : liste_Couches)
 	{
 		pos2 = pos + d->getDimOutput().getTaille();
-		*t2 = t.copie(pos, pos2);
+		t2 = t.copie(pos, pos2);
 		pos = pos2;
 		visite.push_back(make_pair(d, f));
 		retro(d, *t2, alpha);
@@ -265,17 +265,18 @@ void ReseauNeurones::retro(Couche *d, Tenseur &t, double alpha)
 	{
 		d->setTmp(d->getTmp() + t);
 		bool test = true;
-		for (auto s : getListNoeudSucc(positionNoeud(d)))
+		for (auto s : getListNoeudSucc(positionNoeud(d))){
 			if (std::find(visite.begin(), visite.end(), make_pair(d, s)) == visite.end())
 			{
 				test = false;
 				break;
 			}
+		}
 		if (test)
 		{
 			Tenseur tmp = d->getTmp();
 			Tenseur entree = d->getEntree();
-			retro(getListNoeudAnt(positionNoeud(d)), d, d->derivee(entree * tmp), alpha); 
+			retro(getListNoeudAnt(positionNoeud(d)), d, d->derivee(entree).mulTermeATerme(tmp), alpha); 
 		}
 	}
 }

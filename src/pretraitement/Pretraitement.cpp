@@ -22,7 +22,8 @@ Tenseur *Pretraitement::imageToTenseur(std::string nomFichier, int longueur, int
 	{
 
 		Image img(nomFichier);
-		img.resize(to_string(longueur) + "x" + to_string(hauteur));
+		// img.resize(to_string(longueur) + "x" + to_string(hauteur));
+		img.crop(Geometry(longueur, hauteur, 0, 0));
 		if (!couleur)
 		{
 			img.type(GrayscaleType);
@@ -56,9 +57,9 @@ Tenseur *Pretraitement::imageToTenseur(std::string nomFichier, int longueur, int
 		}
 		return t;
 	}
-	catch (Exception)
+	catch (...)
 	{
-		cout << "Exception";
+		cerr << "Exception"<< endl;
 		return NULL;
 	}
 }

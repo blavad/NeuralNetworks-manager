@@ -18,7 +18,7 @@ public:
     int nb_epochs, nb_donnees, max_epochs, max_donnees;
 
 public:
-    DialogueEntrainement(std::string titre, Gtk::Window *parent);
+    DialogueEntrainement(std::string titre, Gtk::Window *parent,int m_d = 0, int m_e = 0);
     void nextData();
 };
 

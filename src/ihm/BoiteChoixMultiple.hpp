@@ -12,18 +12,19 @@ class Panneau;
 
 /** 
  * \class BoiteChoixMultiple
- * \brief Composant graphique qui gère une boite de contenant un choix multiple
+ * \brief Composant graphique qui gère la possibilité de choisir parmis différents choix et appliquer un traitement lors de la validation du choix.
  * \author Samra
  * \version 1.0 
  * \date avril 2019
  * 
- * Cette classe permet d'indiquer à l'utililsateur les differentes options qui lui sont proposées et permet d'accéder à celle qu'il choisit
+ * Cette classe permet d'indiquer à l'utililsateur les differentes options qui lui sont proposées et permet d'aappliquer un traitement au clic sur le bouton valider.
  * 
  */
 class BoiteChoixMultiple : public Gtk::Frame
 {
 
 protected:
+
     /** \brief Une VBox pour agencer la liste et le bouton l'un au dessus de l'autre */
     Gtk::VBox agencement;
     /** \brief La liste des choix possibles */
@@ -44,16 +45,32 @@ public:
      */
     BoiteChoixMultiple(class Panneau *parent, void (Panneau::*f)(void), string nom, vector<string> choix = vector<string>{});
 
+    /**
+     * \fn void on_combo_changed()
+     * \brief Traite le changement de choix sélectionner.
+     * 
+     */
     void on_combo_changed();
 
     /**
      * \fn getValeurSectionnee()
-     * \brief Méthode permettant la lecture du choix de l'utilisateur
+     * \brief Méthode permettant la lecture du choix de l'utilisateur sous forme de string.
 	 * \return le choix de l'utilisateur
      */
     std::string getValeurSectionnee();
 
+    /**
+     * \fn void ajouterChoix(string valeur)
+     * \brief Permet d'ajouter un choix à la liste de choix de la boite.
+     * \param valeur la valeur du choix
+     */
     void ajouterChoix(string valeur);
+
+    /**
+     * \fn void supprimerChoix(string valeur)
+     * \brief Permet de supprimer un choix à la liste de choix de la boite.
+     * \param valeur la valeur du choix
+     */
     void supprimerChoix(string valeur);
 };
 

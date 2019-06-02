@@ -2,8 +2,8 @@
 
 using namespace std;
 
-DialogueEntrainement::DialogueEntrainement(std::string titre, Gtk::Window *parent) : Gtk::Dialog(titre, *parent), boiteV(get_vbox()),
-                                                                                     nb_donnees(0), nb_epochs(0),
+DialogueEntrainement::DialogueEntrainement(std::string titre, Gtk::Window *parent,int m_d, int m_e) : Gtk::Dialog(titre, *parent), boiteV(get_vbox()),
+                                                                                     nb_donnees(0), nb_epochs(0),max_epochs(m_e),max_donnees(m_d),
                                                                                      lab_count_epochs("- Epoque : ?/?"),
                                                                                      lab_count_donnees("- Donnée : ?/?")
 { 

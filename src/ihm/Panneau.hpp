@@ -32,7 +32,7 @@ class BoiteChoixMultiple;
  * \version 1.0 
  * \date avril 2019
  * 
- * Panneau contenant le contenant les différents contenus graphique (boites) du logiciel
+ * Panneau contenant le contenant les différents contenus graphique (boites) du logiciel et les données.
  *
  */
 
@@ -40,10 +40,10 @@ class Panneau : public Gtk::Window
 {
 
 protected:
-  /** \brief un Reseau de Neurones*/
+  /** \brief le réseau de neurones en cours */
   ReseauNeurones *reseauNeurones = new ReseauNeurones();
 
-  /** \brief un objet de la classe apprentissage */
+  /** \brief l'apprentissage et ses paramètres associés */
   Apprentissage *appr = new Apprentissage();
 
   /** Conteneur principal */
@@ -67,21 +67,52 @@ public:
     */
   Panneau();
 
-  void updateParams(Gtk::SpinButton *param, std::string type = "nb_epocs");
-  void ajouterCouche();
-  void changerErreur();
-  void ouvrirRN();
   /**
-    * \fn void sauvegarderRN()
-    * \brief Méthode permettant la sauvegarde d'un Reseau de Neurones. 
-    */
+   * \fn void updateParams(Gtk::SpinButton *param, std::string type = "nb_epocs")
+   * \brief Met à jour les paramètres de l'apprentissage selon les choix de l'utilisateur
+   */
+  void updateParams(Gtk::SpinButton *param, std::string type = "nb_epocs");
+
+  /**
+   * \fn void ajouterCouche()
+   * \brief Méthode appelé lors du clic sur l'ajout d'une couche. 
+   */
+  void ajouterCouche();
+
+  /**
+   * \fn void ouvrirRN()
+   * \brief Méthode appelé lors du clic sur le changement de fonction d'erreur. 
+   */
+  void changerErreur();
+
+  /**
+   * \fn void ouvrirRN()
+   * \brief Méthode appelé lors du clic sur l'ouverture d'un réseau de neurones. 
+   */
+  void ouvrirRN();
+
+  /**
+   * \fn void sauvegarderRN()
+   * \brief Méthode appelé lors du clic sur la sauvegarde du Reseau de Neurones actuel. 
+   */
   void sauvegarderRN();
+
+  /**
+   * \fn void lancerEntrainement()
+   * \brief Méthode appelé lors du clic sur le lancement de l'entrainement. 
+   */
   void lancerEntrainement();
+
+  /**
+   * \fn void pdateZoom(Gtk::Scale *zoom)
+   * \brief Méthode appelé lors du changement de position de la molette de zoom. 
+   * \param zoom le pointeur sur l'élément graphique utilisé pour le zoom
+   */
   void updateZoom(Gtk::Scale *zoom);
 
   /**
     * \fn ReseauNeurones getReseauNeurones()
-    * \brief getteur permettant d'acceder au Reseau de Neurones en attribut de la classe
+    * \brief Getter permettant d'acceder au Reseau de Neurones en attribut de la classe
 	  * \return le Reseau de neurones en attribut de la classe Panneau
     */
   Apprentissage *getApprentissage();
