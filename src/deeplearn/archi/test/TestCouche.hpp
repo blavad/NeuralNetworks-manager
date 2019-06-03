@@ -13,8 +13,8 @@
  * \class TestCouche
  * \brief Test des méthodes de la classe Couche.
  * \author Adrien
- * \version 1.0
- * \date avril 2019
+ * \version 2.0
+ * \date juin 2019
  *
  */
 class TestCouche : public CppUnit::TestFixture

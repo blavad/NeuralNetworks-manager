@@ -13,9 +13,9 @@
 /**
  * \class TestPretraitement
  * \brief Test des méthodes de la classe Pretraitement.
- * \author Marion
- * \version 1.0
- * \date avril 2019
+ * \author Kevin
+ * \version 2.0
+ * \date juin 2019
  *
  */
 

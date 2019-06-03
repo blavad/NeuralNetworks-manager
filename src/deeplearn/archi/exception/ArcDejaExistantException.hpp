@@ -7,8 +7,10 @@
 /**
  * \class ArcDejaExistantException
  * \brief Gestion de l'erreur ArcDejaExistantException
- *
- * Erreur appelée lorsqu'un arc existe déjà
+ * \author Kevin
+ * \version 2.0
+ * \date juin 2019
+ * Erreur appelee lorsqu'un arc existe deja
  *
  */
 class ArcDejaExistantException {

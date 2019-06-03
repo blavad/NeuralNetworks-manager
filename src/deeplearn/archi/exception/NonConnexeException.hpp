@@ -7,8 +7,10 @@
 /**
  * \class NonConnexeException
  * \brief Gestion de l'erreur NonConnexeException
- *
- * Erreur appelée lorsqu'un graphe n'est pas connexe
+ * \author Kevin
+ * \version 2.0
+ * \date juin 2019
+ * Erreur appelee lorsqu'un graphe n'est pas connexe
  *
  */
 class NonConnexeException {

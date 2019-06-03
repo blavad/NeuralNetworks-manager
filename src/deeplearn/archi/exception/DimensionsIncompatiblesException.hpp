@@ -7,7 +7,9 @@
 /**
  * \class DimensionsIncompatiblesException
  * \brief Gestion de l'erreur DimensionsIncompatiblesException
- *
+ * \author Samra
+ * \version 2.0
+ * \date juin 2019
  * Erreur appelée lorsque les dimensions des tenseurs sont incompatibles
  *
  */

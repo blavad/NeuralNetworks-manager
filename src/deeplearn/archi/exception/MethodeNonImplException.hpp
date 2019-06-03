@@ -7,7 +7,9 @@
 /**
  * \class MethodeNonImplException
  * \brief Gestion de l'erreur MethodeNonImplException
- *
+ * \author Coralie
+ * \version 2.0
+ * \date juin 2019
  * Erreur appelée lorsque la méthode appelée n'est pas implémentée
  *
  */

@@ -7,8 +7,10 @@
 /**
  * \class CycleException
  * \brief Gestion de l'erreur CycleException
- *
- * Erreur appelée lorsqu'on trouve un cycle dans le graphe
+ * \author Coralie
+ * \version 2.0
+ * \date juin 2019
+ * Erreur appelee lorsqu'on trouve un cycle dans le graphe
  *
  */
 class CycleException {

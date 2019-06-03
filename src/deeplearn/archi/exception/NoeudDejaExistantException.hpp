@@ -7,8 +7,10 @@
 /**
  * \class NoeudDejaExistantException
  * \brief Gestion de l'erreur NoeudDejaExistantException
- *
- * Erreur appelée lorsqu'un noeud existe déjà
+ * \author Coralie
+ * \version 2.0
+ * \date juin 2019
+ * Erreur appelï¿½e lorsqu'un noeud existe deja
  *
  */
 class NoeudDejaExistantException : public std::exception {

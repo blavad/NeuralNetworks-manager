@@ -5,9 +5,9 @@
 /** 
  * \class ParametresApprentissage 
  * \brief Gère les parametres d'apprentissage du réseau de neurones.
- * \author Marion
- * \version 1.0 
- * \date avril 2019
+ * \author Adrien
+ * \version 2.0 
+ * \date juin 2019
  *
  * Module permettant le choix des paramètres de l'apprentissage.
  * Il permet également leur récupération.

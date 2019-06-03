@@ -10,8 +10,8 @@
  * \brief Classe qui gere la dimension d'un tenseur.
  * \author Adrien
  * \author David
- * \version 1.0
- * \date avril 2019
+ * \version 2.0
+ * \date juin 2019
  *
  * Classe stockant les dimensions d'un tenseur.
  * La dimension d'un tenseur est représentée comme une suite de dimensions dans chaque direction.

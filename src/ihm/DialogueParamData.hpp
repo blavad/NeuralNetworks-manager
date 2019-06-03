@@ -8,6 +8,14 @@
 #include <gtkmm.h>
 #include <iostream>
 
+/**
+ * Class DialogueParamData
+ * \brief Gere le dialogue avec la recuperation des donnees
+ * \author David
+ * \version 2.0
+ * \date juin 2019 
+ */
+
 class DialogueParamData : public Gtk::Dialog
 {
 protected:

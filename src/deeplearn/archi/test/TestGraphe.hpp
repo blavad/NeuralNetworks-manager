@@ -12,8 +12,8 @@
  * \class TestGraphe
  * \brief Test des méthodes de la classe Graphe.
  * \author Coralie
- * \version 1.0
- * \date avril 2019
+ * \version 2.0
+ * \date juin 2019
  *
  */
 class TestGraphe : public CppUnit::TestFixture

@@ -7,9 +7,9 @@
 /**
  * \class Sigmoid
  * \brief Gère la couche Rectified Linear Unit
- * \author Adrien
- * \version 1.0
- * \date avril 2019
+ * \author David
+ * \version 2.0
+ * \date juin 2019
  *
  * Classe permettant la création d'une couche de type ReLU (= Rectified Linear Unit). C'est à dire f(x)=max(0,x)
  *

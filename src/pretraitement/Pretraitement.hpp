@@ -11,9 +11,9 @@
 /** 
  * \class Pretraitement
  * \brief Gère le pretraitement des donnees necessaires a l'apprentissage
- * \author Marion
- * \version 1.0 
- * \date avril 2019
+ * \author David
+ * \version 2.0 
+ * \date juin 2019
  *
  * Module permettant le pretraitement des donnees necessaires avant l'apprentissage.
  * 

@@ -7,9 +7,9 @@
 /**
  * \class TanH
  * \brief Création d'une fonction tangente hyperbolique
- * \author Adrien
- * \version 1.0
- * \date avril 2019
+ * \author Marion
+ * \version 2.0
+ * \date juin 2019
  *
  * Classe permettant la création d'une fonction tangente hyperbolique
  * Cette classe hérite de la classe CoucheActivation.

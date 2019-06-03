@@ -6,9 +6,9 @@
 /**
  * \class CoucheConnectee
  * \brief Gère les couches connectées
- * \author Adrien
- * \version 1.0
- * \date avril 2019
+ * \author David
+ * \version 2.0
+ * \date juin 2019
  *
  * Classe permettant la création d'une couche de combinaison de "type" connectée : tous les neurones sont reliés d'une couche à une autre.
  *

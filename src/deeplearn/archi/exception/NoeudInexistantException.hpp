@@ -7,8 +7,10 @@
 /**
  * \class NoeudInexistantException
  * \brief Gestion de l'erreur NoeudInexistantException
- *
- * Erreur appelée lorsqu'un noeud n'existe pas
+ * \author Coralie
+ * \version 2.0
+ * \date juin 2019
+ * Erreur appelee lorsqu'un noeud n'existe pas
  *
  */
 class NoeudInexistantException {

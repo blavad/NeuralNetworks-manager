@@ -7,8 +7,8 @@
  * \class Erreur
  * \brief Gère le calcul de l'erreur commise lors d'un apprentissage.
  * \author Marion
- * \version 1.0 
- * \date avril 2019
+ * \version 2.0 
+ * \date juin 2019
  *
  * Module permettant le traitement de l'erreur commise lors d'un apprentissage.
  * Il permet également la récupération des données liées aux erreurs.

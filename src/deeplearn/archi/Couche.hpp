@@ -8,9 +8,9 @@
 /** 
  * \class Couche
  * \brief Classe abstraite définissant les fonctionalités d'une couche.
- * \author Adrien
- * \version 1.0 
- * \date avril 2019
+ * \author David
+ * \version 2.0 
+ * \date juin 2019
  *
  * Cette classe permet de fixer les tailles (entrée/sortie) de la couche.
  * Une couche peut être dérivée et propagée.

@@ -7,8 +7,8 @@
  * \class CoucheConvolutive
  * \brief Gère les couche convolutive
  * \author Adrien
- * \version 1.0
- * \date avril 2019
+ * \version 2.0
+ * \date juin 2019
  *
  * Classe permettant la création d'une couche de combinaison de "type" convolutive.
  *

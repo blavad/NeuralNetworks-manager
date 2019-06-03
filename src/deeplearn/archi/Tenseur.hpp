@@ -13,8 +13,8 @@
  * \brief Module permettant la manipulation de tenseurs
  * \author Adrien
  * \author David
- * \version 1.0
- * \date avril 2019
+ * \version 2.0
+ * \date juin 2019
  *
  * Module permettant la manipulation de tenseurs de la taille souhaitée.
  * Les tenseurs sont une généralisation des vecteurs (tenseur d'ordre 1) et matrices (tenseur d'ordre 2).

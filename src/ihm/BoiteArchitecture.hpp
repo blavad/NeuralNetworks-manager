@@ -14,9 +14,9 @@ using namespace std;
 /** 
  * \class BoiteArchitecture
  * \brief Composant graphique qui gère l'affichage du réseau de neurones
- * \author Marion
- * \version 1.0 
- * \date avril 2019
+ * \author David
+ * \version 2.0 
+ * \date juin 2019
  *
  * Ce module gère l'affichage de l architecture du reseau de neurones utilisé par le logiciel 
  */

@@ -6,9 +6,9 @@
 /** 
  * \class Donnee
  * \brief Gère une des données nécessaires à l'apprentissage.
- * \author Marion
- * \version 1.0 
- * \date avril 2019
+ * \author Adrien
+ * \version 2.0 
+ * \date juin 2019
  *
  * Module permettant le stockage en mémoire vive d'une donnee necessaire a l'apprentissage.
  * La donnee est vu comme un couple Entree/Sortie.

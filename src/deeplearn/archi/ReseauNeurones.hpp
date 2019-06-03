@@ -12,9 +12,9 @@ using namespace std;
 /**
  * \class ReseauNeurones
  * \brief Module permettant la manipulation de réseaux de neurones.
- * \author Adrien
- * \version 1.0
- * \date avril 2019
+ * \author David, Marion
+ * \version 2.0
+ * \date juin 2019
  *
  * Cette classe permet de créer un réseau de neurones : on peut ajouter/supprimer des couches/noeuds/arcs.
  *

@@ -11,9 +11,9 @@
 /**
  * \class TestDonnees
  * \brief Test des méthodes de la classe Donnees.
- * \author Adrien
- * \version 1.0
- * \date avril 2019
+ * \author Kevin
+ * \version 2.0
+ * \date juin 2019
  *
  */
 

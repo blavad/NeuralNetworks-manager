@@ -5,11 +5,10 @@
 
 /**
  * \class Vecteur
- * \brief Module qui permet la manipulation de vecteurs
- * \author Adrien
- * \author David
- * \version 1.0
- * \date avril 2019
+ * \brief Module qui permet la manipulation de vecteur
+ * \author Marion
+ * \version 2.0
+ * \date juin 2019
  *
  * Classe qui crée un tenseur d'ordre 1 (= vecteur)
  *

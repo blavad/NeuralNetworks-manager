@@ -10,10 +10,9 @@
 /**
  * \class Matrice
  * \brief Module permettant la manipulation de matrices
- * \author Adrien
- * \author David
- * \version 1.0
- * \date avril 2019
+ * \author Marion
+ * \version 2.0
+ * \date juin 2019
  *
  * Classe qui crée un tenseur d'ordre 2 (= une matrice).
  *

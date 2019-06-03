@@ -8,6 +8,14 @@
 #include <gtkmm.h>
 #include <iostream>
 
+/**
+ * Class DialogueEntrainement
+ * \brief Gere le dialogue avec les fonctions d'entrainement
+ * \author David
+ * \version 2.0
+ * \date juin 2019 
+ */
+
 class DialogueEntrainement : public Gtk::Dialog
 {
 public:

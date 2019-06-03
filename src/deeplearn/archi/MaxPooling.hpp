@@ -6,9 +6,9 @@
 /**
  * \class MaxPooling
  * \brief Classe gérant une couche de MaxPooling.
- * \author Adrien
- * \version 1.0
- * \date avril 2019
+ * \author David
+ * \version 2.0
+ * \date juin 2019
  *
  * Classe qui va effectuer l'opération de redimensionnement des images par la technique du MaxPooling.
  *

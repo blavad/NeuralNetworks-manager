@@ -8,8 +8,8 @@
  * \class CoucheActivation
  * \brief Classe abstraite définissant les couches d'activation
  * \author Adrien
- * \version 1.0
- * \date avril 2019
+ * \version 2.0
+ * \date juin 2019
  *
  * Classe permettant la création d'une couche d'activation de trois types différents (sigmoid,tangente hyperbolique ou Rectified Linear Units)
  * Cette classe hérite de la classe Couche.

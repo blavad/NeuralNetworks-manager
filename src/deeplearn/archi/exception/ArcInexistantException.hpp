@@ -7,8 +7,10 @@
 /**
  * \class ArcInexistantException
  * \brief Gestion de l'erreur ArcInexistantException
- *
- * Erreur appelée lorsqu'un arc n'existe pas
+ * \author Coralie
+ * \version 2.0
+ * \date juin 2019
+ * Erreur appelee lorsqu'un arc n'existe pas
  *
  */
 

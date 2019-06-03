@@ -16,9 +16,9 @@
  * \class Graphe
  * \tparam Type Type de noeud du graphe.
  * \brief Gestion de graphes génériques.
- * \author David, Coralie
- * \version 1.0
- * \date avril 2019
+ * \author Coralie
+ * \version 2.0
+ * \date juin 2019
  *
  * Module permettant l'utilisation d'un graphe orienté générique.
  * Les noeuds du graphe portent cette généricité et peuvent donc être de n'importe quel type de données.

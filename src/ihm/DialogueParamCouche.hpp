@@ -7,6 +7,14 @@
 #include "../deeplearn/archi/Couche.hpp"
 #include "../deeplearn/archi/DimTenseur.hpp"
 
+/**
+ * Class DialogueParamCouche
+ * \brief Gere le dialogue avec le choix des parametres des couches
+ * \author David
+ * \version 2.0
+ * \date juin 2019 
+ */
+
 class DialogueParamCouche : public Gtk::Dialog
 {
 protected:

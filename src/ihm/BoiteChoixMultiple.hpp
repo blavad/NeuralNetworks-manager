@@ -14,8 +14,8 @@ class Panneau;
  * \class BoiteChoixMultiple
  * \brief Composant graphique qui gère la possibilité de choisir parmis différents choix et appliquer un traitement lors de la validation du choix.
  * \author Samra
- * \version 1.0 
- * \date avril 2019
+ * \version 2.0 
+ * \date juin 2019
  * 
  * Cette classe permet d'indiquer à l'utililsateur les differentes options qui lui sont proposées et permet d'aappliquer un traitement au clic sur le bouton valider.
  * 

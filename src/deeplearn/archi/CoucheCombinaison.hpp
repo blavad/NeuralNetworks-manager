@@ -5,9 +5,9 @@
 /**
  * \class CoucheCombinaison
  * \brief Classe abstraite définissant les couches de combinaisons.
- * \author Adrien
- * \version 1.0
- * \date avril 2019
+ * \author Marion
+ * \version 2.0
+ * \date juin 2019
  *
  * Classe permettant la création d'une couche de combinaison c'est-à-dire comportant les paramètres du reseau
  *

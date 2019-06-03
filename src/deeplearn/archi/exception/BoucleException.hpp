@@ -7,8 +7,11 @@
 /**
  * \class BoucleException
  * \brief Gestion de l'erreur BoucleException
- *
- * Erreur appelée lorsqu'on veut créer un arc d'un noeud sur lui-même
+ * \author Coralie
+ * \version 2.0
+ * \date juin 2019
+ * 
+ * Erreur appelee lorsqu'on veut creer un arc d'un noeud sur lui-meme
  *
  */
 class BoucleException {
