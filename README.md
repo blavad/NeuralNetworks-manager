@@ -50,4 +50,5 @@ Fonctionnalités :
 - Double Clic Droit : Permet de supprimer une couche.
 
 
-![alt text](https://gitlab.insa-rouen.fr/dalbert/gestion_reseau_neurones/raw/master/res/ImageLogiciel.png)
+![alt text](https://github.com/davHub/NeuralNetworks-manager/blob/master/res/ImageLogiciel.png)
+
